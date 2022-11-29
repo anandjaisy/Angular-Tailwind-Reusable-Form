@@ -1,9 +1,10 @@
-import { Injectable } from '@angular/core';
-import { Profile, User, UserManager, UserManagerSettings } from 'oidc-client';
-import { LoggerService } from '../logger.service';
-import { TokenHelperService } from './TokenHelperService';
+import {Injectable} from '@angular/core';
+import {Profile, User, UserManager, UserManagerSettings} from 'oidc-client';
+import {LoggerService} from '../logger.service';
+import {TokenHelperService} from './TokenHelperService';
 import {EnvironmentViewModel} from "../../model/environments";
 import {AppSettingService} from "../appsetting.service";
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,11 +13,11 @@ export class AuthService {
   static USER_UNLOADED_EVENT = "USER_UNLOADED";
 
   private initialized: boolean = false;
-  private userManager: UserManager;
-  private user: User = null;
-  public settings: UserManagerSettings;
+  private userManager!: UserManager;
+  private user: any;
+  public settings!: UserManagerSettings;
 
-  private accessToken: Object;
+  private accessToken!: Object;
   private signingOut: boolean = false;
 
   constructor(private logger: LoggerService, private tokenHelperService: TokenHelperService) {
@@ -27,7 +28,9 @@ export class AuthService {
     if (this.initialized) return;
     this.settings = this.getClientSettings(environment);
     this.userManager = new UserManager(this.settings);
-    this.userManager.events.addUserLoaded(user => { this.user = user; });
+    this.userManager.events.addUserLoaded(user => {
+      this.user = user;
+    });
 
 
     this.userManager.events.addAccessTokenExpiring(() => {
@@ -71,7 +74,7 @@ export class AuthService {
     return this.user != null && !this.user.expired;
   }
 
-  public getUser(): Promise<User> {
+  public getUser(): Promise<User | null> {
     return this.userManager.getUser();
   }
 
@@ -86,16 +89,18 @@ export class AuthService {
   public getAuthorizationHeaderValue(): string {
     if (this.user != null)
       return `${this.user.token_type} ${this.user.access_token}`;
+    return '';
   }
 
   getAccessToken(): any {
-    return this.accessToken || this.tokenHelperService.getPayloadFromToken(this.user.access_token, false);;
+    return this.accessToken || this.tokenHelperService.getPayloadFromToken(this.user.access_token, false);
+    ;
   }
 
   async startAuthentication(returnUrl: string): Promise<void> {
     this.logger.info("[AuthService] startAuthentication", returnUrl);
     await this.userManager.clearStaleState();
-    await this.userManager.signinRedirect({ data: { returnUrl: returnUrl } }).catch(err => {
+    await this.userManager.signinRedirect({data: {returnUrl: returnUrl}}).catch(err => {
       //this.$log.debug("IdSvr sign in failed", err);
       return err;
     });
@@ -104,7 +109,11 @@ export class AuthService {
   async completeAuthentication(): Promise<Oidc.User> {
     this.logger.info("[AuthService] completeAuthentication");
     let user = await new Promise<Oidc.User>((resolve, reject) => {
-      this.userManager.signinRedirectCallback().then(user => { resolve(user) }).catch(error => { reject(error); });
+      this.userManager.signinRedirectCallback().then(user => {
+        resolve(user)
+      }).catch(error => {
+        reject(error);
+      });
     });
     this.user = user;
     return this.user;
@@ -130,17 +139,17 @@ export class AuthService {
 
   private getClientSettings(environment: EnvironmentViewModel): UserManagerSettings {
     return {
-      authority: environment.openID.authority,
-      client_id: environment.openID.client_id,
-      redirect_uri: environment.openID.redirect_uri,
-      post_logout_redirect_uri: environment.openID.post_logout_redirect_uri,
-      response_type: environment.openID.response_type,
-      scope: environment.openID.scope,
-      filterProtocolClaims: environment.openID.filterProtocolClaims,
+      authority: environment?.openID?.authority,
+      client_id: environment?.openID?.client_id,
+      redirect_uri: environment?.openID?.redirect_uri,
+      post_logout_redirect_uri: environment?.openID?.post_logout_redirect_uri,
+      response_type: environment?.openID?.response_type,
+      scope: environment?.openID?.scope,
+      filterProtocolClaims: environment?.openID?.filterProtocolClaims,
       loadUserInfo: true,
       monitorSession: true,
-      silent_redirect_uri: environment.openID.silent_redirect_uri,
-      automaticSilentRenew: environment.openID.automaticSilentRenew,
+      silent_redirect_uri: environment?.openID?.silent_redirect_uri,
+      automaticSilentRenew: environment?.openID?.automaticSilentRenew,
       accessTokenExpiringNotificationTime: 20, //default 60
       checkSessionInterval: 2000, //default 2000
       silentRequestTimeout: 20000,
@@ -152,14 +161,14 @@ export class AuthService {
       if (this.initialized) {
         this.logger.info("[AuthService] isServiceReady", true);
         resolve(true);
-      }
-      else {
+      } else {
         this.logger.info("[AuthService] isServiceReady", false);
         reject(false);
       }
     });
   }
 }
+
 export function authServiceFactory(authService: AuthService, appSettings: AppSettingService, environment: EnvironmentViewModel) {
   return async () => {
     appSettings.isServiceReady.subscribe(item => {

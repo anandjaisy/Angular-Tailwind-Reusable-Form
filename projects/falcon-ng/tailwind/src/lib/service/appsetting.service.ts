@@ -1,26 +1,27 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Subject, Observable, from } from 'rxjs';
-import { LoggerService } from './logger.service';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Subject, Observable, from} from 'rxjs';
+import {LoggerService} from './logger.service';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AppSettingService {
   static APP_SETTINGS_LOADED = "APP_SETTINGS_LOADED";
-  private listeners: Object;
+  private listeners: any;
   initialized: boolean = false;
   private eventsSubject: Subject<any>;
   public isServiceReady: Subject<boolean> = new Subject<boolean>();
   private events: Observable<any>;
-  private appSettings;
+  private appSettings: any;
 
-  constructor(private http: HttpClient,private logger: LoggerService) {
+  constructor(private http: HttpClient, private logger: LoggerService) {
     this.listeners = {};
     this.eventsSubject = new Subject<any>();
 
     this.events = from(this.eventsSubject);
     this.events.subscribe(
-      ({ name, args }) => {
+      ({name, args}) => {
         if (this.listeners[name]) {
           for (let listener of this.listeners[name]) {
             listener(...args);
@@ -38,7 +39,7 @@ export class AppSettingService {
     this.logger.info("[AppSettingService] load --> isServiceReady", this.initialized);
   }
 
-  on(name, listener) {
+  on(name: any, listener: any) {
     if (!this.listeners[name]) {
       this.listeners[name] = [];
     }
@@ -46,10 +47,11 @@ export class AppSettingService {
     this.listeners[name].push(listener);
   }
 
-  public getAppsettingValue<T>(): T {
+  public getAppsettingValue<T>(): T | null {
     return this.appSettings ? <T>this.appSettings : null;
   }
 }
+
 export function appSettingsFactory(appSettings: AppSettingService) {
   return async () => await appSettings.load();
 };

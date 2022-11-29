@@ -26,31 +26,28 @@ export class TextboxComponent extends BaseFormComponent<string> implements OnIni
 
   protected defineForm(): void {
     this.controlsConfig = {
-      class: "grid grid-cols-5 gap-4",
+      class: "grid grid-cols-3 gap-4",
       baseControls: [
         new Textbox({
           key: 'firstName',
           label: 'First name',
           value: 'Bombasto',
-          required: true,
           order: 1
         }),
         new Textbox({
           key: 'lastName',
           label: 'Last name',
           value: 'Bombasto',
-          required: true,
           order: 1
         }),
         new Textbox({
           key: 'lastName',
           label: 'Last name',
           value: 'Bombasto',
-          required: true,
           order: 1
         })
       ]
-    }
+    };
   }
 
   protected submitDataSource(model: string): Observable<string> {

@@ -1,0 +1,26 @@
+<mat-card>
+
+  <div class="flex justify-between p-5">
+    <h1>Error messages</h1>
+    <h2></h2>
+    <app-code-button (buttonClickEvent)="buttonClickEvent()"></app-code-button>
+  </div>
+  <mat-card-content>
+    <p class="blurText">Error messages can be shown under the form field underline by adding <strong
+      class="text-format">mat-error</strong> elements inside the form
+      field. Errors are hidden initially and will be displayed on invalid form fields after the user has
+      interacted with the element or the parent form has been submitted. Since the errors occupy the same space as
+      the hints, the hints are hidden when the errors are shown.</p>
+    <div style="margin-top: 40px">
+      <form class="dynamic-form" [formGroup]="formGroup" (ngSubmit)="onSubmit()" novalidate>
+        <control-builder [layout]="controlsConfig" [formGroup]="formGroup"></control-builder>
+      </form>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <pre><code [highlight]="formGroup.value | json"></code></pre>
+      </div>
+    </div>
+
+    <app-code-generator *ngIf="codeGeneratorEnable" [tsConfig]="angularCodeTemplateViewModel.tsConfig"
+                        [htmlConfig]="angularCodeTemplateViewModel.htmlConfig"></app-code-generator>
+  </mat-card-content>
+</mat-card>

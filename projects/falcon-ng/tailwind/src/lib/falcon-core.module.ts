@@ -8,6 +8,7 @@ import {CommonModule} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ControlBuilderComponent} from "./control-builder/control-builder.component";
 import {EnvironmentViewModel} from "./model/environments";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -21,14 +22,16 @@ import {EnvironmentViewModel} from "./model/environments";
     AngularmaterialModule,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports: [
     AngularmaterialModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    ControlBuilderComponent
+    ControlBuilderComponent,
+    RouterModule
   ]
 })
 export class FalconCoreModule {

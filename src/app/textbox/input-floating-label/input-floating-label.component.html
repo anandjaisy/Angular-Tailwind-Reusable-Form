@@ -1,0 +1,28 @@
+<mat-card>
+
+  <div class="flex justify-between p-5">
+    <h1>Floating label</h1>
+    <h2></h2>
+    <app-code-button (buttonClickEvent)="buttonClickEvent()"></app-code-button>
+  </div>
+  <mat-card-content>
+    <p class="blurText">The floatLabel property of <strong class="text-format">mat-form-field</strong> can be used
+      to change this default floating behavior. It can set to never to hide the label instead of float it when
+      text is present in the form field control. It can be set to <strong class="text-format">always</strong> to float
+      the label even
+      when no text is present in the form field control. It can also be set to <strong class="text-format">auto</strong>
+      to
+      restore the default behavior.</p>
+    <div style="margin-top: 40px">
+      <form class="dynamic-form" [formGroup]="formGroup" (ngSubmit)="onSubmit()" novalidate>
+        <control-builder [layout]="controlsConfig" [formGroup]="formGroup"></control-builder>
+      </form>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <pre><code [highlight]="formGroup.value | json"></code></pre>
+      </div>
+    </div>
+
+    <app-code-generator *ngIf="codeGeneratorEnable" [tsConfig]="angularCodeTemplateViewModel.tsConfig"
+                        [htmlConfig]="angularCodeTemplateViewModel.htmlConfig"></app-code-generator>
+  </mat-card-content>
+</mat-card>

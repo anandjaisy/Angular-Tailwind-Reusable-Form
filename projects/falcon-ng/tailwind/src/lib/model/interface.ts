@@ -1,4 +1,5 @@
 import { HttpHeaders, HttpParams } from '@angular/common/http';
+import {LoggingLevel} from "./enum";
 /**
  * @description
  * Interface use for IRequestOptions.
@@ -146,4 +147,39 @@ export declare interface IDialogData {
   cancelBtnText: string;
   mainbtnText?: string;
   bodyMessage?: string;
+}
+/**
+* @description
+* Interface use for setting the suffix and prefix.
+* @usageNotes
+* ```ts
+*       new Textbox({
+*        label: "Prefix & Suffix icon",
+*        appearance: Appearance.Outline,
+*        placeHolder: "Prefix & Suffix icon",
+*        attrType: InputTypes.Text,
+*        prefix : {
+*          isIcon : true,
+*          text : "euro"
+*        },
+*        suffix : {
+*          isIcon: true,
+*          text : "done"
+*        }
+*      });
+* ```
+*/
+export declare interface ISuffixPrefixConfig {
+  isIcon?: boolean;
+  text?: string;
+  toolTipText?: string;
+}
+
+/**
+* @description
+* Interface use for an app setting configuration.
+*/
+export declare interface IAppSettingViewModel {
+  baseUrl?: string;
+  loggingLevel?: LoggingLevel;
 }

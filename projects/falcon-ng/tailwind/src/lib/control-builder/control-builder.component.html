@@ -1,5 +1,5 @@
-<div [class]="layout?.class">
-<ng-container *ngFor="let control of layout?.baseControls">
+<div [class]="layout.class">
+<ng-container *ngFor="let control of layout.baseControls">
     <ng-container reactiveField [control]="control" [formGroup]="formGroup"></ng-container>
   </ng-container>
 </div>

@@ -3,7 +3,6 @@ import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/c
 import { Observable, of } from 'rxjs';
 import { AuthService } from '../open-id/auth.service';
 import { LoggerService } from '../logger.service';
-import { catchError } from "rxjs/internal/operators";
 
 @Injectable({
     providedIn: 'root'

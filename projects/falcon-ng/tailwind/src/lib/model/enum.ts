@@ -124,3 +124,26 @@ export const enum TableAction {
   Delete,
   RightArrow,
 }
+
+/**
+* @description
+* Enum use for setting the Floating label.
+* @usageNotes
+* ```ts
+*      componentProperty: {
+*        floatLabel: Floatinglabel.Always
+*      }
+* ```
+*/
+export const enum Floatinglabel {
+  Auto = 'auto',
+  Always = 'always',
+}
+
+export const enum LoggingLevel {
+  None = 'None',
+  Verbose = 'Verbose',
+  Info = 'Info',
+  Warnings = 'Warnings',
+  Errors = 'Errors'
+}

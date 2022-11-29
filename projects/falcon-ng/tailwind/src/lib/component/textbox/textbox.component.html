@@ -1,7 +1,30 @@
-<mat-form-field [formGroup]="formGroup">
-  <mat-label>Clearable input</mat-label>
-<input matInput type="text" [formControlName]="control.key">
-  <button matSuffix mat-icon-button aria-label="Clear">
-    <mat-icon>close</mat-icon>
-  </button>
+<mat-form-field [formGroup]="formGroup" [appearance]="control.appearance" [floatLabel]="control.floatLabel">
+  <mat-label>{{control.label}}</mat-label>
+  <input matInput [type]="control.type" [formControlName]="control.key"
+         [class]="control.class"
+         [required]="formGroup.get(control.key)?.errors !== null && formGroup.get(control.key)?.errors?.['required']">
+
+  <span matPrefix
+        [matTooltip]="control.prefix.toolTipText!"
+        [ngClass]="{'material-icons': control.prefix.isIcon}">{{control.prefix.text}}</span>
+  <span matSuffix [matTooltip]="control.suffix.toolTipText!"
+        [ngClass]="{'material-icons': control.suffix.isIcon}">{{control.suffix.text}}</span>
+  <ng-container *ngIf="control.hint.link?.isLink; else elseBlock">
+    <mat-hint *ngIf="control.hint.link?.queryParams !== undefined; else withoutQueryBlock">
+      <a [routerLink]="[control.hint.link?.routerLink]"
+         [queryParams]="{ query: control.hint.link?.queryParams }"
+         routerLinkActive="router-link-active">{{control.hint.text}}</a>
+    </mat-hint>
+  </ng-container>
+  <ng-template #elseBlock>
+    <mat-hint>{{control.hint.text}}</mat-hint>
+  </ng-template>
+  <ng-template #withoutQueryBlock>
+    <a [routerLink]="[control.hint.link?.routerLink]"
+       routerLinkActive="router-link-active">{{control.hint.text}}</a>
+  </ng-template>
+
+  <ng-container *ngFor="let validation of control.validations;" ngProjectAs="mat-error">
+    <mat-error *ngIf="formGroup.get(control.key)?.hasError(validation.name)">{{validation.message}}</mat-error>
+  </ng-container>
 </mat-form-field>

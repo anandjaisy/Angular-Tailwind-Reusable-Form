@@ -29,10 +29,10 @@
             the form field with a border all the way around, not just an underline.</p>
         </div>
         <form class="dynamic-form" [formGroup]="formGroup" (ngSubmit)="onSubmit()" novalidate>
-        <control-builder [layout]="controlsConfig" [formGroup]="formGroup"></control-builder>
+          <control-builder [layout]="controlsConfig" [formGroup]="formGroup"></control-builder>
         </form>
         <div fxLayout="row" fxLayoutAlign="center center">
-          <pre><code [highlight]="formGroup?.value | json"></code></pre>
+          <pre><code [highlight]="formGroup.value | json"></code></pre>
         </div>
       </div>
       <app-code-generator *ngIf="codeGeneratorEnable" [tsConfig]="angularCodeTemplateViewModel.tsConfig"
@@ -42,12 +42,12 @@
 
   </mat-card>
 
-  <!--  <br>-->
-  <!--  <app-input-floating-label></app-input-floating-label>-->
-  <!--  <br>-->
-  <!--  <app-input-hint></app-input-hint>-->
-  <!--  <br>-->
-  <!--  <app-input-error></app-input-error>-->
-  <!--  <br>-->
-  <!--  <app-input-prefix-suffix></app-input-prefix-suffix>-->
+  <br>
+  <app-input-floating-label></app-input-floating-label>
+  <br>
+  <app-input-hint></app-input-hint>
+  <br>
+  <app-input-error></app-input-error>
+  <br>
+  <app-input-prefix-suffix></app-input-prefix-suffix>
 </div>

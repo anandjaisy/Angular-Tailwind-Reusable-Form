@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AppSettingService } from './appsetting.service';
+import {LoggingLevel} from "../model/enum";
+import {IAppSettingViewModel} from "../model/interface";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,7 @@ export class LoggerService {
 
   async initialize(appSettings: IAppSettingViewModel): Promise<void> {
     if (this.initialized) return;
-    this._level = appSettings.loggingLevel;
+    this._level = appSettings.loggingLevel as LoggingLevel;
     this.initialized = true;
   }
 
@@ -67,7 +69,7 @@ export function loggerServiceFactory(loggerService: LoggerService, appSettings: 
   return async () => {
     appSettings.isServiceReady.subscribe(item => {
       if (item)
-        loggerService.initialize(appSettings.getAppsettingValue());
+        loggerService.initialize(appSettings.getAppsettingValue() as IAppSettingViewModel);
     });
   }
 };

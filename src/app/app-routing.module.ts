@@ -1,11 +1,12 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {ComponenttestingComponent} from "./componenttesting/componenttesting.component";
+import {TextboxComponent} from "./textbox/textbox.component";
 
 const routes: Routes = [
   //{path: 'auth-callback', component: AuthCallbackComponent},
   {path: '', component: ComponenttestingComponent},
-//  {path: 'input', component: InputComponent},
+  {path: 'input', component: TextboxComponent},
 //  {path: 'auto-complete', component: AutoCompleteComponent},
 //  {path: 'checkbox', component: CheckboxComponent},
 //  {path: 'datepicker', component: DatepickerComponent},

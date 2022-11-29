@@ -6,7 +6,7 @@ import {ReactiveFieldDirective} from './reactive-field.directive';
 import {AngularmaterialModule} from "./module/angularmaterial.module";
 import {CommonModule} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {FalconControlBuilderComponent} from "./control-builder/control-builder.component";
+import {ControlBuilderComponent} from "./control-builder/control-builder.component";
 import {EnvironmentViewModel} from "./model/environments";
 
 @NgModule({
@@ -15,7 +15,7 @@ import {EnvironmentViewModel} from "./model/environments";
     TextareaComponent,
     SelectComponent,
     ReactiveFieldDirective,
-    FalconControlBuilderComponent
+    ControlBuilderComponent
   ],
   imports: [
     AngularmaterialModule,
@@ -27,7 +27,8 @@ import {EnvironmentViewModel} from "./model/environments";
     AngularmaterialModule,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ControlBuilderComponent
   ]
 })
 export class FalconCoreModule {

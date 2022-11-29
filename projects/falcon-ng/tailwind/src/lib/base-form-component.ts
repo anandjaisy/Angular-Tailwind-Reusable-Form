@@ -6,9 +6,10 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import { BaseControl } from './base-control';
+import {BaseControl, Layout} from './base-control';
 import { inject } from '@angular/core';
 import { IValidator } from './model/ivalidator';
+import { ControlType } from './model/enum';
 
 /**
  * @description
@@ -26,7 +27,7 @@ import { IValidator } from './model/ivalidator';
  *    protected defineForm(): void {
  *    }
  *    ngOnInit(): void {
- *      this.form = this.createControls();
+ *      this.formGroup = this.createControls();
  *    }
  *    protected submitDatasource(model: any): Observable<any> {
  *      return of(model);
@@ -34,10 +35,17 @@ import { IValidator } from './model/ivalidator';
  * ```
  */
 export abstract class BaseFormComponent<T> {
-  public form!: FormGroup;
-  protected fb = inject(FormBuilder);
+  public formGroup!: FormGroup;
+
   protected abstract defineForm(): void;
+
   protected abstract submitDataSource(model: T): Observable<T>;
+
+  public dataSource: T | undefined = undefined;
+  public controlsConfig!: Layout<T>;
+  public showLoading: boolean = false;
+  protected fb = inject(FormBuilder);
+
   constructor() {}
 
   /**
@@ -46,10 +54,10 @@ export abstract class BaseFormComponent<T> {
    * @returns submitDatasource() method with form data if valid otherwise form invalid.
    */
   public onSubmit() {
-    if (this.form !== undefined && this.form.valid) {
-      this.submitDataSource(this.form.value);
+    if (this.formGroup !== undefined && this.formGroup.valid) {
+      this.submitDataSource(this.formGroup.value);
     } else {
-      this.validateAllFormFields(this.form);
+      this.validateAllFormFields(this.formGroup);
     }
   }
 
@@ -60,7 +68,7 @@ export abstract class BaseFormComponent<T> {
    * @returns Groups of controls added to the form builder.
    */
   private validateAllFormFields(formGroup: FormGroup) {
-    if (this.form !== undefined) this.form.markAllAsTouched();
+    if (this.formGroup !== undefined) this.formGroup.markAllAsTouched();
   }
 
   /**
@@ -68,10 +76,10 @@ export abstract class BaseFormComponent<T> {
    * Create the reactive form controls
    * @returns Groups of controls added to the form builder.
    */
-  protected createControls(controls: BaseControl<T>[]) {
+  protected createControls() {
     const group = this.fb.group({});
-    controls.forEach((control, index) => {
-      this.bindControl(control, group, index);
+    this.controlsConfig.baseControls.forEach((controls, index) => {
+      this.bindControl(controls, group, index);
     });
     return group;
   }
@@ -88,22 +96,21 @@ export abstract class BaseFormComponent<T> {
     group: FormGroup,
     index: number
   ) {
-    //    if (componentConfig.componentType === ComponentType.Button)
-    //      return;
+    if (controlConfig.controlType === ControlType.Button) return;
     var control = null;
-    //    if (componentConfig.formArray !== undefined) {
+    //    if (controlConfig.formArray !== undefined) {
     //      control =
-    //        componentConfig.formArray.length > 0
+    //        controlConfig.formArray.length > 0
     //          ? this.fb.array([
     //            this.createFormArrayGroup(
-    //              componentConfig.formArray[
-    //              componentConfig.formArray.length - 1
+    //              controlConfig.formArray[
+    //              controlConfig.formArray.length - 1
     //                ].componentConfig,
     //            ),
     //          ])
     //          : this.fb.array(
     //            [],
-    //            this.bindValidations(componentConfig.validations || []),
+    //            this.bindValidations(controlConfig.validations || []),
     //          );
     //    } else {
     control = this.fb.control(
@@ -126,7 +133,7 @@ export abstract class BaseFormComponent<T> {
   private bindValidations(validations: IValidator[]) {
     if (validations.length > 0) {
       const validList: (ValidatorFn | null | undefined)[] = [];
-      validations.forEach((valid) => {
+      validations.forEach((valid: IValidator) => {
         validList.push(valid.validator);
       });
       return Validators.compose(validList);
@@ -182,7 +189,7 @@ export abstract class BaseFormComponent<T> {
    * @returns void.
    */
   public reset(defaultValues?: any): void {
-    this.form.reset(defaultValues);
+    this.formGroup.reset(defaultValues);
   }
 
   /**
@@ -191,17 +198,17 @@ export abstract class BaseFormComponent<T> {
    * @param name Name of the field to reset the error.
    * @returns void.
    */
-  //  resetFieldErrors(name: string): void {
-  //    this.form.get(name).setErrors(null);
-  //  }
+  resetFieldErrors(name: string): void {
+    this.formGroup?.get(name)?.setErrors(null);
+  }
 
   /**
    * @description
    * Get the controls value from the form.
    * @returns Form controls values.
    */
-  get value() {
-    return this.form.value;
+  get value(): any {
+    return this.formGroup.value;
   }
 
   /**
@@ -220,7 +227,7 @@ export abstract class BaseFormComponent<T> {
    * The following snippet shows how a component can implement this abstract class to
    * define its own initialization method.
    * ```ts
-   *   this.form.patchValue({
+   *   this.formGroup.patchValue({
    *     name: 'Todd Motto',
    *     event: {
    *       title: 'AngularCamp 2016',
@@ -233,7 +240,7 @@ export abstract class BaseFormComponent<T> {
     value: { [key: string]: any },
     options?: { onlySelf?: boolean; emitEvent?: boolean }
   ) {
-    return this.form.patchValue(value, options);
+    return this.formGroup.patchValue(value, options);
   }
 
   /**
@@ -252,7 +259,7 @@ export abstract class BaseFormComponent<T> {
    * The following snippet shows how a component can implement this abstract class to
    * define its own initialization method.
    * ```ts
-   *   this.form.setValue({
+   *   this.formGroup.setValue({
    *     name: 'Todd Motto',
    *     event: {
    *       title: 'AngularCamp 2016',
@@ -265,7 +272,7 @@ export abstract class BaseFormComponent<T> {
     value: { [key: string]: any },
     options?: { onlySelf?: boolean; emitEvent?: boolean }
   ) {
-    return this.form.setValue(value, options);
+    return this.formGroup.setValue(value, options);
   }
 
   /**
@@ -279,7 +286,7 @@ export abstract class BaseFormComponent<T> {
    * ```
    */
   //  protected removeControl(layoutIndex: number, index: number) {
-  //    this.form.removeControl(
+  //    this.formGroup.removeControl(
   //      this.controlsConfig.container.layoutConfig[layoutIndex]
   //        .componentConfig[index].formControlName,
   //    );
@@ -325,7 +332,7 @@ export abstract class BaseFormComponent<T> {
   //        (componentConfig, componentIndex) => {
   //          if (componentConfig.formArray !== undefined) {
   //            componentConfig.formArray.forEach((control) => {
-  //              this.form.setControl(
+  //              this.formGroup.setControl(
   //                'productOption',
   //                this.createFormArrayGroup(control.componentConfig),
   //              );
@@ -334,7 +341,7 @@ export abstract class BaseFormComponent<T> {
   //              );
   //            });
   //          } else {
-  //            this.form.addControl(
+  //            this.formGroup.addControl(
   //              componentConfig.formControlName,
   //              new UntypedFormControl(
   //                {

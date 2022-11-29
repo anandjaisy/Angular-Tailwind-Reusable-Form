@@ -1,6 +1,6 @@
-<mat-form-field class="example-form-field">
+<mat-form-field [formGroup]="formGroup">
   <mat-label>Clearable input</mat-label>
-  <input matInput type="text">
+<input matInput type="text" [formControlName]="control.key">
   <button matSuffix mat-icon-button aria-label="Clear">
     <mat-icon>close</mat-icon>
   </button>

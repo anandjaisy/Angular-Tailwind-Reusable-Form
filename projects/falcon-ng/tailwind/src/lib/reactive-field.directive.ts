@@ -16,8 +16,8 @@ export class ReactiveFieldDirective implements OnInit {
   ngOnInit(): void {
     if (this.control !== undefined) {
       this.componentRef = this.viewContainerRef.createComponent(Constant.ComponentMapper[this.control.controlType]);
-      this.componentRef.instance.field = this.control;
-      this.componentRef.instance.group = this.formGroup;
+      this.componentRef.instance.control = this.control;
+      this.componentRef.instance.formGroup = this.formGroup;
     }
   }
 

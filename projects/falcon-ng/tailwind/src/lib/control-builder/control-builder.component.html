@@ -1,0 +1,5 @@
+<div [formGroup]="formGroup">
+  <ng-container *ngFor="let control of controls">
+    <ng-container reactiveField [control]="control" [formGroup]="formGroup"></ng-container>
+  </ng-container>
+</div>

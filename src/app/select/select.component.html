@@ -1,0 +1,51 @@
+<div class="container mx-auto p-6">
+  <mat-card>
+    <div class="flex justify-between p-5">
+      <a mat-mini-fab color="accent" routerLink="..">
+        <mat-icon>arrow_back</mat-icon>
+      </a>
+      <h2>Select component</h2>
+      <h2></h2>
+    </div>
+
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div style="margin-top: 40px">
+        <div>
+          <div class="flex justify-between p-5">
+            <h1>Select</h1>
+            <app-code-button (buttonClickEvent)="buttonClickEvent()"></app-code-button>
+          </div>
+          <h2>Select label</h2>
+          <p class="blurText">To add options to the select, add <strong class="text-format">mat-option</strong> elements
+            to the <strong class="text-format">mat-select</strong>. Each <strong class="text-format">mat-option</strong>
+            has a value property that can be used to set the value that will be selected if the
+            user chooses this option. The content of the <strong class="text-format">mat-option</strong> is
+            what will be shown to
+            the user.
+          </p>
+
+          <h2>Multiple selection</h2>
+          <p class="blurText">
+            <strong class="text-format">mat-select</strong> defaults to single-selection mode, but can be
+            configured to allow multiple
+            selection by setting the <strong class="text-format">multiple</strong> property.
+          </p>
+        </div>
+        <br><br>
+        <form class="dynamic-form" [formGroup]="formGroup" (ngSubmit)="onSubmit()" novalidate>
+          <control-builder [layout]="controlsConfig" [formGroup]="formGroup"></control-builder>
+        </form>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <pre><code [highlight]="formGroup.value | json"></code></pre>
+        </div>
+      </div>
+      <app-code-generator *ngIf="codeGeneratorEnable" [tsConfig]="angularCodeTemplateViewModel.tsConfig"
+        [htmlConfig]="angularCodeTemplateViewModel.htmlConfig"></app-code-generator>
+
+    </mat-card-content>
+
+    <!-- <app-select-html></app-select-html> -->
+
+  </mat-card>
+</div>

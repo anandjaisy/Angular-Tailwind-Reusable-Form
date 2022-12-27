@@ -1,4 +1,4 @@
-import {ModuleWithProviders, NgModule} from '@angular/core';
+import {ModuleWithProviders, NgModule, APP_INITIALIZER, inject} from '@angular/core';
 import {TextboxComponent} from './component/textbox/textbox.component';
 import {TextareaComponent} from './component/textarea/textarea.component';
 import {SelectComponent} from './component/select/select.component';
@@ -9,6 +9,14 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ControlBuilderComponent} from "./control-builder/control-builder.component";
 import {EnvironmentViewModel} from "./model/environments";
 import {RouterModule} from "@angular/router";
+import {IGenericHttpClient} from "./service/http/igeneric-http-client";
+import {GenericHttpClient} from "./service/http/generic-http-client";
+import {AppSettingService, appSettingsFactory} from "./service/appsetting.service";
+import {AuthService, authServiceFactory} from "./service/open-id/auth.service";
+import {LoggerService, loggerServiceFactory} from "./service/logger.service";
+import {MAT_SNACK_BAR_DEFAULT_OPTIONS} from "@angular/material/snack-bar";
+import {provideHttpClient, withInterceptors} from "@angular/common/http";
+import { DatePickerComponent } from './component/date-picker/date-picker.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +24,8 @@ import {RouterModule} from "@angular/router";
     TextareaComponent,
     SelectComponent,
     ReactiveFieldDirective,
-    ControlBuilderComponent
+    ControlBuilderComponent,
+    DatePickerComponent
   ],
   imports: [
     AngularmaterialModule,
@@ -32,7 +41,50 @@ import {RouterModule} from "@angular/router";
     ReactiveFormsModule,
     ControlBuilderComponent,
     RouterModule
-  ]
+  ],
+  providers: [
+    provideHttpClient(
+      withInterceptors([
+        (req, next) => {
+          // Get the auth token from the service.
+          const authToken = inject(AuthService).getAuthorizationHeaderValue();
+          inject(LoggerService).info("Auth bearer token ", authToken);
+          if (authToken) {
+            req = req.clone({
+              setHeaders: {
+                'Content-Type': 'application/json',
+                Authorization: authToken
+              }
+            });
+          }
+          return next(req);
+        },
+      ])
+    ),
+    {provide: IGenericHttpClient, useClass: GenericHttpClient},
+    {
+      provide: APP_INITIALIZER,
+      useFactory: appSettingsFactory,
+      deps: [AppSettingService],
+      multi: true,
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: authServiceFactory,
+      deps: [AuthService, AppSettingService, EnvironmentViewModel],
+      multi: true,
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: loggerServiceFactory,
+      deps: [LoggerService, AppSettingService],
+      multi: true,
+    },
+    {
+      provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,
+      useValue: {duration: 5000},
+    },
+  ],
 })
 export class FalconCoreModule {
   public static forRoot(

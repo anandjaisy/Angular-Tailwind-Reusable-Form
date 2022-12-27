@@ -14,8 +14,9 @@ import {InputErrorComponent} from "./textbox/input-error/input-error.component";
 import {InputFloatingLabelComponent} from "./textbox/input-floating-label/input-floating-label.component";
 import {InputHintComponent} from "./textbox/input-hint/input-hint.component";
 import {InputPrefixSuffixComponent} from "./textbox/input-prefix-suffix/input-prefix-suffix.component";
-import {HTTP_INTERCEPTORS} from "@angular/common/http";
-import {HttpFalconInterceptor} from "../../projects/falcon-ng/tailwind/src/lib/service/http/httpInterceptor";
+import { SelectComponent } from './select/select.component';
+import { TextAreaComponent } from './text-area/text-area.component';
+import {SelectHtmlComponent} from "./select/select-html/select-html.component";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,10 @@ import {HttpFalconInterceptor} from "../../projects/falcon-ng/tailwind/src/lib/s
     InputErrorComponent,
     InputFloatingLabelComponent,
     InputHintComponent,
-    InputPrefixSuffixComponent
+    InputPrefixSuffixComponent,
+    SelectComponent,
+    TextAreaComponent,
+    SelectHtmlComponent
   ],
   imports: [
     BrowserModule,
@@ -47,12 +51,7 @@ import {HttpFalconInterceptor} from "../../projects/falcon-ng/tailwind/src/lib/s
           scss: () => import('highlight.js/lib/languages/scss'),
         }
       }
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HttpFalconInterceptor,
-      multi: true,
-    },],
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule {

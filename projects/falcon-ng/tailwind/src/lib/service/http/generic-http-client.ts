@@ -1,20 +1,23 @@
-import { HttpClient, HttpHeaders, HttpRequest, HttpEventType, HttpEvent, HttpResponse, HttpErrorResponse } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpRequest,
+  HttpEventType,
+  HttpEvent,
+  HttpStatusCode
+} from '@angular/common/http';
 import { Observable, from } from 'rxjs';
 import { IGenericHttpClient } from './igeneric-http-client';
 import { Injectable } from '@angular/core';
-import { HttpMethod } from '../../model/component-type.enum';
-import { IRequestOptions } from '../../model/interface';
-import { EnvironmentViewModel } from '../../model/environment-view-model';
-import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
+import {IRequestOptions, SnackbarModel} from '../../model/interface';
 import { LoggerService } from '../logger.service';
-import { ComponentType } from '../../model/component-type.enum';
-import { HttpStatusCode } from '../../model/HttpStatusCodeEnum';
-import { SnackbarViewModel } from '../../model/snack-bar-viewmodel';
+import {EnvironmentViewModel} from "../../model/environments";
+import {HttpMethod} from "../../model/enum";
+import {MatSnackBar} from "@angular/material/snack-bar";
 @Injectable({
   providedIn: 'root'
 })
 export class GenericHttpClient<T> implements IGenericHttpClient<T>{
-  private snackBarViewModel: SnackbarViewModel = new SnackbarViewModel();
+  private snackBarViewModel: SnackbarModel = {} as SnackbarModel;
   private isHttpError: boolean = false;
 
   constructor(private httpClient: HttpClient, private environment: EnvironmentViewModel,
@@ -165,23 +168,23 @@ export class GenericHttpClient<T> implements IGenericHttpClient<T>{
         },
         (error) => {
           switch (error.status) {
-            case HttpStatusCode.FORBIDDEN:
+            case HttpStatusCode.Forbidden:
               // observer.complete();
               this.snackBarViewModel.messageText = 'Access to the requested resource is forbidden.';
               this.snackBarViewModel.actionText = 'Forbidden';
               this.isHttpError = true;
               break;
-            case HttpStatusCode.BAD_REQUEST:
+            case HttpStatusCode.BadRequest:
               this.snackBarViewModel.messageText = 'Server cannot or will not process the request.';
               this.snackBarViewModel.actionText = 'Bad Request';
               this.isHttpError = true;
               break;
-            case HttpStatusCode.UNAUTHORIZED:
+            case HttpStatusCode.Unauthorized:
               this.snackBarViewModel.messageText = 'Request has not been applied because it lacks valid authentication credentials.';
               this.snackBarViewModel.actionText = 'Unauthorized';
               this.isHttpError = true;
               break;
-            case HttpStatusCode.INTERNAL_SERVER_ERROR:
+            case HttpStatusCode.InternalServerError:
               this.snackBarViewModel.messageText = 'Server encountered an unexpected condition.';
               this.snackBarViewModel.actionText = 'Internal server error';
               this.isHttpError = true;

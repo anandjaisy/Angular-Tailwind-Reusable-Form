@@ -2,6 +2,8 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {ComponenttestingComponent} from "./componenttesting/componenttesting.component";
 import {TextboxComponent} from "./textbox/textbox.component";
+import {SelectComponent} from "./select/select.component";
+import {TextAreaComponent} from "./text-area/text-area.component";
 
 const routes: Routes = [
   //{path: 'auth-callback', component: AuthCallbackComponent},
@@ -12,11 +14,11 @@ const routes: Routes = [
 //  {path: 'datepicker', component: DatepickerComponent},
 //  {path: 'form-field', component: FormFieldComponent},
 //  {path: 'radio', component: RadioComponent},
-//  {path: 'select', component: SelectComponent},
+  {path: 'select', component: SelectComponent},
 //  {path: 'slider', component: SliderComponent},
 //  {path: 'slide-toggle', component: SlideToggleComponent},
 //  {path: 'button-indicator', component: ButtonIndicatorComponent},
-//  {path: 'text-area', component: TextAreaComponent},
+  {path: 'text-area', component: TextAreaComponent},
 //  {path: 'button-toggle', component: ButtonToggleComponent},
 //  {path: 'progress-spinner', component: ProgressSpinnerComponent},
 //  {path: 'progress-bar', component: ProgressBarComponent},

@@ -9,13 +9,13 @@
         [ngClass]="{'material-icons': control.prefix.isIcon}">{{control.prefix.text}}</span>
   <span matSuffix [matTooltip]="control.suffix.toolTipText!"
         [ngClass]="{'material-icons': control.suffix.isIcon}">{{control.suffix.text}}</span>
-  <ng-container *ngIf="control.hint.link?.isLink; else elseBlock">
-    <mat-hint *ngIf="control.hint.link?.queryParams !== undefined; else withoutQueryBlock">
+  <mat-hint *ngIf="control.hint.link?.isLink; else elseBlock">
+    <ng-container *ngIf="control.hint.link?.queryParams !== undefined; else withoutQueryBlock">
       <a [routerLink]="[control.hint.link?.routerLink]"
          [queryParams]="{ query: control.hint.link?.queryParams }"
          routerLinkActive="router-link-active">{{control.hint.text}}</a>
-    </mat-hint>
-  </ng-container>
+    </ng-container>
+  </mat-hint>
   <ng-template #elseBlock>
     <mat-hint>{{control.hint.text}}</mat-hint>
   </ng-template>

@@ -35,7 +35,6 @@ export class InputErrorComponent
           label: 'Required Validation',
           appearance: Appearance.Fill as MatFormFieldAppearance,
           placeHolder: 'Required Validation *',
-          type: InputTypes.Text,
           validations: [{
             name: 'required',
             validator: Validators.required,
@@ -47,7 +46,6 @@ export class InputErrorComponent
           label: 'Pattern Validation',
           appearance: Appearance.Outline as MatFormFieldAppearance,
           placeHolder: 'Pattern Validation *',
-          type: InputTypes.Text,
           validations: [{
             name: 'pattern',
             validator: Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'),
@@ -59,7 +57,6 @@ export class InputErrorComponent
           label: 'Required & Pattern Validation *',
           appearance: Appearance.Outline as MatFormFieldAppearance,
           placeHolder: 'Required & Pattern Validation *',
-          type: InputTypes.Text,
           validations: [
             {
               name: 'required',
@@ -83,7 +80,6 @@ export class InputErrorComponent
           label: 'Custom Validation *',
           appearance: Appearance.Outline as MatFormFieldAppearance,
           placeHolder: 'Custom Validation *',
-          type: InputTypes.Text,
           validations: [{
             name: 'cannotContainSpace',
             validator: CustomValidator.cannotContainSpace,

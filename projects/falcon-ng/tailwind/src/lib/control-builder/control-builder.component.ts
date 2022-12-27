@@ -11,5 +11,4 @@ import {CommonModule} from "@angular/common";
 export class ControlBuilderComponent {
   @Input() layout!: Layout<string>;
   @Input() formGroup!: FormGroup;
-  //get isValid() { return this.form.controls[this.control.key].valid; }
 }

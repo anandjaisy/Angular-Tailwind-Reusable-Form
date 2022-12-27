@@ -1,5 +1,6 @@
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import {LoggingLevel} from "./enum";
+import {EventEmitter} from "@angular/core";
 /**
  * @description
  * Interface use for IRequestOptions.
@@ -182,4 +183,82 @@ export declare interface ISuffixPrefixConfig {
 export declare interface IAppSettingViewModel {
   baseUrl?: string;
   loggingLevel?: LoggingLevel;
+}
+
+/**
+* View model for snack bar Message and Action Text
+*/
+export interface SnackbarModel {
+  messageText: string;
+  actionText: string;
+}
+
+/**
+* @description
+* Interface use for setting the TextArea Property.
+* @usageNotes
+* ```ts
+*       componentProperty: {
+*        textAreaProperty : {
+*          cdkTextareaAutosize : true,
+*          cdkAutosizeMinRows : 1,
+*          cdkAutosizeMaxRows : 2,
+*          rows : 2,
+*          cols : 2
+*        }
+*      }
+* ```
+*/
+export declare interface ITextAreaProperty {
+  cdkTextareaAutosize?: boolean;
+  cdkAutosizeMinRows?: number;
+  cdkAutosizeMaxRows?: number;
+  rows?: number;
+  cols?: number;
+}
+
+/**
+* @description
+* Interface use for setting the options meta for select control.
+* @usageNotes
+* ```ts
+*       componentProperty: {
+*        selectProperty: {multiple : true};
+*      }
+* ```
+*/
+export declare interface ISelectOptions {
+  single?: boolean;
+  multiple?: boolean;
+}
+
+/**
+* @description
+* Interface use for setting the options meta.
+* Disable is used for select option values
+* @usageNotes
+* ```ts
+*       componentProperty: {
+*        options: [{key : 'key-1', value : 'value-1', icon: 'material_icon', disabled: true}];
+*      }
+* ```
+*/
+export declare interface IOptions {
+  viewValue?: string;
+  value?: any;
+  icon?: string;
+  class?: string;
+  disabled?: boolean;
+}
+
+/**
+* @description
+* @param change change event for the control
+* @param click click event for the control
+* Events for controls
+*/
+export declare interface IComponentEvent<T> {
+  change?: EventEmitter<T>;
+  click?: EventEmitter<T>;
+  keyboardEnter?: EventEmitter<T>;
 }

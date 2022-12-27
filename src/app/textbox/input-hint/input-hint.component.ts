@@ -34,7 +34,6 @@ export class InputHintComponent
           label: 'Legacy form field HINT',
           appearance: Appearance.Fill as MatFormFieldAppearance,
           placeHolder: 'Form field hint',
-          type: InputTypes.Text,
           hint: {
             text: 'Legacy form field HINT',
             isIcon: false,
@@ -50,7 +49,6 @@ export class InputHintComponent
           label: 'Outline form field HINT',
           appearance: Appearance.Fill as MatFormFieldAppearance,
           placeHolder: 'Outline form field HINT',
-          type: InputTypes.Text,
           hint: {
             text: 'Outline form field HINT',
             isIcon: false,

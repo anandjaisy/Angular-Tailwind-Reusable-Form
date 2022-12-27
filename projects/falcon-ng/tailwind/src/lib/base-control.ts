@@ -1,7 +1,14 @@
 import {ControlType} from './model/enum';
 import {IValidator} from "./model/ivalidator";
 import {FloatLabelType, MatFormFieldAppearance} from "@angular/material/form-field";
-import {IMatHint, ISuffixPrefixConfig} from "./model/interface";
+import {
+  IComponentEvent,
+  IMatHint,
+  IOptions,
+  ISelectOptions,
+  ISuffixPrefixConfig,
+  ITextAreaProperty
+} from "./model/interface";
 
 /**
  * @description
@@ -52,17 +59,19 @@ export class BaseControl<T> {
   controlType: ControlType;
   type: string;
   disabled: boolean;
-  options: { key: string; value: string }[];
+  options: IOptions[] | any;
   validations: IValidator[];
   appearance: MatFormFieldAppearance;
   class: string
-  style: string
+  style: { [klass: string]: any; }
   placeHolder: string
   floatLabel: FloatLabelType
   hint: IMatHint;
   suffix: ISuffixPrefixConfig;
   prefix: ISuffixPrefixConfig;
-
+  textAreaProperty: ITextAreaProperty;
+  event: IComponentEvent<T>;
+  selectProperty: ISelectOptions;
   constructor(
     options: {
       value?: T;
@@ -72,16 +81,19 @@ export class BaseControl<T> {
       controlType?: ControlType;
       type?: string;
       disabled?: boolean;
-      options?: { key: string; value: string }[];
+      options?: IOptions[] | any;
       validations?: IValidator[];
       appearance?: MatFormFieldAppearance;
       class?: string;
-      style?: string;
+      style?: { [klass: string]: any; };
       placeHolder?: string;
       floatLabel?: FloatLabelType;
       hint?: IMatHint;
       suffix?: ISuffixPrefixConfig;
       prefix?: ISuffixPrefixConfig;
+      textAreaProperty?: ITextAreaProperty;
+      event?: IComponentEvent<T>;
+      selectProperty?: ISelectOptions;
     } = {}
   ) {
     this.value = options.value;
@@ -95,11 +107,14 @@ export class BaseControl<T> {
     this.validations = options.validations || [];
     this.appearance = options.appearance || 'outline';
     this.class = options.class || '';
-    this.style = options.style || '';
+    this.style = options.style || {};
     this.placeHolder = options.placeHolder || '';
     this.floatLabel = options.floatLabel || 'auto';
-    this.hint = options.hint || {} as IMatHint
-    this.prefix = options.prefix || {} as ISuffixPrefixConfig
-    this.suffix = options.suffix || {} as ISuffixPrefixConfig
+    this.hint = options.hint || {} as IMatHint;
+    this.prefix = options.prefix || {} as ISuffixPrefixConfig;
+    this.suffix = options.suffix || {} as ISuffixPrefixConfig;
+    this.textAreaProperty = options.textAreaProperty || {} as ITextAreaProperty;
+    this.event = options.event || {};
+    this.selectProperty = options.selectProperty || {}
   }
 }

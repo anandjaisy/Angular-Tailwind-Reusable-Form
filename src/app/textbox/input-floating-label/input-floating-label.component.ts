@@ -31,15 +31,13 @@ export class InputFloatingLabelComponent
         key: 'floatingLabelAlways',
         label: 'Floating label ALWAYS',
         appearance: Appearance.Fill as MatFormFieldAppearance,
-        placeHolder: 'Floating label ALWAYS',
-        type: InputTypes.Text
+        placeHolder: 'Floating label ALWAYS'
       }),
         new Textbox({
           key: 'floatingLabelAuto',
           label: 'Floating label AUTO',
           appearance: Appearance.Fill as MatFormFieldAppearance,
           placeHolder: 'Floating label ALWAYS',
-          type: InputTypes.Text,
           floatLabel: Floatinglabel.Auto,
         }),]
     }

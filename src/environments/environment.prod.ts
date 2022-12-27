@@ -14,7 +14,7 @@ class EnvironmentImpl implements EnvironmentViewModel {
     automaticSilentRenew: true,
   };
   baseUrl =
-    'https://raw.githubusercontent.com/anandjaisy/Angular-Dynamic-Form-Builder/master/src/app/component/';
+  'https://raw.githubusercontent.com/anandjaisy/Angular-Tailwind-Reusable-Form/main/src/app/';
   snackBarEnable = true;
 }
 

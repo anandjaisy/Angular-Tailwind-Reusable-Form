@@ -1,14 +1,8 @@
-import {
-  Component,
-  OnInit,
-  Input,
-  ViewChild,
-  ElementRef,
-  TemplateRef,
-} from '@angular/core';
-import { MatLegacyTabChangeEvent as MatTabChangeEvent } from '@angular/material/legacy-tabs';
-import { HttpClient } from '@angular/common/http';
-import { IGenericHttpClient } from 'projects/falcon-ng/tailwind/src/lib/service/http/igeneric-http-client';
+import {Component, OnInit, Input, ViewChild, TemplateRef} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {IGenericHttpClient} from 'projects/falcon-ng/tailwind/src/lib/service/http/igeneric-http-client';
+import {MatTabChangeEvent} from "@angular/material/tabs";
+
 @Component({
   selector: 'app-code-generator',
   templateUrl: './code-generator.component.html',
@@ -21,15 +15,16 @@ export class CodeGeneratorComponent implements OnInit {
   code!: string | null;
 
   templateToLoad!: TemplateRef<any>;
-  @ViewChild('lazyLoadingTemplate', { static: true })
+  @ViewChild('lazyLoadingTemplate', {static: true})
   lazyLoadingTemplate!: TemplateRef<any>;
-  @ViewChild('codeTemplate', { static: true })
+  @ViewChild('codeTemplate', {static: true})
   codeTemplate!: TemplateRef<any>;
 
   constructor(
     private igenericHttpClient: IGenericHttpClient<any>,
     private httpClient: HttpClient
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     this.loadHtmlFromServer();
@@ -53,7 +48,7 @@ export class CodeGeneratorComponent implements OnInit {
   private loadHtmlFromServer() {
     this.templateToLoad = this.lazyLoadingTemplate;
     this.igenericHttpClient
-      .get(this.htmlConfig, { responseType: 'text' })
+      .get(this.htmlConfig, {responseType: 'text'})
       .subscribe(
         (data: any) => {
           this.code = `${data}`;
@@ -64,11 +59,12 @@ export class CodeGeneratorComponent implements OnInit {
         }
       );
   }
+
   private loadTSFromServer() {
     this.templateToLoad = this.lazyLoadingTemplate;
 
     this.igenericHttpClient
-      .get(this.tsConfig, { responseType: 'text' })
+      .get(this.tsConfig, {responseType: 'text'})
       .subscribe(
         (data: any) => {
           this.code = `${data}`;
@@ -79,6 +75,7 @@ export class CodeGeneratorComponent implements OnInit {
         }
       );
   }
+
   private loadCSSFromServer() {
     this.templateToLoad = this.lazyLoadingTemplate;
     this.igenericHttpClient.get(this.cssConfig).subscribe(

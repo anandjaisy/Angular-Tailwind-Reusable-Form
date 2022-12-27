@@ -1,1 +1,25 @@
-<p>select works!</p>
+<mat-form-field [appearance]="control.appearance" [formGroup]="formGroup" [floatLabel]="control.floatLabel"
+  [ngStyle]="control.style" [ngClass]="control.class">
+  <mat-label>{{control.label}}</mat-label>
+  <mat-select [multiple]="control.selectProperty.multiple" (selectionChange)="selectChange($event)"
+    [formControlName]="control.key != undefined ? control.key : 'default'" [placeholder]="control.placeHolder"
+    [ngStyle]="control.style" [ngClass]="control.class" [(value)]="control.value">
+    <mat-option *ngFor="let item of control.options" [value]="item.value" [disabled]="item.disabled">
+      {{item.viewValue}}
+    </mat-option>
+  </mat-select>
+  <mat-hint *ngIf="control.hint?.show">
+    <ng-container *ngIf="control.hint?.link?.isLink; else elseBlock">
+      <ng-container *ngIf="control.hint?.link?.queryParams !== undefined; else withoutQueryBlock">
+        <a [routerLink]="[control.hint.link?.routerLink]" [queryParams]="{ query: control.hint.link?.queryParams }"
+          routerLinkActive="router-link-active">{{control.hint.text}}</a>
+      </ng-container>
+    </ng-container>
+    <ng-template #elseBlock>
+      <span>{{control.hint.text}}</span>
+    </ng-template>
+    <ng-template #withoutQueryBlock>
+      <a [routerLink]="[control.hint.link?.routerLink]" routerLinkActive="router-link-active">{{control.hint.text}}</a>
+    </ng-template>
+  </mat-hint>
+</mat-form-field>

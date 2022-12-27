@@ -28,7 +28,7 @@ export class SelectComponent
 
   protected defineForm(): void {
     this.controlsConfig = {
-      class: 'grid grid-cols-3 gap-4',
+      class: 'grid grid-cols-4 gap-4',
       baseControls: [
         new Select({
           formControlName: 'basicMatSelect',
@@ -68,6 +68,56 @@ export class SelectComponent
           ],
           appearance: Appearance.Outline,
           selectProperty: { multiple: true },
+        }),
+        new Select({
+          formControlName: 'DisableSelectComponent',
+          label: 'Disable select component',
+          options: [
+            {
+              value: 'Extra-cheese',
+              viewValue: 'Extra cheese',
+            },
+            { value: 'Bellsprout', viewValue: 'Bellsprout' },
+            { value: 'Mushroom', viewValue: 'Mushroom' },
+            {
+              value: 'Onion',
+              viewValue: 'Onion',
+              disabled: true,
+            },
+            { value: 'Pepperoni', viewValue: 'Pepperoni' },
+            { value: 'Sausage', viewValue: 'Sausage' },
+            {
+              value: 'Tomato',
+              viewValue: 'Tomato',
+              disabled: false,
+            },
+          ],
+          appearance: Appearance.Outline,
+        }),
+        new Select({
+          formControlName: 'Default value in component',
+          label: 'DefaultValueInComponent',
+          value: 'Onion',
+          options: [
+            {
+              value: 'Extra-cheese',
+              viewValue: 'Extra cheese',
+            },
+            { value: 'Bellsprout', viewValue: 'Bellsprout' },
+            { value: 'Mushroom', viewValue: 'Mushroom' },
+            {
+              value: 'Onion',
+              viewValue: 'Onion',
+            },
+            { value: 'Pepperoni', viewValue: 'Pepperoni' },
+            { value: 'Sausage', viewValue: 'Sausage' },
+            {
+              value: 'Tomato',
+              viewValue: 'Tomato',
+              disabled: false,
+            },
+          ],
+          appearance: Appearance.Outline,
         }),
       ],
     };

@@ -17,6 +17,14 @@ import {LoggerService, loggerServiceFactory} from "./service/logger.service";
 import {MAT_SNACK_BAR_DEFAULT_OPTIONS} from "@angular/material/snack-bar";
 import {provideHttpClient, withInterceptors} from "@angular/common/http";
 import { DatePickerComponent } from './component/date-picker/date-picker.component';
+import { CheckboxComponent } from './component/checkbox/checkbox.component';
+import { RadioComponent } from './component/radio/radio.component';
+import { AutoCompleteComponent } from './component/auto-complete/auto-complete.component';
+import { ButtonToggleComponent } from './component/button-toggle/button-toggle.component';
+import { ChipsComponent } from './component/chips/chips.component';
+import { EditorComponent } from './component/editor/editor.component';
+import { SliderComponent } from './component/slider/slider.component';
+import { SlideToggleComponent } from './component/slide-toggle/slide-toggle.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +33,15 @@ import { DatePickerComponent } from './component/date-picker/date-picker.compone
     SelectComponent,
     ReactiveFieldDirective,
     ControlBuilderComponent,
-    DatePickerComponent
+    DatePickerComponent,
+    CheckboxComponent,
+    RadioComponent,
+    AutoCompleteComponent,
+    ButtonToggleComponent,
+    ChipsComponent,
+    EditorComponent,
+    SliderComponent,
+    SlideToggleComponent
   ],
   imports: [
     AngularmaterialModule,

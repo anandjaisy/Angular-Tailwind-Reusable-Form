@@ -1,15 +1,13 @@
-<mat-form-field [appearance]="control.appearance" [formGroup]="formGroup"
-                [floatLabel]="control.floatLabel" [ngStyle]="control.style"
-                [ngClass]="control.style">
+<mat-form-field [appearance]="control.appearance" [formGroup]="formGroup" [floatLabel]="control.floatLabel"
+  [ngStyle]="control.style" [ngClass]="control.style">
   <mat-label>{{control.label}}</mat-label>
 
-  <textarea matInput [formControlName]="control.key" [placeholder]="control.placeHolder"
-            [ngStyle]="control.style" [ngClass]="control.class"
-            [cdkTextareaAutosize]="control.textAreaProperty.cdkTextareaAutosize"
-            [cdkAutosizeMinRows]="control.textAreaProperty.cdkAutosizeMinRows"
-            [cdkAutosizeMaxRows]="control.textAreaProperty.cdkAutosizeMaxRows"
-            [rows]="control.textAreaProperty.rows"
-            [cols]="control.textAreaProperty.cols"></textarea>
+  <textarea matInput [formControlName]="control.formControlName" [placeholder]="control.placeHolder"
+    [ngStyle]="control.style" [ngClass]="control.class"
+    [cdkTextareaAutosize]="control.textAreaProperty.cdkTextareaAutosize"
+    [cdkAutosizeMinRows]="control.textAreaProperty.cdkAutosizeMinRows"
+    [cdkAutosizeMaxRows]="control.textAreaProperty.cdkAutosizeMaxRows" [rows]="control.textAreaProperty.rows"
+    [cols]="control.textAreaProperty.cols"></textarea>
 
   <span matPrefix [ngClass]="{'material-icons': control.prefix.isIcon}">{{control.prefix.text}}</span>
   <span matSuffix [ngClass]="{'material-icons': control.suffix.isIcon}">{{control.suffix.text}}</span>
@@ -18,6 +16,7 @@
   <mat-hint>{{control.hint.text}}</mat-hint>
 
   <ng-container *ngFor="let validation of control.validations;" ngProjectAs="mat-error">
-    <mat-error *ngIf="formGroup.get(control.key)?.hasError(validation.name)">{{validation.message}}</mat-error>
+    <mat-error *ngIf="formGroup.get(control.formControlName)?.hasError(validation.name)">{{validation.message}}
+    </mat-error>
   </ng-container>
 </mat-form-field>

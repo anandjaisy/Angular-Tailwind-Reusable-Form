@@ -1,16 +1,19 @@
-import {Component, OnInit} from '@angular/core';
-import {BaseFormComponent} from "../../../projects/falcon-ng/tailwind/src/lib/base-form-component";
-import {Observable, of} from "rxjs";
-import {Textbox} from "../../../projects/falcon-ng/tailwind/src/lib/control-type/textbox";
-import {AngularCodeTemplateViewModel} from "../common/angularCodeTemplateViewModel";
-import {AngularCodeTemplate} from "../common/angularCodeTemplate";
+import { Component, OnInit } from '@angular/core';
+import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
+import { Observable, of } from 'rxjs';
+import { Textbox } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/textbox';
+import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
+import { AngularCodeTemplate } from '../common/angularCodeTemplate';
 
 @Component({
   selector: 'app-textbox',
   templateUrl: './textbox.component.html',
-  styleUrls: ['./textbox.component.scss']
+  styleUrls: ['./textbox.component.scss'],
 })
-export class TextboxComponent extends BaseFormComponent<string> implements OnInit {
+export class TextboxComponent
+  extends BaseFormComponent<string>
+  implements OnInit
+{
   public codeGeneratorEnable: boolean = false;
   public angularCodeTemplateViewModel: AngularCodeTemplateViewModel =
     new AngularCodeTemplateViewModel();
@@ -26,27 +29,27 @@ export class TextboxComponent extends BaseFormComponent<string> implements OnIni
 
   protected defineForm(): void {
     this.controlsConfig = {
-      class: "grid grid-cols-3 gap-4",
+      class: 'grid grid-cols-3 gap-4',
       baseControls: [
         new Textbox({
-          key: 'firstName',
+          formControlName: 'firstName',
           label: 'First name',
           value: 'Bombasto',
-          order: 1
+          order: 1,
         }),
         new Textbox({
-          key: 'lastName',
+          formControlName: 'lastName',
           label: 'Last name',
           value: 'Bombasto',
-          order: 1
+          order: 1,
         }),
         new Textbox({
-          key: 'lastName',
+          formControlName: 'lastName',
           label: 'Last name',
           value: 'Bombasto',
-          order: 1
-        })
-      ]
+          order: 1,
+        }),
+      ],
     };
   }
 

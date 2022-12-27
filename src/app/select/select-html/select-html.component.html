@@ -7,10 +7,10 @@
         <app-code-button (buttonClickEvent)="buttonClickEvent()"></app-code-button>
       </div>
       <form #heroForm="ngForm">
-<!--      <select [layout]="controlsConfig" (selectionChange)="selectionChange($event)"></select>-->
+        <!-- <falcon-select [layout]="controlsConfig" (selectionChange)="selectionChange($event)"></falcon-select> -->
       </form>
       <app-code-generator *ngIf="codeGeneratorEnable" [tsConfig]="angularCodeTemplateViewModel.tsConfig"
-                          [htmlConfig]="angularCodeTemplateViewModel.htmlConfig"></app-code-generator>
+        [htmlConfig]="angularCodeTemplateViewModel.htmlConfig"></app-code-generator>
 
     </mat-card-content>
   </mat-card>

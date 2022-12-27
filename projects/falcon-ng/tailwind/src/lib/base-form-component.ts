@@ -1,4 +1,4 @@
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 import {
   FormBuilder,
   FormControl,
@@ -6,10 +6,10 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import {BaseControl, Layout} from './base-control';
-import {inject} from '@angular/core';
-import {IValidator} from './model/ivalidator';
-import {ControlType} from './model/enum';
+import { BaseControl, Layout } from './base-control';
+import { inject } from '@angular/core';
+import { IValidator } from './model/ivalidator';
+import { ControlType } from './model/enum';
 
 /**
  * @description
@@ -46,8 +46,7 @@ export abstract class BaseFormComponent<T> {
   public showLoading: boolean = false;
   protected fb = inject(FormBuilder);
 
-  constructor() {
-  }
+  constructor() {}
 
   /**
    * @description
@@ -122,7 +121,7 @@ export abstract class BaseFormComponent<T> {
       this.bindValidations(controlConfig.validations || [])
     );
     //}
-    group.addControl(controlConfig.key, control);
+    group.addControl(controlConfig.formControlName, control);
   }
 
   /**
@@ -287,7 +286,9 @@ export abstract class BaseFormComponent<T> {
    * ```
    */
   protected removeControl(layoutIndex: number, index: number) {
-    this.formGroup.removeControl(this.controlsConfig.baseControls[layoutIndex].key);
+    this.formGroup.removeControl(
+      this.controlsConfig.baseControls[layoutIndex].formControlName
+    );
     this.controlsConfig.baseControls.splice(index, 1);
   }
 
@@ -319,46 +320,46 @@ export abstract class BaseFormComponent<T> {
    *  this.addControl(configToadd); or this.addControl(configToadd,1);
    * ```
    */
-//  protected addControl(layoutToAdd?: BaseControl<string>[],index?: number) {
-//    layoutToAdd.forEach((layout, layoutIndex) => {
-//      layout.componentConfig.forEach(
-//        (componentConfig, componentIndex) => {
-//          if (componentConfig.formArray !== undefined) {
-//            componentConfig.formArray.forEach((control) => {
-//              this.formGroup.setControl(
-//                'productOption',
-//                this.createFormArrayGroup(control.componentConfig),
-//              );
-//              this.controlsConfig.container.layoutConfig[1].componentConfig[0].formArray.push(
-//                layout,
-//              );
-//            });
-//          } else {
-//            this.formGroup.addControl(
-//              componentConfig.formControlName,
-//              new UntypedFormControl(
-//                {
-//                  value: componentConfig.componentProperty.value,
-//                  disabled:
-//                  componentConfig.componentProperty.disabled,
-//                },
-//                this.bindValidations(
-//                  componentConfig.validations || [],
-//                ),
-//              ),
-//            );
-//            index !== null
-//              ? this.controlsConfig.container.layoutConfig.splice(
-//                index,
-//                0,
-//                layout,
-//              )
-//              : this.controlsConfig.container.layoutConfig.push(
-//                layout,
-//              );
-//          }
-//        },
-//      );
-//    });
-//  }
+  //  protected addControl(layoutToAdd?: BaseControl<string>[],index?: number) {
+  //    layoutToAdd.forEach((layout, layoutIndex) => {
+  //      layout.componentConfig.forEach(
+  //        (componentConfig, componentIndex) => {
+  //          if (componentConfig.formArray !== undefined) {
+  //            componentConfig.formArray.forEach((control) => {
+  //              this.formGroup.setControl(
+  //                'productOption',
+  //                this.createFormArrayGroup(control.componentConfig),
+  //              );
+  //              this.controlsConfig.container.layoutConfig[1].componentConfig[0].formArray.push(
+  //                layout,
+  //              );
+  //            });
+  //          } else {
+  //            this.formGroup.addControl(
+  //              componentConfig.formControlName,
+  //              new UntypedFormControl(
+  //                {
+  //                  value: componentConfig.componentProperty.value,
+  //                  disabled:
+  //                  componentConfig.componentProperty.disabled,
+  //                },
+  //                this.bindValidations(
+  //                  componentConfig.validations || [],
+  //                ),
+  //              ),
+  //            );
+  //            index !== null
+  //              ? this.controlsConfig.container.layoutConfig.splice(
+  //                index,
+  //                0,
+  //                layout,
+  //              )
+  //              : this.controlsConfig.container.layoutConfig.push(
+  //                layout,
+  //              );
+  //          }
+  //        },
+  //      );
+  //    });
+  //  }
 }

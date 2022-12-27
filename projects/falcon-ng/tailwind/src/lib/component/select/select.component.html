@@ -2,8 +2,8 @@
   [ngStyle]="control.style" [ngClass]="control.class">
   <mat-label>{{control.label}}</mat-label>
   <mat-select [multiple]="control.selectProperty.multiple" (selectionChange)="selectChange($event)"
-    [formControlName]="control.key != undefined ? control.key : 'default'" [placeholder]="control.placeHolder"
-    [ngStyle]="control.style" [ngClass]="control.class" [(value)]="control.value">
+    [formControlName]="control.formControlName != undefined ? control.formControlName : 'default'"
+    [placeholder]="control.placeHolder" [ngStyle]="control.style" [ngClass]="control.class" [(value)]="control.value">
     <mat-option *ngFor="let item of control.options" [value]="item.value" [disabled]="item.disabled">
       {{item.viewValue}}
     </mat-option>

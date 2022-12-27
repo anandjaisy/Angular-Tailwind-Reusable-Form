@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {AngularCodeTemplateViewModel} from 'src/app/common/angularCodeTemplateViewModel';
-import {AngularCodeTemplate} from 'src/app/common/angularCodeTemplate';
-import {Appearance} from "../../../../projects/falcon-ng/tailwind/src/lib/model/enum";
-import {Select} from "../../../../projects/falcon-ng/tailwind/src/lib/control-type/select";
+import { Component, OnInit } from '@angular/core';
+import { AngularCodeTemplateViewModel } from 'src/app/common/angularCodeTemplateViewModel';
+import { AngularCodeTemplate } from 'src/app/common/angularCodeTemplate';
+import { Appearance } from '../../../../projects/falcon-ng/tailwind/src/lib/model/enum';
+import { Select } from '../../../../projects/falcon-ng/tailwind/src/lib/control-type/select';
 
 @Component({
   selector: 'app-select-html',
@@ -15,26 +15,24 @@ export class SelectHtmlComponent {
     new AngularCodeTemplateViewModel();
 
   controlsConfig = {
-    class: "grid grid-cols-3 gap-4",
+    class: 'grid grid-cols-3 gap-4',
     baseControls: [
       new Select({
-        key: 'basicMatSelect',
+        formControlName: 'basicMatSelect',
         label: 'Basic mat-select',
         options: [
-          {value: 'bulbasaur-0', viewValue: 'Bulbasaur'},
-          {value: 'oddish-1', viewValue: 'Oddish'},
-          {value: 'bellsprout-2', viewValue: 'Bellsprout'},
+          { value: 'bulbasaur-0', viewValue: 'Bulbasaur' },
+          { value: 'oddish-1', viewValue: 'Oddish' },
+          { value: 'bellsprout-2', viewValue: 'Bellsprout' },
         ],
-        appearance: Appearance.Outline
+        appearance: Appearance.Outline,
       }),
-    ]
+    ],
   };
 
-  constructor() {
-  }
+  constructor() {}
 
-  selectionChange($event: any) {
-  }
+  selectionChange($event: any) {}
 
   buttonClickEvent() {
     this.angularCodeTemplateViewModel.tsConfig =

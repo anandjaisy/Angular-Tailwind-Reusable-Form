@@ -1,14 +1,17 @@
-import {ControlType} from './model/enum';
-import {IValidator} from "./model/ivalidator";
-import {FloatLabelType, MatFormFieldAppearance} from "@angular/material/form-field";
+import { ControlType } from './model/enum';
+import { IValidator } from './model/ivalidator';
+import {
+  FloatLabelType,
+  MatFormFieldAppearance,
+} from '@angular/material/form-field';
 import {
   IComponentEvent,
   IMatHint,
   IOptions,
   ISelectOptions,
   ISuffixPrefixConfig,
-  ITextAreaProperty
-} from "./model/interface";
+  ITextAreaProperty,
+} from './model/interface';
 
 /**
  * @description
@@ -29,8 +32,8 @@ import {
  ** ```
  */
 export interface Layout<T> {
-  class?: string
-  baseControls: BaseControl<T>[]
+  class?: string;
+  baseControls: BaseControl<T>[];
 }
 
 /**
@@ -39,7 +42,7 @@ export interface Layout<T> {
  * @usageNotes
  * ```ts
  *       new Dropdown({
- *        key: 'brave',
+ *        formControlName: 'brave',
  *       label: 'Bravery Rating',
  *       options: [
  *         {key: 'solid',  value: 'Solid'},
@@ -53,7 +56,7 @@ export interface Layout<T> {
  */
 export class BaseControl<T> {
   value: T | undefined;
-  key: string;
+  formControlName: string;
   label: string;
   order: number;
   controlType: ControlType;
@@ -62,10 +65,10 @@ export class BaseControl<T> {
   options: IOptions[] | any;
   validations: IValidator[];
   appearance: MatFormFieldAppearance;
-  class: string
-  style: { [klass: string]: any; }
-  placeHolder: string
-  floatLabel: FloatLabelType
+  class: string;
+  style: { [klass: string]: any };
+  placeHolder: string;
+  floatLabel: FloatLabelType;
   hint: IMatHint;
   suffix: ISuffixPrefixConfig;
   prefix: ISuffixPrefixConfig;
@@ -75,7 +78,7 @@ export class BaseControl<T> {
   constructor(
     options: {
       value?: T;
-      key?: string;
+      formControlName?: string;
       label?: string;
       order?: number;
       controlType?: ControlType;
@@ -85,7 +88,7 @@ export class BaseControl<T> {
       validations?: IValidator[];
       appearance?: MatFormFieldAppearance;
       class?: string;
-      style?: { [klass: string]: any; };
+      style?: { [klass: string]: any };
       placeHolder?: string;
       floatLabel?: FloatLabelType;
       hint?: IMatHint;
@@ -97,7 +100,7 @@ export class BaseControl<T> {
     } = {}
   ) {
     this.value = options.value;
-    this.key = options.key || '';
+    this.formControlName = options.formControlName || '';
     this.label = options.label || '';
     this.order = options.order === undefined ? 1 : options.order;
     this.controlType = options.controlType || ControlType.Button;
@@ -110,11 +113,12 @@ export class BaseControl<T> {
     this.style = options.style || {};
     this.placeHolder = options.placeHolder || '';
     this.floatLabel = options.floatLabel || 'auto';
-    this.hint = options.hint || {} as IMatHint;
-    this.prefix = options.prefix || {} as ISuffixPrefixConfig;
-    this.suffix = options.suffix || {} as ISuffixPrefixConfig;
-    this.textAreaProperty = options.textAreaProperty || {} as ITextAreaProperty;
+    this.hint = options.hint || ({} as IMatHint);
+    this.prefix = options.prefix || ({} as ISuffixPrefixConfig);
+    this.suffix = options.suffix || ({} as ISuffixPrefixConfig);
+    this.textAreaProperty =
+      options.textAreaProperty || ({} as ITextAreaProperty);
     this.event = options.event || {};
-    this.selectProperty = options.selectProperty || {}
+    this.selectProperty = options.selectProperty || {};
   }
 }

@@ -31,7 +31,7 @@ export class SelectComponent
       class: 'grid grid-cols-3 gap-4',
       baseControls: [
         new Select({
-          key: 'basicMatSelect',
+          formControlName: 'basicMatSelect',
           label: 'Basic mat-select',
           options: [
             { value: 'bulbasaur-0', viewValue: 'Bulbasaur' },
@@ -43,38 +43,32 @@ export class SelectComponent
           ],
           appearance: Appearance.Fill,
         }),
-        //        new Select({
-        //          key: 'multipleMatSelect',
-        //          label: 'Multiple selection',
-        //          options: [
-        //            {
-        //              value: 'Extra-cheese',
-        //              viewValue: 'Extra cheese',
-        //            },
-        //            {value: 'Bellsprout', viewValue: 'Bellsprout'},
-        //            {value: 'Mushroom', viewValue: 'Mushroom'},
-        //            {
-        //              value: 'Onion',
-        //              viewValue: 'Onion',
-        //              disabled: true,
-        //            },
-        //            {value: 'Pepperoni', viewValue: 'Pepperoni'},
-        //            {value: 'Sausage', viewValue: 'Sausage'},
-        //            {
-        //              value: 'Tomato',
-        //              viewValue: 'Tomato',
-        //              disabled: false,
-        //            },
-        //          ],
-        //          appearance: Appearance.Outline,
-        //          selectProperty: {multiple: true},
-        //        }),
-        // new DatePicker({
-        //   key: 'lastName',
-        //   label: 'Last name',
-        //   value: 'Bombasto',
-        //   order: 1,
-        // }),
+        new Select({
+          formControlName: 'multipleMatSelect',
+          label: 'Multiple selection',
+          options: [
+            {
+              value: 'Extra-cheese',
+              viewValue: 'Extra cheese',
+            },
+            { value: 'Bellsprout', viewValue: 'Bellsprout' },
+            { value: 'Mushroom', viewValue: 'Mushroom' },
+            {
+              value: 'Onion',
+              viewValue: 'Onion',
+              disabled: true,
+            },
+            { value: 'Pepperoni', viewValue: 'Pepperoni' },
+            { value: 'Sausage', viewValue: 'Sausage' },
+            {
+              value: 'Tomato',
+              viewValue: 'Tomato',
+              disabled: false,
+            },
+          ],
+          appearance: Appearance.Outline,
+          selectProperty: { multiple: true },
+        }),
       ],
     };
   }

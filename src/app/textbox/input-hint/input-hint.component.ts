@@ -1,12 +1,15 @@
-import {Component, OnInit} from '@angular/core';
-import {Observable, of} from 'rxjs';
-import {AngularCodeTemplateViewModel} from 'src/app/common/angularCodeTemplateViewModel';
-import {AngularCodeTemplate} from 'src/app/common/angularCodeTemplate';
-import {BaseFormComponent} from "../../../../projects/falcon-ng/tailwind/src/lib/base-form-component";
-import {MatFormFieldAppearance} from "@angular/material/form-field";
-import {Appearance, InputTypes} from "../../../../projects/falcon-ng/tailwind/src/lib/model/enum";
-import {Textbox} from "../../../../projects/falcon-ng/tailwind/src/lib/control-type/textbox";
-import {Validators} from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { AngularCodeTemplateViewModel } from 'src/app/common/angularCodeTemplateViewModel';
+import { AngularCodeTemplate } from 'src/app/common/angularCodeTemplate';
+import { BaseFormComponent } from '../../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
+import {
+  Appearance,
+  InputTypes,
+} from '../../../../projects/falcon-ng/tailwind/src/lib/model/enum';
+import { Textbox } from '../../../../projects/falcon-ng/tailwind/src/lib/control-type/textbox';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-input-hint',
@@ -15,7 +18,8 @@ import {Validators} from "@angular/forms";
 })
 export class InputHintComponent
   extends BaseFormComponent<any>
-  implements OnInit {
+  implements OnInit
+{
   codeGeneratorEnable: boolean = false;
   public angularCodeTemplateViewModel: AngularCodeTemplateViewModel =
     new AngularCodeTemplateViewModel();
@@ -27,10 +31,10 @@ export class InputHintComponent
 
   protected defineForm(): void {
     this.controlsConfig = {
-      class: "flex justify-end space-x-4",
+      class: 'flex justify-end space-x-4',
       baseControls: [
         new Textbox({
-          key: 'legacyFormFieldHint',
+          formControlName: 'legacyFormFieldHint',
           label: 'Legacy form field HINT',
           appearance: Appearance.Fill as MatFormFieldAppearance,
           placeHolder: 'Form field hint',
@@ -42,31 +46,31 @@ export class InputHintComponent
               queryParams: 'value',
               isLink: true,
             },
-          }
+          },
         }),
         new Textbox({
-          key: 'requiredValidation',
+          formControlName: 'requiredValidation',
           label: 'Outline form field HINT',
           appearance: Appearance.Fill as MatFormFieldAppearance,
           placeHolder: 'Outline form field HINT',
           hint: {
             text: 'Outline form field HINT',
             isIcon: false,
-          }
+          },
         }),
-      ]
+      ],
     };
   }
 
-  ngOnInit():void {
+  ngOnInit(): void {
     this.formGroup = this.createControls();
   }
 
-  protected getDatasource():Observable<any> {
+  protected getDatasource(): Observable<any> {
     return of();
   }
 
-  protected submitDataSource(model:any):Observable<any> {
+  protected submitDataSource(model: any): Observable<any> {
     return of(model);
   }
 

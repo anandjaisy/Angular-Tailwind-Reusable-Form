@@ -1,30 +1,27 @@
 <mat-form-field [formGroup]="formGroup" [appearance]="control.appearance" [floatLabel]="control.floatLabel">
   <mat-label>{{control.label}}</mat-label>
-  <input matInput [type]="control.type" [formControlName]="control.key"
-         [class]="control.class"
-         [required]="formGroup.get(control.key)?.errors !== null && formGroup.get(control.key)?.errors?.['required']">
+  <input matInput [type]="control.type" [formControlName]="control.formControlName" [class]="control.class"
+    [required]="formGroup.get(control.formControlName)?.errors !== null && formGroup.get(control.formControlName)?.errors?.['required']">
 
-  <span matPrefix
-        [matTooltip]="control.prefix.toolTipText!"
-        [ngClass]="{'material-icons': control.prefix.isIcon}">{{control.prefix.text}}</span>
+  <span matPrefix [matTooltip]="control.prefix.toolTipText!"
+    [ngClass]="{'material-icons': control.prefix.isIcon}">{{control.prefix.text}}</span>
   <span matSuffix [matTooltip]="control.suffix.toolTipText!"
-        [ngClass]="{'material-icons': control.suffix.isIcon}">{{control.suffix.text}}</span>
+    [ngClass]="{'material-icons': control.suffix.isIcon}">{{control.suffix.text}}</span>
   <mat-hint *ngIf="control.hint.link?.isLink; else elseBlock">
     <ng-container *ngIf="control.hint.link?.queryParams !== undefined; else withoutQueryBlock">
-      <a [routerLink]="[control.hint.link?.routerLink]"
-         [queryParams]="{ query: control.hint.link?.queryParams }"
-         routerLinkActive="router-link-active">{{control.hint.text}}</a>
+      <a [routerLink]="[control.hint.link?.routerLink]" [queryParams]="{ query: control.hint.link?.queryParams }"
+        routerLinkActive="router-link-active">{{control.hint.text}}</a>
     </ng-container>
   </mat-hint>
   <ng-template #elseBlock>
     <mat-hint>{{control.hint.text}}</mat-hint>
   </ng-template>
   <ng-template #withoutQueryBlock>
-    <a [routerLink]="[control.hint.link?.routerLink]"
-       routerLinkActive="router-link-active">{{control.hint.text}}</a>
+    <a [routerLink]="[control.hint.link?.routerLink]" routerLinkActive="router-link-active">{{control.hint.text}}</a>
   </ng-template>
 
   <ng-container *ngFor="let validation of control.validations;" ngProjectAs="mat-error">
-    <mat-error *ngIf="formGroup.get(control.key)?.hasError(validation.name)">{{validation.message}}</mat-error>
+    <mat-error *ngIf="formGroup.get(control.formControlName)?.hasError(validation.name)">{{validation.message}}
+    </mat-error>
   </ng-container>
 </mat-form-field>

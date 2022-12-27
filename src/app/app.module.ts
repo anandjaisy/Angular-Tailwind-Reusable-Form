@@ -17,6 +17,26 @@ import {InputPrefixSuffixComponent} from "./textbox/input-prefix-suffix/input-pr
 import { SelectComponent } from './select/select.component';
 import { TextAreaComponent } from './text-area/text-area.component';
 import {SelectHtmlComponent} from "./select/select-html/select-html.component";
+import { CheckboxComponent } from './checkbox/checkbox.component';
+import { DatepickerComponent } from './datepicker/datepicker.component';
+import { RadioComponent } from './radio/radio.component';
+import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
+import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { ExampleBottomSheetComponent } from './example-bottom-sheet/example-bottom-sheet.component';
+import { SnackbarComponent } from './snackbar/snackbar.component';
+import { ModalDialogComponent } from './modal-dialog/modal-dialog.component';
+import { ChipsComponent } from './chips/chips.component';
+import { TableComponent } from './table/table.component';
+import { AppPaginationComponent } from './app-pagination/app-pagination.component';
+import { AngularRichTextEditorComponent } from './angular-rich-text-editor/angular-rich-text-editor.component';
+import { FormComponent } from './form/form.component';
+import { SliderComponent } from './slider/slider.component';
+import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
+import { ButtonIndicatorComponent } from './button-indicator/button-indicator.component';
+import { AuthCallbackComponent } from './auth-callback/auth-callback.component';
+import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
+import { FormFieldComponent } from './form-field/form-field.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +51,27 @@ import {SelectHtmlComponent} from "./select/select-html/select-html.component";
     InputPrefixSuffixComponent,
     SelectComponent,
     TextAreaComponent,
-    SelectHtmlComponent
+    SelectHtmlComponent,
+    CheckboxComponent,
+    DatepickerComponent,
+    RadioComponent,
+    ButtonToggleComponent,
+    ProgressSpinnerComponent,
+    ProgressBarComponent,
+    ExampleBottomSheetComponent,
+    SnackbarComponent,
+    ModalDialogComponent,
+    ChipsComponent,
+    TableComponent,
+    AppPaginationComponent,
+    AngularRichTextEditorComponent,
+    FormComponent,
+    SliderComponent,
+    SlideToggleComponent,
+    ButtonIndicatorComponent,
+    AuthCallbackComponent,
+    AutoCompleteComponent,
+    FormFieldComponent
   ],
   imports: [
     BrowserModule,

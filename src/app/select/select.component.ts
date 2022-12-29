@@ -7,6 +7,7 @@ import { Select } from '../../../projects/falcon-ng/tailwind/src/lib/control-typ
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
 import { Textbox } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/textbox';
 import { DatePicker } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/DatePicker';
+import {MatFormFieldAppearance} from "@angular/material/form-field";
 
 @Component({
   selector: 'app-select',
@@ -41,7 +42,7 @@ export class SelectComponent
               viewValue: 'Bellsprout',
             },
           ],
-          appearance: Appearance.Fill,
+          appearance: Appearance.Fill as MatFormFieldAppearance,
         }),
         new Select({
           formControlName: 'multipleMatSelect',
@@ -66,7 +67,7 @@ export class SelectComponent
               disabled: false,
             },
           ],
-          appearance: Appearance.Outline,
+          appearance: Appearance.Outline as MatFormFieldAppearance,
           selectProperty: { multiple: true },
         }),
         new Select({
@@ -92,7 +93,7 @@ export class SelectComponent
               disabled: false,
             },
           ],
-          appearance: Appearance.Outline,
+          appearance: Appearance.Outline as MatFormFieldAppearance,
         }),
         new Select({
           formControlName: 'Default value in component',
@@ -117,7 +118,7 @@ export class SelectComponent
               disabled: false,
             },
           ],
-          appearance: Appearance.Outline,
+          appearance: Appearance.Outline as MatFormFieldAppearance,
         }),
       ],
     };

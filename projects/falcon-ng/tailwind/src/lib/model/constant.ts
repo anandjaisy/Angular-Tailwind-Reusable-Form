@@ -9,6 +9,7 @@ import { SliderComponent } from '../component/slider/slider.component';
 import { ButtonToggleComponent } from '../component/button-toggle/button-toggle.component';
 import { AutoCompleteComponent } from '../component/auto-complete/auto-complete.component';
 import { ChipsComponent } from '../component/chips/chips.component';
+import {ButtonComponent} from "../component/button/button.component";
 
 export class Constant {
   public static ComponentMapper = [
@@ -18,7 +19,7 @@ export class Constant {
     DatePickerComponent,
     RadioComponent,
     CheckboxComponent,
-    //ButtonComponent,
+    ButtonComponent,
     SlideToggleComponent,
     SliderComponent,
     ButtonToggleComponent,

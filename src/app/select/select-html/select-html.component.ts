@@ -3,6 +3,7 @@ import { AngularCodeTemplateViewModel } from 'src/app/common/angularCodeTemplate
 import { AngularCodeTemplate } from 'src/app/common/angularCodeTemplate';
 import { Appearance } from '../../../../projects/falcon-ng/tailwind/src/lib/model/enum';
 import { Select } from '../../../../projects/falcon-ng/tailwind/src/lib/control-type/select';
+import {MatFormFieldAppearance} from "@angular/material/form-field";
 
 @Component({
   selector: 'app-select-html',
@@ -25,7 +26,7 @@ export class SelectHtmlComponent {
           { value: 'oddish-1', viewValue: 'Oddish' },
           { value: 'bellsprout-2', viewValue: 'Bellsprout' },
         ],
-        appearance: Appearance.Outline,
+        appearance: Appearance.Outline as MatFormFieldAppearance,
       }),
     ],
   };

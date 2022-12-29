@@ -7,6 +7,7 @@ import {
 import { Observable, of } from 'rxjs';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
+import {MatFormFieldAppearance} from "@angular/material/form-field";
 
 @Component({
   selector: 'app-checkbox',
@@ -33,13 +34,13 @@ export class CheckboxComponent
         new CheckBox({
           formControlName: 'textAreaAutoSizeEnable',
           label: 'Basic checkboxes BEFORE (with checked)',
-          appearance: Appearance.Outline,
+          appearance: Appearance.Outline as MatFormFieldAppearance,
           value: true,
         }),
         new CheckBox({
           formControlName: 'textAreaStaticRowColumn',
           label: 'Basic checkboxes AFTER',
-          appearance: Appearance.Fill,
+          appearance: Appearance.Fill as MatFormFieldAppearance,
         }),
       ],
     };

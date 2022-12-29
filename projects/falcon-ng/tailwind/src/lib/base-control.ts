@@ -65,7 +65,7 @@ export class BaseControl<T> {
   disabled: boolean;
   options: IOptions[] | any;
   validations: IValidator[];
-  appearance: MatFormFieldAppearance;
+  appearance: MatFormFieldAppearance | any;
   class: string;
   style: { [klass: string]: any };
   placeHolder: string;
@@ -89,7 +89,7 @@ export class BaseControl<T> {
       disabled?: boolean;
       options?: IOptions[] | any;
       validations?: IValidator[];
-      appearance?: MatFormFieldAppearance;
+      appearance?: MatFormFieldAppearance | any;
       class?: string;
       style?: { [klass: string]: any };
       placeHolder?: string;

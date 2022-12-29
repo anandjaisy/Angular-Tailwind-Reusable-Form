@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
 import { Textarea } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/textarea';
 import { Appearance } from '../../../projects/falcon-ng/tailwind/src/lib/model/enum';
+import {MatFormFieldAppearance} from "@angular/material/form-field";
 
 @Component({
   selector: 'app-text-area',
@@ -31,7 +32,7 @@ export class TextAreaComponent
         new Textarea({
           formControlName: 'textAreaAutoSizeEnable',
           label: 'Text Area with Auto Size Enable',
-          appearance: Appearance.Outline,
+          appearance: Appearance.Outline as MatFormFieldAppearance,
           placeHolder: 'Text Area with Auto Size Enable',
           textAreaProperty: {
             cdkTextareaAutosize: true,
@@ -46,7 +47,7 @@ export class TextAreaComponent
         new Textarea({
           formControlName: 'textAreaStaticRowColumn',
           label: 'Text Area with static row and column',
-          appearance: Appearance.Fill,
+          appearance: Appearance.Fill as MatFormFieldAppearance,
           placeHolder: 'Text Area with static row and column',
           textAreaProperty: {
             rows: 10,

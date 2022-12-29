@@ -25,6 +25,7 @@ import { ChipsComponent } from './component/chips/chips.component';
 import { EditorComponent } from './component/editor/editor.component';
 import { SliderComponent } from './component/slider/slider.component';
 import { SlideToggleComponent } from './component/slide-toggle/slide-toggle.component';
+import { ButtonComponent } from './component/button/button.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { SlideToggleComponent } from './component/slide-toggle/slide-toggle.comp
     ChipsComponent,
     EditorComponent,
     SliderComponent,
-    SlideToggleComponent
+    SlideToggleComponent,
+    ButtonComponent
   ],
   imports: [
     AngularmaterialModule,

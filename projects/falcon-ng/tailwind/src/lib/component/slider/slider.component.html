@@ -1,1 +1,11 @@
-<p>slider works!</p>
+<div [ngStyle]="control.style" [ngClass]="control.class" [formGroup]="formGroup">
+<mat-label>{{control.label}}</mat-label>&nbsp;&nbsp;&nbsp;
+  <mat-slider
+    [ngStyle]="control.style" [ngClass]="control.class"
+    [color]="control.color"
+    [max]="control.sliderProperty.max"
+    [min]="control.sliderProperty.min"
+    [step]="control.sliderProperty.step">
+    <input matSliderThumb [formControlName]="control.formControlName">
+  </mat-slider>
+</div>

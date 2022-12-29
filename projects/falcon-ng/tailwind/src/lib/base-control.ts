@@ -8,7 +8,7 @@ import {
   IComponentEvent,
   IMatHint,
   IOptions,
-  ISelectOptions,
+  ISelectOptions, ISliderProperty,
   ISuffixPrefixConfig,
   ITextAreaProperty,
 } from './model/interface';
@@ -77,6 +77,7 @@ export class BaseControl<T> {
   event: IComponentEvent<T>;
   selectProperty: ISelectOptions;
   color: string;
+  sliderProperty: ISliderProperty;
   constructor(
     options: {
       value?: T;
@@ -101,6 +102,7 @@ export class BaseControl<T> {
       event?: IComponentEvent<T>;
       selectProperty?: ISelectOptions;
       color?: string;
+      sliderProperty?: ISliderProperty;
     } = {}
   ) {
     this.value = options.value;
@@ -126,5 +128,6 @@ export class BaseControl<T> {
     this.event = options.event || {};
     this.selectProperty = options.selectProperty || {};
     this.color = options.color || '';
+    this.sliderProperty = options.sliderProperty || {};
   }
 }

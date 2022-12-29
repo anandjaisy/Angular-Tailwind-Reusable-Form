@@ -1,1 +1,47 @@
-<p>slider works!</p>
+<div class="container mx-auto p-6">
+  <mat-card>
+    <div class="flex justify-between p-5">
+      <a mat-mini-fab color="accent" routerLink="..">
+        <mat-icon>arrow_back</mat-icon>
+      </a>
+      <h2>Slider component</h2>
+      <h2></h2>
+    </div>
+
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div style="margin-top: 40px">
+        <div>
+          <div class="flex justify-between p-5">
+            <h1>Slider</h1>
+            <app-code-button (buttonClickEvent)="buttonClickEvent()"></app-code-button>
+          </div>
+          <p class="blurText">
+
+            By default the minimum value of the slider is <strong class="text-format">0</strong>, the
+            maximum value is <strong class="text-format">100</strong>,, and the thumb moves
+            in increments of <strong class="text-format">1</strong>. These values can be changed by setting
+            the <strong class="text-format">min, max, and step attributes</strong>
+            respectively. The initial value is set to the minimum value unless otherwise specified.
+          </p>
+        </div>
+        <h2>Slider configuration</h2>
+        <div class="container">
+          <div class="container">
+            <form class="dynamic-form" [formGroup]="formGroup" (ngSubmit)="onSubmit()" novalidate>
+              <control-builder [layout]="controlsConfig" [formGroup]="formGroup"></control-builder>
+            </form>
+            <div fxLayout="row" fxLayoutAlign="center center">
+              <pre><code [highlight]="formGroup.value | json"></code></pre>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+      <app-code-generator *ngIf="codeGeneratorEnable" [tsConfig]="angularCodeTemplateViewModel.tsConfig"
+                          [htmlConfig]="angularCodeTemplateViewModel.htmlConfig"></app-code-generator>
+    </mat-card-content>
+  </mat-card>
+</div>

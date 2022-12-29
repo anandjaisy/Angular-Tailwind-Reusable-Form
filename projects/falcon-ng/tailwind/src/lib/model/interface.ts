@@ -262,3 +262,28 @@ export declare interface IComponentEvent<T> {
   click?: EventEmitter<T>;
   keyboardEnter?: EventEmitter<T>;
 }
+/**
+* @description
+* Interface use for setting the Mat Slider Property.
+* @usageNotes
+* ```ts
+*       componentProperty: {
+*        sliderProperty : {
+*          invert : true,
+*          step : 1,
+*          thumbLabel : false,
+*          vertical : true,
+*          horizontal : false
+*        }
+*      }
+* ```
+*/
+export declare interface ISliderProperty {
+  invert?: boolean;
+  thumbLabel?: boolean;
+  vertical?: boolean;
+  min?: number;
+  max?: number;
+  step?: number;
+  tickInterval?: string | number;
+}

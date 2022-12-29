@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { BaseControl } from 'dist/@falcon-ng/tailwind/lib/base-control';
+import {Component, EventEmitter, Output} from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
+import {MatRadioChange} from "@angular/material/radio";
+import {BaseControl} from "../../base-control";
 
 @Component({
   selector: 'falcon-radio',
@@ -10,8 +11,19 @@ import { BaseControl } from 'dist/@falcon-ng/tailwind/lib/base-control';
 export class RadioComponent {
   control!: BaseControl<string>;
   formGroup!: FormGroup;
-  // change($event: any) {
-  //   if (this.control.event !== undefined)
-  //     this.control?.event?.change?.emit($event);
-  // }
+  @Output() radioGroupChange: EventEmitter<MatRadioChange> =
+    new EventEmitter<MatRadioChange>();
+
+  ngOnInit(): void {
+    console.log(this.control.options)
+    if (this.formGroup === undefined) {
+      this.formGroup = new FormGroup({
+        default: new FormControl(),
+      });
+    }
+  }
+
+  radioGroupChangeEvent($event: any) {
+    this.radioGroupChange.emit($event.value);
+  }
 }

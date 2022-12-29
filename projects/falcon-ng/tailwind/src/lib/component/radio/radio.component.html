@@ -1,1 +1,13 @@
-<p>radio works!</p>
+<div [ngStyle]="control.style" [ngClass]="control.class"
+     [formGroup]="formGroup">
+  <label class="radio-label-padding">{{control.label | titlecase}}</label>
+  <mat-radio-group [attr.aria-label]="control.label"
+                   [labelPosition]="control.appearance"
+                   [formControlName]="control.formControlName != undefined ? control.formControlName : 'default'"
+                   [ngStyle]="control.style" [ngClass]="control.class"
+                   (change)="radioGroupChangeEvent($event)">
+    <mat-radio-button [ngClass]="control.class"
+                      *ngFor="let item of control.options" [value]="item.value">{{item.viewValue | titlecase}}
+    </mat-radio-button>
+  </mat-radio-group>
+</div>

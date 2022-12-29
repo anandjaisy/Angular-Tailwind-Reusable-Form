@@ -1,1 +1,7 @@
-<p>slide-toggle works!</p>
+<div [formGroup]="formGroup">
+  <mat-slide-toggle [labelPosition]="control.appearance"
+                    [ngStyle]="control.style" [ngClass]="control.class"
+                    [formControlName]="control.formControlName" [color]="control.color">
+    {{control.label}}
+  </mat-slide-toggle>
+</div>

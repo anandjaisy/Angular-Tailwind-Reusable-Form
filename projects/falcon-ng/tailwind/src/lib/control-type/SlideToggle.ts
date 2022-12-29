@@ -1,6 +1,6 @@
 import { BaseControl } from '../base-control';
 import { ControlType } from '../model/enum';
 
-export class Select extends BaseControl<string> {
+export class SliderToggle extends BaseControl<boolean> {
   override controlType = ControlType.SlideToggle;
 }

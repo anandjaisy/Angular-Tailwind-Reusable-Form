@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {BaseControl} from "../../base-control";
+import {FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'falcon-date-picker',
@@ -6,7 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./date-picker.component.scss'],
 })
 export class DatePickerComponent {
-  constructor() {
-    console.log('Text box');
-  }
+ control!: BaseControl<string>;
+ formGroup!: FormGroup;
 }

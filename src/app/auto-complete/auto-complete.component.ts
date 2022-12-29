@@ -85,9 +85,9 @@ export class AutoCompleteComponent
 
   buttonClickEvent() {
     this.angularCodeTemplateViewModel.tsConfig =
-    AngularCodeTemplate.FormFieldAppearanceVariant_TS_KEY;
+    AngularCodeTemplate.Auto_Complete_TS_KEY;
     this.angularCodeTemplateViewModel.htmlConfig =
-    AngularCodeTemplate.FormFieldAppearanceVariant_HTML_KEY;
+    AngularCodeTemplate.Auto_Complete_HTML_KEY;
     this.codeGeneratorEnable = !this.codeGeneratorEnable;
   }
 }

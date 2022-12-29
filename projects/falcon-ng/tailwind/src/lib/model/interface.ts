@@ -1,6 +1,6 @@
 import { HttpHeaders, HttpParams } from '@angular/common/http';
-import {LoggingLevel} from "./enum";
-import {EventEmitter} from "@angular/core";
+import { LoggingLevel } from './enum';
+import { EventEmitter } from '@angular/core';
 /**
  * @description
  * Interface use for IRequestOptions.
@@ -150,26 +150,26 @@ export declare interface IDialogData {
   bodyMessage?: string;
 }
 /**
-* @description
-* Interface use for setting the suffix and prefix.
-* @usageNotes
-* ```ts
-*       new Textbox({
-*        label: "Prefix & Suffix icon",
-*        appearance: Appearance.Outline,
-*        placeHolder: "Prefix & Suffix icon",
-*        attrType: InputTypes.Text,
-*        prefix : {
-*          isIcon : true,
-*          text : "euro"
-*        },
-*        suffix : {
-*          isIcon: true,
-*          text : "done"
-*        }
-*      });
-* ```
-*/
+ * @description
+ * Interface use for setting the suffix and prefix.
+ * @usageNotes
+ * ```ts
+ *       new Textbox({
+ *        label: "Prefix & Suffix icon",
+ *        appearance: Appearance.Outline,
+ *        placeHolder: "Prefix & Suffix icon",
+ *        attrType: InputTypes.Text,
+ *        prefix : {
+ *          isIcon : true,
+ *          text : "euro"
+ *        },
+ *        suffix : {
+ *          isIcon: true,
+ *          text : "done"
+ *        }
+ *      });
+ * ```
+ */
 export declare interface ISuffixPrefixConfig {
   isIcon?: boolean;
   text?: string;
@@ -177,38 +177,38 @@ export declare interface ISuffixPrefixConfig {
 }
 
 /**
-* @description
-* Interface use for an app setting configuration.
-*/
+ * @description
+ * Interface use for an app setting configuration.
+ */
 export declare interface IAppSettingViewModel {
   baseUrl?: string;
   loggingLevel?: LoggingLevel;
 }
 
 /**
-* View model for snack bar Message and Action Text
-*/
+ * View model for snack bar Message and Action Text
+ */
 export interface SnackbarModel {
   messageText: string;
   actionText: string;
 }
 
 /**
-* @description
-* Interface use for setting the TextArea Property.
-* @usageNotes
-* ```ts
-*       componentProperty: {
-*        textAreaProperty : {
-*          cdkTextareaAutosize : true,
-*          cdkAutosizeMinRows : 1,
-*          cdkAutosizeMaxRows : 2,
-*          rows : 2,
-*          cols : 2
-*        }
-*      }
-* ```
-*/
+ * @description
+ * Interface use for setting the TextArea Property.
+ * @usageNotes
+ * ```ts
+ *       componentProperty: {
+ *        textAreaProperty : {
+ *          cdkTextareaAutosize : true,
+ *          cdkAutosizeMinRows : 1,
+ *          cdkAutosizeMaxRows : 2,
+ *          rows : 2,
+ *          cols : 2
+ *        }
+ *      }
+ * ```
+ */
 export declare interface ITextAreaProperty {
   cdkTextareaAutosize?: boolean;
   cdkAutosizeMinRows?: number;
@@ -218,31 +218,31 @@ export declare interface ITextAreaProperty {
 }
 
 /**
-* @description
-* Interface use for setting the options meta for select control.
-* @usageNotes
-* ```ts
-*       componentProperty: {
-*        selectProperty: {multiple : true};
-*      }
-* ```
-*/
+ * @description
+ * Interface use for setting the options meta for select control.
+ * @usageNotes
+ * ```ts
+ *       componentProperty: {
+ *        selectProperty: {multiple : true};
+ *      }
+ * ```
+ */
 export declare interface ISelectOptions {
   single?: boolean;
   multiple?: boolean;
 }
 
 /**
-* @description
-* Interface use for setting the options meta.
-* Disable is used for select option values
-* @usageNotes
-* ```ts
-*       componentProperty: {
-*        options: [{key : 'key-1', value : 'value-1', icon: 'material_icon', disabled: true}];
-*      }
-* ```
-*/
+ * @description
+ * Interface use for setting the options meta.
+ * Disable is used for select option values
+ * @usageNotes
+ * ```ts
+ *       componentProperty: {
+ *        options: [{key : 'key-1', value : 'value-1', icon: 'material_icon', disabled: true}];
+ *      }
+ * ```
+ */
 export declare interface IOptions {
   viewValue?: string;
   value?: any;
@@ -252,11 +252,11 @@ export declare interface IOptions {
 }
 
 /**
-* @description
-* @param change change event for the control
-* @param click click event for the control
-* Events for controls
-*/
+ * @description
+ * @param change change event for the control
+ * @param click click event for the control
+ * Events for controls
+ */
 export declare interface IComponentEvent<T> {
   change?: EventEmitter<T>;
   click?: EventEmitter<T>;

@@ -1,1 +1,6 @@
-<p>checkbox works!</p>
+<div [formGroup]="formGroup">
+    <mat-checkbox [ngStyle]="control.style" [ngClass]="control.class"
+        [color]="control.color != null ? control.color : 'accent'" [labelPosition]="control.labelPosition"
+        [formControlName]="control.formControlName" (change)="change($event)">
+        {{control.label}}</mat-checkbox>
+</div>

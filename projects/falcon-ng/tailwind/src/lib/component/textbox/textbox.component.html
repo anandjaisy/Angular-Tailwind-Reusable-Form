@@ -1,12 +1,12 @@
-<mat-form-field [formGroup]="formGroup" [appearance]="control.appearance" [floatLabel]="control.floatLabel">
+<mat-form-field [formGroup]="formGroup" [appearance]="control.appearance">
   <mat-label>{{control.label}}</mat-label>
   <input matInput [type]="control.type" [formControlName]="control.formControlName" [class]="control.class"
     [required]="formGroup.get(control.formControlName)?.errors !== null && formGroup.get(control.formControlName)?.errors?.['required']">
 
-  <span matPrefix [matTooltip]="control.prefix.toolTipText!"
+  <!-- <span matPrefix [matTooltip]="control.prefix.toolTipText!"
     [ngClass]="{'material-icons': control.prefix.isIcon}">{{control.prefix.text}}</span>
   <span matSuffix [matTooltip]="control.suffix.toolTipText!"
-    [ngClass]="{'material-icons': control.suffix.isIcon}">{{control.suffix.text}}</span>
+    [ngClass]="{'material-icons': control.suffix.isIcon}">{{control.suffix.text}}</span> -->
   <mat-hint *ngIf="control.hint.link?.isLink; else elseBlock">
     <ng-container *ngIf="control.hint.link?.queryParams !== undefined; else withoutQueryBlock">
       <a [routerLink]="[control.hint.link?.routerLink]" [queryParams]="{ query: control.hint.link?.queryParams }"

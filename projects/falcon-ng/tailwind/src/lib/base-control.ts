@@ -58,6 +58,7 @@ export class BaseControl<T> {
   value: T | undefined;
   formControlName: string;
   label: string;
+  labelPosition: any;
   order: number;
   controlType: ControlType;
   type: string;
@@ -75,11 +76,13 @@ export class BaseControl<T> {
   textAreaProperty: ITextAreaProperty;
   event: IComponentEvent<T>;
   selectProperty: ISelectOptions;
+  color: string;
   constructor(
     options: {
       value?: T;
       formControlName?: string;
       label?: string;
+      labelPosition?: any;
       order?: number;
       controlType?: ControlType;
       type?: string;
@@ -97,11 +100,13 @@ export class BaseControl<T> {
       textAreaProperty?: ITextAreaProperty;
       event?: IComponentEvent<T>;
       selectProperty?: ISelectOptions;
+      color?: string;
     } = {}
   ) {
     this.value = options.value;
     this.formControlName = options.formControlName || '';
     this.label = options.label || '';
+    this.labelPosition = options.labelPosition || 'before' || 'after';
     this.order = options.order === undefined ? 1 : options.order;
     this.controlType = options.controlType || ControlType.Button;
     this.type = options.type || '';
@@ -120,5 +125,6 @@ export class BaseControl<T> {
       options.textAreaProperty || ({} as ITextAreaProperty);
     this.event = options.event || {};
     this.selectProperty = options.selectProperty || {};
+    this.color = options.color || '';
   }
 }

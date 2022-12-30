@@ -2,13 +2,16 @@ import { Component } from '@angular/core';
 import {AngularCodeTemplate} from "../common/angularCodeTemplate";
 import {AngularCodeTemplateViewModel} from "../common/angularCodeTemplateViewModel";
 import {MatBottomSheet} from "@angular/material/bottom-sheet";
+import {
+  BottomSheetComponent
+} from "../../../projects/falcon-ng/tailwind/src/lib/component/bottom-sheet/bottom-sheet.component";
 
 @Component({
   selector: 'app-bottom-sheet',
   templateUrl: './bottom-sheet.component.html',
   styleUrls: ['./bottom-sheet.component.scss']
 })
-export class BottomSheetComponent {
+export class ExampleBottomSheetComponent {
   public codeGeneratorEnable: boolean = false;
   public angularCodeTemplateViewModel: AngularCodeTemplateViewModel =
   new AngularCodeTemplateViewModel();

@@ -10,7 +10,6 @@ import { RadioComponent } from './radio/radio.component';
 import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
 import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
-import { ExampleBottomSheetComponent } from './example-bottom-sheet/example-bottom-sheet.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { ModalDialogComponent } from './modal-dialog/modal-dialog.component';
 import { ChipsComponent } from './chips/chips.component';
@@ -24,7 +23,7 @@ import { ButtonIndicatorComponent } from './button-indicator/button-indicator.co
 import { AuthCallbackComponent } from './auth-callback/auth-callback.component';
 import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
 import { FormFieldComponent } from './form-field/form-field.component';
-import {BottomSheetComponent} from "./bottom-sheet/bottom-sheet.component";
+import {ExampleBottomSheetComponent} from "./bottom-sheet/example-bottom-sheet.component";
 
 const routes: Routes = [
   { path: 'auth-callback', component: AuthCallbackComponent },
@@ -43,7 +42,7 @@ const routes: Routes = [
   { path: 'button-toggle', component: ButtonToggleComponent },
   { path: 'progress-spinner', component: ProgressSpinnerComponent },
   { path: 'progress-bar', component: ProgressBarComponent },
-  { path: 'bottom-sheet', component: BottomSheetComponent },
+  { path: 'bottom-sheet', component: ExampleBottomSheetComponent },
   { path: 'snackbar', component: SnackbarComponent },
   { path: 'dialog', component: ModalDialogComponent },
   { path: 'chips', component: ChipsComponent },

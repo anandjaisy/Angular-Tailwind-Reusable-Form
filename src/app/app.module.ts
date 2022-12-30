@@ -23,7 +23,6 @@ import { RadioComponent } from './radio/radio.component';
 import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
 import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
-import { ExampleBottomSheetComponent } from './example-bottom-sheet/example-bottom-sheet.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { ModalDialogComponent } from './modal-dialog/modal-dialog.component';
 import { ChipsComponent } from './chips/chips.component';
@@ -37,7 +36,7 @@ import { ButtonIndicatorComponent } from './button-indicator/button-indicator.co
 import { AuthCallbackComponent } from './auth-callback/auth-callback.component';
 import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
 import { FormFieldComponent } from './form-field/form-field.component';
-import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
+import { ExampleBottomSheetComponent } from './bottom-sheet/example-bottom-sheet.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +58,6 @@ import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
     ButtonToggleComponent,
     ProgressSpinnerComponent,
     ProgressBarComponent,
-    ExampleBottomSheetComponent,
     SnackbarComponent,
     ModalDialogComponent,
     ChipsComponent,
@@ -73,7 +71,7 @@ import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
     AuthCallbackComponent,
     AutoCompleteComponent,
     FormFieldComponent,
-    BottomSheetComponent
+    ExampleBottomSheetComponent
   ],
   imports: [
     BrowserModule,

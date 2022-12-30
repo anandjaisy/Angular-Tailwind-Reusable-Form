@@ -1,8 +1,9 @@
-<ng-container>
-    <mat-nav-list>
-        <a mat-list-item [href]="item.link" *ngFor="let item of data" (click)="click($event,item)">
-            <span mat-line>{{item.levelOneText}}</span>
-            <span mat-line>{{item.levelTwoText}}</span>
-        </a>
-    </mat-nav-list>
-</ng-container>
+<mat-nav-list>
+  <ng-container *ngFor="let item of data">
+    <a [href]="item.link" mat-list-item (click)="click($event,item)">
+      <span matListItemTitle>{{item.levelOneText}}</span>
+      <span matLine>{{item.levelTwoText}}</span>
+    </a>
+  </ng-container>
+
+</mat-nav-list>

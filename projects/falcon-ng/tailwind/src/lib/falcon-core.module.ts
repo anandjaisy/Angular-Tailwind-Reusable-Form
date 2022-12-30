@@ -28,6 +28,7 @@ import { SlideToggleComponent } from './component/slide-toggle/slide-toggle.comp
 import { ButtonComponent } from './component/button/button.component';
 import { DialogComponent } from './component/dialog/dialog.component';
 import { SnackBarComponent } from './component/snack-bar/snack-bar.component';
+import { BottomSheetComponent } from './component/bottom-sheet/bottom-sheet.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { SnackBarComponent } from './component/snack-bar/snack-bar.component';
     SlideToggleComponent,
     ButtonComponent,
     DialogComponent,
-    SnackBarComponent
+    SnackBarComponent,
+    BottomSheetComponent
   ],
   imports: [
     AngularmaterialModule,

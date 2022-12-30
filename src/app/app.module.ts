@@ -37,6 +37,7 @@ import { ButtonIndicatorComponent } from './button-indicator/button-indicator.co
 import { AuthCallbackComponent } from './auth-callback/auth-callback.component';
 import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
 import { FormFieldComponent } from './form-field/form-field.component';
+import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { FormFieldComponent } from './form-field/form-field.component';
     ButtonIndicatorComponent,
     AuthCallbackComponent,
     AutoCompleteComponent,
-    FormFieldComponent
+    FormFieldComponent,
+    BottomSheetComponent
   ],
   imports: [
     BrowserModule,

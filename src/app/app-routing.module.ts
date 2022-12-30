@@ -24,6 +24,7 @@ import { ButtonIndicatorComponent } from './button-indicator/button-indicator.co
 import { AuthCallbackComponent } from './auth-callback/auth-callback.component';
 import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
 import { FormFieldComponent } from './form-field/form-field.component';
+import {BottomSheetComponent} from "./bottom-sheet/bottom-sheet.component";
 
 const routes: Routes = [
   { path: 'auth-callback', component: AuthCallbackComponent },
@@ -42,7 +43,7 @@ const routes: Routes = [
   { path: 'button-toggle', component: ButtonToggleComponent },
   { path: 'progress-spinner', component: ProgressSpinnerComponent },
   { path: 'progress-bar', component: ProgressBarComponent },
-  { path: 'bottom-sheet', component: ExampleBottomSheetComponent },
+  { path: 'bottom-sheet', component: BottomSheetComponent },
   { path: 'snackbar', component: SnackbarComponent },
   { path: 'dialog', component: ModalDialogComponent },
   { path: 'chips', component: ChipsComponent },

@@ -1,0 +1,29 @@
+<!--<span mat-dialog-title>{{data.title}}</span>-->
+<!--<mat-divider></mat-divider>-->
+<!--<div mat-dialog-content>-->
+<!--  <span class="mat-h3">{{data.bodyMessage}}</span>-->
+<!--</div>-->
+<!--<mat-divider></mat-divider>-->
+<!--<br>-->
+<!--<div class="mr-4">-->
+<!--  <div class="flex justify-end space-x-4">-->
+<!--    <button mat-raised-button [mat-dialog-close]="" cdkFocusInitial>{{data.cancelBtnText}}</button>-->
+<!--    <button mat-raised-button [color]="'warn'" [mat-dialog-close]="data">-->
+<!--      {{data.mainbtnText}}-->
+<!--    </button>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<br>-->
+
+<span mat-dialog-title>{{data.title}}</span>
+<mat-divider></mat-divider>
+<div mat-dialog-content>
+  <span class="mat-h3">{{data.bodyMessage}}</span>
+</div>
+<mat-divider></mat-divider>
+<div mat-dialog-actions>
+    <button mat-raised-button [mat-dialog-close]="" cdkFocusInitial>{{data.cancelBtnText}}</button>
+    <button mat-raised-button [color]="'warn'" [mat-dialog-close]="data">
+      {{data.mainbtnText}}
+    </button>
+  </div>

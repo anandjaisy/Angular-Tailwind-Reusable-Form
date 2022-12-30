@@ -26,6 +26,7 @@ import { EditorComponent } from './component/editor/editor.component';
 import { SliderComponent } from './component/slider/slider.component';
 import { SlideToggleComponent } from './component/slide-toggle/slide-toggle.component';
 import { ButtonComponent } from './component/button/button.component';
+import { DialogComponent } from './component/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ButtonComponent } from './component/button/button.component';
     EditorComponent,
     SliderComponent,
     SlideToggleComponent,
-    ButtonComponent
+    ButtonComponent,
+    DialogComponent
   ],
   imports: [
     AngularmaterialModule,

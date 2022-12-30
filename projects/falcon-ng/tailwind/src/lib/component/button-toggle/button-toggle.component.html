@@ -1,1 +1,21 @@
-<p>button-toggle works!</p>
+<div [ngStyle]="control.style" [ngClass]="control.class"
+     [formGroup]="formGroup">
+  <mat-label [ngStyle]="control.style" [ngClass]="control.class"
+             *ngIf="control.label != undefined">
+    {{control.label | titlecase}}
+  </mat-label>
+  <mat-button-toggle-group
+    [formControlName]="control.formControlName != undefined ? control.formControlName : 'default'"
+    [appearance]="control.appearance" [ngStyle]="control.style"
+    [ngClass]="control.class" [attr.aria-label]="control.label"
+    class="botton-toggle" (change)="toggleChange($event)">
+    <mat-button-toggle *ngFor="let item of control.options" [value]="item?.value"
+                       [ngStyle]="control.style"
+                       [ngClass]="control.class">
+      <mat-icon [ngClass]="item?.class" aria-hidden="false" aria-label="item icon" *ngIf="item?.icon != undefined">
+        {{item?.icon}}
+      </mat-icon>
+      {{item.viewValue | titlecase}}
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</div>

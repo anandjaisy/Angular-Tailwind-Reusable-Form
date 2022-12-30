@@ -1,8 +1,26 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
+import {BaseControl} from "../../base-control";
+import {MatButtonToggleChange} from "@angular/material/button-toggle";
 
 @Component({
   selector: 'falcon-button-toggle',
   templateUrl: './button-toggle.component.html',
-  styleUrls: ['./button-toggle.component.css'],
+  styleUrls: ['./button-toggle.component.scss'],
 })
-export class ButtonToggleComponent {}
+export class ButtonToggleComponent implements OnInit {
+  control!: BaseControl<string>;
+  formGroup!: FormGroup;
+  @Output() toggleGroupChange: EventEmitter<MatButtonToggleChange> = new EventEmitter<MatButtonToggleChange>();
+  ngOnInit(): void {
+    if (this.formGroup === undefined) {
+      this.formGroup = new FormGroup({
+        default: new FormControl()
+      });
+    }
+  }
+
+  toggleChange($event: any) {
+    this.toggleGroupChange.emit($event.value);
+  }
+}

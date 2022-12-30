@@ -27,7 +27,7 @@ export class TextAreaComponent
 
   protected defineForm(): void {
     this.controlsConfig = {
-      class: 'grid grid-cols-3 gap-4',
+      class: 'grid grid-cols-2 gap-4',
       baseControls: [
         new Textarea({
           formControlName: 'textAreaAutoSizeEnable',

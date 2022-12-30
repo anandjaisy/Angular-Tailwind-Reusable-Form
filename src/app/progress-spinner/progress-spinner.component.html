@@ -1,1 +1,44 @@
-<p>progress-spinner works!</p>
+<div class="container mx-auto p-6">
+  <mat-card>
+    <div class="flex justify-between p-5">
+      <a mat-mini-fab color="accent" routerLink="..">
+        <mat-icon>arrow_back</mat-icon>
+      </a>
+      <h2>Progress Spinner component</h2>
+      <h2></h2>
+    </div>
+
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div style="margin-top: 40px">
+        <div>
+          <div class="flex justify-between p-5">
+            <h1>Progress Spinner</h1>
+            <app-code-button (buttonClickEvent)="buttonClickEvent()"></app-code-button>
+          </div>
+          <p class="blurText">
+            <strong class="text-format">mat-progress-spinner</strong> and <strong
+            class="text-format">mat-spinner</strong> are a circular indicators of progress and activity.
+          </p>
+        </div>
+        <h1>Progress mode</h1>
+        <h3> Determinate</h3>
+        <p class="blurText">Standard progress indicator, fills from 0% to 100%</p>
+        <form class="dynamic-form" [formGroup]="formGroup" (ngSubmit)="onSubmit()" novalidate>
+          <control-builder [layout]="controlsConfig" [formGroup]="formGroup"></control-builder>
+          <falcon-progress-spinner [mode]="'determinate'" [value]="progressSpinnerValue"></falcon-progress-spinner>
+        </form>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <pre><code [highlight]="formGroup.value | json"></code></pre>
+        </div>
+        <h3> Indeterminate</h3>
+        <p class="blurText">Indicates that something is happening without conveying a discrete progress</p>
+        <falcon-progress-spinner [diameter]="60" [mode]="'indeterminate'" [value]="40" [color]="'accent'">
+        </falcon-progress-spinner>
+      </div>
+      <app-code-generator *ngIf="codeGeneratorEnable" [tsConfig]="angularCodeTemplateViewModel.tsConfig"
+                          [htmlConfig]="angularCodeTemplateViewModel.htmlConfig"></app-code-generator>
+    </mat-card-content>
+
+  </mat-card>
+</div>

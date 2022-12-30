@@ -29,6 +29,8 @@ import { ButtonComponent } from './component/button/button.component';
 import { DialogComponent } from './component/dialog/dialog.component';
 import { SnackBarComponent } from './component/snack-bar/snack-bar.component';
 import { BottomSheetComponent } from './component/bottom-sheet/bottom-sheet.component';
+import { ProgressBarComponent } from './component/progress-bar/progress-bar.component';
+import { ProgressSpinnerComponent } from './component/progress-spinner/progress-spinner.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { BottomSheetComponent } from './component/bottom-sheet/bottom-sheet.comp
     ButtonComponent,
     DialogComponent,
     SnackBarComponent,
-    BottomSheetComponent
+    BottomSheetComponent,
+    ProgressBarComponent,
+    ProgressSpinnerComponent
   ],
   imports: [
     AngularmaterialModule,
@@ -64,7 +68,9 @@ import { BottomSheetComponent } from './component/bottom-sheet/bottom-sheet.comp
     FormsModule,
     ReactiveFormsModule,
     ControlBuilderComponent,
-    RouterModule
+    RouterModule,
+    ProgressBarComponent,
+    ProgressSpinnerComponent
   ],
   providers: [
     provideHttpClient(

@@ -27,6 +27,7 @@ import { SliderComponent } from './component/slider/slider.component';
 import { SlideToggleComponent } from './component/slide-toggle/slide-toggle.component';
 import { ButtonComponent } from './component/button/button.component';
 import { DialogComponent } from './component/dialog/dialog.component';
+import { SnackBarComponent } from './component/snack-bar/snack-bar.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { DialogComponent } from './component/dialog/dialog.component';
     SliderComponent,
     SlideToggleComponent,
     ButtonComponent,
-    DialogComponent
+    DialogComponent,
+    SnackBarComponent
   ],
   imports: [
     AngularmaterialModule,

@@ -26,7 +26,7 @@ export class ChipsAutocompleteComponent extends BaseFormComponent<string>
 
   protected defineForm(): void {
     this.controlsConfig = {
-      class: 'flex justify-center',
+      class: '',
       baseControls: [
         new Chip({
           formControlName: 'chipsWithAutoComplete',
@@ -52,7 +52,7 @@ export class ChipsAutocompleteComponent extends BaseFormComponent<string>
 
   ngOnInit(): void {
     this.formGroup = this.createControls();
-    this.controlsConfig.baseControls[0].options =
+    this.controlsConfig.baseControls[0].chipSelectedOptions =
       [{value: 'Kathmandu', viewValue: 'Kathmandu'}];
   }
 

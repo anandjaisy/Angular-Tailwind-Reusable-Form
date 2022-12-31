@@ -1,13 +1,13 @@
 <ng-container [ngSwitch]="control.type">
-  <mat-form-field class="chip-list" *ngSwitchCase="'search'" [appearance]="control.appearance"
+<mat-form-field class="example-chip-list" *ngSwitchCase="'search'" [appearance]="control.appearance"
                   [formGroup]="formGroup" [ngStyle]="control.style" [ngClass]="control.class">
     <mat-label>{{control.label}}</mat-label>
     <mat-chip-grid #chipGrid aria-label="item selection">
-      <mat-chip *ngFor="let option of control.chipSelectedOptions" [value]="selectable"
+    <mat-chip-row *ngFor="let option of control.chipSelectedOptions"
                 [removable]="removable" (removed)="remove(option)">
         {{option.viewValue}}
         <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-      </mat-chip>
+    </mat-chip-row>
 
       <input matInput #chipInput [formControl]="autoCompleteControl" [formArrayName]="control.formControlName"
              [placeholder]="control.placeHolder" [ngStyle]="control.style"

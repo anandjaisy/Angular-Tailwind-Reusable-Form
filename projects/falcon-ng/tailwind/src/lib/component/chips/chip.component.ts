@@ -15,30 +15,30 @@ import {CdkDragDrop, moveItemInArray} from "@angular/cdk/drag-drop";
   styleUrls: ['./chip.component.scss'],
 })
 export class ChipComponent implements OnInit {
-  @Input() control!: BaseControl<any>;
-  @Input() formGroup!: FormGroup;
+  @Input() control: BaseControl<any>;
+  @Input() formGroup: FormGroup;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   selectable = true;
   removable = true;
   addOnBlur = true;
-
-  filteredOptions!: Observable<IOptions[]>;
+  filteredOptions: Observable<IOptions[]>;
   autoCompleteControl = new FormControl();
-  private items!: FormArray;
+  private items: FormArray;
 
-  @ViewChild('chipInput') matChipInput!: ElementRef<HTMLInputElement>;
-  @ViewChild('auto') matAutocomplete!: MatAutocomplete;
+  @ViewChild('chipInput') matChipInput: ElementRef<HTMLInputElement>;
+  @ViewChild('auto') matAutocomplete: MatAutocomplete;
 
   constructor(private fb: FormBuilder) {
-
+    this.filteredOptions = this.autoCompleteControl.valueChanges.pipe(
+      startWith(null),
+      map((value: string | null) => (value ? this._filter(value) : this.control.options.slice())),
+    );
+    this.filteredOptions.subscribe(item => console.log(item));
   }
 
 
   ngOnInit() {
-    this.filteredOptions = this.autoCompleteControl.valueChanges.pipe(
-      startWith(''),
-      map((value) => this._filter(value)),
-      ) as Observable<IOptions[]>;
+    console.log(this.control)
     setTimeout(() => {
       if (
         this.control.chipSelectedOptions.length > 0
@@ -47,7 +47,7 @@ export class ChipComponent implements OnInit {
           this.control.formControlName,
         ) as FormArray;
         this.control.chipSelectedOptions.forEach(
-          (value: IOptions) => {
+          (value: any) => {
             this.items.push(this.createItem(value.value));
           },
         );
@@ -108,14 +108,13 @@ export class ChipComponent implements OnInit {
     this.items.push(this.createItem(event.option.value));
   }
 
-  private _filter(value: string): IOptions[] | undefined {
+  private _filter(value: string): any {
     if (value !== null) {
       const filterValue = value.toLowerCase();
-      return this.control.options.filter((option: IOptions) =>
+      return this.control.options.filter((option: any) =>
         option.value.toLowerCase().includes(filterValue),
       );
     }
-    return undefined;
   }
 
   drop(event: CdkDragDrop<IOptions[]>) {

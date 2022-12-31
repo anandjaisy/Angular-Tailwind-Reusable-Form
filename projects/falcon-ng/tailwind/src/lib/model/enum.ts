@@ -67,16 +67,17 @@ export const enum Appearance {
   routeLink = 7,
   routeHref = 8,
 }
+
 /**
-* @description
-* Enum use for setting the attribute Types.
-* @usageNotes
-* ```ts
-*      componentProperty: {
-*        attrType: InputTypes.Text
-*      }
-* ```
-*/
+ * @description
+ * Enum use for setting the attribute Types.
+ * @usageNotes
+ * ```ts
+ *      componentProperty: {
+ *        attrType: InputTypes.Text
+ *      }
+ * ```
+ */
 export const enum InputTypes {
   Color = 'color',
   Date = 'date',
@@ -92,20 +93,21 @@ export const enum InputTypes {
   Url = 'url',
   Week = 'week',
   /**
-  * @usageNotes Should be only use for Buttom
-  */
+   * @usageNotes Should be only use for Buttom
+   */
   Button = 'button',
   Submit = 'submit',
   DragDrop = 'dragDrop',
 }
+
 /**
-* @description
-* Enum use for setting HTTP method.
-* @usageNotes
-* ```ts
-*      this.genericHttpClientService.Delete(this.deleteUserUrl).subscribe(item => {}, error => {});
-* ```
-*/
+ * @description
+ * Enum use for setting HTTP method.
+ * @usageNotes
+ * ```ts
+ *      this.genericHttpClientService.Delete(this.deleteUserUrl).subscribe(item => {}, error => {});
+ * ```
+ */
 export const enum HttpMethod {
   Get = 'GET',
   Post = 'POST',
@@ -115,9 +117,9 @@ export const enum HttpMethod {
 }
 
 /**
-* @description
-* Enum use for Table actions
-*/
+ * @description
+ * Enum use for Table actions
+ */
 export const enum TableAction {
   View,
   Edit,
@@ -126,15 +128,15 @@ export const enum TableAction {
 }
 
 /**
-* @description
-* Enum use for setting the Floating label.
-* @usageNotes
-* ```ts
-*      componentProperty: {
-*        floatLabel: Floatinglabel.Always
-*      }
-* ```
-*/
+ * @description
+ * Enum use for setting the Floating label.
+ * @usageNotes
+ * ```ts
+ *      componentProperty: {
+ *        floatLabel: Floatinglabel.Always
+ *      }
+ * ```
+ */
 export const enum Floatinglabel {
   Auto = 'auto',
   Always = 'always',

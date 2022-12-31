@@ -51,7 +51,7 @@ export class ChipsDragDropComponent extends BaseFormComponent<string>
 
   ngOnInit(): void {
     this.formGroup = this.createControls();
-    this.controlsConfig.baseControls[0].options =
+    this.controlsConfig.baseControls[0].chipSelectedOptions =
       [{value: 'Kathmandu', viewValue: 'Kathmandu'}];
   }
 

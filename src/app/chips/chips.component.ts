@@ -15,7 +15,7 @@ import {MatFormFieldAppearance} from "@angular/material/form-field";
 export class ChipsComponent {
   public codeGeneratorEnable: boolean = false;
   htmlChipConfig = {
-    class: 'grid grid-cols-2 gap-4',
+    class: 'flex justify-center',
     baseControls: [
       new Chip({
         formControlName: 'chipsWithAutoComplete',

@@ -10,6 +10,7 @@ import { ButtonToggleComponent } from '../component/button-toggle/button-toggle.
 import { AutoCompleteComponent } from '../component/auto-complete/auto-complete.component';
 import { ChipComponent } from '../component/chips/chip.component';
 import {ButtonComponent} from "../component/button/button.component";
+import {RichTextEditorComponent} from "../component/rich-text-editor/rich-text-editor.component";
 
 export class Constant {
   public static ComponentMapper = [
@@ -25,7 +26,7 @@ export class Constant {
     ButtonToggleComponent,
     AutoCompleteComponent,
     ChipComponent,
-    //RichTextEditorComponent,
+    RichTextEditorComponent,
     //DividerComponent,
   ];
 }

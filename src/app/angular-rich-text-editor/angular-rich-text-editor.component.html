@@ -1,1 +1,29 @@
-<p>angular-rich-text-editor works!</p>
+<div class="container mx-auto p-6">
+  <mat-card>
+    <div class="flex justify-between p-5">
+      <a mat-mini-fab color="accent" routerLink="..">
+        <mat-icon>arrow_back</mat-icon>
+      </a>
+      <h2>Angular editor</h2>
+      <app-code-button (buttonClickEvent)="buttonClickEvent()"></app-code-button>
+    </div>
+
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div class="flex justify-center">
+        <form class="dynamic-form" [formGroup]="formGroup" (ngSubmit)="onSubmit()" novalidate>
+          <control-builder [layout]="controlsConfig" [formGroup]="formGroup"></control-builder>
+        </form>
+
+      </div>
+      <div class="flex justify-center">
+        <pre><code [highlight]="formGroup.value | json"></code></pre>
+      </div>
+
+      <app-code-generator *ngIf="codeGeneratorEnable" [tsConfig]="angularCodeTemplateViewModel.tsConfig"
+                          [htmlConfig]="angularCodeTemplateViewModel.htmlConfig"></app-code-generator>
+
+    </mat-card-content>
+
+  </mat-card>
+</div>

@@ -1,0 +1,10 @@
+<ng-container [formGroup]="formGroup">
+  <mat-label>{{control.label}}</mat-label>
+  <angular-editor [formControlName]="control.formControlName" [config]="control.editorProperty">
+  </angular-editor>
+  <mat-hint>{{control.hint.text}}</mat-hint>
+  <ng-container *ngFor="let validation of control.validations;" ngProjectAs="mat-error">
+    <mat-error *ngIf="formGroup.get(control.formControlName)?.hasError(validation.name)">{{validation.message}}
+    </mat-error>
+  </ng-container>
+</ng-container>

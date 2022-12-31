@@ -33,6 +33,8 @@ import { ProgressBarComponent } from './component/progress-bar/progress-bar.comp
 import { ProgressSpinnerComponent } from './component/progress-spinner/progress-spinner.component';
 import { TableComponent } from './component/table/table.component';
 import { PaginationComponent } from './component/pagination/pagination.component';
+import { RichTextEditorComponent } from './component/rich-text-editor/rich-text-editor.component';
+import {AngularEditorModule} from "@kolkov/angular-editor";
 
 @NgModule({
   declarations: [
@@ -57,14 +59,16 @@ import { PaginationComponent } from './component/pagination/pagination.component
     ProgressBarComponent,
     ProgressSpinnerComponent,
     TableComponent,
-    PaginationComponent
+    PaginationComponent,
+    RichTextEditorComponent
   ],
   imports: [
     AngularmaterialModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    AngularEditorModule
   ],
   exports: [
     AngularmaterialModule,
@@ -77,7 +81,8 @@ import { PaginationComponent } from './component/pagination/pagination.component
     ProgressSpinnerComponent,
     ChipComponent,
     PaginationComponent,
-    TableComponent
+    TableComponent,
+    AngularEditorModule
   ],
   providers: [
     provideHttpClient(

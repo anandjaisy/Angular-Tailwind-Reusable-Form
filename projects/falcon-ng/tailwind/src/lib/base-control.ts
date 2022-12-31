@@ -1,5 +1,5 @@
-import { ControlType } from './model/enum';
-import { IValidator } from './model/ivalidator';
+import {ControlType} from './model/enum';
+import {IValidator} from './model/ivalidator';
 import {
   FloatLabelType,
   MatFormFieldAppearance,
@@ -79,6 +79,8 @@ export class BaseControl<T> {
   color: string;
   sliderProperty: ISliderProperty;
   chipSelectedOptions: IOptions[] | any;
+  editorProperty: any;
+
   constructor(
     options: {
       value?: T;
@@ -105,6 +107,7 @@ export class BaseControl<T> {
       color?: string;
       sliderProperty?: ISliderProperty;
       chipSelectedOptions?: IOptions[] | any;
+      editorProperty?: any;
     } = {}
   ) {
     this.value = options.value;
@@ -132,5 +135,6 @@ export class BaseControl<T> {
     this.color = options.color || '';
     this.sliderProperty = options.sliderProperty || {};
     this.chipSelectedOptions = options.chipSelectedOptions || {};
+    this.editorProperty = options.editorProperty || {};
   }
 }

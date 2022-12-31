@@ -287,3 +287,24 @@ export declare interface ISliderProperty {
   step?: number;
   tickInterval?: string | number;
 }
+
+/**
+* @description
+* Interface use for mat table header and column.
+* @usageNotes
+* ```ts
+*       columns: MatTable[] = [
+*        {
+*          columnDef: 'position',
+*          header: 'No.',
+*          cell: (element: any) => `${element.position}`
+*          }
+*      ]
+* ```
+*/
+export declare interface MatTable {
+  columnDef?: string;
+  header?: string;
+  cell?: any;
+  link?: IRouteLink;
+}

@@ -1,8 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {AngularCodeTemplate} from "../common/angularCodeTemplate";
-import {IGenericHttpClient} from "../../../projects/falcon-ng/tailwind/src/lib/service/http/igeneric-http-client";
-import {AngularCodeTemplateViewModel} from "../common/angularCodeTemplateViewModel";
-import {MatTableConfig, MatTable} from "../../../projects/falcon-ng/tailwind/src/lib/model/interface";
+import { Component ,OnInit} from '@angular/core';
+import {AngularCodeTemplate} from "../../common/angularCodeTemplate";
+import {AngularCodeTemplateViewModel} from "../../common/angularCodeTemplateViewModel";
+import {MatTableConfig, MatTable} from "../../../../projects/falcon-ng/tailwind/src/lib/model/interface";
 
 export interface PeriodicElement {
   name: string;
@@ -10,6 +9,7 @@ export interface PeriodicElement {
   weight: number;
   symbol: string;
 }
+
 const ELEMENT_DATA: PeriodicElement[] = [
   { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
   { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
@@ -22,13 +22,14 @@ const ELEMENT_DATA: PeriodicElement[] = [
   { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
   { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
   ];
+
 @Component({
-  selector: 'app-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+  selector: 'app-table-filter',
+  templateUrl: './table-filter.component.html',
+  styleUrls: ['./table-filter.component.scss']
 })
-export class TableComponent implements OnInit{
-  displayedColumns: string[] = [];
+export class TableFilterComponent implements OnInit {
+  public displayedColumns = ['action'];
   public codeGeneratorEnable: boolean = false;
   public angularCodeTemplateViewModel: AngularCodeTemplateViewModel =
   new AngularCodeTemplateViewModel();
@@ -56,20 +57,24 @@ export class TableComponent implements OnInit{
     },
     ];
   dataSource = ELEMENT_DATA;
-  constructor(private iGenericHttpClient: IGenericHttpClient<any>) {}
+  constructor() {}
+
   ngOnInit(): void {
     this.matTableConfig.columns = this.columns;
-    this.matTableConfig.filter = false;
+    this.matTableConfig.filter = true;
     this.matTableConfig.dataSource = this.dataSource;
-
-    this.iGenericHttpClient.get('/category').subscribe((item) => {});
+    this.matTableConfig.action = {
+      edit: false,
+      delete: true,
+      isMenu: false,
+    };
   }
-
   buttonClickEvent() {
     this.angularCodeTemplateViewModel.tsConfig =
-    AngularCodeTemplate.Table_TS_KEY;
+    AngularCodeTemplate.Table_FILTER_TS_KEY;
     this.angularCodeTemplateViewModel.htmlConfig =
-    AngularCodeTemplate.Table_HTML_KEY;
+    AngularCodeTemplate.Table_FILTER_HTML_KEY;
     this.codeGeneratorEnable = !this.codeGeneratorEnable;
   }
+  tableActionRowEvent($event: any) {}
 }

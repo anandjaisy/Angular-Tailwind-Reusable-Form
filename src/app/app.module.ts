@@ -40,6 +40,9 @@ import { ExampleBottomSheetComponent } from './bottom-sheet/example-bottom-sheet
 import { ChipsWithinputComponent } from './chips/chips-withinput/chips-withinput.component';
 import { ChipsDragDropComponent } from './chips/chips-drag-drop/chips-drag-drop.component';
 import { ChipsAutocompleteComponent } from './chips/chips-autocomplete/chips-autocomplete.component';
+import { TablePaginationComponent } from './table/table-pagination/table-pagination.component';
+import { TableFilterComponent } from './table/table-filter/table-filter.component';
+import { TableActionMenuComponent } from './table/table-action-menu/table-action-menu.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +81,9 @@ import { ChipsAutocompleteComponent } from './chips/chips-autocomplete/chips-aut
     ChipsWithinputComponent,
     ChipsDragDropComponent,
     ChipsAutocompleteComponent,
+    TablePaginationComponent,
+    TableFilterComponent,
+    TableActionMenuComponent,
   ],
   imports: [
     BrowserModule,

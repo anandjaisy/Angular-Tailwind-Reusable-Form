@@ -76,7 +76,8 @@ import { PaginationComponent } from './component/pagination/pagination.component
     ProgressBarComponent,
     ProgressSpinnerComponent,
     ChipComponent,
-    PaginationComponent
+    PaginationComponent,
+    TableComponent
   ],
   providers: [
     provideHttpClient(

@@ -8,7 +8,7 @@ import { SlideToggleComponent } from '../component/slide-toggle/slide-toggle.com
 import { SliderComponent } from '../component/slider/slider.component';
 import { ButtonToggleComponent } from '../component/button-toggle/button-toggle.component';
 import { AutoCompleteComponent } from '../component/auto-complete/auto-complete.component';
-import { ChipsComponent } from '../component/chips/chips.component';
+import { ChipComponent } from '../component/chips/chip.component';
 import {ButtonComponent} from "../component/button/button.component";
 
 export class Constant {
@@ -24,7 +24,7 @@ export class Constant {
     SliderComponent,
     ButtonToggleComponent,
     AutoCompleteComponent,
-    ChipsComponent,
+    ChipComponent,
     //RichTextEditorComponent,
     //DividerComponent,
   ];

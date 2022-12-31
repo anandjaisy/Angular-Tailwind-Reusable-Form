@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChipsComponent } from './chips.component';
+import { ChipsDragDropComponent } from './chips-drag-drop.component';
 
-describe('ChipsComponent', () => {
-  let component: ChipsComponent;
-  let fixture: ComponentFixture<ChipsComponent>;
+describe('ChipsDragDropComponent', () => {
+  let component: ChipsDragDropComponent;
+  let fixture: ComponentFixture<ChipsDragDropComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChipsComponent ]
+      declarations: [ ChipsDragDropComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ChipsComponent);
+    fixture = TestBed.createComponent(ChipsDragDropComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

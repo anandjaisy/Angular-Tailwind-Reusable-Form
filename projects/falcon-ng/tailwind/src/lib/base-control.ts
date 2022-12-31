@@ -78,6 +78,7 @@ export class BaseControl<T> {
   selectProperty: ISelectOptions;
   color: string;
   sliderProperty: ISliderProperty;
+  chipSelectedOptions: IOptions[] | any;
   constructor(
     options: {
       value?: T;
@@ -103,6 +104,7 @@ export class BaseControl<T> {
       selectProperty?: ISelectOptions;
       color?: string;
       sliderProperty?: ISliderProperty;
+      chipSelectedOptions?: IOptions[] | any;
     } = {}
   ) {
     this.value = options.value;
@@ -129,5 +131,6 @@ export class BaseControl<T> {
     this.selectProperty = options.selectProperty || {};
     this.color = options.color || '';
     this.sliderProperty = options.sliderProperty || {};
+    this.chipSelectedOptions = options.chipSelectedOptions || {};
   }
 }

@@ -21,7 +21,7 @@ import { CheckboxComponent } from './component/checkbox/checkbox.component';
 import { RadioComponent } from './component/radio/radio.component';
 import { AutoCompleteComponent } from './component/auto-complete/auto-complete.component';
 import { ButtonToggleComponent } from './component/button-toggle/button-toggle.component';
-import { ChipsComponent } from './component/chips/chips.component';
+import { ChipComponent } from './component/chips/chip.component';
 import { EditorComponent } from './component/editor/editor.component';
 import { SliderComponent } from './component/slider/slider.component';
 import { SlideToggleComponent } from './component/slide-toggle/slide-toggle.component';
@@ -44,7 +44,7 @@ import { ProgressSpinnerComponent } from './component/progress-spinner/progress-
     RadioComponent,
     AutoCompleteComponent,
     ButtonToggleComponent,
-    ChipsComponent,
+    ChipComponent,
     EditorComponent,
     SliderComponent,
     SlideToggleComponent,
@@ -70,7 +70,8 @@ import { ProgressSpinnerComponent } from './component/progress-spinner/progress-
     ControlBuilderComponent,
     RouterModule,
     ProgressBarComponent,
-    ProgressSpinnerComponent
+    ProgressSpinnerComponent,
+    ChipComponent
   ],
   providers: [
     provideHttpClient(

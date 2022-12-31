@@ -37,6 +37,9 @@ import { AuthCallbackComponent } from './auth-callback/auth-callback.component';
 import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
 import { FormFieldComponent } from './form-field/form-field.component';
 import { ExampleBottomSheetComponent } from './bottom-sheet/example-bottom-sheet.component';
+import { ChipsWithinputComponent } from './chips/chips-withinput/chips-withinput.component';
+import { ChipsDragDropComponent } from './chips/chips-drag-drop/chips-drag-drop.component';
+import { ChipsAutocompleteComponent } from './chips/chips-autocomplete/chips-autocomplete.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +74,10 @@ import { ExampleBottomSheetComponent } from './bottom-sheet/example-bottom-sheet
     AuthCallbackComponent,
     AutoCompleteComponent,
     FormFieldComponent,
-    ExampleBottomSheetComponent
+    ExampleBottomSheetComponent,
+    ChipsWithinputComponent,
+    ChipsDragDropComponent,
+    ChipsAutocompleteComponent
   ],
   imports: [
     BrowserModule,

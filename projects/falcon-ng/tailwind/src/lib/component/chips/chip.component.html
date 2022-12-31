@@ -1,0 +1,78 @@
+<ng-container [ngSwitch]="control.type">
+  <mat-form-field class="chip-list" *ngSwitchCase="'search'" [appearance]="control.appearance"
+                  [formGroup]="formGroup" [ngStyle]="control.style" [ngClass]="control.class">
+    <mat-label>{{control.label}}</mat-label>
+    <mat-chip-grid #chipGrid aria-label="item selection">
+      <mat-chip *ngFor="let option of control.chipSelectedOptions" [value]="selectable"
+                [removable]="removable" (removed)="remove(option)">
+        {{option.viewValue}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+
+      <input matInput #chipInput [formControl]="autoCompleteControl" [formArrayName]="control.formControlName"
+             [placeholder]="control.placeHolder" [ngStyle]="control.style"
+             [ngClass]="control.class" [matAutocomplete]="auto" [matChipInputFor]="chipGrid"
+             [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)"
+             [required]="formGroup.get(control.formControlName)?.errors !== null && formGroup.get(control.formControlName)?.errors?.['required']"
+             (keyup.enter)="keyboardEnterEvent($event)">
+
+    </mat-chip-grid>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="optionSelected($event)">
+      <mat-option *ngFor="let item of filteredOptions | async" [value]="item.value">
+        {{item.viewValue}}
+      </mat-option>
+    </mat-autocomplete>
+    <mat-hint>
+      <ng-container *ngIf="control.hint.link?.isLink; else elseBlock">
+        <ng-container
+          *ngIf="control.hint.link?.queryParams !== undefined; else withoutQueryBlock">
+          <a [routerLink]="[control.hint.link?.routerLink]"
+             [queryParams]="{ query: control.hint.link?.queryParams }"
+             routerLinkActive="router-link-active">{{control.hint.text}}</a>
+        </ng-container>
+      </ng-container>
+      <ng-template #elseBlock>
+        <span>{{control.hint.text}}</span>
+      </ng-template>
+      <ng-template #withoutQueryBlock>
+        <a [routerLink]="[control.hint.link?.routerLink]"
+           routerLinkActive="router-link-active">{{control.hint.text}}</a>
+      </ng-template>
+    </mat-hint>
+  </mat-form-field>
+
+  <mat-form-field class="chip-list" *ngSwitchCase="'text'" [appearance]="control.appearance"
+                  [formGroup]="formGroup" [ngStyle]="control.style"
+                  [ngClass]="control.class">
+    <mat-label>{{control.label}}</mat-label>
+    <mat-chip-grid #chipGrid aria-label="item selection">
+      <mat-chip-row *ngFor="let option of control.chipSelectedOptions" [value]="selectable"
+                    [removable]="removable" (removed)="remove(option)">
+        {{option?.viewValue}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip-row>
+
+      <input matInput [formArrayName]="control.formControlName" multiple
+             [placeholder]="control.placeHolder" [matChipInputFor]="chipGrid"
+             [ngStyle]="control.style" [ngClass]="control.class"
+             [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+             (matChipInputTokenEnd)="add($event)"
+             [required]="formGroup.get(control.formControlName)?.errors !== null && formGroup.get(control.formControlName)?.errors?.['required']">
+
+    </mat-chip-grid>
+  </mat-form-field>
+
+  <mat-chip-listbox aria-label="Chips selection" *ngSwitchDefault>
+    <mat-chip color="{{control.color}}" selected>{{control.label}}</mat-chip>
+  </mat-chip-listbox>
+
+
+  <mat-chip-set class="chip-list" cdkDropList cdkDropListOrientation="horizontal"
+                (cdkDropListDropped)="drop($event)"
+                *ngSwitchCase="'dragDrop'" class="example-chip">
+    <mat-chip class="example-box" cdkDrag *ngFor="let option of control.options">
+      {{option?.viewValue}}
+    </mat-chip>
+  </mat-chip-set>
+
+</ng-container>

@@ -1,1 +1,67 @@
-<p>chips works!</p>
+<div class="container mx-auto p-6">
+  <mat-card>
+    <div class="flex justify-between p-5">
+      <a mat-mini-fab color="accent" routerLink="..">
+        <mat-icon>arrow_back</mat-icon>
+      </a>
+      <h2>Chips</h2>
+      <h2></h2>
+    </div>
+
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div style="margin-top: 40px">
+        <div>
+          <div class="flex justify-between p-5">
+            <h1>Chips</h1>
+            <app-code-button (buttonClickEvent)="buttonClickEvent()"></app-code-button>
+          </div>
+          <h2>Mat Chip </h2>
+          <p class="blurText">
+            <strong class="text-format">mat-chip-list</strong> displays a list of values as individual,
+            keyboard accessible, chips.
+          </p>
+        </div>
+        <br><br>
+        <!--        <falcon-chip [control]="htmlChipConfig"></falcon-chip>-->
+      </div>
+      <app-code-generator *ngIf="codeGeneratorEnable" [tsConfig]="angularCodeTemplateViewModel.tsConfig"
+                          [htmlConfig]="angularCodeTemplateViewModel.htmlConfig"></app-code-generator>
+
+    </mat-card-content>
+
+  </mat-card>
+  <br>
+  <mat-card>
+    <div>
+    <div class="flex justify-between p-5">
+        <h1>Auto complete chips</h1>
+        <app-code-button (buttonClickEvent)="chipsAutoCompleteClickEvent()"></app-code-button>
+      </div>
+    </div>
+    <app-chips-autocomplete></app-chips-autocomplete>
+  </mat-card>
+  <br>
+  <mat-card>
+    <div>
+    <div class="flex justify-between p-5">
+        <h1>Chips with input</h1>
+        <app-code-button (buttonClickEvent)="chipsWithInputClickEvent()"></app-code-button>
+      </div>
+    </div>
+    <app-chips-withinput></app-chips-withinput>
+  </mat-card>
+
+  <br>
+
+  <mat-card>
+    <div>
+      <div class="container mx-auto p-6">
+        <h1>Drag and drop chips</h1>
+        <app-code-button (buttonClickEvent)="buttonClickEvent()"></app-code-button>
+      </div>
+    </div>
+    <app-chips-drag-drop></app-chips-drag-drop>
+  </mat-card>
+
+</div>

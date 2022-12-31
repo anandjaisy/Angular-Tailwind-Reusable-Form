@@ -1,4 +1,11 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {BaseFormComponent} from "../../../projects/falcon-ng/tailwind/src/lib/base-form-component";
+import {AngularCodeTemplateViewModel} from "../common/angularCodeTemplateViewModel";
+import {AngularCodeTemplate} from "../common/angularCodeTemplate";
+import {Observable, of} from "rxjs";
+import {Chip} from "../../../projects/falcon-ng/tailwind/src/lib/control-type/Chip";
+import {Appearance, InputTypes} from "../../../projects/falcon-ng/tailwind/src/lib/model/enum";
+import {MatFormFieldAppearance} from "@angular/material/form-field";
 
 @Component({
   selector: 'app-chips',
@@ -6,5 +13,62 @@ import { Component } from '@angular/core';
   styleUrls: ['./chips.component.scss']
 })
 export class ChipsComponent {
+  public codeGeneratorEnable: boolean = false;
+  htmlChipConfig = {
+    class: 'grid grid-cols-2 gap-4',
+    baseControls: [
+      new Chip({
+        formControlName: 'chipsWithAutoComplete',
+        label: 'Basic Auto complete',
+        appearance: Appearance.Outline as MatFormFieldAppearance,
+        options: [
+          {value: 'Sydney', viewValue: 'Sydney'},
+          {value: 'Melbourne', viewValue: 'Melbourne'},
+          {value: 'Brisbane', viewValue: 'Brisbane'},
+          {value: 'NewYork', viewValue: 'New York'},
+          {value: 'Kathmandu', viewValue: 'Kathmandu'},
+          ],
+        type: InputTypes.Text,
+        chipSelectedOptions: [],
+      })
+    ],
+  };
+  public angularCodeTemplateViewModel: AngularCodeTemplateViewModel =
+    new AngularCodeTemplateViewModel();
 
+  constructor() {
+
+  }
+
+  buttonClickEvent() {
+    this.angularCodeTemplateViewModel.tsConfig =
+      AngularCodeTemplate.Chips_TS_KEY;
+    this.angularCodeTemplateViewModel.htmlConfig =
+      AngularCodeTemplate.Chips_HTML_KEY;
+    this.codeGeneratorEnable = !this.codeGeneratorEnable;
+  }
+
+  chipsAutoCompleteClickEvent() {
+    this.angularCodeTemplateViewModel.tsConfig =
+      AngularCodeTemplate.Chips_AUTO_COMPLETE_TS_KEY;
+    this.angularCodeTemplateViewModel.htmlConfig =
+      AngularCodeTemplate.Chips_AUTO_COMPLETE_HTML_KEY;
+    this.codeGeneratorEnable = !this.codeGeneratorEnable;
+  }
+
+  chipsWithInputClickEvent() {
+    this.angularCodeTemplateViewModel.tsConfig =
+      AngularCodeTemplate.Chips_INPUT_TS_KEY;
+    this.angularCodeTemplateViewModel.htmlConfig =
+      AngularCodeTemplate.Chips_INPUT_HTML_KEY;
+    this.codeGeneratorEnable = !this.codeGeneratorEnable;
+  }
+
+  chipsDragDropClickEvent() {
+    this.angularCodeTemplateViewModel.tsConfig =
+      AngularCodeTemplate.Chips_DRAGDROP_TS_KEY;
+    this.angularCodeTemplateViewModel.htmlConfig =
+      AngularCodeTemplate.Chips_DRAGDROP_HTML_KEY;
+    this.codeGeneratorEnable = !this.codeGeneratorEnable;
+  }
 }

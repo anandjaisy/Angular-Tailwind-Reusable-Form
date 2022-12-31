@@ -31,6 +31,8 @@ import { SnackBarComponent } from './component/snack-bar/snack-bar.component';
 import { BottomSheetComponent } from './component/bottom-sheet/bottom-sheet.component';
 import { ProgressBarComponent } from './component/progress-bar/progress-bar.component';
 import { ProgressSpinnerComponent } from './component/progress-spinner/progress-spinner.component';
+import { TableComponent } from './component/table/table.component';
+import { PaginationComponent } from './component/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { ProgressSpinnerComponent } from './component/progress-spinner/progress-
     SnackBarComponent,
     BottomSheetComponent,
     ProgressBarComponent,
-    ProgressSpinnerComponent
+    ProgressSpinnerComponent,
+    TableComponent,
+    PaginationComponent
   ],
   imports: [
     AngularmaterialModule,
@@ -71,7 +75,8 @@ import { ProgressSpinnerComponent } from './component/progress-spinner/progress-
     RouterModule,
     ProgressBarComponent,
     ProgressSpinnerComponent,
-    ChipComponent
+    ChipComponent,
+    PaginationComponent
   ],
   providers: [
     provideHttpClient(

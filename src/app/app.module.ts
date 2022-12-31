@@ -77,7 +77,7 @@ import { ChipsAutocompleteComponent } from './chips/chips-autocomplete/chips-aut
     ExampleBottomSheetComponent,
     ChipsWithinputComponent,
     ChipsDragDropComponent,
-    ChipsAutocompleteComponent
+    ChipsAutocompleteComponent,
   ],
   imports: [
     BrowserModule,

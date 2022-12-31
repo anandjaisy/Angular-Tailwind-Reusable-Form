@@ -1,1 +1,32 @@
-<p>app-pagination works!</p>
+<div class="container mx-auto p-6">
+  <mat-card>
+    <div class="flex justify-between p-5">
+      <a mat-mini-fab color="accent" routerLink="..">
+        <mat-icon>arrow_back</mat-icon>
+      </a>
+      <h2>Pagination</h2>
+      <h2></h2>
+    </div>
+
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div style="margin-top: 40px">
+        <div>
+          <div class="flex justify-between p-5">
+            <h1>Pagination</h1>
+            <app-code-button (buttonClickEvent)="buttonClickEvent()"></app-code-button>
+          </div>
+          <p class="blurText">
+            The Pagination component enables the user to select a specific page from a range of pages.</p>
+        </div>
+        <div style="margin-top: 40px">
+          <falcon-pagination [totalPage]="totalPage" [pageSize]="pageSize"
+                             (paginationEvent)="paginationEvent($event)"></falcon-pagination>
+        </div>
+      </div>
+
+
+    </mat-card-content>
+
+  </mat-card>
+</div>

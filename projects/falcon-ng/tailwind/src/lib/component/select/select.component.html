@@ -4,8 +4,8 @@
   <mat-select [multiple]="control.selectProperty.multiple" (selectionChange)="selectChange($event)"
     [formControlName]="control.formControlName != undefined ? control.formControlName : 'default'"
     [placeholder]="control.placeHolder" [ngStyle]="control.style" [ngClass]="control.class" [(value)]="control.value">
-    <mat-option *ngFor="let item of control.options" [value]="item.value" [disabled]="item.disabled">
-      {{item.viewValue}}
+    <mat-option *ngFor="let item of control.options" [value]="item.key" [disabled]="item.disabled">
+      {{item.value}}
     </mat-option>
   </mat-select>
   <mat-hint *ngIf="control.hint?.show">

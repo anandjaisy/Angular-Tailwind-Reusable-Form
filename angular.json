@@ -38,7 +38,10 @@
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "oidc-client"
+            ]
           },
           "configurations": {
             "production": {

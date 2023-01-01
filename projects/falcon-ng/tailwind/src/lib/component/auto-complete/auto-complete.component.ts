@@ -22,7 +22,7 @@ export class AutoCompleteComponent {
 
   private _filter(value: string): IOptions[] {
     const filterValue = value.toLowerCase();
-    return this.control.options.filter((option: IOptions) => option?.viewValue?.toLowerCase().includes(filterValue));
+    return this.control.options.filter((option: IOptions) => option?.key?.toLowerCase().includes(filterValue));
   }
 
   optionSelected(value: any) {

@@ -1,22 +1,20 @@
-<mat-form-field *ngIf="control.appearance != 'plain'; else plainInput"
-                [appearance]="control.appearance" [formGroup]="formGroup" [ngStyle]="control.style"
-                [ngClass]="control.class">
+<mat-form-field *ngIf="control.appearance != 'plain'; else plainInput" [appearance]="control.appearance"
+  [formGroup]="formGroup" [ngStyle]="control.style" [ngClass]="control.class">
   <mat-label>{{control.label}}</mat-label>
   <input matInput [formControl]="autoCompleteControl" [formControlName]="control.formControlName"
-         [placeholder]="control.placeHolder" [type]="control.type"
-         [ngStyle]="control.style" [ngClass]="control.class"
-         [matAutocomplete]="auto"
-         [required]="formGroup.get(control.formControlName)?.errors !== null && formGroup.get(control.formControlName)?.errors?.['required']">
+    [placeholder]="control.placeHolder" [type]="control.type" [ngStyle]="control.style" [ngClass]="control.class"
+    [matAutocomplete]="auto"
+    [required]="formGroup.get(control.formControlName)?.errors !== null && formGroup.get(control.formControlName)?.errors?.['required']">
   <mat-autocomplete #auto="matAutocomplete" (optionSelected)='optionSelected($event.option.viewValue)'>
-    <mat-option *ngFor="let item of filteredOptions | async" [value]="item.value">
-      {{item.viewValue}}
+    <mat-option *ngFor="let item of filteredOptions | async" [value]="item.key">
+      {{item.value}}
     </mat-option>
   </mat-autocomplete>
 
   <span matPrefix [matTooltip]="control.prefix.toolTipText!"
-        [ngClass]="{'material-icons': control.prefix.isIcon}">{{control.prefix.text}} &nbsp;&nbsp;</span>
+    [ngClass]="{'material-icons': control.prefix.isIcon}">{{control.prefix.text}} &nbsp;&nbsp;</span>
   <span matSuffix [matTooltip]="control.suffix.toolTipText!"
-        [ngClass]="{'material-icons': control.suffix.isIcon}">{{control.suffix.text}} &nbsp;&nbsp;</span>
+    [ngClass]="{'material-icons': control.suffix.isIcon}">{{control.suffix.text}} &nbsp;&nbsp;</span>
 
   <mat-hint>{{control.hint.text}}</mat-hint>
   <ng-container *ngFor="let validation of control.validations;" ngProjectAs="mat-error">
@@ -26,18 +24,16 @@
 </mat-form-field>
 
 <ng-template #plainInput>
-  <div [formGroup]="formGroup" [ngStyle]="control.style"
-       [ngClass]="control.class">
+  <div [formGroup]="formGroup" [ngStyle]="control.style" [ngClass]="control.class">
     <input type="text" [formControl]="autoCompleteControl" [formControlName]="control.formControlName"
-           [placeholder]="control.placeHolder" [type]="control.type"
-           [ngStyle]="control.style" [ngClass]="control.class"
-           [matAutocomplete]="auto"
-           [required]="formGroup.get(control.formControlName)?.errors !== null && formGroup.get(control.formControlName)?.errors?.['required']"
-           class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">
+      [placeholder]="control.placeHolder" [type]="control.type" [ngStyle]="control.style" [ngClass]="control.class"
+      [matAutocomplete]="auto"
+      [required]="formGroup.get(control.formControlName)?.errors !== null && formGroup.get(control.formControlName)?.errors?.['required']"
+      class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">
   </div>
   <mat-autocomplete #auto="matAutocomplete" (optionSelected)='optionSelected($event.option.viewValue)'>
-    <mat-option *ngFor="let item of filteredOptions | async" [value]="item.value">
-      {{item.viewValue}}
+    <mat-option *ngFor="let item of filteredOptions | async" [value]="item.key">
+      {{item.value}}
     </mat-option>
   </mat-autocomplete>
 </ng-template>

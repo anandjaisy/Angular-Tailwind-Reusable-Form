@@ -1,12 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
-import { Observable, of } from 'rxjs';
-import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
-import { Appearance } from '../../../projects/falcon-ng/tailwind/src/lib/model/enum';
-import { Select } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/select';
-import { AngularCodeTemplate } from '../common/angularCodeTemplate';
-import { Textbox } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/textbox';
-import { DatePicker } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/DatePicker';
+import {Component, OnInit} from '@angular/core';
+import {BaseFormComponent} from '../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
+import {Observable, of} from 'rxjs';
+import {AngularCodeTemplateViewModel} from '../common/angularCodeTemplateViewModel';
+import {Appearance} from '../../../projects/falcon-ng/tailwind/src/lib/model/enum';
+import {Select} from '../../../projects/falcon-ng/tailwind/src/lib/control-type/select';
+import {AngularCodeTemplate} from '../common/angularCodeTemplate';
 import {MatFormFieldAppearance} from "@angular/material/form-field";
 
 @Component({
@@ -16,8 +14,7 @@ import {MatFormFieldAppearance} from "@angular/material/form-field";
 })
 export class SelectComponent
   extends BaseFormComponent<string>
-  implements OnInit
-{
+  implements OnInit {
   public codeGeneratorEnable: boolean = false;
   public angularCodeTemplateViewModel: AngularCodeTemplateViewModel =
     new AngularCodeTemplateViewModel();
@@ -35,11 +32,11 @@ export class SelectComponent
           formControlName: 'basicMatSelect',
           label: 'Basic mat-select',
           options: [
-            { value: 'bulbasaur-0', viewValue: 'Bulbasaur' },
-            { value: 'oddish-1', viewValue: 'Oddish' },
+            {key: 'bulbasaur-0', value: 'Bulbasaur'},
+            {key: 'oddish-1', value: 'Oddish'},
             {
-              value: 'bellsprout-2',
-              viewValue: 'Bellsprout',
+              key: 'bellsprout-2',
+              value: 'Bellsprout',
             },
           ],
           appearance: Appearance.Fill as MatFormFieldAppearance,
@@ -49,47 +46,47 @@ export class SelectComponent
           label: 'Multiple selection',
           options: [
             {
-              value: 'Extra-cheese',
-              viewValue: 'Extra cheese',
+              key: 'Extra-cheese',
+              value: 'Extra cheese',
             },
-            { value: 'Bellsprout', viewValue: 'Bellsprout' },
-            { value: 'Mushroom', viewValue: 'Mushroom' },
+            {key: 'Bellsprout', value: 'Bellsprout'},
+            {key: 'Mushroom', value: 'Mushroom'},
             {
+              key: 'Onion',
               value: 'Onion',
-              viewValue: 'Onion',
               disabled: true,
             },
-            { value: 'Pepperoni', viewValue: 'Pepperoni' },
-            { value: 'Sausage', viewValue: 'Sausage' },
+            {key: 'Pepperoni', value: 'Pepperoni'},
+            {key: 'Sausage', value: 'Sausage'},
             {
+              key: 'Tomato',
               value: 'Tomato',
-              viewValue: 'Tomato',
               disabled: false,
             },
           ],
           appearance: Appearance.Outline as MatFormFieldAppearance,
-          selectProperty: { multiple: true },
+          selectProperty: {multiple: true},
         }),
         new Select({
           formControlName: 'DisableSelectComponent',
           label: 'Disable select component',
           options: [
             {
-              value: 'Extra-cheese',
-              viewValue: 'Extra cheese',
+              key: 'Extra-cheese',
+              value: 'Extra cheese',
             },
-            { value: 'Bellsprout', viewValue: 'Bellsprout' },
-            { value: 'Mushroom', viewValue: 'Mushroom' },
+            {key: 'Bellsprout', value: 'Bellsprout'},
+            {key: 'Mushroom', value: 'Mushroom'},
             {
+              key: 'Onion',
               value: 'Onion',
-              viewValue: 'Onion',
               disabled: true,
             },
-            { value: 'Pepperoni', viewValue: 'Pepperoni' },
-            { value: 'Sausage', viewValue: 'Sausage' },
+            {key: 'Pepperoni', value: 'Pepperoni'},
+            {key: 'Sausage', value: 'Sausage'},
             {
+              key: 'Tomato',
               value: 'Tomato',
-              viewValue: 'Tomato',
               disabled: false,
             },
           ],
@@ -102,19 +99,19 @@ export class SelectComponent
           options: [
             {
               value: 'Extra-cheese',
-              viewValue: 'Extra cheese',
+              key: 'Extra cheese',
             },
-            { value: 'Bellsprout', viewValue: 'Bellsprout' },
-            { value: 'Mushroom', viewValue: 'Mushroom' },
+            {value: 'Bellsprout', key: 'Bellsprout'},
+            {value: 'Mushroom', key: 'Mushroom'},
             {
               value: 'Onion',
-              viewValue: 'Onion',
+              key: 'Onion',
             },
-            { value: 'Pepperoni', viewValue: 'Pepperoni' },
-            { value: 'Sausage', viewValue: 'Sausage' },
+            {value: 'Pepperoni', key: 'Pepperoni'},
+            {value: 'Sausage', key: 'Sausage'},
             {
               value: 'Tomato',
-              viewValue: 'Tomato',
+              key: 'Tomato',
               disabled: false,
             },
           ],

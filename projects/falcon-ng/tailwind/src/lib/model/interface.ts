@@ -244,7 +244,7 @@ export declare interface ISelectOptions {
  * ```
  */
 export declare interface IOptions {
-  viewValue?: string;
+  key?: any;
   value?: any;
   icon?: string;
   class?: string;

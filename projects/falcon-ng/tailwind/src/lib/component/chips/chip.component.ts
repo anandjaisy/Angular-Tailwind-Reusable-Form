@@ -106,6 +106,8 @@ export class ChipComponent implements OnInit {
       this.control.formControlName,
     ) as FormArray;
     this.items.push(this.createItem(event.option.value));
+    this.matChipInput.nativeElement.value = '';
+    this.formGroup.get(this.control.formControlName)?.setValue(null)
   }
 
   private _filter(value: string): any {

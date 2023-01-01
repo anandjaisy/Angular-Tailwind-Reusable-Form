@@ -1,5 +1,5 @@
 <ng-container [ngSwitch]="control.type">
-<mat-form-field class="example-chip-list" *ngSwitchCase="'search'" [appearance]="control.appearance"
+<mat-form-field class="chip-list" *ngSwitchCase="'search'" [appearance]="control.appearance"
                   [formGroup]="formGroup" [ngStyle]="control.style" [ngClass]="control.class">
     <mat-label>{{control.label}}</mat-label>
     <mat-chip-grid #chipGrid aria-label="item selection">
@@ -41,7 +41,7 @@
     </mat-hint>
   </mat-form-field>
 
-  <mat-form-field class="chip-list" *ngSwitchCase="'text'" [appearance]="control.appearance"
+<mat-form-field class="chip-list" *ngSwitchCase="'text'" [appearance]="control.appearance"
                   [formGroup]="formGroup" [ngStyle]="control.style"
                   [ngClass]="control.class">
     <mat-label>{{control.label}}</mat-label>

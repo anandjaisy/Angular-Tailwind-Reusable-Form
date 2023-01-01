@@ -25,7 +25,7 @@ export class ChipsWithinputComponent extends BaseFormComponent<string>
 
   protected defineForm(): void {
     this.controlsConfig = {
-      class: 'flex justify-start',
+      class: 'p-5',
       baseControls: [
         new Chip({
           formControlName: 'chipsWithAutoComplete',

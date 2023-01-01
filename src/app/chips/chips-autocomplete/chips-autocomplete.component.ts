@@ -26,7 +26,7 @@ export class ChipsAutocompleteComponent extends BaseFormComponent<string>
 
   protected defineForm(): void {
     this.controlsConfig = {
-      class: '',
+      class: 'p-5',
       baseControls: [
         new Chip({
           formControlName: 'chipsWithAutoComplete',

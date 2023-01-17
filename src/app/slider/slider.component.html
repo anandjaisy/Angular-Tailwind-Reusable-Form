@@ -31,7 +31,7 @@
             <form class="dynamic-form" [formGroup]="formGroup" (ngSubmit)="onSubmit()" novalidate>
               <control-builder [layout]="controlsConfig" [formGroup]="formGroup"></control-builder>
             </form>
-            <div fxLayout="row" fxLayoutAlign="center center">
+            <div class="flex justify-center">
               <pre><code [highlight]="formGroup.value | json"></code></pre>
             </div>
           </div>

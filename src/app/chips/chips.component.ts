@@ -30,6 +30,7 @@ export class ChipsComponent {
           ],
         type: InputTypes.Text,
         chipSelectedOptions: [],
+        formArray: []
       })
     ],
   };

@@ -9,11 +9,10 @@
         <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
       </mat-chip-row>
 
-      <input matInput #chipAutoCompleteInput [formControl]="autoCompleteControl" [formArrayName]="control.formControlName"
-             [placeholder]="control.placeHolder" [ngStyle]="control.style" [ngClass]="control.class"
-             [matAutocomplete]="auto"
-             [matChipInputFor]="chipGrid" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-             (matChipInputTokenEnd)="add($event)"
+      <input matInput #chipAutoCompleteInput [formControl]="autoCompleteControl"
+             [formArrayName]="control.formControlName" [placeholder]="control.placeHolder" [ngStyle]="control.style"
+             [ngClass]="control.class" [matAutocomplete]="auto" [matChipInputFor]="chipGrid"
+             [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)"
              [required]="formGroup.get(control.formControlName)?.errors !== null && formGroup.get(control.formControlName)?.errors?.['required']"
              (keyup.enter)="keyboardEnterEvent($event)">
 
@@ -50,7 +49,8 @@
         <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
       </mat-chip-row>
 
-    <input matInput  #chipTextInput [formArrayName]="control.formControlName" multiple [placeholder]="control.placeHolder"
+      <input matInput #chipTextInput [formArrayName]="control.formControlName" multiple
+             [placeholder]="control.placeHolder"
              [matChipInputFor]="chipGrid" [ngStyle]="control.style" [ngClass]="control.class"
              [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
              (matChipInputTokenEnd)="add($event)"
@@ -67,7 +67,7 @@
 
   <mat-chip-set class="chip-list" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)"
                 *ngSwitchCase="'dragDrop'" class="example-chip">
-    <mat-chip class="example-box" cdkDrag *ngFor="let option of control.options">
+    <mat-chip class="example-box" cdkDrag *ngFor="let option of control?.options">
       {{option?.value}}
     </mat-chip>
   </mat-chip-set>

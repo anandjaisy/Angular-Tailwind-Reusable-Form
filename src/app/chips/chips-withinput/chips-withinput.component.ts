@@ -40,6 +40,7 @@ export class ChipsWithinputComponent extends BaseFormComponent<string>
           ],
           type: InputTypes.Text,
           chipSelectedOptions: [],
+          formArray: []
         })
       ],
     };

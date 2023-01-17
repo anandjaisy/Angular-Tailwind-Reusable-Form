@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import {Observable} from 'rxjs';
 import {
   FormBuilder,
   FormControl,
@@ -6,10 +6,10 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import { BaseControl, Layout } from './base-control';
-import { inject } from '@angular/core';
-import { IValidator } from './model/ivalidator';
-import { ControlType } from './model/enum';
+import {BaseControl, Layout} from './base-control';
+import {inject} from '@angular/core';
+import {IValidator} from './model/ivalidator';
+import {ControlType} from './model/enum';
 
 /**
  * @description
@@ -46,7 +46,8 @@ export abstract class BaseFormComponent<T> {
   public showLoading: boolean = false;
   protected fb = inject(FormBuilder);
 
-  constructor() {}
+  constructor() {
+  }
 
   /**
    * @description
@@ -87,7 +88,7 @@ export abstract class BaseFormComponent<T> {
   /**
    * @description
    * Private method to bind the form control.
-   * @param field field to bind.
+   * @param controlConfig field to bind.
    * @param group group to add.
    * @param index index of the layout
    */
@@ -97,30 +98,30 @@ export abstract class BaseFormComponent<T> {
     index: number
   ) {
     if (controlConfig.controlType === ControlType.Button) return;
-    var control = null;
-    //    if (controlConfig.formArray !== undefined) {
-    //      control =
-    //        controlConfig.formArray.length > 0
-    //          ? this.fb.array([
-    //            this.createFormArrayGroup(
-    //              controlConfig.formArray[
-    //              controlConfig.formArray.length - 1
-    //                ].componentConfig,
-    //            ),
-    //          ])
-    //          : this.fb.array(
-    //            [],
-    //            this.bindValidations(controlConfig.validations || []),
-    //          );
-    //    } else {
-    control = this.fb.control(
-      {
-        value: controlConfig.value,
-        disabled: controlConfig.disabled,
-      },
-      this.bindValidations(controlConfig.validations || [])
-    );
-    //}
+    let control = null;
+    if (controlConfig.formArray !== undefined) {
+      control =
+        controlConfig.formArray.length > 0
+          ? this.fb.array([
+            this.createFormArrayGroup(
+              controlConfig.formArray[
+              controlConfig.formArray.length - 1
+                ].formArray,
+            ),
+          ])
+          : this.fb.array(
+            [],
+            this.bindValidations(controlConfig.validations || []),
+          );
+    } else {
+      control = this.fb.control(
+        {
+          value: controlConfig.value,
+          disabled: controlConfig.disabled,
+        },
+        this.bindValidations(controlConfig.validations || [])
+      );
+    }
     group.addControl(controlConfig.formControlName, control);
   }
 
@@ -146,41 +147,38 @@ export abstract class BaseFormComponent<T> {
    * @param layoutConfig layout of form array
    * @returns Form array group
    */
-  //  private createFormArrayGroup(
-  //    componentConfig: IComponentConfig[],
-  //  ): UntypedFormGroup {
-  //    var formGroup: UntypedFormGroup = this.fb.group({});
-  //    componentConfig.forEach((item, index) => {
-  //      var control = null;
-  //      if (item.formArray !== undefined) {
-  //        control =
-  //          item.formArray.length > 0
-  //            ? this.fb.array(
-  //              [
-  //                this.createFormArrayGroup(
-  //                  item.formArray[item.formArray.length - 1]
-  //                    .componentConfig,
-  //                ),
-  //              ],
-  //              this.bindValidations(item.validations || []),
-  //            )
-  //            : this.fb.array(
-  //              [],
-  //              this.bindValidations(item.validations || []),
-  //            );
-  //      } else {
-  //        control = this.fb.control(
-  //          {
-  //            value: item.componentProperty.value,
-  //            disabled: item.componentProperty.disabled,
-  //          },
-  //          this.bindValidations(item.validations || []),
-  //        );
-  //      }
-  //      formGroup.addControl(item.formControlName, control);
-  //    });
-  //    return formGroup;
-  //  }
+    private createFormArrayGroup(componentConfig: BaseControl<T>[] | undefined): FormGroup {
+      var formGroup: FormGroup = this.fb.group({});
+      componentConfig?.forEach((item, index) => {
+        var control = null;
+        if (item.formArray !== undefined) {
+          control =
+            item.formArray.length > 0
+              ? this.fb.array(
+                [
+                  this.createFormArrayGroup(
+                    item.formArray[item.formArray.length - 1].formArray,
+                  ),
+                ],
+                this.bindValidations(item.validations || []),
+              )
+              : this.fb.array(
+                [],
+                this.bindValidations(item.validations || []),
+              );
+        } else {
+          control = this.fb.control(
+            {
+              value: item.value,
+              disabled: item.disabled,
+            },
+            this.bindValidations(item.validations || []),
+          );
+        }
+        formGroup.addControl(item.formControlName, control);
+      });
+      return formGroup;
+    }
 
   /**
    * @description

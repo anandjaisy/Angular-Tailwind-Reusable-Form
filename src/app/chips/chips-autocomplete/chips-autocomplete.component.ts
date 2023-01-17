@@ -41,6 +41,7 @@ export class ChipsAutocompleteComponent extends BaseFormComponent<string>
           ],
           type: InputTypes.Search,
           chipSelectedOptions: [],
+          formArray: []
         })
       ],
     };

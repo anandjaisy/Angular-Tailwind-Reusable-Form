@@ -40,6 +40,7 @@ export class ChipsDragDropComponent extends BaseFormComponent<string>
           ],
           type: InputTypes.DragDrop,
           chipSelectedOptions: [],
+          formArray: []
         })
       ],
     };

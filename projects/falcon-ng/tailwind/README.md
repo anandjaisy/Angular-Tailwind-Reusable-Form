@@ -49,7 +49,7 @@ npm link @falcon-ng/tailwind
   }
 }
 ```
-- Add falcol core module to the project
+- Add falcol tailwind module to the project
 ```
 import { FalconCoreModule } from '@falcon-ng/tailwind';
 import {environment} from "../environments/environment";

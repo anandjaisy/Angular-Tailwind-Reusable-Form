@@ -1,4 +1,4 @@
-<mat-form-field [formGroup]="formGroup" [appearance]="control.appearance">
+<mat-form-field [formGroup]="formGroup" [appearance]="control.appearance" class="textbox-form">
   <mat-label>{{control.label}}</mat-label>
   <input matInput [type]="control.type" [formControlName]="control.formControlName" [class]="control.class"
          [required]="formGroup.get(control.formControlName)?.errors !== null && formGroup.get(control.formControlName)?.errors?.['required']">

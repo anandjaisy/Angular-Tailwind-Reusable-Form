@@ -1,1 +1,54 @@
-<p>button works!</p>
+<div [ngStyle]="control?.style" [ngClass]="control?.class">
+    <ng-container [ngSwitch]="control?.appearance">
+        <button [disabled]="control?.disabled" (click)="childBtnClick()"
+            [color]="control?.color" [ngClass]="control?.class"
+            [ngStyle]="control?.style" mat-button *ngSwitchCase="0">
+            <mat-icon *ngIf="control?.suffix?.isIcon" style="margin-bottom: 1px;">
+                {{control?.suffix?.text}}</mat-icon>&nbsp;{{control.label}}
+        </button>
+        <button [disabled]="control?.disabled" (click)="childBtnClick()"
+            [type]="control?.type" [ngClass]="control?.class"
+            [color]="control?.color" [ngStyle]="control?.style"
+            mat-raised-button *ngSwitchCase="1">
+            <mat-icon *ngIf="control?.suffix?.isIcon" style="margin-bottom: 1px;">
+                {{control?.suffix?.text}}</mat-icon>&nbsp;{{control.label}}
+        </button>
+        <button [disabled]="control?.disabled" (click)="childBtnClick()"
+            [type]="control?.type" [ngClass]="control?.class"
+            [color]="control?.color" [ngStyle]="control?.style"
+            mat-stroked-button *ngSwitchCase="2">
+            <mat-icon *ngIf="control?.suffix?.isIcon" style="margin-bottom: 1px;">
+                {{control?.suffix?.text}}</mat-icon>&nbsp;{{control.label}}
+        </button>
+        <button [disabled]="control?.disabled" (click)="childBtnClick()"
+            [type]="control?.type" [ngClass]="control?.class"
+            [color]="control?.color" [ngStyle]="control?.style"
+            mat-flat-button *ngSwitchCase="3">
+            <mat-icon *ngIf="control?.suffix?.isIcon" style="margin-bottom: 1px;">
+                {{control?.suffix?.text}}</mat-icon>&nbsp;{{control.label}}
+        </button>
+        <button [disabled]="control?.disabled" (click)="childBtnClick()"
+            [type]="control?.type" [ngClass]="control?.class"
+            [color]="control?.color" [ngStyle]="control?.style"
+            mat-icon-button [attr.aria-label]="control.label" *ngSwitchCase="4">
+            <mat-icon>{{control.label}}</mat-icon>
+        </button>
+        <button [disabled]="control?.disabled" (click)="childBtnClick()"
+            [type]="control?.type" [ngClass]="control?.class"
+            [color]="control?.color" [ngStyle]="control?.style" mat-fab
+            [attr.aria-label]="control.label" *ngSwitchCase="5">
+            <mat-icon>{{control.label}}</mat-icon>
+        </button>
+        <button [disabled]="control?.disabled" (click)="childBtnClick()"
+            [type]="control?.type" [ngClass]="control?.class"
+            [color]="control?.color" [ngStyle]="control?.style" mat-mini-fab
+            [attr.aria-label]="control.label" *ngSwitchCase="6">
+            <mat-icon>{{control.label}}</mat-icon>
+        </button>
+        <a mat-stroked-button *ngSwitchCase="7" [ngClass]="control?.class"
+            [ngStyle]="control?.style" routerLink="[]">{{control.label}}</a>
+        <a mat-stroked-button *ngSwitchCase="8" [ngClass]="control?.class"
+            [ngStyle]="control?.style"
+            href="{{control.value}}">{{control.label}}</a>
+    </ng-container>
+</div>

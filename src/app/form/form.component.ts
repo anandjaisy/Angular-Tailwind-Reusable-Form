@@ -4,6 +4,8 @@ import {Observable,of} from "rxjs";
 import {Radio} from "../../../projects/falcon-ng/tailwind/src/lib/control-type/Radio";
 import {Appearance} from "../../../projects/falcon-ng/tailwind/src/lib/model/enum";
 import {Textbox} from "../../../projects/falcon-ng/tailwind/src/lib/control-type/textbox";
+import {Button} from "../../../projects/falcon-ng/tailwind/src/lib/control-type/Button";
+import {Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-form',
@@ -30,18 +32,32 @@ export class FormComponent extends BaseFormComponent<string>
           formControlName: 'firstName',
           label: 'User Name',
           value: '',
+          validations: [
+            {
+              name: 'required',
+              validator: Validators.required,
+              message: 'Required Field',
+            },
+            ],
         }),
         new Textbox({
           formControlName: 'lastName',
           label: 'Password',
           value: '',
-          type: 'password'
+          type: 'password',
+          validations: [
+            {
+              name: 'required',
+              validator: Validators.required,
+              message: 'Required Field',
+            },
+            ],
         }),
-        new Textbox({
-          formControlName: 'lastName',
-          label: 'Password',
-          value: '',
-          type: 'password'
+        new Button({
+          label: 'Submit',
+          appearance: Appearance.Raised,
+          color: 'primary',
+          class: 'flex justify-center'
         }),
       ],
     };

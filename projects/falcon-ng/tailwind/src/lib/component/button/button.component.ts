@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {FormGroup} from "@angular/forms";
 import {BaseControl} from "../../base-control";
 
@@ -10,4 +10,8 @@ import {BaseControl} from "../../base-control";
 export class ButtonComponent {
   control!: BaseControl<string>;
   formGroup!: FormGroup;
+  @Output() btnClick = new EventEmitter<string>();
+  childBtnClick() {
+    this.btnClick.emit("Button Click Event");
+  }
 }

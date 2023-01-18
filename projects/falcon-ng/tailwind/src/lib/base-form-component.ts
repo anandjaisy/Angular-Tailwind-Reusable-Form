@@ -147,38 +147,38 @@ export abstract class BaseFormComponent<T> {
    * @param layoutConfig layout of form array
    * @returns Form array group
    */
-    private createFormArrayGroup(componentConfig: BaseControl<T>[] | undefined): FormGroup {
-      var formGroup: FormGroup = this.fb.group({});
-      componentConfig?.forEach((item, index) => {
-        var control = null;
-        if (item.formArray !== undefined) {
-          control =
-            item.formArray.length > 0
-              ? this.fb.array(
-                [
-                  this.createFormArrayGroup(
-                    item.formArray[item.formArray.length - 1].formArray,
-                  ),
-                ],
-                this.bindValidations(item.validations || []),
-              )
-              : this.fb.array(
-                [],
-                this.bindValidations(item.validations || []),
-              );
-        } else {
-          control = this.fb.control(
-            {
-              value: item.value,
-              disabled: item.disabled,
-            },
-            this.bindValidations(item.validations || []),
-          );
-        }
-        formGroup.addControl(item.formControlName, control);
-      });
-      return formGroup;
-    }
+  private createFormArrayGroup(componentConfig: BaseControl<T>[] | undefined): FormGroup {
+    var formGroup: FormGroup = this.fb.group({});
+    componentConfig?.forEach((item, index) => {
+      var control = null;
+      if (item.formArray !== undefined) {
+        control =
+          item.formArray.length > 0
+            ? this.fb.array(
+              [
+                this.createFormArrayGroup(
+                  item.formArray[item.formArray.length - 1].formArray,
+                ),
+              ],
+              this.bindValidations(item.validations || []),
+            )
+            : this.fb.array(
+              [],
+              this.bindValidations(item.validations || []),
+            );
+      } else {
+        control = this.fb.control(
+          {
+            value: item.value,
+            disabled: item.disabled,
+          },
+          this.bindValidations(item.validations || []),
+        );
+      }
+      formGroup.addControl(item.formControlName, control);
+    });
+    return formGroup;
+  }
 
   /**
    * @description

@@ -1,15 +1,13 @@
 <mat-toolbar color="primary" class="example-toolbar">
-  <div class="content" style="width: 100%;">
+  <div class="flex justify-between" style="width: 100%;">
+    <div><h1 class="example-app-name">Dynamic form builder</h1></div>
     <div>
-      <h1 class="example-app-name">Dynamic form builder</h1>
-    </div>
-    <div>
-      <!--      <falcon-button *ngIf="!authService.isLoggedIn(); else elseBlock" (btnClick)="SignInclick()"-->
-      <!--                     [field]="signInButtonConfig">-->
-      <!--      </falcon-button>-->
-      <!--      <ng-template #elseBlock>-->
-      <!--        <falcon-button (btnClick)="SignOutclick()" [field]="signOutButtonConfig"></falcon-button>-->
-      <!--      </ng-template>-->
+      <falcon-button *ngIf="!authService.isLoggedIn(); else elseBlock" (btnClick)="SignInclick()"
+                     [control]="signInButtonConfig">
+      </falcon-button>
+      <ng-template #elseBlock>
+        <falcon-button (btnClick)="SignOutclick()" [control]="signOutButtonConfig"></falcon-button>
+      </ng-template>
     </div>
   </div>
 </mat-toolbar>

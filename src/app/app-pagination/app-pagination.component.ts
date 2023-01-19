@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
 import {AngularCodeTemplateViewModel} from "../common/angularCodeTemplateViewModel";
 import {AngularCodeTemplate} from "../common/angularCodeTemplate";
+import {HighlightModule} from "ngx-highlightjs";
+import {CodeGeneratorComponent} from "../common/component/code-generator/code-generator.component";
+import {FalconCoreModule} from "../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
+import {CodeButtonComponent} from "../common/component/code-button/code-button.component";
 
 @Component({
   selector: 'app-app-pagination',
   templateUrl: './app-pagination.component.html',
-  styleUrls: ['./app-pagination.component.scss']
+  styleUrls: ['./app-pagination.component.scss'],
+  standalone: true,
+  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
 })
 export class AppPaginationComponent {
   pageSize: number = 10;

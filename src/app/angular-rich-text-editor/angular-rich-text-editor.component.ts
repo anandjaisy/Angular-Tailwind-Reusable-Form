@@ -5,11 +5,17 @@ import {AngularCodeTemplateViewModel} from "../common/angularCodeTemplateViewMod
 import {AngularCodeTemplate} from "../common/angularCodeTemplate";
 import {RichTextEditor} from "../../../projects/falcon-ng/tailwind/src/lib/control-type/RichTextEditor";
 import {Validators} from "@angular/forms";
+import {FalconCoreModule} from "../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
+import {CodeGeneratorComponent} from "../common/component/code-generator/code-generator.component";
+import {HighlightModule} from "ngx-highlightjs";
+import {CodeButtonComponent} from "../common/component/code-button/code-button.component";
 
 @Component({
   selector: 'app-angular-rich-text-editor',
   templateUrl: './angular-rich-text-editor.component.html',
-  styleUrls: ['./angular-rich-text-editor.component.scss']
+  styleUrls: ['./angular-rich-text-editor.component.scss'],
+  standalone: true,
+  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
 })
 export class AngularRichTextEditorComponent extends BaseFormComponent<any>
   implements OnInit {

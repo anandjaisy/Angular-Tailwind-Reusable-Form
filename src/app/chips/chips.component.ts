@@ -6,11 +6,20 @@ import {Observable, of} from "rxjs";
 import {Chip} from "../../../projects/falcon-ng/tailwind/src/lib/control-type/Chip";
 import {Appearance, InputTypes} from "../../../projects/falcon-ng/tailwind/src/lib/model/enum";
 import {MatFormFieldAppearance} from "@angular/material/form-field";
+import {HighlightModule} from "ngx-highlightjs";
+import {CodeGeneratorComponent} from "../common/component/code-generator/code-generator.component";
+import {FalconCoreModule} from "../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
+import {ChipsWithinputComponent} from "./chips-withinput/chips-withinput.component";
+import {ChipsDragDropComponent} from "./chips-drag-drop/chips-drag-drop.component";
+import {ChipsAutocompleteComponent} from "./chips-autocomplete/chips-autocomplete.component";
+import {CodeButtonComponent} from "../common/component/code-button/code-button.component";
 
 @Component({
   selector: 'app-chips',
   templateUrl: './chips.component.html',
-  styleUrls: ['./chips.component.scss']
+  styleUrls: ['./chips.component.scss'],
+  standalone: true,
+  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,ChipsWithinputComponent,ChipsDragDropComponent,ChipsAutocompleteComponent,CodeButtonComponent]
 })
 export class ChipsComponent {
   public codeGeneratorEnable: boolean = false;

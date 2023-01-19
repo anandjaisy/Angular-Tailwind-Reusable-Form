@@ -5,11 +5,17 @@ import {MatBottomSheet} from "@angular/material/bottom-sheet";
 import {
   BottomSheetComponent
 } from "../../../projects/falcon-ng/tailwind/src/lib/component/bottom-sheet/bottom-sheet.component";
+import {HighlightModule} from "ngx-highlightjs";
+import {CodeGeneratorComponent} from "../common/component/code-generator/code-generator.component";
+import {FalconCoreModule} from "../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
+import {CodeButtonComponent} from "../common/component/code-button/code-button.component";
 
 @Component({
   selector: 'app-bottom-sheet',
   templateUrl: './bottom-sheet.component.html',
-  styleUrls: ['./bottom-sheet.component.scss']
+  styleUrls: ['./bottom-sheet.component.scss'],
+  standalone: true,
+  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
 })
 export class ExampleBottomSheetComponent {
   public codeGeneratorEnable: boolean = false;

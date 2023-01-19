@@ -5,11 +5,17 @@ import {Appearance, InputTypes} from "../../../projects/falcon-ng/tailwind/src/l
 import {Observable, of} from "rxjs";
 import {AngularCodeTemplate} from "../common/angularCodeTemplate";
 import {Slider} from "../../../projects/falcon-ng/tailwind/src/lib/control-type/Slider";
+import {FalconCoreModule} from "../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
+import {HighlightModule} from "ngx-highlightjs";
+import {CodeGeneratorComponent} from "../common/component/code-generator/code-generator.component";
+import {CodeButtonComponent} from "../common/component/code-button/code-button.component";
 
 @Component({
   selector: 'app-progress-spinner',
   templateUrl: './progress-spinner.component.html',
-  styleUrls: ['./progress-spinner.component.scss']
+  styleUrls: ['./progress-spinner.component.scss'],
+  standalone: true,
+  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
 })
 export class ProgressSpinnerComponent extends BaseFormComponent<any>
   implements OnInit {

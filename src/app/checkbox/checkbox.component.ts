@@ -2,17 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { CheckBox } from 'projects/falcon-ng/tailwind/src/lib/control-type/CheckBox';
 import {
   Appearance,
-  BaseFormComponent,
+  BaseFormComponent, FalconCoreModule,
 } from 'projects/falcon-ng/tailwind/src/public-api';
 import { Observable, of } from 'rxjs';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
 import {MatFormFieldAppearance} from "@angular/material/form-field";
+import {HighlightModule} from "ngx-highlightjs";
+import {CodeGeneratorComponent} from "../common/component/code-generator/code-generator.component";
+import {CodeButtonComponent} from "../common/component/code-button/code-button.component";
 
 @Component({
   selector: 'app-checkbox',
   templateUrl: './checkbox.component.html',
   styleUrls: ['./checkbox.component.scss'],
+  standalone: true,
+  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
 })
 export class CheckboxComponent
   extends BaseFormComponent<any>

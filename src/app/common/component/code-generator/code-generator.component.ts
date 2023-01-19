@@ -2,11 +2,15 @@ import {Component, OnInit, Input, ViewChild, TemplateRef} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {IGenericHttpClient} from 'projects/falcon-ng/tailwind/src/lib/service/http/igeneric-http-client';
 import {MatTabChangeEvent} from "@angular/material/tabs";
+import {HighlightModule} from "ngx-highlightjs";
+import {FalconCoreModule} from "../../../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
 
 @Component({
   selector: 'app-code-generator',
   templateUrl: './code-generator.component.html',
   styleUrls: ['./code-generator.component.scss'],
+  standalone: true,
+  imports:[HighlightModule,FalconCoreModule]
 })
 export class CodeGeneratorComponent implements OnInit {
   @Input() tsConfig!: string;

@@ -6,11 +6,17 @@ import {Observable, of} from 'rxjs';
 import {Appearance} from "../../../projects/falcon-ng/tailwind/src/lib/model/enum";
 import {MatFormFieldAppearance} from "@angular/material/form-field";
 import {ButtonToggle} from "../../../projects/falcon-ng/tailwind/src/lib/control-type/ButtonToggle";
+import {HighlightModule} from "ngx-highlightjs";
+import {CodeGeneratorComponent} from "../common/component/code-generator/code-generator.component";
+import {FalconCoreModule} from "../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
+import {CodeButtonComponent} from "../common/component/code-button/code-button.component";
 
 @Component({
   selector: 'app-button-toggle',
   templateUrl: './button-toggle.component.html',
-  styleUrls: ['./button-toggle.component.scss']
+  styleUrls: ['./button-toggle.component.scss'],
+  standalone: true,
+  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
 })
 export class ButtonToggleComponent extends BaseFormComponent<any>
   implements OnInit {

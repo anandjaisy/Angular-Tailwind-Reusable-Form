@@ -6,11 +6,17 @@ import {Observable, of} from "rxjs";
 import {DatePicker} from "../../../projects/falcon-ng/tailwind/src/lib/control-type/DatePicker";
 import {Appearance} from "../../../projects/falcon-ng/tailwind/src/lib/model/enum";
 import {Validators} from "@angular/forms";
+import {HighlightModule} from "ngx-highlightjs";
+import {CodeGeneratorComponent} from "../common/component/code-generator/code-generator.component";
+import {FalconCoreModule} from "../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
+import {CodeButtonComponent} from "../common/component/code-button/code-button.component";
 
 @Component({
   selector: 'app-datepicker',
   templateUrl: './datepicker.component.html',
-  styleUrls: ['./datepicker.component.scss']
+  styleUrls: ['./datepicker.component.scss'],
+  standalone: true,
+  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
 })
 export class DatepickerComponent extends BaseFormComponent<string>
   implements OnInit {

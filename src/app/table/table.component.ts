@@ -3,6 +3,13 @@ import {AngularCodeTemplate} from "../common/angularCodeTemplate";
 import {IGenericHttpClient} from "../../../projects/falcon-ng/tailwind/src/lib/service/http/igeneric-http-client";
 import {AngularCodeTemplateViewModel} from "../common/angularCodeTemplateViewModel";
 import {MatTableConfig, MatTable} from "../../../projects/falcon-ng/tailwind/src/lib/model/interface";
+import {HighlightModule} from "ngx-highlightjs";
+import {CodeGeneratorComponent} from "../common/component/code-generator/code-generator.component";
+import {FalconCoreModule} from "../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
+import {CodeButtonComponent} from "../common/component/code-button/code-button.component";
+import {TablePaginationComponent} from "./table-pagination/table-pagination.component";
+import {TableFilterComponent} from "./table-filter/table-filter.component";
+import {TableActionMenuComponent} from "./table-action-menu/table-action-menu.component";
 
 export interface PeriodicElement {
   name: string;
@@ -25,7 +32,9 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+  styleUrls: ['./table.component.scss'],
+  standalone: true,
+  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent,TablePaginationComponent,TableFilterComponent,TableActionMenuComponent]
 })
 export class TableComponent implements OnInit{
   displayedColumns: string[] = [];

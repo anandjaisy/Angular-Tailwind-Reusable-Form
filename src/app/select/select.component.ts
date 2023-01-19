@@ -6,11 +6,18 @@ import {Appearance} from '../../../projects/falcon-ng/tailwind/src/lib/model/enu
 import {Select} from '../../../projects/falcon-ng/tailwind/src/lib/control-type/select';
 import {AngularCodeTemplate} from '../common/angularCodeTemplate';
 import {MatFormFieldAppearance} from "@angular/material/form-field";
+import {HighlightModule} from "ngx-highlightjs";
+import {CodeGeneratorComponent} from "../common/component/code-generator/code-generator.component";
+import {FalconCoreModule} from "../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
+import {CodeButtonComponent} from "../common/component/code-button/code-button.component";
+import {SelectHtmlComponent} from "./select-html/select-html.component";
 
 @Component({
   selector: 'app-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss'],
+  standalone: true,
+  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent,SelectHtmlComponent]
 })
 export class SelectComponent
   extends BaseFormComponent<string>

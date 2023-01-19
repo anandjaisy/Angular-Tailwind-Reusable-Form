@@ -2,6 +2,10 @@ import { Component ,OnInit} from '@angular/core';
 import {AngularCodeTemplate} from "../../common/angularCodeTemplate";
 import {AngularCodeTemplateViewModel} from "../../common/angularCodeTemplateViewModel";
 import {MatTableConfig, MatTable} from "../../../../projects/falcon-ng/tailwind/src/lib/model/interface";
+import {HighlightModule} from "ngx-highlightjs";
+import {CodeGeneratorComponent} from "../../common/component/code-generator/code-generator.component";
+import {FalconCoreModule} from "../../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
+import {CodeButtonComponent} from "../../common/component/code-button/code-button.component";
 
 export interface PeriodicElement {
   name: string;
@@ -26,7 +30,9 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
   selector: 'app-table-filter',
   templateUrl: './table-filter.component.html',
-  styleUrls: ['./table-filter.component.scss']
+  styleUrls: ['./table-filter.component.scss'],
+  standalone: true,
+  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
 })
 export class TableFilterComponent implements OnInit {
   public displayedColumns = ['action'];

@@ -6,11 +6,17 @@ import {AngularCodeTemplateViewModel} from "../../common/angularCodeTemplateView
 import {MatFormFieldAppearance} from "@angular/material/form-field";
 import {Appearance, InputTypes} from "../../../../projects/falcon-ng/tailwind/src/lib/model/enum";
 import {Chip} from "../../../../projects/falcon-ng/tailwind/src/lib/control-type/Chip";
+import {HighlightModule} from "ngx-highlightjs";
+import {CodeGeneratorComponent} from "../../common/component/code-generator/code-generator.component";
+import {FalconCoreModule} from "../../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
+import {CodeButtonComponent} from "../../common/component/code-button/code-button.component";
 
 @Component({
   selector: 'app-chips-autocomplete',
   templateUrl: './chips-autocomplete.component.html',
-  styleUrls: ['./chips-autocomplete.component.scss']
+  styleUrls: ['./chips-autocomplete.component.scss'],
+  standalone: true,
+  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
 })
 export class ChipsAutocompleteComponent extends BaseFormComponent<string>
   implements OnInit {

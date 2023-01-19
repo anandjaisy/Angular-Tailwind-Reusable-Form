@@ -6,11 +6,17 @@ import { AngularCodeTemplate } from '../common/angularCodeTemplate';
 import { Textarea } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/textarea';
 import { Appearance } from '../../../projects/falcon-ng/tailwind/src/lib/model/enum';
 import {MatFormFieldAppearance} from "@angular/material/form-field";
+import {HighlightModule} from "ngx-highlightjs";
+import {CodeGeneratorComponent} from "../common/component/code-generator/code-generator.component";
+import {FalconCoreModule} from "../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
+import {CodeButtonComponent} from "../common/component/code-button/code-button.component";
 
 @Component({
   selector: 'app-text-area',
   templateUrl: './text-area.component.html',
   styleUrls: ['./text-area.component.scss'],
+  standalone: true,
+  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
 })
 export class TextAreaComponent
   extends BaseFormComponent<string>

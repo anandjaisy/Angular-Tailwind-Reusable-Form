@@ -6,11 +6,17 @@ import { BaseFormComponent } from '../../../../projects/falcon-ng/tailwind/src/l
 import { Textbox } from '../../../../projects/falcon-ng/tailwind/src/lib/control-type/textbox';
 import { Appearance } from '../../../../projects/falcon-ng/tailwind/src/lib/model/enum';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
+import {HighlightModule} from "ngx-highlightjs";
+import {CodeGeneratorComponent} from "../../common/component/code-generator/code-generator.component";
+import {FalconCoreModule} from "../../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
+import {CodeButtonComponent} from "../../common/component/code-button/code-button.component";
 
 @Component({
   selector: 'app-input-prefix-suffix',
   templateUrl: './input-prefix-suffix.component.html',
   styleUrls: ['./input-prefix-suffix.component.scss'],
+  standalone: true,
+  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
 })
 export class InputPrefixSuffixComponent
   extends BaseFormComponent<any>

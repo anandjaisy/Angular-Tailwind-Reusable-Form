@@ -6,11 +6,17 @@ import {AngularCodeTemplate} from "../common/angularCodeTemplate";
 import {Appearance, InputTypes} from "../../../projects/falcon-ng/tailwind/src/lib/model/enum";
 import {MatFormFieldAppearance} from "@angular/material/form-field";
 import {Slider} from "../../../projects/falcon-ng/tailwind/src/lib/control-type/Slider";
+import {HighlightModule} from "ngx-highlightjs";
+import {CodeGeneratorComponent} from "../common/component/code-generator/code-generator.component";
+import {FalconCoreModule} from "../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
+import {CodeButtonComponent} from "../common/component/code-button/code-button.component";
 
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.scss']
+  styleUrls: ['./slider.component.scss'],
+  standalone: true,
+  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
 })
 export class SliderComponent extends BaseFormComponent<any>
   implements OnInit {

@@ -66,7 +66,7 @@ import {AngularEditorModule} from "@kolkov/angular-editor";
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    AngularEditorModule
+    AngularEditorModule,
   ],
   exports: [
     AngularmaterialModule,
@@ -81,7 +81,7 @@ import {AngularEditorModule} from "@kolkov/angular-editor";
     PaginationComponent,
     TableComponent,
     AngularEditorModule,
-    ButtonComponent
+    ButtonComponent,
   ],
   providers: [
     provideHttpClient(

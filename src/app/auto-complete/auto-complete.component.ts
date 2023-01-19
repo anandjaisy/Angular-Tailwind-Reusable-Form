@@ -6,11 +6,17 @@ import {AutoComplete} from '../../../projects/falcon-ng/tailwind/src/lib/control
 import {Appearance} from "../../../projects/falcon-ng/tailwind/src/lib/model/enum";
 import {MatFormFieldAppearance} from "@angular/material/form-field";
 import {AngularCodeTemplate} from "../common/angularCodeTemplate";
+import {HighlightModule} from "ngx-highlightjs";
+import {CodeGeneratorComponent} from "../common/component/code-generator/code-generator.component";
+import {FalconCoreModule} from "../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
+import {CodeButtonComponent} from "../common/component/code-button/code-button.component";
 
 @Component({
   selector: 'app-auto-complete',
   templateUrl: './auto-complete.component.html',
-  styleUrls: ['./auto-complete.component.scss']
+  styleUrls: ['./auto-complete.component.scss'],
+  standalone: true,
+  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
 })
 export class AutoCompleteComponent
   extends BaseFormComponent<string>

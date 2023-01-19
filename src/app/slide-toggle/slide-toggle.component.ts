@@ -7,11 +7,17 @@ import {MatFormFieldAppearance} from "@angular/material/form-field";
 import {Appearance} from "../../../projects/falcon-ng/tailwind/src/lib/model/enum";
 import {BaseControl} from "../../../projects/falcon-ng/tailwind/src/lib/base-control";
 import {SliderToggle} from "../../../projects/falcon-ng/tailwind/src/lib/control-type/SlideToggle";
+import {HighlightModule} from "ngx-highlightjs";
+import {CodeGeneratorComponent} from "../common/component/code-generator/code-generator.component";
+import {FalconCoreModule} from "../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
+import {CodeButtonComponent} from "../common/component/code-button/code-button.component";
 
 @Component({
   selector: 'app-slide-toggle',
   templateUrl: './slide-toggle.component.html',
-  styleUrls: ['./slide-toggle.component.scss']
+  styleUrls: ['./slide-toggle.component.scss'],
+  standalone: true,
+  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
 })
 export class SlideToggleComponent extends BaseFormComponent<any>
 implements OnInit{

@@ -4,11 +4,17 @@ import {IDialogData} from "../../../projects/falcon-ng/tailwind/src/lib/model/in
 import {AngularCodeTemplateViewModel} from "../common/angularCodeTemplateViewModel";
 import {AngularCodeTemplate} from "../common/angularCodeTemplate";
 import {DialogComponent} from "../../../projects/falcon-ng/tailwind/src/lib/component/dialog/dialog.component";
+import {HighlightModule} from "ngx-highlightjs";
+import {CodeGeneratorComponent} from "../common/component/code-generator/code-generator.component";
+import {FalconCoreModule} from "../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
+import {CodeButtonComponent} from "../common/component/code-button/code-button.component";
 
 @Component({
   selector: 'app-modal-dialog',
   templateUrl: './modal-dialog.component.html',
-  styleUrls: ['./modal-dialog.component.scss']
+  styleUrls: ['./modal-dialog.component.scss'],
+  standalone: true,
+  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
 })
 export class ModalDialogComponent {
   private iDialogData: IDialogData = {} as IDialogData;

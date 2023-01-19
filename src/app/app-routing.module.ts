@@ -24,7 +24,7 @@ import { AuthCallbackComponent } from './auth-callback/auth-callback.component';
 import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
 import {ExampleBottomSheetComponent} from "./bottom-sheet/example-bottom-sheet.component";
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: 'auth-callback', component: AuthCallbackComponent },
   { path: '', component: ComponenttestingComponent },
   { path: 'input', component: TextboxComponent },
@@ -50,8 +50,8 @@ const routes: Routes = [
   { path: 'form', component: FormComponent },
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}
+//@NgModule({
+//  imports: [RouterModule.forRoot(routes)],
+//  exports: [RouterModule],
+//})
+//export class AppRoutingModule {}

@@ -3,7 +3,7 @@ import {EnvironmentViewModel} from "../../projects/falcon-ng/tailwind/src/lib/mo
 class EnvironmentImpl implements EnvironmentViewModel {
   production = false;
   openID = {
-    authority: 'https://falconidentityserver.azurewebsites.net',
+    authority: 'https://localhost:5001/',
     client_id: 'Fete_Bird_UI',
     redirect_uri: 'http://localhost:4200/auth-callback',
     silent_redirect_uri:

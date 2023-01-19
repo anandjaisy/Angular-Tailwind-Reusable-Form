@@ -32,3 +32,4 @@ export * from './lib/component/progress-bar/progress-bar.component';
 export * from './lib/component/progress-spinner/progress-spinner.component';
 export * from './lib/component/bottom-sheet/bottom-sheet.component';
 export * from './lib/component/button-toggle/button-toggle.component';
+export * from './lib/component/button/button.component';

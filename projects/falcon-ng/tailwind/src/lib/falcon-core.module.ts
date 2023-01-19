@@ -80,7 +80,8 @@ import {AngularEditorModule} from "@kolkov/angular-editor";
     ChipComponent,
     PaginationComponent,
     TableComponent,
-    AngularEditorModule
+    AngularEditorModule,
+    ButtonComponent
   ],
   providers: [
     provideHttpClient(

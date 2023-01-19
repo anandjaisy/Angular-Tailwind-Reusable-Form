@@ -48,3 +48,19 @@ import {environment} from "../environments/environment";
 })
 ```
 
+- Add falcol tailwind module to the standalone component project (main.ts)
+```
+bootstrapApplication(AppComponent,{
+  providers:[importProvidersFrom(FalconCoreModule.forRoot(environment))
+  ]
+}).catch(err => console.error(err));
+
+@Component({
+  selector: 'app-auto-complete',
+  templateUrl: './auto-complete.component.html',
+  styleUrls: ['./auto-complete.component.scss'],
+  standalone: true,
+  imports:[FalconCoreModule]
+})
+```
+

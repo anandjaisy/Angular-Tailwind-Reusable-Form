@@ -35,7 +35,6 @@ import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
 import { ButtonIndicatorComponent } from './button-indicator/button-indicator.component';
 import { AuthCallbackComponent } from './auth-callback/auth-callback.component';
 import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
-import { FormFieldComponent } from './form-field/form-field.component';
 import { ExampleBottomSheetComponent } from './bottom-sheet/example-bottom-sheet.component';
 import { ChipsWithinputComponent } from './chips/chips-withinput/chips-withinput.component';
 import { ChipsDragDropComponent } from './chips/chips-drag-drop/chips-drag-drop.component';
@@ -76,7 +75,6 @@ import { TableActionMenuComponent } from './table/table-action-menu/table-action
     ButtonIndicatorComponent,
     AuthCallbackComponent,
     AutoCompleteComponent,
-    FormFieldComponent,
     ExampleBottomSheetComponent,
     ChipsWithinputComponent,
     ChipsDragDropComponent,

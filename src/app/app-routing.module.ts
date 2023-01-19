@@ -22,7 +22,6 @@ import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
 import { ButtonIndicatorComponent } from './button-indicator/button-indicator.component';
 import { AuthCallbackComponent } from './auth-callback/auth-callback.component';
 import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
-import { FormFieldComponent } from './form-field/form-field.component';
 import {ExampleBottomSheetComponent} from "./bottom-sheet/example-bottom-sheet.component";
 
 const routes: Routes = [
@@ -32,7 +31,6 @@ const routes: Routes = [
   { path: 'auto-complete', component: AutoCompleteComponent },
   { path: 'checkbox', component: CheckboxComponent },
   { path: 'datepicker', component: DatepickerComponent },
-  { path: 'form-field', component: FormFieldComponent },
   { path: 'radio', component: RadioComponent },
   { path: 'select', component: SelectComponent },
   { path: 'slider', component: SliderComponent },

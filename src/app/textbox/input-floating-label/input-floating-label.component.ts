@@ -10,17 +10,22 @@ import {
   InputTypes,
 } from '../../../../projects/falcon-ng/tailwind/src/lib/model/enum';
 import { Textbox } from '../../../../projects/falcon-ng/tailwind/src/lib/control-type/textbox';
-import {HighlightModule} from "ngx-highlightjs";
-import {CodeGeneratorComponent} from "../../common/component/code-generator/code-generator.component";
-import {FalconCoreModule} from "../../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
-import {CodeButtonComponent} from "../../common/component/code-button/code-button.component";
+import { HighlightModule } from 'ngx-highlightjs';
+import { CodeGeneratorComponent } from '../../common/component/code-generator/code-generator.component';
+import { FalconCoreModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module';
+import { CodeButtonComponent } from '../../common/component/code-button/code-button.component';
 
 @Component({
   selector: 'app-input-floating-label',
   templateUrl: './input-floating-label.component.html',
   styleUrls: ['./input-floating-label.component.scss'],
   standalone: true,
-  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
+  imports: [
+    FalconCoreModule,
+    CodeGeneratorComponent,
+    HighlightModule,
+    CodeButtonComponent,
+  ],
 })
 export class InputFloatingLabelComponent
   extends BaseFormComponent<any>

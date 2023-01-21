@@ -11,17 +11,22 @@ import {
   InputTypes,
 } from '../../../../projects/falcon-ng/tailwind/src/lib/model/enum';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
-import {HighlightModule} from "ngx-highlightjs";
-import {CodeGeneratorComponent} from "../../common/component/code-generator/code-generator.component";
-import {FalconCoreModule} from "../../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
-import {CodeButtonComponent} from "../../common/component/code-button/code-button.component";
+import { HighlightModule } from 'ngx-highlightjs';
+import { CodeGeneratorComponent } from '../../common/component/code-generator/code-generator.component';
+import { FalconCoreModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module';
+import { CodeButtonComponent } from '../../common/component/code-button/code-button.component';
 
 @Component({
   selector: 'app-input-error',
   templateUrl: './input-error.component.html',
   styleUrls: ['./input-error.component.scss'],
   standalone: true,
-  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
+  imports: [
+    FalconCoreModule,
+    CodeGeneratorComponent,
+    HighlightModule,
+    CodeButtonComponent,
+  ],
 })
 export class InputErrorComponent
   extends BaseFormComponent<any>

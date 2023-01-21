@@ -1,11 +1,14 @@
-import { Component ,OnInit} from '@angular/core';
-import {AngularCodeTemplate} from "../../common/angularCodeTemplate";
-import {AngularCodeTemplateViewModel} from "../../common/angularCodeTemplateViewModel";
-import {MatTableConfig, MatTable} from "../../../../projects/falcon-ng/tailwind/src/lib/model/interface";
-import {HighlightModule} from "ngx-highlightjs";
-import {CodeGeneratorComponent} from "../../common/component/code-generator/code-generator.component";
-import {FalconCoreModule} from "../../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
-import {CodeButtonComponent} from "../../common/component/code-button/code-button.component";
+import { Component, OnInit } from '@angular/core';
+import { AngularCodeTemplate } from '../../common/angularCodeTemplate';
+import { AngularCodeTemplateViewModel } from '../../common/angularCodeTemplateViewModel';
+import {
+  MatTableConfig,
+  MatTable,
+} from '../../../../projects/falcon-ng/tailwind/src/lib/model/interface';
+import { HighlightModule } from 'ngx-highlightjs';
+import { CodeGeneratorComponent } from '../../common/component/code-generator/code-generator.component';
+import { FalconCoreModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module';
+import { CodeButtonComponent } from '../../common/component/code-button/code-button.component';
 
 export interface PeriodicElement {
   name: string;
@@ -25,20 +28,25 @@ const ELEMENT_DATA: PeriodicElement[] = [
   { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
   { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
   { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
-  ];
+];
 
 @Component({
   selector: 'app-table-filter',
   templateUrl: './table-filter.component.html',
   styleUrls: ['./table-filter.component.scss'],
   standalone: true,
-  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
+  imports: [
+    FalconCoreModule,
+    CodeGeneratorComponent,
+    HighlightModule,
+    CodeButtonComponent,
+  ],
 })
 export class TableFilterComponent implements OnInit {
   public displayedColumns = ['action'];
   public codeGeneratorEnable: boolean = false;
   public angularCodeTemplateViewModel: AngularCodeTemplateViewModel =
-  new AngularCodeTemplateViewModel();
+    new AngularCodeTemplateViewModel();
   matTableConfig: MatTableConfig = {};
   columns: MatTable[] = [
     {
@@ -61,7 +69,7 @@ export class TableFilterComponent implements OnInit {
       header: 'Symbol',
       cell: (element: any) => `${element.symbol}`,
     },
-    ];
+  ];
   dataSource = ELEMENT_DATA;
   constructor() {}
 
@@ -77,9 +85,9 @@ export class TableFilterComponent implements OnInit {
   }
   buttonClickEvent() {
     this.angularCodeTemplateViewModel.tsConfig =
-    AngularCodeTemplate.Table_FILTER_TS_KEY;
+      AngularCodeTemplate.Table_FILTER_TS_KEY;
     this.angularCodeTemplateViewModel.htmlConfig =
-    AngularCodeTemplate.Table_FILTER_HTML_KEY;
+      AngularCodeTemplate.Table_FILTER_HTML_KEY;
     this.codeGeneratorEnable = !this.codeGeneratorEnable;
   }
   tableActionRowEvent($event: any) {}

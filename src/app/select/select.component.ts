@@ -1,27 +1,34 @@
-import {Component, OnInit} from '@angular/core';
-import {BaseFormComponent} from '../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
-import {Observable, of} from 'rxjs';
-import {AngularCodeTemplateViewModel} from '../common/angularCodeTemplateViewModel';
-import {Appearance} from '../../../projects/falcon-ng/tailwind/src/lib/model/enum';
-import {Select} from '../../../projects/falcon-ng/tailwind/src/lib/control-type/select';
-import {AngularCodeTemplate} from '../common/angularCodeTemplate';
-import {MatFormFieldAppearance} from "@angular/material/form-field";
-import {HighlightModule} from "ngx-highlightjs";
-import {CodeGeneratorComponent} from "../common/component/code-generator/code-generator.component";
-import {FalconCoreModule} from "../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
-import {CodeButtonComponent} from "../common/component/code-button/code-button.component";
-import {SelectHtmlComponent} from "./select-html/select-html.component";
+import { Component, OnInit } from '@angular/core';
+import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
+import { Observable, of } from 'rxjs';
+import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
+import { Appearance } from '../../../projects/falcon-ng/tailwind/src/lib/model/enum';
+import { Select } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/select';
+import { AngularCodeTemplate } from '../common/angularCodeTemplate';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
+import { HighlightModule } from 'ngx-highlightjs';
+import { CodeGeneratorComponent } from '../common/component/code-generator/code-generator.component';
+import { FalconCoreModule } from '../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module';
+import { CodeButtonComponent } from '../common/component/code-button/code-button.component';
+import { SelectHtmlComponent } from './select-html/select-html.component';
 
 @Component({
   selector: 'app-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss'],
   standalone: true,
-  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent,SelectHtmlComponent]
+  imports: [
+    FalconCoreModule,
+    CodeGeneratorComponent,
+    HighlightModule,
+    CodeButtonComponent,
+    SelectHtmlComponent,
+  ],
 })
 export class SelectComponent
   extends BaseFormComponent<string>
-  implements OnInit {
+  implements OnInit
+{
   public codeGeneratorEnable: boolean = false;
   public angularCodeTemplateViewModel: AngularCodeTemplateViewModel =
     new AngularCodeTemplateViewModel();
@@ -39,8 +46,8 @@ export class SelectComponent
           formControlName: 'basicMatSelect',
           label: 'Basic mat-select',
           options: [
-            {key: 'bulbasaur-0', value: 'Bulbasaur'},
-            {key: 'oddish-1', value: 'Oddish'},
+            { key: 'bulbasaur-0', value: 'Bulbasaur' },
+            { key: 'oddish-1', value: 'Oddish' },
             {
               key: 'bellsprout-2',
               value: 'Bellsprout',
@@ -56,15 +63,15 @@ export class SelectComponent
               key: 'Extra-cheese',
               value: 'Extra cheese',
             },
-            {key: 'Bellsprout', value: 'Bellsprout'},
-            {key: 'Mushroom', value: 'Mushroom'},
+            { key: 'Bellsprout', value: 'Bellsprout' },
+            { key: 'Mushroom', value: 'Mushroom' },
             {
               key: 'Onion',
               value: 'Onion',
               disabled: true,
             },
-            {key: 'Pepperoni', value: 'Pepperoni'},
-            {key: 'Sausage', value: 'Sausage'},
+            { key: 'Pepperoni', value: 'Pepperoni' },
+            { key: 'Sausage', value: 'Sausage' },
             {
               key: 'Tomato',
               value: 'Tomato',
@@ -72,7 +79,7 @@ export class SelectComponent
             },
           ],
           appearance: Appearance.Outline as MatFormFieldAppearance,
-          selectProperty: {multiple: true},
+          selectProperty: { multiple: true },
         }),
         new Select({
           formControlName: 'DisableSelectComponent',
@@ -82,15 +89,15 @@ export class SelectComponent
               key: 'Extra-cheese',
               value: 'Extra cheese',
             },
-            {key: 'Bellsprout', value: 'Bellsprout'},
-            {key: 'Mushroom', value: 'Mushroom'},
+            { key: 'Bellsprout', value: 'Bellsprout' },
+            { key: 'Mushroom', value: 'Mushroom' },
             {
               key: 'Onion',
               value: 'Onion',
               disabled: true,
             },
-            {key: 'Pepperoni', value: 'Pepperoni'},
-            {key: 'Sausage', value: 'Sausage'},
+            { key: 'Pepperoni', value: 'Pepperoni' },
+            { key: 'Sausage', value: 'Sausage' },
             {
               key: 'Tomato',
               value: 'Tomato',
@@ -108,14 +115,14 @@ export class SelectComponent
               value: 'Extra-cheese',
               key: 'Extra cheese',
             },
-            {value: 'Bellsprout', key: 'Bellsprout'},
-            {value: 'Mushroom', key: 'Mushroom'},
+            { value: 'Bellsprout', key: 'Bellsprout' },
+            { value: 'Mushroom', key: 'Mushroom' },
             {
               value: 'Onion',
               key: 'Onion',
             },
-            {value: 'Pepperoni', key: 'Pepperoni'},
-            {value: 'Sausage', key: 'Sausage'},
+            { value: 'Pepperoni', key: 'Pepperoni' },
+            { value: 'Sausage', key: 'Sausage' },
             {
               value: 'Tomato',
               key: 'Tomato',

@@ -8,9 +8,8 @@ describe('AutoCompleteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AutoCompleteComponent ]
-    })
-    .compileComponents();
+      declarations: [AutoCompleteComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AutoCompleteComponent);
     component = fixture.componentInstance;

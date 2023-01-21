@@ -8,9 +8,8 @@ describe('BottomSheetComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ExampleBottomSheetComponent ]
-    })
-    .compileComponents();
+      declarations: [ExampleBottomSheetComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ExampleBottomSheetComponent);
     component = fixture.componentInstance;

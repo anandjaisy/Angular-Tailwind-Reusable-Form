@@ -8,9 +8,8 @@ describe('TableActionMenuComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TableActionMenuComponent ]
-    })
-    .compileComponents();
+      declarations: [TableActionMenuComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TableActionMenuComponent);
     component = fixture.componentInstance;

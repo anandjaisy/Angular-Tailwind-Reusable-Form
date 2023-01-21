@@ -1,25 +1,32 @@
-import {Component, OnInit} from '@angular/core';
-import {AngularCodeTemplateViewModel} from "../common/angularCodeTemplateViewModel";
-import {BaseFormComponent} from "../../../projects/falcon-ng/tailwind/src/lib/base-form-component";
-import {AngularCodeTemplate} from "../common/angularCodeTemplate";
-import {Observable, of} from "rxjs";
-import {DatePicker} from "../../../projects/falcon-ng/tailwind/src/lib/control-type/DatePicker";
-import {Appearance} from "../../../projects/falcon-ng/tailwind/src/lib/model/enum";
-import {Validators} from "@angular/forms";
-import {HighlightModule} from "ngx-highlightjs";
-import {CodeGeneratorComponent} from "../common/component/code-generator/code-generator.component";
-import {FalconCoreModule} from "../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
-import {CodeButtonComponent} from "../common/component/code-button/code-button.component";
+import { Component, OnInit } from '@angular/core';
+import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
+import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
+import { AngularCodeTemplate } from '../common/angularCodeTemplate';
+import { Observable, of } from 'rxjs';
+import { DatePicker } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/DatePicker';
+import { Appearance } from '../../../projects/falcon-ng/tailwind/src/lib/model/enum';
+import { Validators } from '@angular/forms';
+import { HighlightModule } from 'ngx-highlightjs';
+import { CodeGeneratorComponent } from '../common/component/code-generator/code-generator.component';
+import { FalconCoreModule } from '../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module';
+import { CodeButtonComponent } from '../common/component/code-button/code-button.component';
 
 @Component({
   selector: 'app-datepicker',
   templateUrl: './datepicker.component.html',
   styleUrls: ['./datepicker.component.scss'],
   standalone: true,
-  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
+  imports: [
+    FalconCoreModule,
+    CodeGeneratorComponent,
+    HighlightModule,
+    CodeButtonComponent,
+  ],
 })
-export class DatepickerComponent extends BaseFormComponent<string>
-  implements OnInit {
+export class DatepickerComponent
+  extends BaseFormComponent<string>
+  implements OnInit
+{
   public codeGeneratorEnable: boolean = false;
   public angularCodeTemplateViewModel: AngularCodeTemplateViewModel =
     new AngularCodeTemplateViewModel();
@@ -59,7 +66,7 @@ export class DatepickerComponent extends BaseFormComponent<string>
           label: 'Outline Basic datepicker',
           appearance: Appearance.Outline,
           placeHolder: 'Outline Basic datepicker',
-        })
+        }),
       ],
     };
   }

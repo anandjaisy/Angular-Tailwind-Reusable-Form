@@ -1,25 +1,23 @@
-import {Component, OnInit} from '@angular/core';
-import {BaseFormComponent} from "../../../projects/falcon-ng/tailwind/src/lib/base-form-component";
-import {Observable,of} from "rxjs";
-import {Radio} from "../../../projects/falcon-ng/tailwind/src/lib/control-type/Radio";
-import {Appearance} from "../../../projects/falcon-ng/tailwind/src/lib/model/enum";
-import {Textbox} from "../../../projects/falcon-ng/tailwind/src/lib/control-type/textbox";
-import {Button} from "../../../projects/falcon-ng/tailwind/src/lib/control-type/Button";
-import {Validators} from "@angular/forms";
-import {HighlightModule} from "ngx-highlightjs";
-import {CodeGeneratorComponent} from "../common/component/code-generator/code-generator.component";
-import {FalconCoreModule} from "../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
+import { Component, OnInit } from '@angular/core';
+import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
+import { Observable, of } from 'rxjs';
+import { Radio } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/Radio';
+import { Appearance } from '../../../projects/falcon-ng/tailwind/src/lib/model/enum';
+import { Textbox } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/textbox';
+import { Button } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/Button';
+import { Validators } from '@angular/forms';
+import { HighlightModule } from 'ngx-highlightjs';
+import { CodeGeneratorComponent } from '../common/component/code-generator/code-generator.component';
+import { FalconCoreModule } from '../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
   standalone: true,
-  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule]
+  imports: [FalconCoreModule, CodeGeneratorComponent, HighlightModule],
 })
-export class FormComponent extends BaseFormComponent<string>
-  implements OnInit {
-
+export class FormComponent extends BaseFormComponent<string> implements OnInit {
   constructor() {
     super();
     this.defineForm();
@@ -43,7 +41,7 @@ export class FormComponent extends BaseFormComponent<string>
               validator: Validators.required,
               message: 'Required Field',
             },
-            ],
+          ],
         }),
         new Textbox({
           formControlName: 'lastName',
@@ -56,13 +54,13 @@ export class FormComponent extends BaseFormComponent<string>
               validator: Validators.required,
               message: 'Required Field',
             },
-            ],
+          ],
         }),
         new Button({
           label: 'Submit',
           appearance: Appearance.Raised,
           color: 'primary',
-          class: 'flex justify-center'
+          class: 'flex justify-center',
         }),
       ],
     };
@@ -71,5 +69,4 @@ export class FormComponent extends BaseFormComponent<string>
   protected submitDataSource(model: string): Observable<string> {
     return of(model);
   }
-
 }

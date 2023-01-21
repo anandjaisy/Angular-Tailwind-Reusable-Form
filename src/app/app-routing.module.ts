@@ -22,7 +22,7 @@ import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
 import { ButtonIndicatorComponent } from './button-indicator/button-indicator.component';
 import { AuthCallbackComponent } from './auth-callback/auth-callback.component';
 import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
-import {ExampleBottomSheetComponent} from "./bottom-sheet/example-bottom-sheet.component";
+import { ExampleBottomSheetComponent } from './bottom-sheet/example-bottom-sheet.component';
 
 export const routes: Routes = [
   { path: 'auth-callback', component: AuthCallbackComponent },

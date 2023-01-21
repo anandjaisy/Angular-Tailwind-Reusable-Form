@@ -6,15 +6,14 @@ class EnvironmentImpl implements EnvironmentViewModel {
     authority: 'https://falconidentityserver.azurewebsites.net',
     client_id: 'Fete_Bird_UI',
     redirect_uri: 'http://localhost:4200/auth-callback',
-    silent_redirect_uri:
-      'http://localhost:4200/assets/silent-renew.html',
+    silent_redirect_uri: 'http://localhost:4200/assets/silent-renew.html',
     post_logout_redirect_uri: 'http://localhost:4200',
     response_type: 'code',
     scope: 'openid profile email',
     automaticSilentRenew: true,
   };
   baseUrl =
-  'https://raw.githubusercontent.com/anandjaisy/Angular-Tailwind-Reusable-Form/main/src/app/';
+    'https://raw.githubusercontent.com/anandjaisy/Angular-Tailwind-Reusable-Form/main/src/app/';
   snackBarEnable = true;
 }
 

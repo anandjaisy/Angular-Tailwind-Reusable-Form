@@ -1,17 +1,22 @@
-import {Component} from '@angular/core';
-import {AngularCodeTemplate} from "../common/angularCodeTemplate";
-import {AngularCodeTemplateViewModel} from "../common/angularCodeTemplateViewModel";
-import {HighlightModule} from "ngx-highlightjs";
-import {CodeGeneratorComponent} from "../common/component/code-generator/code-generator.component";
-import {FalconCoreModule} from "../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
-import {CodeButtonComponent} from "../common/component/code-button/code-button.component";
+import { Component } from '@angular/core';
+import { AngularCodeTemplate } from '../common/angularCodeTemplate';
+import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
+import { HighlightModule } from 'ngx-highlightjs';
+import { CodeGeneratorComponent } from '../common/component/code-generator/code-generator.component';
+import { FalconCoreModule } from '../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module';
+import { CodeButtonComponent } from '../common/component/code-button/code-button.component';
 
 @Component({
   selector: 'app-progress-bar',
   templateUrl: './progress-bar.component.html',
   styleUrls: ['./progress-bar.component.scss'],
   standalone: true,
-  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
+  imports: [
+    FalconCoreModule,
+    CodeGeneratorComponent,
+    HighlightModule,
+    CodeButtonComponent,
+  ],
 })
 export class ProgressBarComponent {
   public codeGeneratorEnable: boolean = false;

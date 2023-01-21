@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-button-indicator',
   templateUrl: './button-indicator.component.html',
   styleUrls: ['./button-indicator.component.scss'],
-  standalone: true
+  standalone: true,
 })
-export class ButtonIndicatorComponent {
-
-}
+export class ButtonIndicatorComponent {}

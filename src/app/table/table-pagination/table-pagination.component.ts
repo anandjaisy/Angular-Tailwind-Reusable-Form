@@ -1,12 +1,15 @@
-import {Component, OnInit} from '@angular/core';
-import {AngularCodeTemplateViewModel} from "../../common/angularCodeTemplateViewModel";
-import {MatTableConfig,MatTable} from "../../../../projects/falcon-ng/tailwind/src/lib/model/interface";
-import {MatSnackBar} from "@angular/material/snack-bar";
-import {AngularCodeTemplate} from "../../common/angularCodeTemplate";
-import {HighlightModule} from "ngx-highlightjs";
-import {CodeGeneratorComponent} from "../../common/component/code-generator/code-generator.component";
-import {FalconCoreModule} from "../../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
-import {CodeButtonComponent} from "../../common/component/code-button/code-button.component";
+import { Component, OnInit } from '@angular/core';
+import { AngularCodeTemplateViewModel } from '../../common/angularCodeTemplateViewModel';
+import {
+  MatTableConfig,
+  MatTable,
+} from '../../../../projects/falcon-ng/tailwind/src/lib/model/interface';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { AngularCodeTemplate } from '../../common/angularCodeTemplate';
+import { HighlightModule } from 'ngx-highlightjs';
+import { CodeGeneratorComponent } from '../../common/component/code-generator/code-generator.component';
+import { FalconCoreModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module';
+import { CodeButtonComponent } from '../../common/component/code-button/code-button.component';
 
 export interface PeriodicElement {
   name: string;
@@ -36,20 +39,25 @@ const ELEMENT_DATA: PeriodicElement[] = [
   { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
   { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
   { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
-  ];
+];
 
 @Component({
   selector: 'app-table-pagination',
   templateUrl: './table-pagination.component.html',
   styleUrls: ['./table-pagination.component.scss'],
   standalone: true,
-  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
+  imports: [
+    FalconCoreModule,
+    CodeGeneratorComponent,
+    HighlightModule,
+    CodeButtonComponent,
+  ],
 })
 export class TablePaginationComponent implements OnInit {
   public displayedColumns = ['action'];
   public codeGeneratorEnable: boolean = false;
   public angularCodeTemplateViewModel: AngularCodeTemplateViewModel =
-  new AngularCodeTemplateViewModel();
+    new AngularCodeTemplateViewModel();
   matTableConfig: MatTableConfig = {};
   columns: MatTable[] = [
     {
@@ -72,7 +80,7 @@ export class TablePaginationComponent implements OnInit {
       header: 'Symbol',
       cell: (element: any) => `${element.symbol}`,
     },
-    ];
+  ];
   dataSource = ELEMENT_DATA;
   constructor(private _snackBar: MatSnackBar) {}
 
@@ -93,9 +101,9 @@ export class TablePaginationComponent implements OnInit {
   }
   buttonClickEvent() {
     this.angularCodeTemplateViewModel.tsConfig =
-    AngularCodeTemplate.Table_PAGINATION_TS_KEY;
+      AngularCodeTemplate.Table_PAGINATION_TS_KEY;
     this.angularCodeTemplateViewModel.htmlConfig =
-    AngularCodeTemplate.Table_PAGINATION_HTML_KEY;
+      AngularCodeTemplate.Table_PAGINATION_HTML_KEY;
     this.codeGeneratorEnable = !this.codeGeneratorEnable;
   }
   page($event: any) {
@@ -106,7 +114,7 @@ export class TablePaginationComponent implements OnInit {
 
     setTimeout(() => {
       this.matTableConfig.progressBar = false;
-      }, 1000);
+    }, 1000);
   }
 
   tableActionRowEvent($event: any) {}

@@ -3,18 +3,23 @@ import { AngularCodeTemplateViewModel } from 'src/app/common/angularCodeTemplate
 import { AngularCodeTemplate } from 'src/app/common/angularCodeTemplate';
 import { Appearance } from '../../../../projects/falcon-ng/tailwind/src/lib/model/enum';
 import { Select } from '../../../../projects/falcon-ng/tailwind/src/lib/control-type/select';
-import {MatFormFieldAppearance} from "@angular/material/form-field";
-import {HighlightModule} from "ngx-highlightjs";
-import {FalconCoreModule} from "../../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
-import {CodeGeneratorComponent} from "../../common/component/code-generator/code-generator.component";
-import {CodeButtonComponent} from "../../common/component/code-button/code-button.component";
+import { MatFormFieldAppearance } from '@angular/material/form-field';
+import { HighlightModule } from 'ngx-highlightjs';
+import { FalconCoreModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module';
+import { CodeGeneratorComponent } from '../../common/component/code-generator/code-generator.component';
+import { CodeButtonComponent } from '../../common/component/code-button/code-button.component';
 
 @Component({
   selector: 'app-select-html',
   templateUrl: './select-html.component.html',
   styleUrls: ['./select-html.component.scss'],
   standalone: true,
-  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
+  imports: [
+    FalconCoreModule,
+    CodeGeneratorComponent,
+    HighlightModule,
+    CodeButtonComponent,
+  ],
 })
 export class SelectHtmlComponent {
   public codeGeneratorEnable: boolean = false;

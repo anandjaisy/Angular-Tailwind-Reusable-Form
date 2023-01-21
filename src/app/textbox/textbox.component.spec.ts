@@ -8,9 +8,8 @@ describe('TextboxComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TextboxComponent ]
-    })
-    .compileComponents();
+      declarations: [TextboxComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TextboxComponent);
     component = fixture.componentInstance;

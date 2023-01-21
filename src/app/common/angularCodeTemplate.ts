@@ -41,17 +41,14 @@ export class AngularCodeTemplate {
 
   //Radio button and checkbox
   public static Radios_TS_KEY: string = '/radio/radio.component.ts';
-  public static Radio_HTML_KEY: string =
-    '/radio/radio.component.html';
+  public static Radio_HTML_KEY: string = '/radio/radio.component.html';
   public static Radios_OnHtml_TS_KEY: string =
     '/radio-html/radio-html.component.ts';
   public static Radio_OnHtml_HTML_KEY: string =
     '/radio-html/radio-html.component.html';
 
-  public static CheckBox_TS_KEY: string =
-    '/checkbox/checkbox.component.ts';
-  public static CheckBox_HTML_KEY: string =
-    '/checkbox/checkbox.component.html';
+  public static CheckBox_TS_KEY: string = '/checkbox/checkbox.component.ts';
+  public static CheckBox_HTML_KEY: string = '/checkbox/checkbox.component.html';
 
   public static SlideToggle_TS_KEY: string =
     '/slide-toggle/slide-toggle.component.ts';
@@ -59,14 +56,12 @@ export class AngularCodeTemplate {
     '/slide-toggle/slide-toggle.component.html';
 
   public static Slider_TS_KEY: string = '/slider/slider.component.ts';
-  public static Slider_HTML_KEY: string =
-    '/slider/slider.component.html';
+  public static Slider_HTML_KEY: string = '/slider/slider.component.html';
   //End of Radio & check box
 
   //select
   public static Select_TS_KEY: string = '/select/select.component.ts';
-  public static Select_HTML_KEY: string =
-    '/select/select.component.html';
+  public static Select_HTML_KEY: string = '/select/select.component.html';
   public static Select_OnHtml_TS_KEY: string =
     '/select/select-html/select-html.component.ts';
   public static Select_OnHtml_HTML_KEY: string =
@@ -81,8 +76,7 @@ export class AngularCodeTemplate {
 
   // chips
   public static Chips_TS_KEY: string = '/chips/chips.component.ts';
-  public static Chips_HTML_KEY: string =
-    '/chips/chips.component.html';
+  public static Chips_HTML_KEY: string = '/chips/chips.component.html';
   public static Chips_AUTO_COMPLETE_TS_KEY: string =
     '/chips/chips-autocomplete/chips-autocomplete.component.ts';
   public static Chips_AUTO_COMPLETE_HTML_KEY: string =
@@ -131,14 +125,11 @@ export class AngularCodeTemplate {
   public static BottomSheet_HTML_KEY: string =
     '/bottom-sheet/bottom-sheet.component.html';
 
-  public static Snackbar_TS_KEY: string =
-    '/snackbar/snackbar.component.ts';
-  public static Snackbar_HTML_KEY: string =
-    '/snackbar/snackbar.component.html';
+  public static Snackbar_TS_KEY: string = '/snackbar/snackbar.component.ts';
+  public static Snackbar_HTML_KEY: string = '/snackbar/snackbar.component.html';
 
   public static Table_TS_KEY: string = '/table/table.component.ts';
-  public static Table_HTML_KEY: string =
-    '/table/table.component.html';
+  public static Table_HTML_KEY: string = '/table/table.component.html';
 
   public static Table_FILTER_TS_KEY: string =
     '/table/table-filter/table-filter.component.ts';

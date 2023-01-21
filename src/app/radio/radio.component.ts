@@ -1,25 +1,31 @@
-import {Component, OnInit} from '@angular/core';
-import {BaseFormComponent} from "../../../projects/falcon-ng/tailwind/src/lib/base-form-component";
-import {Observable, of} from "rxjs";
-import {AngularCodeTemplateViewModel} from "../common/angularCodeTemplateViewModel";
-import {AngularCodeTemplate} from "../common/angularCodeTemplate";
-import {Appearance} from "../../../projects/falcon-ng/tailwind/src/lib/model/enum";
-import {Radio} from "../../../projects/falcon-ng/tailwind/src/lib/control-type/Radio";
-import {HighlightModule} from "ngx-highlightjs";
-import {CodeGeneratorComponent} from "../common/component/code-generator/code-generator.component";
-import {FalconCoreModule} from "../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
-import {CodeButtonComponent} from "../common/component/code-button/code-button.component";
+import { Component, OnInit } from '@angular/core';
+import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
+import { Observable, of } from 'rxjs';
+import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
+import { AngularCodeTemplate } from '../common/angularCodeTemplate';
+import { Appearance } from '../../../projects/falcon-ng/tailwind/src/lib/model/enum';
+import { Radio } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/Radio';
+import { HighlightModule } from 'ngx-highlightjs';
+import { CodeGeneratorComponent } from '../common/component/code-generator/code-generator.component';
+import { FalconCoreModule } from '../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module';
+import { CodeButtonComponent } from '../common/component/code-button/code-button.component';
 
 @Component({
   selector: 'app-radio',
   templateUrl: './radio.component.html',
   styleUrls: ['./radio.component.scss'],
   standalone: true,
-  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
+  imports: [
+    FalconCoreModule,
+    CodeGeneratorComponent,
+    HighlightModule,
+    CodeButtonComponent,
+  ],
 })
-export class RadioComponent extends BaseFormComponent<string>
-  implements OnInit {
-
+export class RadioComponent
+  extends BaseFormComponent<string>
+  implements OnInit
+{
   public codeGeneratorEnable: boolean = false;
   public angularCodeTemplateViewModel: AngularCodeTemplateViewModel =
     new AngularCodeTemplateViewModel();
@@ -41,21 +47,29 @@ export class RadioComponent extends BaseFormComponent<string>
           formControlName: 'basicRadios',
           label:
             'Positon BEFORE (css=radio-group-column) (with prefilled value)',
-          options: [{viewValue: 'Option 1', value: 'Option 1'}, {viewValue: 'Option 2', value: 'Option 2'}],
+          options: [
+            { viewValue: 'Option 1', value: 'Option 1' },
+            { viewValue: 'Option 2', value: 'Option 2' },
+          ],
           appearance: Appearance.Before,
-          class: 'radio-group-column'
+          class: 'radio-group-column',
         }),
         new Radio({
           formControlName: 'radiosWithLabel',
           label:
             'Pick your favorite season (with positon AFTER & css=radio-group-column)',
-          options: [{viewValue: 'Winter', value: 'Winter'}, {
-            viewValue: 'Spring',
-            value: 'Spring'
-          }, {viewValue: 'Summer', value: 'Summer'}, {viewValue: 'Autumn', value: 'Autumn'}],
+          options: [
+            { viewValue: 'Winter', value: 'Winter' },
+            {
+              viewValue: 'Spring',
+              value: 'Spring',
+            },
+            { viewValue: 'Summer', value: 'Summer' },
+            { viewValue: 'Autumn', value: 'Autumn' },
+          ],
           appearance: Appearance.After,
-          class: 'radio-group-column'
-        })
+          class: 'radio-group-column',
+        }),
       ],
     };
   }

@@ -10,17 +10,22 @@ import {
 } from '../../../../projects/falcon-ng/tailwind/src/lib/model/enum';
 import { Textbox } from '../../../../projects/falcon-ng/tailwind/src/lib/control-type/textbox';
 import { Validators } from '@angular/forms';
-import {HighlightModule} from "ngx-highlightjs";
-import {CodeGeneratorComponent} from "../../common/component/code-generator/code-generator.component";
-import {FalconCoreModule} from "../../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module";
-import {CodeButtonComponent} from "../../common/component/code-button/code-button.component";
+import { HighlightModule } from 'ngx-highlightjs';
+import { CodeGeneratorComponent } from '../../common/component/code-generator/code-generator.component';
+import { FalconCoreModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module';
+import { CodeButtonComponent } from '../../common/component/code-button/code-button.component';
 
 @Component({
   selector: 'app-input-hint',
   templateUrl: './input-hint.component.html',
   styleUrls: ['./input-hint.component.scss'],
   standalone: true,
-  imports:[FalconCoreModule,CodeGeneratorComponent,HighlightModule,CodeButtonComponent]
+  imports: [
+    FalconCoreModule,
+    CodeGeneratorComponent,
+    HighlightModule,
+    CodeButtonComponent,
+  ],
 })
 export class InputHintComponent
   extends BaseFormComponent<any>

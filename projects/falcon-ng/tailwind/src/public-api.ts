@@ -1,5 +1,23 @@
 /*
- * Public API Surface of tailwind
+ * Public API Surface of falcon-core-module
+ */
+export * from './lib/module/angularmaterial.module';
+export * from './lib/falcon-core.module';
+export * from './lib/reactive-field.directive';
+
+
+/*
+ * Public API Surface of falcon core module service
+ */
+export * from './lib/service/http/igeneric-http-client';
+export * from './lib/service/logger.service';
+export * from './lib/service/open-id/auth.service';
+export * from './lib/service/open-id/auth-guard.service';
+export * from './lib/service/appsetting.service';
+
+
+/*
+ * Public control type
  */
 export * from './lib/control-type/select';
 export * from './lib/control-type/textarea';
@@ -10,9 +28,10 @@ export * from './lib/model/environments';
 export * from './lib/model/ivalidator';
 export * from './lib/control-builder/control-builder.component';
 export * from './lib/base-form-component';
-export * from './lib/module/angularmaterial.module';
-export * from './lib/falcon-core.module';
 
+/*
+ * Public component type
+ */
 export * from './lib/component/auto-complete/auto-complete.component';
 export * from './lib/component/snack-bar/snack-bar.component';
 export * from './lib/component/chips/chip.component';

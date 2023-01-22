@@ -8,7 +8,7 @@ import {
   Appearance,
   InputTypes,
 } from '../../../../projects/falcon-ng/tailwind/src/lib/model/enum';
-import { Textbox } from '../../../../projects/falcon-ng/tailwind/src/lib/control-type/textbox';
+import { Textbox } from '../../../../projects/falcon-ng/tailwind/src/lib/control-type/Textbox';
 import { Validators } from '@angular/forms';
 import { HighlightModule } from 'ngx-highlightjs';
 import { CodeGeneratorComponent } from '../../common/component/code-generator/code-generator.component';

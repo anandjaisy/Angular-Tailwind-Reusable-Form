@@ -5,7 +5,7 @@ import { AngularCodeTemplateViewModel } from 'src/app/common/angularCodeTemplate
 import { AngularCodeTemplate } from 'src/app/common/angularCodeTemplate';
 import { CustomValidator } from 'src/app/common/validations';
 import { BaseFormComponent } from '../../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
-import { Textbox } from '../../../../projects/falcon-ng/tailwind/src/lib/control-type/textbox';
+import { Textbox } from '../../../../projects/falcon-ng/tailwind/src/lib/control-type/Textbox';
 import {
   Appearance,
   InputTypes,

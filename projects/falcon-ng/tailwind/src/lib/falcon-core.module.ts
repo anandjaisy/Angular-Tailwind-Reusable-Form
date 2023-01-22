@@ -77,7 +77,6 @@ import {AngularEditorModule} from "@kolkov/angular-editor";
     RouterModule,
     ProgressBarComponent,
     ProgressSpinnerComponent,
-    ChipComponent,
     PaginationComponent,
     TableComponent,
     AngularEditorModule,

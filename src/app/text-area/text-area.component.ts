@@ -3,7 +3,7 @@ import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
 import { Observable, of } from 'rxjs';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
-import { Textarea } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/textarea';
+import { Textarea } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/Textarea';
 import { Appearance } from '../../../projects/falcon-ng/tailwind/src/lib/model/enum';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { HighlightModule } from 'ngx-highlightjs';

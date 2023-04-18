@@ -4,6 +4,7 @@
 export * from './lib/module/angularmaterial.module';
 export * from './lib/falcon-core.module';
 export * from './lib/reactive-field.directive';
+export * from './lib/control-builder/control-builder.component';
 
 
 /*
@@ -52,3 +53,4 @@ export * from './lib/component/pagination/pagination.component';
 export * from './lib/component/progress-bar/progress-bar.component';
 export * from './lib/component/progress-spinner/progress-spinner.component';
 export * from './lib/component/button/button.component';
+export * from './lib/component/dialog/dialog.component';

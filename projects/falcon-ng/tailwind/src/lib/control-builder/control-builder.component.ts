@@ -1,7 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {FormGroup, ReactiveFormsModule} from "@angular/forms";
-import {BaseControl, Layout} from "../base-control";
-import {CommonModule} from "@angular/common";
+import {FormGroup} from "@angular/forms";
+import {Layout} from "../base-control";
 
 @Component({
   selector: 'control-builder',

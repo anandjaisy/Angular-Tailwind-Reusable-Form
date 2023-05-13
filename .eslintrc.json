@@ -20,7 +20,9 @@
         "plugin:@angular-eslint/template/process-inline-templates",
         "prettier"
       ],
-      "plugins": ["prettier"],
+      "plugins": [
+        "prettier"
+      ],
       "rules": {
         "@angular-eslint/component-selector": [
           "error",
@@ -38,7 +40,9 @@
             "type": "attribute"
           }
         ],
-        "prettier/prettier": ["error"]
+        "prettier/prettier": [
+          "error"
+        ]
       }
     },
     {

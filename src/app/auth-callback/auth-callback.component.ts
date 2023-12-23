@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppSettingService } from '../../../projects/falcon-ng/tailwind/src/lib/service/appsetting.service';
 import { AuthService } from '../../../projects/falcon-ng/tailwind/src/lib/service/open-id/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -34,32 +34,7 @@ export class AuthCallbackComponent implements OnInit {
   }
 
   async completeAuthentication() {
-    if (this.completed) {
-      this.logger.info(
-        '[AuthCallbackComponent] completeAuthentication',
-        'auth-callback: completed.'
-      );
-      return;
-    }
-    try {
-      const user = await this.authService.completeAuthentication();
-      const returnUrl = user.state
-        ? user.state.returnUrl
-        : this.route.snapshot.params['url'] || null;
-      this.completed = true;
-      this.logger.info(
-        '[AuthCallbackComponent] completeAuthentication',
-        'auth-callback: returnUrl completed.'
-      );
-      if (!returnUrl || returnUrl === '/auth-callback') {
-        this.router.navigateByUrl(location.origin);
-      } else if (returnUrl === '/') {
-        this.router.navigate(['']);
-      } else {
-        this.router.navigateByUrl(returnUrl);
-      }
-    } catch (e) {
-      this.authService.startAuthentication('/');
-    }
+    await this.authService.userManager.signinCallback();
+    this.router.navigate(['']);
   }
 }

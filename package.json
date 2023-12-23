@@ -23,7 +23,7 @@
     "@angular/router": "^17.0.5",
     "@kolkov/angular-editor": "^3.0.0-beta.0",
     "ngx-highlightjs": "^7.0.1",
-    "oidc-client": "^1.11.5",
+    "oidc-client-ts": "^2.4.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"

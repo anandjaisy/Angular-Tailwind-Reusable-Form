@@ -1,6 +1,8 @@
 table {
-  text-align: center !important;
   width: 100%;
+}
+table td {
+  text-align: center !important;
 }
 .mat-form-field {
   font-size: 14px;
@@ -11,7 +13,7 @@ table {
     display: flex;
     justify-content: center;
   }
-.mat-row:hover {
+  .mat-row:hover {
     background-color: whitesmoke;
   }
 }

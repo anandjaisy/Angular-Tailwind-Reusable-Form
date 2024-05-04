@@ -1,5 +1,5 @@
 <div class="flex justify-end">
-  <mat-form-field *ngIf="matTableConfig?.filter">
+  <mat-form-field *ngIf="matTableConfig?.filter" appearance="outline">
     <mat-label>Filter</mat-label>
     <input matInput (keyup)="applyFilter($event)" #input>
   </mat-form-field>

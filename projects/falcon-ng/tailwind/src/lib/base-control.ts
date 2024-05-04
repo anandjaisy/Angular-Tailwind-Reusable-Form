@@ -12,6 +12,7 @@ import {
   ISuffixPrefixConfig,
   ITextAreaProperty,
 } from './model/interface';
+import { ThemePalette } from '@angular/material/core';
 
 /**
  * @description
@@ -76,7 +77,7 @@ export class BaseControl<T> {
   textAreaProperty: ITextAreaProperty;
   event: IComponentEvent<T>;
   selectProperty: ISelectOptions;
-  color: string;
+  color: ThemePalette;
   sliderProperty: ISliderProperty;
   chipSelectedOptions: IOptions[] | any;
   editorProperty: any;
@@ -104,7 +105,7 @@ export class BaseControl<T> {
       textAreaProperty?: ITextAreaProperty;
       event?: IComponentEvent<T>;
       selectProperty?: ISelectOptions;
-      color?: string;
+      color?: ThemePalette;
       sliderProperty?: ISliderProperty;
       chipSelectedOptions?: IOptions[] | any;
       editorProperty?: any;
@@ -133,7 +134,7 @@ export class BaseControl<T> {
       options.textAreaProperty || ({} as ITextAreaProperty);
     this.event = options.event || {};
     this.selectProperty = options.selectProperty || {};
-    this.color = options.color || '';
+    this.color = options.color || undefined;
     this.sliderProperty = options.sliderProperty || {};
     this.chipSelectedOptions = options.chipSelectedOptions || {};
     this.editorProperty = options.editorProperty || {};

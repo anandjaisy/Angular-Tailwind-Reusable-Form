@@ -15,7 +15,7 @@ import {AppSettingService, appSettingsFactory} from "./service/appsetting.servic
 import {AuthService, authServiceFactory} from "./service/open-id/auth.service";
 import {LoggerService, loggerServiceFactory} from "./service/logger.service";
 import {MAT_SNACK_BAR_DEFAULT_OPTIONS} from "@angular/material/snack-bar";
-import {provideHttpClient, withInterceptors} from "@angular/common/http";
+import { provideHttpClient, withInterceptors } from "@angular/common/http";
 import { DatePickerComponent } from './component/date-picker/date-picker.component';
 import { CheckboxComponent } from './component/checkbox/checkbox.component';
 import { RadioComponent } from './component/radio/radio.component';

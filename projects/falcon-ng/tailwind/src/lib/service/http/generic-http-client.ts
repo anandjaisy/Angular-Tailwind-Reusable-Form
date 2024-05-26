@@ -1,10 +1,4 @@
-import {
-  HttpClient,
-  HttpRequest,
-  HttpEventType,
-  HttpEvent,
-  HttpStatusCode
-} from '@angular/common/http';
+import { HttpClient, HttpRequest, HttpEventType, HttpEvent, HttpStatusCode } from '@angular/common/http';
 import { Observable, from } from 'rxjs';
 import { IGenericHttpClient } from './igeneric-http-client';
 import { Injectable } from '@angular/core';

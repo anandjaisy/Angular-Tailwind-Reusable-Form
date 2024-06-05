@@ -3,7 +3,7 @@ import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewM
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
 import { HighlightModule } from 'ngx-highlightjs';
 import { CodeGeneratorComponent } from '../common/component/code-generator/code-generator.component';
-import { FalconCoreModule } from '../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module';
+import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 import { CodeButtonComponent } from '../common/component/code-button/code-button.component';
 
 @Component({
@@ -12,7 +12,7 @@ import { CodeButtonComponent } from '../common/component/code-button/code-button
   styleUrls: ['./app-pagination.component.scss'],
   standalone: true,
   imports: [
-    FalconCoreModule,
+    FalconTailwindModule,
     CodeGeneratorComponent,
     HighlightModule,
     CodeButtonComponent,

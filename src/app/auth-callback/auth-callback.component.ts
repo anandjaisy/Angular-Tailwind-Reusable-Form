@@ -5,14 +5,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { LoggerService } from '../../../projects/falcon-ng/tailwind/src/lib/service/logger.service';
 import { HighlightModule } from 'ngx-highlightjs';
 import { CodeGeneratorComponent } from '../common/component/code-generator/code-generator.component';
-import { FalconCoreModule } from '../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module';
+import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 
 @Component({
   selector: 'app-auth-callback',
   templateUrl: './auth-callback.component.html',
   styleUrls: ['./auth-callback.component.scss'],
   standalone: true,
-  imports: [FalconCoreModule, CodeGeneratorComponent, HighlightModule],
+  imports: [FalconTailwindModule, CodeGeneratorComponent, HighlightModule],
 })
 export class AuthCallbackComponent implements OnInit {
   private completed: boolean;

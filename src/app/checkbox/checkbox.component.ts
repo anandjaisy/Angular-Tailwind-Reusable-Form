@@ -3,7 +3,7 @@ import { CheckBox } from 'projects/falcon-ng/tailwind/src/lib/control-type/Check
 import {
   Appearance,
   BaseFormComponent,
-  FalconCoreModule,
+  FalconTailwindModule,
 } from 'projects/falcon-ng/tailwind/src/public-api';
 import { Observable, of } from 'rxjs';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
@@ -19,7 +19,7 @@ import { CodeButtonComponent } from '../common/component/code-button/code-button
   styleUrls: ['./checkbox.component.scss'],
   standalone: true,
   imports: [
-    FalconCoreModule,
+    FalconTailwindModule,
     CodeGeneratorComponent,
     HighlightModule,
     CodeButtonComponent,

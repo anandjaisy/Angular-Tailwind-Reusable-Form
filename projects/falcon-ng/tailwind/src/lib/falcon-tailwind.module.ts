@@ -126,12 +126,12 @@ import {AngularEditorModule} from "@kolkov/angular-editor";
     },
   ],
 })
-export class FalconCoreModule {
+export class FalconTailwindModule {
   public static forRoot(
     environment: any,
-  ): ModuleWithProviders<FalconCoreModule> {
+  ): ModuleWithProviders<FalconTailwindModule> {
     return {
-      ngModule: FalconCoreModule,
+      ngModule: FalconTailwindModule,
       providers: [
         {provide: EnvironmentViewModel, useValue: environment},
       ],

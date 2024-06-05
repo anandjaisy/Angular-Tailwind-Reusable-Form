@@ -5,7 +5,7 @@ import { Appearance } from '../../../../projects/falcon-ng/tailwind/src/lib/mode
 import { Select } from '../../../../projects/falcon-ng/tailwind/src/lib/control-type/select';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { HighlightModule } from 'ngx-highlightjs';
-import { FalconCoreModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module';
+import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 import { CodeGeneratorComponent } from '../../common/component/code-generator/code-generator.component';
 import { CodeButtonComponent } from '../../common/component/code-button/code-button.component';
 
@@ -15,7 +15,7 @@ import { CodeButtonComponent } from '../../common/component/code-button/code-but
   styleUrls: ['./select-html.component.scss'],
   standalone: true,
   imports: [
-    FalconCoreModule,
+    FalconTailwindModule,
     CodeGeneratorComponent,
     HighlightModule,
     CodeButtonComponent,

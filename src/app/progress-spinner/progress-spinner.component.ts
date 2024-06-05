@@ -8,7 +8,7 @@ import {
 import { Observable, of } from 'rxjs';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
 import { Slider } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/Slider';
-import { FalconCoreModule } from '../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module';
+import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 import { HighlightModule } from 'ngx-highlightjs';
 import { CodeGeneratorComponent } from '../common/component/code-generator/code-generator.component';
 import { CodeButtonComponent } from '../common/component/code-button/code-button.component';
@@ -19,7 +19,7 @@ import { CodeButtonComponent } from '../common/component/code-button/code-button
   styleUrls: ['./progress-spinner.component.scss'],
   standalone: true,
   imports: [
-    FalconCoreModule,
+    FalconTailwindModule,
     CodeGeneratorComponent,
     HighlightModule,
     CodeButtonComponent,

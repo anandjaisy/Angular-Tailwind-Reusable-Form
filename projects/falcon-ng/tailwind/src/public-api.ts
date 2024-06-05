@@ -2,7 +2,7 @@
  * Public API Surface of falcon-core-module
  */
 export * from './lib/module/angularmaterial.module';
-export * from './lib/falcon-core.module';
+export * from './lib/falcon-tailwind.module';
 export * from './lib/reactive-field.directive';
 export * from './lib/control-builder/control-builder.component';
 

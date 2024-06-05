@@ -3,6 +3,9 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
+      "@falcon-ng/core": [
+        "./dist/falcon-ng/core"
+      ],
       "@falcon-ng/tailwind": ["dist/falcon-ng/tailwind"]
     },
     "baseUrl": "./",

@@ -6,14 +6,14 @@ import {
 import { AuthService } from '../../projects/falcon-ng/tailwind/src/lib/service/open-id/auth.service';
 import { Button } from '../../projects/falcon-ng/tailwind/src/lib/control-type/Button';
 import { RouterModule } from '@angular/router';
-import { FalconCoreModule } from '../../projects/falcon-ng/tailwind/src/lib/falcon-core.module';
+import { FalconTailwindModule } from '../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   standalone: true,
-  imports: [RouterModule, FalconCoreModule],
+  imports: [RouterModule, FalconTailwindModule],
 })
 export class AppComponent {
   title = 'Dynamic form builder';

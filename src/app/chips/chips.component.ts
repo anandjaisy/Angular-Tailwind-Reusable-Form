@@ -11,7 +11,7 @@ import {
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { HighlightModule } from 'ngx-highlightjs';
 import { CodeGeneratorComponent } from '../common/component/code-generator/code-generator.component';
-import { FalconCoreModule } from '../../../projects/falcon-ng/tailwind/src/lib/falcon-core.module';
+import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 import { ChipsWithinputComponent } from './chips-withinput/chips-withinput.component';
 import { ChipsDragDropComponent } from './chips-drag-drop/chips-drag-drop.component';
 import { ChipsAutocompleteComponent } from './chips-autocomplete/chips-autocomplete.component';
@@ -23,7 +23,7 @@ import { CodeButtonComponent } from '../common/component/code-button/code-button
   styleUrls: ['./chips.component.scss'],
   standalone: true,
   imports: [
-    FalconCoreModule,
+    FalconTailwindModule,
     CodeGeneratorComponent,
     HighlightModule,
     ChipsWithinputComponent,

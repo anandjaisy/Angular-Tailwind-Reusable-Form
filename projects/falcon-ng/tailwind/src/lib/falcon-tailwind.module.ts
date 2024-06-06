@@ -3,7 +3,7 @@ import {TextboxComponent} from './component/textbox/textbox.component';
 import {TextareaComponent} from './component/textarea/textarea.component';
 import {SelectComponent} from './component/select/select.component';
 import {ReactiveFieldDirective} from './reactive-field.directive';
-import {AngularmaterialModule} from "./module/angularmaterial.module";
+import {AngularmaterialModule} from "@falcon-ng/core";
 import {CommonModule} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ControlBuilderComponent} from "./control-builder/control-builder.component";

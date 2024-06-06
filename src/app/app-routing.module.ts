@@ -23,6 +23,8 @@ import { ButtonIndicatorComponent } from './button-indicator/button-indicator.co
 import { AuthCallbackComponent } from './auth-callback/auth-callback.component';
 import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
 import { ExampleBottomSheetComponent } from './bottom-sheet/example-bottom-sheet.component';
+import { StandaloneTextboxComponent } from './standalone-component/standalone-textbox/standalone-textbox.component';
+import { StandaloneTextareaComponent } from './standalone-component/standalone-textarea/standalone-textarea.component';
 
 export const routes: Routes = [
   { path: 'auth-callback', component: AuthCallbackComponent },
@@ -48,6 +50,8 @@ export const routes: Routes = [
   { path: 'pagination', component: AppPaginationComponent },
   { path: 'editor', component: AngularRichTextEditorComponent },
   { path: 'form', component: FormComponent },
+  { path: 'standalone-textbox', component: StandaloneTextboxComponent },
+  { path: 'standalone-texarea', component: StandaloneTextareaComponent },
 ];
 
 //@NgModule({

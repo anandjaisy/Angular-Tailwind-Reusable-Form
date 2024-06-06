@@ -9,7 +9,6 @@ import { Component } from '@angular/core';
       textarea works!
     </p>
   `,
-  styleUrl: './textarea.component.css'
 })
 export class TextareaComponent {
 

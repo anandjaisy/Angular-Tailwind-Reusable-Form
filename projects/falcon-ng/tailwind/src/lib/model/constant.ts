@@ -11,22 +11,21 @@ import { AutoCompleteComponent } from '../component/auto-complete/auto-complete.
 import { ChipComponent } from '../component/chips/chip.component';
 import {ButtonComponent} from "../component/button/button.component";
 import {RichTextEditorComponent} from "../component/rich-text-editor/rich-text-editor.component";
-
 export class Constant {
-  public static ComponentMapper = [
-    TextboxComponent,
-    TextareaComponent,
-    SelectComponent,
-    DatePickerComponent,
-    RadioComponent,
-    CheckboxComponent,
-    ButtonComponent,
-    SlideToggleComponent,
-    SliderComponent,
-    ButtonToggleComponent,
-    AutoCompleteComponent,
-    ChipComponent,
-    RichTextEditorComponent,
-    //DividerComponent,
-  ];
+  public static ComponentMapper = {
+    textbox: TextboxComponent,
+    textarea: TextareaComponent,
+    select: SelectComponent,
+    datepicker: DatePickerComponent,
+    radio: RadioComponent,
+    checkbox: CheckboxComponent,
+    button: ButtonComponent,
+    slideToggle: SlideToggleComponent,
+    slider: SliderComponent,
+    buttonToggle: ButtonToggleComponent,
+    autocomplete: AutoCompleteComponent,
+    chip: ChipComponent,
+    editor: RichTextEditorComponent,
+    divider: RichTextEditorComponent
+  };
 }

@@ -1,6 +1,6 @@
 import { BaseControl } from '../model/base-control';
-import { ControlType } from '../model/enum';
+import { Control } from '../model/enum';
 
 export class Divider extends BaseControl<string> {
-  override controlType = ControlType.Divider;
+  override controlType = Control.Divider;
 }

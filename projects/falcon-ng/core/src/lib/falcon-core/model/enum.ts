@@ -8,21 +8,21 @@
  *      }
  * ```
  */
-export const enum ControlType {
-  TextBox = 0,
-  TextArea = 1,
-  Select = 2,
-  DatePicker = 3,
-  Radio = 4,
-  Checkbox = 5,
-  Button = 6,
-  SlideToggle = 7,
-  Slider = 8,
-  ButtonToggle = 9,
-  AutoComplete = 10,
-  Chip = 11,
-  Editor = 12,
-  Divider = 13,
+export const enum Control {
+  TextBox = 'textbox',
+  TextArea = 'textarea',
+  Select = 'select',
+  DatePicker = 'datepicker',
+  Radio = 'radio',
+  Checkbox = 'checkbox',
+  Button = 'button',
+  SlideToggle = 'slideToggle',
+  Slider = 'slider',
+  ButtonToggle = 'buttonToggle',
+  AutoComplete = 'autocomplete',
+  Chip = 'chip',
+  Editor = 'editor',
+  Divider = 'divider',
 }
 
 /**

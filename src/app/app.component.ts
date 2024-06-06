@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {
   Appearance,
-  ControlType,
+  Control,
 } from '../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
 import { AuthService } from '../../projects/falcon-ng/tailwind/src/lib/service/open-id/auth.service';
 import { Button } from '@falcon-ng/core';

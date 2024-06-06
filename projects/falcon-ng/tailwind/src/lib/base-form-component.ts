@@ -6,7 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import {inject} from '@angular/core';
-import {BaseControl,IValidator, ControlType} from "@falcon-ng/core"
+import {BaseControl,IValidator} from "@falcon-ng/core"
 import { Layout } from './model/layout';
 
 /**
@@ -95,7 +95,7 @@ export abstract class BaseFormComponent<T> {
     group: FormGroup,
     index: number
   ) {
-    if (controlConfig.controlType === ControlType.Button) return;
+    if (controlConfig.controlType === 'button') return;
     let control = null;
     if (controlConfig.formArray !== undefined) {
       control =

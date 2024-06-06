@@ -1,4 +1,4 @@
-import {ControlType} from './enum';
+import { Control} from './enum';
 import {IValidator} from './ivalidator';
 import {
   FloatLabelType,
@@ -38,7 +38,7 @@ export class BaseControl<T> {
   label: string;
   labelPosition: any;
   order: number;
-  controlType: ControlType;
+  controlType: Control;
   type: string;
   disabled: boolean;
   options: IOptions[] | any;
@@ -66,7 +66,7 @@ export class BaseControl<T> {
       label?: string;
       labelPosition?: any;
       order?: number;
-      controlType?: ControlType;
+      controlType?: Control;
       type?: string;
       disabled?: boolean;
       options?: IOptions[] | any;
@@ -94,7 +94,7 @@ export class BaseControl<T> {
     this.label = options.label || '';
     this.labelPosition = options.labelPosition || 'before' || 'after';
     this.order = options.order === undefined ? 1 : options.order;
-    this.controlType = options.controlType || ControlType.Button;
+    this.controlType = options.controlType || Control.Button;
     this.type = options.type || '';
     this.disabled = options.disabled || false;
     this.options = options.options || [];

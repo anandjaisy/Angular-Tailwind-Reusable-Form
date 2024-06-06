@@ -1,19 +1,18 @@
 import { Component } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
-import { BaseControlBuilder } from '../../control-builder/BaseControlBuilder';
-import { ReactiveFormsModule } from '@angular/forms';
+import { BaseControlBuilder, controlProvider, sharedControlDeps } from '../../control-builder/base-control-builder';
 
 @Component({
   selector: 'falcon-textbox',
   standalone: true,
-  imports: [MatInputModule, ReactiveFormsModule],
+  imports: [MatInputModule, ...sharedControlDeps],
+  viewProviders: [controlProvider],
   template: `
-    <mat-form-field appearance="outline" [formControlName]="formControlName">
-      <mat-label>{{label}}</mat-label>
-      <input matInput [placeholder]="placeholder">
+    <mat-form-field appearance="outline" [formControlName]="control.formControlName">
+      <mat-label>{{control.config.label}}</mat-label>
+      <input matInput [placeholder]="control.config.placeHolder">
     </mat-form-field>
   `,
-  styleUrl: './textbox.component.css'
 })
 export class TextboxComponent extends BaseControlBuilder{
 }

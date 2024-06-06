@@ -1,18 +1,15 @@
 import { Component, Input } from '@angular/core';
-import { ComponentResolver, ControlType } from '../component-resolver.service';
-import { CommonModule } from '@angular/common';
+import { ComponentResolver } from '../component-resolver';
+import { BaseControl } from '../model/base-control';
+import { controlProvider } from './base-control-builder';
 
 @Component({
   selector: 'falcon-control',
-  standalone: true,
-  imports: [CommonModule],
-  template: `<ng-container [ngComponentOutlet]="componentResolver.resolver(type)"></ng-container>`
+  viewProviders:[controlProvider],
+  template: `<ng-container [ngComponentOutlet]="componentResolver.resolver(control.controlType) | async"
+                           [ngComponentOutletInjector]="control.formControlName | controlInjection: control"></ng-container>`
 })
-export class ControlBuilderComponent {
-  @Input({ required: true }) formControlName: string = '';
-  @Input({ required: true }) type: ControlType = 'textbox';
-  @Input() label: string = '';
-  @Input() placeholder: string = '';
-  constructor(public componentResolver: ComponentResolver) {
-  }
+export class ControlBuilderComponent<T>  {
+  @Input({ required: true }) control!: BaseControl<T>;
+  constructor(public componentResolver: ComponentResolver) {}
 }

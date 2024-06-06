@@ -25,10 +25,7 @@ import { FalconCoreModule } from '@falcon-ng/core';
   styleUrl: './standalone-textbox.component.scss'
 })
 export class StandaloneTextboxComponent {
-  firstName: BaseControl<string> = new Textbox({
-    formControlName: 'firstName',
-    label: 'First Name',
-  });
+  firstName: BaseControl<string> = new Textbox({ formControlName: 'firstName', label: 'First Name', });
   form: FormGroup;
   constructor() {
     this.form = new FormGroup({});

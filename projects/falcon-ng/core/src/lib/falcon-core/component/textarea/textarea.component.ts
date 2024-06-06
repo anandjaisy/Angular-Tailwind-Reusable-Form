@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
+import { MatInputModule } from '@angular/material/input';
+import { BaseControlBuilder, controlProvider, sharedControlDeps } from '../../control-builder/base-control-builder';
 
 @Component({
   selector: 'lib-textarea',
   standalone: true,
-  imports: [],
+  imports: [MatInputModule, ...sharedControlDeps],
+  viewProviders: [controlProvider],
   template: `
-    <p>
-      textarea works!
-    </p>
+    <mat-form-field appearance="outline">
+      <mat-label>{{control?.config?.label}}</mat-label>
+      <textarea matInput [formControlName]="control.formControlName" [placeholder]="control.config.placeHolder"></textarea>
+    </mat-form-field>
   `,
 })
-export class TextareaComponent {
-
-}
+export class TextareaComponent extends BaseControlBuilder{}

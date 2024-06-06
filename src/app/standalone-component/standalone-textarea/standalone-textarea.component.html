@@ -1,1 +1,37 @@
-<p>standalone-textarea works!</p>
+<div class="container mx-auto p-6">
+  <mat-card>
+    <div class="flex justify-between p-5">
+      <a mat-mini-fab color="accent" routerLink="..">
+        <mat-icon>arrow_back</mat-icon>
+      </a>
+      <h2>Input component</h2>
+      <h2></h2>
+    </div>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div style="margin-top: 40px">
+        <div>
+          <div class="flex justify-between">
+            <h1>Form field appearance variants</h1>
+          </div>
+          <p class="blurText mt-5">The mat-form-field supports 4 different appearance variants which can be set via
+            the appearance input. The legacy appearance is the default style that the mat-form-field has
+            traditionally had. It shows the input box with an underline underneath it. The <strong
+              class="text-format">standard</strong>
+            appearance is a slightly updated version of the <strong class="text-format">legacy</strong>
+            appearance that has spacing that is more
+            consistent with the <strong class="text-format">fill</strong> and <strong
+              class="text-format">outline</strong> appearances. The <strong class="text-format">fill</strong> appearance
+            displays the form field
+            with a filled background box in addition to the underline. Finally the <strong
+              class="text-format">outline</strong> appearance shows
+            the form field with a border all the way around, not just an underline.</p>
+        </div>
+        <form [formGroup]="form">
+          <falcon-control [control]="textArea"/>
+        </form>
+      </div>
+    </mat-card-content>
+
+  </mat-card>
+</div>

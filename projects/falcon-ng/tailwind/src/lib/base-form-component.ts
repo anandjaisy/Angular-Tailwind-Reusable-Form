@@ -1,15 +1,13 @@
 import {Observable} from 'rxjs';
 import {
   FormBuilder,
-  FormControl,
   FormGroup,
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import {BaseControl, Layout} from './base-control';
 import {inject} from '@angular/core';
-import {IValidator} from './model/ivalidator';
-import {ControlType} from './model/enum';
+import {BaseControl,IValidator, ControlType} from "@falcon-ng/core"
+import { Layout } from './model/layout';
 
 /**
  * @description

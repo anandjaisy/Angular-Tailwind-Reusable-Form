@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularCodeTemplateViewModel } from 'src/app/common/angularCodeTemplateViewModel';
 import { AngularCodeTemplate } from 'src/app/common/angularCodeTemplate';
-import { Appearance } from '../../../../projects/falcon-ng/tailwind/src/lib/model/enum';
-import { Select } from '../../../../projects/falcon-ng/tailwind/src/lib/control-type/select';
+import { Appearance } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
+import { Select } from '@falcon-ng/core';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { HighlightModule } from 'ngx-highlightjs';
 import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';

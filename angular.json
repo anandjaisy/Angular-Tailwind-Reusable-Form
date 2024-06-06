@@ -41,7 +41,8 @@
             "scripts": [],
             "allowedCommonJsDependencies": [
               "oidc-client"
-            ]
+            ],
+            "preserveSymlinks": true
           },
           "configurations": {
             "production": {

@@ -3,8 +3,8 @@ import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewM
 import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
 import { Observable, of } from 'rxjs';
-import { DatePicker } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/DatePicker';
-import { Appearance } from '../../../projects/falcon-ng/tailwind/src/lib/model/enum';
+import { DatePicker } from '@falcon-ng/core';
+import { Appearance } from '../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
 import { Validators } from '@angular/forms';
 import { HighlightModule } from 'ngx-highlightjs';
 import { CodeGeneratorComponent } from '../common/component/code-generator/code-generator.component';

@@ -3,7 +3,7 @@ import { AngularCodeTemplateViewModel } from '../../common/angularCodeTemplateVi
 import {
   MatTableConfig,
   MatTable,
-} from '../../../../projects/falcon-ng/tailwind/src/lib/model/interface';
+} from '../../../../projects/falcon-ng/core/src/lib/falcon-core/model/interface';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AngularCodeTemplate } from '../../common/angularCodeTemplate';
 import { HighlightModule } from 'ngx-highlightjs';

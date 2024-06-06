@@ -1,7 +1,7 @@
 import {ComponentRef, Directive, Input, OnInit, ViewContainerRef} from '@angular/core';
-import {BaseControl} from "./base-control";
 import {FormGroup} from "@angular/forms";
 import {Constant} from "./model/constant";
+import { BaseControl } from '@falcon-ng/core';
 
 @Directive({
   selector: '[reactiveField]'

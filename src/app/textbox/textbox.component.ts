@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
 import { Observable, of } from 'rxjs';
-import { Textbox } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/Textbox';
+import { Textbox } from '@falcon-ng/core';
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
 import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';

@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {FormGroup} from "@angular/forms";
-import {Layout} from "../base-control";
+import { Layout } from '../model/layout';
 
 @Component({
   selector: 'control-builder',

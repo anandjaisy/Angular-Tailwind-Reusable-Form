@@ -3,9 +3,8 @@ import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewM
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
 import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
 import { Observable, of } from 'rxjs';
-import { Appearance } from '../../../projects/falcon-ng/tailwind/src/lib/model/enum';
-import { MatFormFieldAppearance } from '@angular/material/form-field';
-import { ButtonToggle } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/ButtonToggle';
+import { Appearance } from '../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
+import { ButtonToggle } from '@falcon-ng/core';
 import { HighlightModule } from 'ngx-highlightjs';
 import { CodeGeneratorComponent } from '../common/component/code-generator/code-generator.component';
 import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';

@@ -5,16 +5,17 @@ import { AngularCodeTemplateViewModel } from 'src/app/common/angularCodeTemplate
 import { AngularCodeTemplate } from 'src/app/common/angularCodeTemplate';
 import { CustomValidator } from 'src/app/common/validations';
 import { BaseFormComponent } from '../../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
-import { Textbox } from '../../../../projects/falcon-ng/tailwind/src/lib/control-type/Textbox';
+
 import {
   Appearance,
   InputTypes,
-} from '../../../../projects/falcon-ng/tailwind/src/lib/model/enum';
+} from '../../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { HighlightModule } from 'ngx-highlightjs';
 import { CodeGeneratorComponent } from '../../common/component/code-generator/code-generator.component';
 import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 import { CodeButtonComponent } from '../../common/component/code-button/code-button.component';
+import { Textbox } from '@falcon-ng/core';
 
 @Component({
   selector: 'app-input-error',

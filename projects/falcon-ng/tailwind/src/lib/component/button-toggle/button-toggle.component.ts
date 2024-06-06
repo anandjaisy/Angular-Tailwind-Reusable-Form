@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
-import {BaseControl} from "../../base-control";
 import {MatButtonToggleChange} from "@angular/material/button-toggle";
+import {BaseControl} from "@falcon-ng/core"
 
 @Component({
   selector: 'falcon-button-toggle',

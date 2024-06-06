@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
-import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
-import { Observable, of } from 'rxjs';
-import { Chip } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/Chip';
+import { Chip } from '@falcon-ng/core';
 import {
   Appearance,
   InputTypes,
-} from '../../../projects/falcon-ng/tailwind/src/lib/model/enum';
+} from '../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { HighlightModule } from 'ngx-highlightjs';
 import { CodeGeneratorComponent } from '../common/component/code-generator/code-generator.component';

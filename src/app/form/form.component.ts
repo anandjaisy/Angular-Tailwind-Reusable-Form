@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
 import { Observable, of } from 'rxjs';
-import { Appearance } from '../../../projects/falcon-ng/tailwind/src/lib/model/enum';
-import { Textbox } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/Textbox';
-import { Button } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/Button';
+import { Appearance } from '../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
+import { Textbox } from '@falcon-ng/core';
+import { Button } from '@falcon-ng/core';
 import { Validators } from '@angular/forms';
 import { HighlightModule } from 'ngx-highlightjs';
 import { CodeGeneratorComponent } from '../common/component/code-generator/code-generator.component';

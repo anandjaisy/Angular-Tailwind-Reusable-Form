@@ -1,10 +1,9 @@
 import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
-import {MatTableConfig} from "../../model/interface";
+import {MatTableConfig} from "@falcon-ng/core";
 import {MatPaginator, PageEvent} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {MatTableDataSource} from "@angular/material/table";
-import {TableAction} from "../../model/enum";
-
+import {TableAction} from "@falcon-ng/core";
 @Component({
   selector: 'falcon-table',
   templateUrl: './table.component.html',

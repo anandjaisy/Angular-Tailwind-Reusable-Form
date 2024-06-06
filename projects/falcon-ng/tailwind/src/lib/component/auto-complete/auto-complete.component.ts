@@ -1,9 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
-import {BaseControl} from "../../base-control";
+import { Component } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
-import {IOptions} from "../../model/interface";
 import {Observable} from "rxjs";
 import { map, startWith } from 'rxjs/operators';
+import {BaseControl,IOptions} from "@falcon-ng/core"
 @Component({
   selector: 'falcon-auto-complete',
   templateUrl: './auto-complete.component.html',

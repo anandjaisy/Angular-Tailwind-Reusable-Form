@@ -4,7 +4,7 @@ import { AngularCodeTemplateViewModel } from '../../common/angularCodeTemplateVi
 import {
   MatTableConfig,
   MatTable,
-} from '../../../../projects/falcon-ng/tailwind/src/lib/model/interface';
+} from '../../../../projects/falcon-ng/core/src/lib/falcon-core/model/interface';
 import { HighlightModule } from 'ngx-highlightjs';
 import { CodeGeneratorComponent } from '../../common/component/code-generator/code-generator.component';
 import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';

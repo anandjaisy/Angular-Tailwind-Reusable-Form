@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AppSettingService } from './appsetting.service';
-import {LoggingLevel} from "../model/enum";
-import {IAppSettingViewModel} from "../model/interface";
+import {LoggingLevel, IAppSettingViewModel} from "@falcon-ng/core";
 
 @Injectable({
   providedIn: 'root'

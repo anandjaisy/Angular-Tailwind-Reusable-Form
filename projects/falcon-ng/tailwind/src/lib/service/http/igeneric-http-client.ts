@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { IRequestOptions } from '../../model/interface';
+import { IRequestOptions } from '@falcon-ng/core';
 @Injectable()
 export abstract class IGenericHttpClient<T> {
   /**

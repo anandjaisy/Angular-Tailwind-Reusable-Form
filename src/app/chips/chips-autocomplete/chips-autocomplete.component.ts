@@ -7,8 +7,8 @@ import { MatFormFieldAppearance } from '@angular/material/form-field';
 import {
   Appearance,
   InputTypes,
-} from '../../../../projects/falcon-ng/tailwind/src/lib/model/enum';
-import { Chip } from '../../../../projects/falcon-ng/tailwind/src/lib/control-type/Chip';
+} from '../../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
+import { Chip } from '@falcon-ng/core';
 import { HighlightModule } from 'ngx-highlightjs';
 import { CodeGeneratorComponent } from '../../common/component/code-generator/code-generator.component';
 import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';

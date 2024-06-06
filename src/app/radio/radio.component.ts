@@ -3,8 +3,8 @@ import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/
 import { Observable, of } from 'rxjs';
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
-import { Appearance } from '../../../projects/falcon-ng/tailwind/src/lib/model/enum';
-import { Radio } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/Radio';
+import { Appearance } from '../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
+import { Radio } from '@falcon-ng/core';
 import { HighlightModule } from 'ngx-highlightjs';
 import { CodeGeneratorComponent } from '../common/component/code-generator/code-generator.component';
 import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';

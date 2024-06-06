@@ -3,7 +3,7 @@ import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/
 import { Observable, of } from 'rxjs';
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
-import { RichTextEditor } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/RichTextEditor';
+import { RichTextEditor } from '@falcon-ng/core';
 import { Validators } from '@angular/forms';
 import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 import { CodeGeneratorComponent } from '../common/component/code-generator/code-generator.component';

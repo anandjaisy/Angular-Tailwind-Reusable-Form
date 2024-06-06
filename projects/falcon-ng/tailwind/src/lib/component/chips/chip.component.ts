@@ -1,9 +1,8 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { BaseControl } from '../../base-control';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { Observable } from 'rxjs';
-import { IOptions } from '../../model/interface';
+import { IOptions } from '@falcon-ng/core';
 import {
   MatAutocomplete,
   MatAutocompleteSelectedEvent,
@@ -11,6 +10,7 @@ import {
 import { map, startWith } from 'rxjs/operators';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import {BaseControl} from "@falcon-ng/core"
 
 @Component({
   selector: 'falcon-chip',

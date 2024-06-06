@@ -3,10 +3,8 @@ import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
 import { Observable, of } from 'rxjs';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
-import { MatFormFieldAppearance } from '@angular/material/form-field';
-import { Appearance } from '../../../projects/falcon-ng/tailwind/src/lib/model/enum';
-import { BaseControl } from '../../../projects/falcon-ng/tailwind/src/lib/base-control';
-import { SliderToggle } from '../../../projects/falcon-ng/tailwind/src/lib/control-type/SlideToggle';
+import { Appearance } from '../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
+import { SliderToggle } from '@falcon-ng/core';
 import { HighlightModule } from 'ngx-highlightjs';
 import { CodeGeneratorComponent } from '../common/component/code-generator/code-generator.component';
 import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';

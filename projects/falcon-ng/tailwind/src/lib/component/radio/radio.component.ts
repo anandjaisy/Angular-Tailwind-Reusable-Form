@@ -1,14 +1,14 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {MatRadioChange} from "@angular/material/radio";
-import {BaseControl} from "../../base-control";
+import { BaseControl } from '@falcon-ng/core';
 
 @Component({
   selector: 'falcon-radio',
   templateUrl: './radio.component.html',
   styleUrls: ['./radio.component.scss'],
 })
-export class RadioComponent {
+export class RadioComponent implements OnInit{
   control!: BaseControl<string>;
   formGroup!: FormGroup;
   @Output() radioGroupChange: EventEmitter<MatRadioChange> =

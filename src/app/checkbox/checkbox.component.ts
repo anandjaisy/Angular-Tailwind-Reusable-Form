@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CheckBox } from 'projects/falcon-ng/tailwind/src/lib/control-type/CheckBox';
 import {
-  Appearance,
   BaseFormComponent,
   FalconTailwindModule,
 } from 'projects/falcon-ng/tailwind/src/public-api';
@@ -12,6 +10,7 @@ import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { HighlightModule } from 'ngx-highlightjs';
 import { CodeGeneratorComponent } from '../common/component/code-generator/code-generator.component';
 import { CodeButtonComponent } from '../common/component/code-button/code-button.component';
+import { Appearance, CheckBox } from '@falcon-ng/core';
 
 @Component({
   selector: 'app-checkbox',

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { BaseControl } from '../../base-control';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatSelectChange } from '@angular/material/select';
+import { BaseControl } from '@falcon-ng/core';
 
 @Component({
   selector: 'falcon-select',

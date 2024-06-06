@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { IDialogData } from '../../../projects/falcon-ng/tailwind/src/lib/model/interface';
+import { IDialogData } from '../../../projects/falcon-ng/core/src/lib/falcon-core/model/interface';
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
 import { DialogComponent } from '../../../projects/falcon-ng/tailwind/src/lib/component/dialog/dialog.component';

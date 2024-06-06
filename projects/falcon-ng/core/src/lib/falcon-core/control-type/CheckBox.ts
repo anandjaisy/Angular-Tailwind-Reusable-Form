@@ -1,4 +1,4 @@
-import { BaseControl } from '../base-control';
+import { BaseControl } from '../model/base-control';
 import { ControlType } from '../model/enum';
 
 export class CheckBox extends BaseControl<boolean> {

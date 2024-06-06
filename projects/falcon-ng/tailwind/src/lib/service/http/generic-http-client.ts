@@ -2,10 +2,9 @@ import { HttpClient, HttpRequest, HttpEventType, HttpEvent, HttpStatusCode } fro
 import { Observable, from } from 'rxjs';
 import { IGenericHttpClient } from './igeneric-http-client';
 import { Injectable } from '@angular/core';
-import {IRequestOptions, SnackbarModel} from '../../model/interface';
+import {IRequestOptions, SnackbarModel, HttpMethod} from '@falcon-ng/core';
 import { LoggerService } from '../logger.service';
 import {EnvironmentViewModel} from "../../model/environments";
-import {HttpMethod} from "../../model/enum";
 import {MatSnackBar} from "@angular/material/snack-bar";
 @Injectable({
   providedIn: 'root'
@@ -120,7 +119,7 @@ export class GenericHttpClient<T> implements IGenericHttpClient<T>{
   public delete(destinationUrl: string, options?: IRequestOptions | any): Observable<T> {
     return this.request<T>(HttpMethod.Delete, destinationUrl, options);
   }
-  
+
   /**
       * @description
       * Http request method to accept different method type and params

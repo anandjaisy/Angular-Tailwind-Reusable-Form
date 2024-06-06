@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import {
   Appearance,
   ControlType,
-} from '../../projects/falcon-ng/tailwind/src/lib/model/enum';
+} from '../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
 import { AuthService } from '../../projects/falcon-ng/tailwind/src/lib/service/open-id/auth.service';
-import { Button } from '../../projects/falcon-ng/tailwind/src/lib/control-type/Button';
+import { Button } from '@falcon-ng/core';
 import { RouterModule } from '@angular/router';
 import { FalconTailwindModule } from '../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 

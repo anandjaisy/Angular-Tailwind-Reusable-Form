@@ -1,5 +1,5 @@
 import { HttpHeaders, HttpParams } from '@angular/common/http';
-import { LoggingLevel } from './enum';
+import { LoggingLevel } from '@falcon-ng/core';
 import { EventEmitter } from '@angular/core';
 /**
  * @description

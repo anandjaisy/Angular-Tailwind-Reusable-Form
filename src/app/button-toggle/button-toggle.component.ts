@@ -47,6 +47,7 @@ export class ButtonToggleComponent
             { value: 'Italic', viewValue: 'Italic' },
             { value: 'Underline', viewValue: 'Underline' },
           ],
+          label: 'Button toggle'
         }),
         new ButtonToggle({
           label: 'Multiple selection',

@@ -63,7 +63,7 @@ export class BaseControl<T> {
     options: {
       value?: T;
       formControlName?: string;
-      label?: string;
+      label: string;
       labelPosition?: any;
       order?: number;
       controlType?: Control;
@@ -87,11 +87,11 @@ export class BaseControl<T> {
       chipSelectedOptions?: IOptions[] | any;
       editorProperty?: any;
       formArray?: BaseControl<T>[];
-    } = {}
+    }
   ) {
     this.value = options.value;
     this.formControlName = options.formControlName || '';
-    this.label = options.label || '';
+    this.label = options.label;
     this.labelPosition = options.labelPosition || 'before' || 'after';
     this.order = options.order === undefined ? 1 : options.order;
     this.controlType = options.controlType || Control.Button;

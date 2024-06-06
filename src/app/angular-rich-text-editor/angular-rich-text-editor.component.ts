@@ -44,6 +44,7 @@ export class AngularRichTextEditorComponent
       class: 'flex justify-center',
       baseControls: [
         new RichTextEditor({
+          label: 'Rich text editor',
           editorProperty: {
             editable: true,
             spellcheck: true,

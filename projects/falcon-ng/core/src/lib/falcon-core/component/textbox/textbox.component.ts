@@ -8,11 +8,10 @@ import { BaseControlBuilder, controlProvider, sharedControlDeps } from '../../co
   imports: [MatInputModule, ...sharedControlDeps],
   viewProviders: [controlProvider],
   template: `
-    <mat-form-field appearance="outline" [formControlName]="control.formControlName">
-      <mat-label>{{control.config.label}}</mat-label>
-      <input matInput [placeholder]="control.config.placeHolder">
+    <mat-form-field appearance="outline">
+      <mat-label>{{control?.config?.label}}</mat-label>
+      <input matInput [formControlName]="control.formControlName" [placeholder]="control.config.placeHolder">
     </mat-form-field>
   `,
 })
-export class TextboxComponent extends BaseControlBuilder{
-}
+export class TextboxComponent extends BaseControlBuilder{}

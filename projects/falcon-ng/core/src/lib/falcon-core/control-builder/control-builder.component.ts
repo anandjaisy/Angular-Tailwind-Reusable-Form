@@ -6,7 +6,7 @@ import { controlProvider } from './base-control-builder';
 @Component({
   selector: 'falcon-control',
   viewProviders:[controlProvider],
-  template: `<ng-container [ngComponentOutlet]="componentResolver.resolver(control.controlType) | async"
+  template: `<ng-container class="w-full" [ngComponentOutlet]="componentResolver.resolver(control.controlType) | async"
                            [ngComponentOutletInjector]="control.formControlName | controlInjection: control"></ng-container>`
 })
 export class ControlBuilderComponent<T>  {

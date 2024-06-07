@@ -27,3 +27,6 @@ export * from './lib/falcon-core/control-type/Textbox';
 export * from './lib/falcon-core/control-builder/control-builder.component';
 
 export * from './lib/falcon-core/angularmaterial.module';
+
+export * from './lib/falcon-core/component/card/card.component';
+export * from './lib/falcon-core/component/button/button.component';

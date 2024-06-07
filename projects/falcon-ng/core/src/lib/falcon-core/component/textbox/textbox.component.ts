@@ -8,8 +8,8 @@ import { BaseControlBuilder, controlProvider, sharedControlDeps } from '../../co
   imports: [MatInputModule, ...sharedControlDeps],
   viewProviders: [controlProvider],
   template: `
-    <mat-form-field appearance="outline">
-      <mat-label>{{control?.config?.label}}</mat-label>
+    <mat-form-field appearance="outline" class="w-full">
+      <mat-label>{{control.config.label}}</mat-label>
       <input matInput [formControlName]="control.formControlName" [placeholder]="control.config.placeHolder">
     </mat-form-field>
   `,

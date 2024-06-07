@@ -12,8 +12,8 @@ import { BaseControlBuilder, controlProvider, sharedControlDeps } from '../../co
       <mat-label>{{ control.config.label }}</mat-label>
       <input matInput [formControlName]="control.formControlName" [placeholder]="control.config.placeHolder"
              [container]="containerDir.container">
+      <ng-container falconValidationMessageContainer #containerDir="falconValidationMessageContainer" />
     </mat-form-field>
-    <ng-container falconValidationMessageContainer #containerDir="falconValidationMessageContainer" />
   `,
   styles: `.w-full {
     width: 100%

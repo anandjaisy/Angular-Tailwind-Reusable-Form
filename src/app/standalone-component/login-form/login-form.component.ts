@@ -17,7 +17,7 @@ export class LoginFormComponent {
   userName: BaseControl<string> = new Textbox({
     formControlName: 'userName',
     label: 'User Name',
-    validations: [{ validator: Validators.required, name: 'required', message: 'This is required' }],
+    validations: [{ validator: Validators.required}],
   });
   password: BaseControl<string> = new Textbox({ formControlName: 'password', label: 'Password' });
 

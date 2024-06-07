@@ -1,3 +1,5 @@
+import { ValidatorFn, Validators } from '@angular/forms';
+
 /**
  * @description
  * Interface use for validation config.
@@ -12,7 +14,7 @@
  * ```
  */
 export declare interface IValidator {
-  name: string;
-  validator: any;
-  message: string;
+  name?: string;
+  validator: ValidatorFn;
+  message?: string;
 }

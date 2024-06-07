@@ -5,7 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ErrorMessagePipe } from './error-message.pipe';
 
 @Component({
-  selector: 'falcon-validation-error',
+  selector: 'falcon-error',
   standalone: true,
   imports: [CommonModule, MatInputModule, ErrorMessagePipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -19,7 +19,7 @@ import { ErrorMessagePipe } from './error-message.pipe';
 })
 export class ValidationErrorComponent {
   @Input() errors: ValidationErrors | undefined | null = null;
-  trackByFn(index: number, item: KeyValue<string, any>) {
+  trackByFn(item: KeyValue<string, any>) {
     return item.key;
   }
 }

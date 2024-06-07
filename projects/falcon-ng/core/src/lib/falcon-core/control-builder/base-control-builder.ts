@@ -11,8 +11,11 @@ import { CommonModule } from '@angular/common';
 import { CONTROL_DATA } from './control-data-builder';
 import { IValidator } from '../model/ivalidator';
 import { ValidationMessageDirective } from '../component/validation-error/validation-message.directive';
+import {
+  ValidationMessageContainerDirective
+} from '../component/validation-error/validation-message-container.directive';
 
-export const sharedControlDeps = [CommonModule, ReactiveFormsModule, ValidationMessageDirective];
+export const sharedControlDeps = [CommonModule, ReactiveFormsModule, ValidationMessageDirective,ValidationMessageContainerDirective];
 export const controlProvider: StaticProvider = {
   provide: ControlContainer,
   useFactory: () => inject(ControlContainer, { skipSelf: true })

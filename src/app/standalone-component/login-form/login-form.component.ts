@@ -10,11 +10,15 @@ import { Textbox } from '../../../../projects/falcon-ng/core/src/lib/falcon-core
   imports: [ReactiveFormsModule, FalconCoreModule],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginFormComponent {
   loginForm: FormGroup;
-  userName: BaseControl<string> = new Textbox({ formControlName: 'userName', label: 'User Name' , validations: [{validator: Validators.required, name: 'required', message: 'This is required'}] });
+  userName: BaseControl<string> = new Textbox({
+    formControlName: 'userName',
+    label: 'User Name',
+    validations: [{ validator: Validators.required, name: 'required', message: 'This is required' }],
+  });
   password: BaseControl<string> = new Textbox({ formControlName: 'password', label: 'Password' });
 
   constructor() {
@@ -22,6 +26,7 @@ export class LoginFormComponent {
   }
 
   submit(): void {
-    console.log(this.loginForm.value);
+    if (this.loginForm.valid)
+      console.log(this.loginForm.value);
   }
 }

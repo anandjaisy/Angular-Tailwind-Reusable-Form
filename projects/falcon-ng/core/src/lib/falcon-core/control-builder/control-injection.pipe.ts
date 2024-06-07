@@ -1,6 +1,6 @@
 import { inject, Injector, Pipe, PipeTransform } from '@angular/core';
-import { BaseControl } from './model/base-control';
-import { CONTROL_DATA, ControlData } from './control-builder/control-data-builder';
+import { BaseControl } from '../model/base-control';
+import { CONTROL_DATA, ControlData } from './control-data-builder';
 
 @Pipe({
   name: 'controlInjection',

@@ -13,5 +13,6 @@ import { BaseControlBuilder, controlProvider, sharedControlDeps } from '../../co
       <textarea matInput [formControlName]="control.formControlName" [placeholder]="control.config.placeHolder"></textarea>
     </mat-form-field>
   `,
+  styles: `.w-full{width: 100%}`
 })
 export class TextareaComponent extends BaseControlBuilder{}

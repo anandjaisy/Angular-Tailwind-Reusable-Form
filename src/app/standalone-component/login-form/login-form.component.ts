@@ -9,7 +9,8 @@ import { Textbox } from '../../../../projects/falcon-ng/core/src/lib/falcon-core
   standalone: true,
   imports: [ReactiveFormsModule, FalconCoreModule],
   templateUrl: './login-form.component.html',
-  styleUrl: './login-form.component.scss'
+  styleUrl: './login-form.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginFormComponent {
   loginForm: FormGroup;

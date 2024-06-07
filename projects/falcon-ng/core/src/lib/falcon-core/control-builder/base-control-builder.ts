@@ -10,8 +10,9 @@ import {
 import { CommonModule } from '@angular/common';
 import { CONTROL_DATA } from './control-data-builder';
 import { IValidator } from '../model/ivalidator';
+import { ValidationMessageDirective } from '../component/validation-error/validation-message.directive';
 
-export const sharedControlDeps = [CommonModule, ReactiveFormsModule];
+export const sharedControlDeps = [CommonModule, ReactiveFormsModule, ValidationMessageDirective];
 export const controlProvider: StaticProvider = {
   provide: ControlContainer,
   useFactory: () => inject(ControlContainer, { skipSelf: true })
@@ -35,13 +36,10 @@ export class BaseControlBuilder implements OnInit, OnDestroy {
     this.parentFormGroup.removeControl(this.control.formControlName);
   }
 
-  private bindValidators(validations: IValidator[]) : ValidatorFn | null{
+  private bindValidators(validations: IValidator[]): ValidatorFn | null {
     if (validations.length > 0) {
-      const validList: (ValidatorFn | null | undefined)[] = [];
-      validations.forEach((valid: IValidator) => {
-        validList.push(valid.validator);
-      });
-      return Validators.compose(validList);
+      const validatorList: ValidatorFn[] = validations.map((valid: IValidator) => valid.validator);
+      return Validators.compose(validatorList);
     }
     return Validators.nullValidator;
   }

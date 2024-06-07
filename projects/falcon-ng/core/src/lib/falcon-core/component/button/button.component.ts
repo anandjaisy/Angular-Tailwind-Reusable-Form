@@ -4,13 +4,14 @@ import { ThemePalette } from '@angular/material/core';
 @Component({
   selector: 'falcon-button',
   template: `
-    <button mat-flat-button [color]="color" [type]="type" (click)="onClick($event)">{{ label }}</button>
+    <button mat-flat-button [color]="color" [type]="type" (click)="onClick($event)" [disabled]="disabled">{{ label }}</button>
   `,
 })
 export class ButtonComponent implements OnDestroy {
   @Input({ required: true }) label!: string;
   @Input({ required: true }) type: 'submit' | 'reset' | 'button' = 'submit';
   @Input() color: ThemePalette = 'primary';
+  @Input() disabled: boolean = false;
   @Output() click = new EventEmitter<MouseEvent>();
 
   ngOnDestroy(): void {

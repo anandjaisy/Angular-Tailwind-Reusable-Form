@@ -21,7 +21,7 @@ Note - Tailwind project is dependent on core project. The build artifacts will b
 - `npm publish --access public` access public is for free version
 
 #### Tailwind
-- `ng build @falcon-ng/tailwind --configuration=production`
+-     ng build @falcon-ng/tailwind --configuration=production
 - `npm login`
 - From the project root folder: `cd dist/@falcon-ng/tailwind`
 - `npm publish --access public` access public is for free version

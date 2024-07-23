@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { BaseControlBuilder, controlProvider, sharedControlDeps } from '../../control-builder/base-control-builder';
 

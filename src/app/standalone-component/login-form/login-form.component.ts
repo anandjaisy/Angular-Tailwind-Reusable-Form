@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FalconCoreModule } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/falcon-core.module';
 import { BaseControl } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/model/base-control';
@@ -10,7 +10,6 @@ import { Textbox } from '../../../../projects/falcon-ng/core/src/lib/falcon-core
   imports: [ReactiveFormsModule, FalconCoreModule],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginFormComponent {
   loginForm: FormGroup;

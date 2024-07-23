@@ -16,7 +16,7 @@
   <mat-hint>{{control.hint.text}}</mat-hint>
 
   <ng-container *ngFor="let validation of control.validations;" ngProjectAs="mat-error">
-    <mat-error *ngIf="formGroup.get(control.formControlName)?.hasError(validation.name)">{{validation.message}}
+    <mat-error *ngIf="formGroup.get(control.formControlName)?.hasError(validation.name || '')">{{validation.message}}
     </mat-error>
   </ng-container>
 </mat-form-field>

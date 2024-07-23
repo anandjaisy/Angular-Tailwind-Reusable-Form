@@ -1,4 +1,4 @@
-import { Directive, inject, Input, OnDestroy, OnInit, StaticProvider } from '@angular/core';
+import { AfterViewInit, Directive, inject, Input, OnDestroy, OnInit, StaticProvider } from '@angular/core';
 import {
   AbstractControl,
   ControlContainer,

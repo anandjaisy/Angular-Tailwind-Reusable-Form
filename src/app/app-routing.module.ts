@@ -26,6 +26,7 @@ import { ExampleBottomSheetComponent } from './bottom-sheet/example-bottom-sheet
 import { StandaloneTextboxComponent } from './standalone-component/standalone-textbox/standalone-textbox.component';
 import { StandaloneTextareaComponent } from './standalone-component/standalone-textarea/standalone-textarea.component';
 import { LoginFormComponent } from './standalone-component/login-form/login-form.component';
+import { StandaloneSelectComponent } from './standalone-component/standalone-select/standalone-select.component';
 
 export const routes: Routes = [
   { path: 'auth-callback', component: AuthCallbackComponent },
@@ -53,6 +54,7 @@ export const routes: Routes = [
   { path: 'form', component: FormComponent },
   { path: 'standalone-textbox', component: StandaloneTextboxComponent },
   { path: 'standalone-texarea', component: StandaloneTextareaComponent },
+  { path: 'standalone-select', component: StandaloneSelectComponent },
   { path: 'login', component: LoginFormComponent },
 ];
 

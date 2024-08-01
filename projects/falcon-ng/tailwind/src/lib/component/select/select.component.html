@@ -1,5 +1,5 @@
 <mat-form-field [appearance]="control.appearance" [formGroup]="formGroup" [floatLabel]="control.floatLabel"
-  [ngStyle]="control.style" [ngClass]="control.class">
+  [ngStyle]="control.style" [ngClass]="control.class" class="w-full">
   <mat-label>{{control.label}}</mat-label>
   <mat-select [multiple]="control.selectProperty.multiple" (selectionChange)="selectChange($event)"
     [formControlName]="control.formControlName != undefined ? control.formControlName : 'default'"

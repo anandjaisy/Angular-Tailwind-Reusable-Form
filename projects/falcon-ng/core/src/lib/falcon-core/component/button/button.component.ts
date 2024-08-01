@@ -1,10 +1,24 @@
-import { Component, EventEmitter, Input, input, OnDestroy, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  input,
+  OnDestroy,
+  Output,
+} from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 
 @Component({
-  selector: 'falcon-button',
+  selector: 'fal-button',
   template: `
-    <button mat-flat-button [color]="color" [type]="type" (click)="onClick($event)" [disabled]="disabled">{{ label }}</button>
+    <button
+      mat-flat-button
+      [color]="color"
+      [type]="type"
+      (click)="onClick($event)"
+      [disabled]="disabled">
+      {{ label }}
+    </button>
   `,
 })
 export class ButtonComponent implements OnDestroy {

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
+import { provideNativeDateAdapter } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatSelectChange, MatSelectModule } from '@angular/material/select';
 import {
   BaseControlBuilder,
   controlProvider,
@@ -9,33 +10,28 @@ import {
 } from '../../control-builder/base-control-builder';
 
 @Component({
-  selector: 'fal-select',
+  selector: 'fal-datepicker',
   standalone: true,
+  providers: [provideNativeDateAdapter()],
   imports: [
-    MatInputModule,
     MatFormFieldModule,
-    MatSelectModule,
+    MatInputModule,
+    MatDatepickerModule,
     ...sharedControlDeps,
   ],
   viewProviders: [controlProvider],
   template: `<mat-form-field appearance="outline" class="w-full">
     <mat-label>{{ control.config.label }}</mat-label>
-    <mat-select
-      [value]="control.config.value"
+    <input
+      matInput
+      [matDatepicker]="picker"
       [formControlName]="control.formControlName"
-      [placeholder]="control.config.placeHolder"
-      (selectionChange)="selectionChange($event)">
-      @for(option of control.config.options; track option){
-      <mat-option [value]="option.key">{{ option.value }}</mat-option>
-      }
-    </mat-select>
+      [placeholder]="control.config.placeHolder" />
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>`,
   styles: `.w-full {
     width: 100%
   }`,
 })
-export class SelectComponent extends BaseControlBuilder {
-  selectionChange(event: MatSelectChange): void {
-    this.control.config.event.change?.emit(event);
-  }
-}
+export class DatepickerComponent extends BaseControlBuilder {}

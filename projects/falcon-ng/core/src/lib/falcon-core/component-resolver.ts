@@ -23,8 +23,8 @@ export class ComponentResolver {
         c => c.SelectComponent
       ),
     datepicker: () =>
-      import('./component/textarea/textarea.component').then(
-        c => c.TextareaComponent
+      import('./component/datepicker/datepicker.component').then(
+        c => c.DatepickerComponent
       ),
     radio: () =>
       import('./component/textarea/textarea.component').then(

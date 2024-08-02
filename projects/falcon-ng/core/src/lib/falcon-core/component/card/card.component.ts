@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'fal-card',
@@ -8,11 +8,14 @@ import { Component } from '@angular/core';
       '"0px 0px 0px 0px rgba(0, 0, 0, 0.12), 0px 0px 0px 1px rgba(0, 0, 0, 0.12), 0px 0px 1px 1px rgba(0.12, 0.12, 0.12, 0.12)"',
   },
   template: `
-    <mat-card>
+    <mat-card [ngClass]="class" [style.backgroundColor]="backgroundColor">
       <mat-card-content>
         <ng-content></ng-content>
       </mat-card-content>
     </mat-card>
   `,
 })
-export class CardComponent {}
+export class CardComponent {
+  @Input({ required: false }) backgroundColor: string | undefined = undefined;
+  @Input({ required: false }) class: string | undefined = undefined;
+}

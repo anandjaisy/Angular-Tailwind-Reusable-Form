@@ -17,7 +17,21 @@ import {
       <textarea
         matInput
         [formControlName]="control.formControlName"
-        [placeholder]="control.config.placeHolder"></textarea>
+        [placeholder]="control.config.placeHolder"
+        [ngStyle]="control.config.style"
+        [ngClass]="control.config.class"
+        [cdkTextareaAutosize]="
+          control.config.textAreaProperty.cdkTextareaAutosize
+        "
+        [cdkAutosizeMinRows]="
+          control.config.textAreaProperty.cdkAutosizeMinRows
+        "
+        [cdkAutosizeMaxRows]="
+          control.config.textAreaProperty.cdkAutosizeMaxRows
+        "
+        [rows]="control.config.textAreaProperty.rows"
+        [cols]="control.config.textAreaProperty.cols"
+        [disabled]="control.config.disabled"></textarea>
     </mat-form-field>
   `,
   styles: `.w-full{width: 100%}`,

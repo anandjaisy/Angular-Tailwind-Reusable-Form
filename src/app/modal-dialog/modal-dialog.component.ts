@@ -10,16 +10,15 @@ import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/l
 import { CodeButtonComponent } from '../common/component/code-button/code-button.component';
 
 @Component({
-  selector: 'app-modal-dialog',
-  templateUrl: './modal-dialog.component.html',
-  styleUrls: ['./modal-dialog.component.scss'],
-  standalone: true,
-  imports: [
-    FalconTailwindModule,
-    CodeGeneratorComponent,
-    HighlightModule,
-    CodeButtonComponent,
-  ],
+    selector: 'app-modal-dialog',
+    templateUrl: './modal-dialog.component.html',
+    styleUrls: ['./modal-dialog.component.scss'],
+    imports: [
+        FalconTailwindModule,
+        CodeGeneratorComponent,
+        HighlightModule,
+        CodeButtonComponent,
+    ]
 })
 export class ModalDialogComponent {
   private iDialogData: IDialogData = {} as IDialogData;

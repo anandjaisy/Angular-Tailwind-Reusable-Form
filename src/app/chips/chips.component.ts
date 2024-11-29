@@ -16,19 +16,18 @@ import { ChipsAutocompleteComponent } from './chips-autocomplete/chips-autocompl
 import { CodeButtonComponent } from '../common/component/code-button/code-button.component';
 
 @Component({
-  selector: 'app-chips',
-  templateUrl: './chips.component.html',
-  styleUrls: ['./chips.component.scss'],
-  standalone: true,
-  imports: [
-    FalconTailwindModule,
-    CodeGeneratorComponent,
-    HighlightModule,
-    ChipsWithinputComponent,
-    ChipsDragDropComponent,
-    ChipsAutocompleteComponent,
-    CodeButtonComponent,
-  ],
+    selector: 'app-chips',
+    templateUrl: './chips.component.html',
+    styleUrls: ['./chips.component.scss'],
+    imports: [
+        FalconTailwindModule,
+        CodeGeneratorComponent,
+        HighlightModule,
+        ChipsWithinputComponent,
+        ChipsDragDropComponent,
+        ChipsAutocompleteComponent,
+        CodeButtonComponent,
+    ]
 })
 export class ChipsComponent {
   public codeGeneratorEnable: boolean = false;

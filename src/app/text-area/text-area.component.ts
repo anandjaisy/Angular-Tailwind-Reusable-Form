@@ -12,16 +12,15 @@ import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/l
 import { CodeButtonComponent } from '../common/component/code-button/code-button.component';
 
 @Component({
-  selector: 'app-text-area',
-  templateUrl: './text-area.component.html',
-  styleUrls: ['./text-area.component.scss'],
-  standalone: true,
-  imports: [
-    FalconTailwindModule,
-    CodeGeneratorComponent,
-    HighlightModule,
-    CodeButtonComponent,
-  ],
+    selector: 'app-text-area',
+    templateUrl: './text-area.component.html',
+    styleUrls: ['./text-area.component.scss'],
+    imports: [
+        FalconTailwindModule,
+        CodeGeneratorComponent,
+        HighlightModule,
+        CodeButtonComponent,
+    ]
 })
 export class TextAreaComponent
   extends BaseFormComponent<string>

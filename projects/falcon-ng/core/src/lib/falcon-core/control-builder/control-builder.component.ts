@@ -4,10 +4,11 @@ import { BaseControl } from '../model/base-control';
 import { controlProvider } from './base-control-builder';
 
 @Component({
-  selector: 'falcon-control',
-  viewProviders:[controlProvider],
-  template: `<ng-container class="w-full" [ngComponentOutlet]="componentResolver.resolver(control.controlType) | async"
-                           [ngComponentOutletInjector]="control.formControlName | controlInjection: control"></ng-container>`
+    selector: 'falcon-control',
+    viewProviders: [controlProvider],
+    template: `<ng-container class="w-full" [ngComponentOutlet]="componentResolver.resolver(control.controlType) | async"
+                           [ngComponentOutletInjector]="control.formControlName | controlInjection: control"></ng-container>`,
+    standalone: false
 })
 export class ControlBuilderComponent<T> implements AfterContentChecked {
   @Input({ required: true }) control!: BaseControl<T>;

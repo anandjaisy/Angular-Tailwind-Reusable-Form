@@ -15,16 +15,15 @@ import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/sr
 import { CodeButtonComponent } from '../../common/component/code-button/code-button.component';
 
 @Component({
-  selector: 'app-chips-autocomplete',
-  templateUrl: './chips-autocomplete.component.html',
-  styleUrls: ['./chips-autocomplete.component.scss'],
-  standalone: true,
-  imports: [
-    FalconTailwindModule,
-    CodeGeneratorComponent,
-    HighlightModule,
-    CodeButtonComponent,
-  ],
+    selector: 'app-chips-autocomplete',
+    templateUrl: './chips-autocomplete.component.html',
+    styleUrls: ['./chips-autocomplete.component.scss'],
+    imports: [
+        FalconTailwindModule,
+        CodeGeneratorComponent,
+        HighlightModule,
+        CodeButtonComponent,
+    ]
 })
 export class ChipsAutocompleteComponent
   extends BaseFormComponent<string>

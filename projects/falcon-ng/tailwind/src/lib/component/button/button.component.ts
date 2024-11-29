@@ -3,9 +3,10 @@ import {FormGroup} from "@angular/forms";
 import {BaseControl} from "@falcon-ng/core"
 
 @Component({
-  selector: 'falcon-button',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.css']
+    selector: 'falcon-button',
+    templateUrl: './button.component.html',
+    styleUrls: ['./button.component.css'],
+    standalone: false
 })
 export class ButtonComponent {
   @Input() control!: BaseControl<string>;

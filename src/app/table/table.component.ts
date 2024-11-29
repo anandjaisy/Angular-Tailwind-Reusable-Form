@@ -33,19 +33,18 @@ const ELEMENT_DATA: PeriodicElement[] = [
   { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
 ];
 @Component({
-  selector: 'app-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss'],
-  standalone: true,
-  imports: [
-    FalconTailwindModule,
-    CodeGeneratorComponent,
-    HighlightModule,
-    CodeButtonComponent,
-    TablePaginationComponent,
-    TableFilterComponent,
-    TableActionMenuComponent,
-  ],
+    selector: 'app-table',
+    templateUrl: './table.component.html',
+    styleUrls: ['./table.component.scss'],
+    imports: [
+        FalconTailwindModule,
+        CodeGeneratorComponent,
+        HighlightModule,
+        CodeButtonComponent,
+        TablePaginationComponent,
+        TableFilterComponent,
+        TableActionMenuComponent,
+    ]
 })
 export class TableComponent implements OnInit {
   displayedColumns: string[] = [];

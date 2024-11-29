@@ -12,16 +12,15 @@ import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/sr
 import { CodeButtonComponent } from '../../common/component/code-button/code-button.component';
 
 @Component({
-  selector: 'app-input-prefix-suffix',
-  templateUrl: './input-prefix-suffix.component.html',
-  styleUrls: ['./input-prefix-suffix.component.scss'],
-  standalone: true,
-  imports: [
-    FalconTailwindModule,
-    CodeGeneratorComponent,
-    HighlightModule,
-    CodeButtonComponent,
-  ],
+    selector: 'app-input-prefix-suffix',
+    templateUrl: './input-prefix-suffix.component.html',
+    styleUrls: ['./input-prefix-suffix.component.scss'],
+    imports: [
+        FalconTailwindModule,
+        CodeGeneratorComponent,
+        HighlightModule,
+        CodeButtonComponent,
+    ]
 })
 export class InputPrefixSuffixComponent
   extends BaseFormComponent<any>

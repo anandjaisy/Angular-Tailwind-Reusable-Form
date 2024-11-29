@@ -42,16 +42,15 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 @Component({
-  selector: 'app-table-action-menu',
-  templateUrl: './table-action-menu.component.html',
-  styleUrls: ['./table-action-menu.component.scss'],
-  standalone: true,
-  imports: [
-    FalconTailwindModule,
-    CodeGeneratorComponent,
-    HighlightModule,
-    CodeButtonComponent,
-  ],
+    selector: 'app-table-action-menu',
+    templateUrl: './table-action-menu.component.html',
+    styleUrls: ['./table-action-menu.component.scss'],
+    imports: [
+        FalconTailwindModule,
+        CodeGeneratorComponent,
+        HighlightModule,
+        CodeButtonComponent,
+    ]
 })
 export class TableActionMenuComponent implements OnInit {
   public displayedColumns = ['action'];

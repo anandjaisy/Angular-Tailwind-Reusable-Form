@@ -5,11 +5,10 @@ import { BaseControl } from '../../../../projects/falcon-ng/core/src/lib/falcon-
 import { Textbox } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/control-type/Textbox';
 
 @Component({
-  selector: 'app-login-form',
-  standalone: true,
-  imports: [ReactiveFormsModule, FalconCoreModule],
-  templateUrl: './login-form.component.html',
-  styleUrl: './login-form.component.scss',
+    selector: 'app-login-form',
+    imports: [ReactiveFormsModule, FalconCoreModule],
+    templateUrl: './login-form.component.html',
+    styleUrl: './login-form.component.scss'
 })
 export class LoginFormComponent {
   loginForm: FormGroup;

@@ -13,9 +13,10 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import {BaseControl} from "@falcon-ng/core"
 
 @Component({
-  selector: 'falcon-chip',
-  templateUrl: './chip.component.html',
-  styleUrls: ['./chip.component.scss'],
+    selector: 'falcon-chip',
+    templateUrl: './chip.component.html',
+    styleUrls: ['./chip.component.scss'],
+    standalone: false
 })
 export class ChipComponent implements OnInit {
   @Input() control!: BaseControl<any>;

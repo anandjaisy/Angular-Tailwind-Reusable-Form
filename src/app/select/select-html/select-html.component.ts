@@ -10,16 +10,15 @@ import { CodeGeneratorComponent } from '../../common/component/code-generator/co
 import { CodeButtonComponent } from '../../common/component/code-button/code-button.component';
 
 @Component({
-  selector: 'app-select-html',
-  templateUrl: './select-html.component.html',
-  styleUrls: ['./select-html.component.scss'],
-  standalone: true,
-  imports: [
-    FalconTailwindModule,
-    CodeGeneratorComponent,
-    HighlightModule,
-    CodeButtonComponent,
-  ],
+    selector: 'app-select-html',
+    templateUrl: './select-html.component.html',
+    styleUrls: ['./select-html.component.scss'],
+    imports: [
+        FalconTailwindModule,
+        CodeGeneratorComponent,
+        HighlightModule,
+        CodeButtonComponent,
+    ]
 })
 export class SelectHtmlComponent {
   public codeGeneratorEnable: boolean = false;

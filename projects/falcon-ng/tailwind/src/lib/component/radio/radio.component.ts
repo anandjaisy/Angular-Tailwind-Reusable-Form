@@ -4,9 +4,10 @@ import {MatRadioChange} from "@angular/material/radio";
 import { BaseControl } from '@falcon-ng/core';
 
 @Component({
-  selector: 'falcon-radio',
-  templateUrl: './radio.component.html',
-  styleUrls: ['./radio.component.scss'],
+    selector: 'falcon-radio',
+    templateUrl: './radio.component.html',
+    styleUrls: ['./radio.component.scss'],
+    standalone: false
 })
 export class RadioComponent implements OnInit{
   control!: BaseControl<string>;

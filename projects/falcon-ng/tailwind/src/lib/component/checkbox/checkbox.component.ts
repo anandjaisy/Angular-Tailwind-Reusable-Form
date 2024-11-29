@@ -3,9 +3,10 @@ import { FormGroup } from '@angular/forms';
 import {BaseControl} from "@falcon-ng/core"
 
 @Component({
-  selector: 'falcon-checkbox',
-  templateUrl: './checkbox.component.html',
-  styleUrls: ['./checkbox.component.scss'],
+    selector: 'falcon-checkbox',
+    templateUrl: './checkbox.component.html',
+    styleUrls: ['./checkbox.component.scss'],
+    standalone: false
 })
 export class CheckboxComponent {
   control!: BaseControl<string>;

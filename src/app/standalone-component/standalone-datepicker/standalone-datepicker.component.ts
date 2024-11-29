@@ -5,11 +5,10 @@ import { FalconCoreModule } from '../../../../projects/falcon-ng/core/src/lib/fa
 import { BaseControl } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/model/base-control';
 import { DatePicker } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/control-type/DatePicker';
 @Component({
-  selector: 'app-standalone-datepicker',
-  standalone: true,
-  imports: [ReactiveFormsModule, RouterLink, FalconCoreModule],
-  templateUrl: './standalone-datepicker.component.html',
-  styleUrl: './standalone-datepicker.component.scss',
+    selector: 'app-standalone-datepicker',
+    imports: [ReactiveFormsModule, RouterLink, FalconCoreModule],
+    templateUrl: './standalone-datepicker.component.html',
+    styleUrl: './standalone-datepicker.component.scss'
 })
 export class StandaloneDatepickerComponent {
   datePicker: BaseControl<string> = new DatePicker({

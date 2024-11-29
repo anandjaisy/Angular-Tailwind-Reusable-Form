@@ -9,11 +9,10 @@ import { RouterModule } from '@angular/router';
 import { FalconTailwindModule } from '../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  standalone: true,
-  imports: [RouterModule, FalconTailwindModule],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    imports: [RouterModule, FalconTailwindModule]
 })
 export class AppComponent {
   title = 'Dynamic form builder';

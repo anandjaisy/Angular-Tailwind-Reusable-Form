@@ -12,16 +12,15 @@ import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/l
 import { CodeButtonComponent } from '../common/component/code-button/code-button.component';
 
 @Component({
-  selector: 'app-auto-complete',
-  templateUrl: './auto-complete.component.html',
-  styleUrls: ['./auto-complete.component.scss'],
-  standalone: true,
-  imports: [
-    FalconTailwindModule,
-    CodeGeneratorComponent,
-    HighlightModule,
-    CodeButtonComponent,
-  ],
+    selector: 'app-auto-complete',
+    templateUrl: './auto-complete.component.html',
+    styleUrls: ['./auto-complete.component.scss'],
+    imports: [
+        FalconTailwindModule,
+        CodeGeneratorComponent,
+        HighlightModule,
+        CodeButtonComponent,
+    ]
 })
 export class AutoCompleteComponent
   extends BaseFormComponent<string>

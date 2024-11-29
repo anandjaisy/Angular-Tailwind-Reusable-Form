@@ -15,16 +15,15 @@ import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/sr
 import { CodeButtonComponent } from '../../common/component/code-button/code-button.component';
 
 @Component({
-  selector: 'app-chips-withinput',
-  templateUrl: './chips-withinput.component.html',
-  styleUrls: ['./chips-withinput.component.scss'],
-  standalone: true,
-  imports: [
-    FalconTailwindModule,
-    CodeGeneratorComponent,
-    HighlightModule,
-    CodeButtonComponent,
-  ],
+    selector: 'app-chips-withinput',
+    templateUrl: './chips-withinput.component.html',
+    styleUrls: ['./chips-withinput.component.scss'],
+    imports: [
+        FalconTailwindModule,
+        CodeGeneratorComponent,
+        HighlightModule,
+        CodeButtonComponent,
+    ]
 })
 export class ChipsWithinputComponent
   extends BaseFormComponent<string>

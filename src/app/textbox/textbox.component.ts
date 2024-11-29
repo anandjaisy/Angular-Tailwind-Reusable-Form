@@ -14,20 +14,19 @@ import { InputErrorComponent } from './input-error/input-error.component';
 import { CodeButtonComponent } from '../common/component/code-button/code-button.component';
 
 @Component({
-  selector: 'app-textbox',
-  templateUrl: './textbox.component.html',
-  styleUrls: ['./textbox.component.scss'],
-  standalone: true,
-  imports: [
-    FalconTailwindModule,
-    CodeGeneratorComponent,
-    HighlightModule,
-    InputPrefixSuffixComponent,
-    InputHintComponent,
-    InputFloatingLabelComponent,
-    InputErrorComponent,
-    CodeButtonComponent,
-  ],
+    selector: 'app-textbox',
+    templateUrl: './textbox.component.html',
+    styleUrls: ['./textbox.component.scss'],
+    imports: [
+        FalconTailwindModule,
+        CodeGeneratorComponent,
+        HighlightModule,
+        InputPrefixSuffixComponent,
+        InputHintComponent,
+        InputFloatingLabelComponent,
+        InputErrorComponent,
+        CodeButtonComponent,
+    ]
 })
 export class TextboxComponent
   extends BaseFormComponent<string>

@@ -42,16 +42,15 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 @Component({
-  selector: 'app-table-pagination',
-  templateUrl: './table-pagination.component.html',
-  styleUrls: ['./table-pagination.component.scss'],
-  standalone: true,
-  imports: [
-    FalconTailwindModule,
-    CodeGeneratorComponent,
-    HighlightModule,
-    CodeButtonComponent,
-  ],
+    selector: 'app-table-pagination',
+    templateUrl: './table-pagination.component.html',
+    styleUrls: ['./table-pagination.component.scss'],
+    imports: [
+        FalconTailwindModule,
+        CodeGeneratorComponent,
+        HighlightModule,
+        CodeButtonComponent,
+    ]
 })
 export class TablePaginationComponent implements OnInit {
   public displayedColumns = ['action'];

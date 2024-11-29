@@ -8,11 +8,10 @@ import { CodeGeneratorComponent } from '../common/component/code-generator/code-
 import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 
 @Component({
-  selector: 'app-auth-callback',
-  templateUrl: './auth-callback.component.html',
-  styleUrls: ['./auth-callback.component.scss'],
-  standalone: true,
-  imports: [FalconTailwindModule, CodeGeneratorComponent, HighlightModule],
+    selector: 'app-auth-callback',
+    templateUrl: './auth-callback.component.html',
+    styleUrls: ['./auth-callback.component.scss'],
+    imports: [FalconTailwindModule, CodeGeneratorComponent, HighlightModule]
 })
 export class AuthCallbackComponent implements OnInit {
   private completed: boolean;

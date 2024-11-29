@@ -16,16 +16,15 @@ import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/sr
 import { CodeButtonComponent } from '../../common/component/code-button/code-button.component';
 
 @Component({
-  selector: 'app-input-floating-label',
-  templateUrl: './input-floating-label.component.html',
-  styleUrls: ['./input-floating-label.component.scss'],
-  standalone: true,
-  imports: [
-    FalconTailwindModule,
-    CodeGeneratorComponent,
-    HighlightModule,
-    CodeButtonComponent,
-  ],
+    selector: 'app-input-floating-label',
+    templateUrl: './input-floating-label.component.html',
+    styleUrls: ['./input-floating-label.component.scss'],
+    imports: [
+        FalconTailwindModule,
+        CodeGeneratorComponent,
+        HighlightModule,
+        CodeButtonComponent,
+    ]
 })
 export class InputFloatingLabelComponent
   extends BaseFormComponent<any>

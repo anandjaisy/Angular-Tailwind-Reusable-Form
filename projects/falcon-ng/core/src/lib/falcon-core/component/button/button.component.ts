@@ -9,8 +9,8 @@ import {
 import { ThemePalette } from '@angular/material/core';
 
 @Component({
-  selector: 'fal-button',
-  template: `
+    selector: 'fal-button',
+    template: `
     <button
       mat-flat-button
       [color]="color"
@@ -20,6 +20,7 @@ import { ThemePalette } from '@angular/material/core';
       {{ label }}
     </button>
   `,
+    standalone: false
 })
 export class ButtonComponent implements OnDestroy {
   @Input({ required: true }) label!: string;

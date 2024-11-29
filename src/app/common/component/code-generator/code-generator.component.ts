@@ -12,11 +12,10 @@ import { HighlightModule } from 'ngx-highlightjs';
 import { FalconTailwindModule } from '../../../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 
 @Component({
-  selector: 'app-code-generator',
-  templateUrl: './code-generator.component.html',
-  styleUrls: ['./code-generator.component.scss'],
-  standalone: true,
-  imports: [HighlightModule, FalconTailwindModule],
+    selector: 'app-code-generator',
+    templateUrl: './code-generator.component.html',
+    styleUrls: ['./code-generator.component.scss'],
+    imports: [HighlightModule, FalconTailwindModule]
 })
 export class CodeGeneratorComponent implements OnInit {
   @Input() tsConfig!: string;

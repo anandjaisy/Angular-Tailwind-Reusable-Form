@@ -4,9 +4,10 @@ import { MatSelectChange } from '@angular/material/select';
 import { BaseControl } from '@falcon-ng/core';
 
 @Component({
-  selector: 'falcon-select',
-  templateUrl: './select.component.html',
-  styleUrls: ['./select.component.scss'],
+    selector: 'falcon-select',
+    templateUrl: './select.component.html',
+    styleUrls: ['./select.component.scss'],
+    standalone: false
 })
 export class SelectComponent implements OnInit {
   control!: BaseControl<string>;

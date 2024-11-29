@@ -15,16 +15,15 @@ import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/sr
 import { CodeButtonComponent } from '../../common/component/code-button/code-button.component';
 
 @Component({
-  selector: 'app-chips-drag-drop',
-  templateUrl: './chips-drag-drop.component.html',
-  styleUrls: ['./chips-drag-drop.component.scss'],
-  standalone: true,
-  imports: [
-    FalconTailwindModule,
-    CodeGeneratorComponent,
-    HighlightModule,
-    CodeButtonComponent,
-  ],
+    selector: 'app-chips-drag-drop',
+    templateUrl: './chips-drag-drop.component.html',
+    styleUrls: ['./chips-drag-drop.component.scss'],
+    imports: [
+        FalconTailwindModule,
+        CodeGeneratorComponent,
+        HighlightModule,
+        CodeButtonComponent,
+    ]
 })
 export class ChipsDragDropComponent
   extends BaseFormComponent<string>

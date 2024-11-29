@@ -1,4 +1,4 @@
-import {ModuleWithProviders, NgModule, APP_INITIALIZER, inject} from '@angular/core';
+import { ModuleWithProviders, NgModule, inject, provideAppInitializer } from '@angular/core';
 import {TextboxComponent} from './component/textbox/textbox.component';
 import {TextareaComponent} from './component/textarea/textarea.component';
 import {SelectComponent} from './component/select/select.component';
@@ -102,24 +102,18 @@ import {AngularEditorModule} from "@kolkov/angular-editor";
       ])
     ),
     {provide: IGenericHttpClient, useClass: GenericHttpClient},
-    {
-      provide: APP_INITIALIZER,
-      useFactory: appSettingsFactory,
-      deps: [AppSettingService],
-      multi: true,
-    },
-    {
-      provide: APP_INITIALIZER,
-      useFactory: authServiceFactory,
-      deps: [AuthService, AppSettingService, EnvironmentViewModel],
-      multi: true,
-    },
-    {
-      provide: APP_INITIALIZER,
-      useFactory: loggerServiceFactory,
-      deps: [LoggerService, AppSettingService],
-      multi: true,
-    },
+    provideAppInitializer(() => {
+        const initializerFn = (appSettingsFactory)(inject(AppSettingService));
+        return initializerFn();
+      }),
+    provideAppInitializer(() => {
+        const initializerFn = (authServiceFactory)(inject(AuthService), inject(AppSettingService), inject(EnvironmentViewModel));
+        return initializerFn();
+      }),
+    provideAppInitializer(() => {
+        const initializerFn = (loggerServiceFactory)(inject(LoggerService), inject(AppSettingService));
+        return initializerFn();
+      }),
     {
       provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,
       useValue: {duration: 5000},

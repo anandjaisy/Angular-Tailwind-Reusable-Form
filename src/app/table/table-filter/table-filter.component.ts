@@ -31,16 +31,15 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 @Component({
-  selector: 'app-table-filter',
-  templateUrl: './table-filter.component.html',
-  styleUrls: ['./table-filter.component.scss'],
-  standalone: true,
-  imports: [
-    FalconTailwindModule,
-    CodeGeneratorComponent,
-    HighlightModule,
-    CodeButtonComponent,
-  ],
+    selector: 'app-table-filter',
+    templateUrl: './table-filter.component.html',
+    styleUrls: ['./table-filter.component.scss'],
+    imports: [
+        FalconTailwindModule,
+        CodeGeneratorComponent,
+        HighlightModule,
+        CodeButtonComponent,
+    ]
 })
 export class TableFilterComponent implements OnInit {
   public displayedColumns = ['action'];

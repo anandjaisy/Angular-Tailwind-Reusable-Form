@@ -18,16 +18,15 @@ import { CodeButtonComponent } from '../../common/component/code-button/code-but
 import { Textbox } from '@falcon-ng/core';
 
 @Component({
-  selector: 'app-input-error',
-  templateUrl: './input-error.component.html',
-  styleUrls: ['./input-error.component.scss'],
-  standalone: true,
-  imports: [
-    FalconTailwindModule,
-    CodeGeneratorComponent,
-    HighlightModule,
-    CodeButtonComponent,
-  ],
+    selector: 'app-input-error',
+    templateUrl: './input-error.component.html',
+    styleUrls: ['./input-error.component.scss'],
+    imports: [
+        FalconTailwindModule,
+        CodeGeneratorComponent,
+        HighlightModule,
+        CodeButtonComponent,
+    ]
 })
 export class InputErrorComponent
   extends BaseFormComponent<any>

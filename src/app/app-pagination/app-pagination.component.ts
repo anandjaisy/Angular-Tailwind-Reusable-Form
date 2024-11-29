@@ -7,16 +7,15 @@ import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/l
 import { CodeButtonComponent } from '../common/component/code-button/code-button.component';
 
 @Component({
-  selector: 'app-app-pagination',
-  templateUrl: './app-pagination.component.html',
-  styleUrls: ['./app-pagination.component.scss'],
-  standalone: true,
-  imports: [
-    FalconTailwindModule,
-    CodeGeneratorComponent,
-    HighlightModule,
-    CodeButtonComponent,
-  ],
+    selector: 'app-app-pagination',
+    templateUrl: './app-pagination.component.html',
+    styleUrls: ['./app-pagination.component.scss'],
+    imports: [
+        FalconTailwindModule,
+        CodeGeneratorComponent,
+        HighlightModule,
+        CodeButtonComponent,
+    ]
 })
 export class AppPaginationComponent {
   pageSize: number = 10;

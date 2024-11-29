@@ -10,17 +10,16 @@ import {
 } from '../../control-builder/base-control-builder';
 
 @Component({
-  selector: 'fal-datepicker',
-  standalone: true,
-  providers: [provideNativeDateAdapter()],
-  imports: [
-    MatFormFieldModule,
-    MatInputModule,
-    MatDatepickerModule,
-    ...sharedControlDeps,
-  ],
-  viewProviders: [controlProvider],
-  template: `<mat-form-field appearance="outline" class="w-full">
+    selector: 'fal-datepicker',
+    providers: [provideNativeDateAdapter()],
+    imports: [
+        MatFormFieldModule,
+        MatInputModule,
+        MatDatepickerModule,
+        ...sharedControlDeps,
+    ],
+    viewProviders: [controlProvider],
+    template: `<mat-form-field appearance="outline" class="w-full">
     <mat-label>{{ control.config.label }}</mat-label>
     <input
       matInput
@@ -30,8 +29,8 @@ import {
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>`,
-  styles: `.w-full {
+    styles: `.w-full {
     width: 100%
-  }`,
+  }`
 })
 export class DatepickerComponent extends BaseControlBuilder {}

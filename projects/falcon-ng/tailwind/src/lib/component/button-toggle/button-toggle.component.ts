@@ -4,9 +4,10 @@ import {MatButtonToggleChange} from "@angular/material/button-toggle";
 import {BaseControl} from "@falcon-ng/core"
 
 @Component({
-  selector: 'falcon-button-toggle',
-  templateUrl: './button-toggle.component.html',
-  styleUrls: ['./button-toggle.component.scss'],
+    selector: 'falcon-button-toggle',
+    templateUrl: './button-toggle.component.html',
+    styleUrls: ['./button-toggle.component.scss'],
+    standalone: false
 })
 export class ButtonToggleComponent implements OnInit {
   control!: BaseControl<string>;

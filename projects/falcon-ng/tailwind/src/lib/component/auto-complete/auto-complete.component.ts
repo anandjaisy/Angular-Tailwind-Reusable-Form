@@ -4,9 +4,10 @@ import {Observable} from "rxjs";
 import { map, startWith } from 'rxjs/operators';
 import {BaseControl,IOptions} from "@falcon-ng/core"
 @Component({
-  selector: 'falcon-auto-complete',
-  templateUrl: './auto-complete.component.html',
-  styleUrls: ['./auto-complete.component.scss'],
+    selector: 'falcon-auto-complete',
+    templateUrl: './auto-complete.component.html',
+    styleUrls: ['./auto-complete.component.scss'],
+    standalone: false
 })
 export class AutoCompleteComponent {
   control!: BaseControl<string>;

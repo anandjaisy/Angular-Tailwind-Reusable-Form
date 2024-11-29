@@ -3,9 +3,10 @@ import {FormGroup} from "@angular/forms";
 import { Layout } from '../model/layout';
 
 @Component({
-  selector: 'control-builder',
-  templateUrl: './control-builder.component.html',
-  styleUrls: ['./control-builder.component.scss']
+    selector: 'control-builder',
+    templateUrl: './control-builder.component.html',
+    styleUrls: ['./control-builder.component.scss'],
+    standalone: false
 })
 export class ControlBuilderComponent {
   @Input() layout!: Layout<string>;

@@ -11,16 +11,15 @@ import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/l
 import { CodeButtonComponent } from '../common/component/code-button/code-button.component';
 
 @Component({
-  selector: 'app-slide-toggle',
-  templateUrl: './slide-toggle.component.html',
-  styleUrls: ['./slide-toggle.component.scss'],
-  standalone: true,
-  imports: [
-    FalconTailwindModule,
-    CodeGeneratorComponent,
-    HighlightModule,
-    CodeButtonComponent,
-  ],
+    selector: 'app-slide-toggle',
+    templateUrl: './slide-toggle.component.html',
+    styleUrls: ['./slide-toggle.component.scss'],
+    imports: [
+        FalconTailwindModule,
+        CodeGeneratorComponent,
+        HighlightModule,
+        CodeButtonComponent,
+    ]
 })
 export class SlideToggleComponent
   extends BaseFormComponent<any>

@@ -10,11 +10,10 @@ import { CodeGeneratorComponent } from '../common/component/code-generator/code-
 import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss'],
-  standalone: true,
-  imports: [FalconTailwindModule, CodeGeneratorComponent, HighlightModule],
+    selector: 'app-form',
+    templateUrl: './form.component.html',
+    styleUrls: ['./form.component.scss'],
+    imports: [FalconTailwindModule, CodeGeneratorComponent, HighlightModule]
 })
 export class FormComponent extends BaseFormComponent<string> implements OnInit {
   constructor() {

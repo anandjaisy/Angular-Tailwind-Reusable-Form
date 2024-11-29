@@ -8,16 +8,15 @@ import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/l
 import { CodeButtonComponent } from '../common/component/code-button/code-button.component';
 
 @Component({
-  selector: 'app-snackbar',
-  templateUrl: './snackbar.component.html',
-  styleUrls: ['./snackbar.component.scss'],
-  standalone: true,
-  imports: [
-    FalconTailwindModule,
-    CodeGeneratorComponent,
-    HighlightModule,
-    CodeButtonComponent,
-  ],
+    selector: 'app-snackbar',
+    templateUrl: './snackbar.component.html',
+    styleUrls: ['./snackbar.component.scss'],
+    imports: [
+        FalconTailwindModule,
+        CodeGeneratorComponent,
+        HighlightModule,
+        CodeButtonComponent,
+    ]
 })
 export class SnackbarComponent {
   public codeGeneratorEnable: boolean = false;

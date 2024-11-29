@@ -13,17 +13,16 @@ import { CodeButtonComponent } from '../common/component/code-button/code-button
 import { SelectHtmlComponent } from './select-html/select-html.component';
 
 @Component({
-  selector: 'app-select',
-  templateUrl: './select.component.html',
-  styleUrls: ['./select.component.scss'],
-  standalone: true,
-  imports: [
-    FalconTailwindModule,
-    CodeGeneratorComponent,
-    HighlightModule,
-    CodeButtonComponent,
-    SelectHtmlComponent,
-  ],
+    selector: 'app-select',
+    templateUrl: './select.component.html',
+    styleUrls: ['./select.component.scss'],
+    imports: [
+        FalconTailwindModule,
+        CodeGeneratorComponent,
+        HighlightModule,
+        CodeButtonComponent,
+        SelectHtmlComponent,
+    ]
 })
 export class SelectComponent
   extends BaseFormComponent<string>

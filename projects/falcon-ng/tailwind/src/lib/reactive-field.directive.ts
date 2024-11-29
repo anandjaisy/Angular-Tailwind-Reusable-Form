@@ -4,7 +4,8 @@ import {Constant} from "./model/constant";
 import { BaseControl } from '@falcon-ng/core';
 
 @Directive({
-  selector: '[reactiveField]'
+    selector: '[reactiveField]',
+    standalone: false
 })
 export class ReactiveFieldDirective implements OnInit {
   @Input() control!: BaseControl<string>;

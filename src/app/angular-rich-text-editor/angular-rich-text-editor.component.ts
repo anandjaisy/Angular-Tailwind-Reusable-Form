@@ -11,16 +11,15 @@ import { HighlightModule } from 'ngx-highlightjs';
 import { CodeButtonComponent } from '../common/component/code-button/code-button.component';
 
 @Component({
-  selector: 'app-angular-rich-text-editor',
-  templateUrl: './angular-rich-text-editor.component.html',
-  styleUrls: ['./angular-rich-text-editor.component.scss'],
-  standalone: true,
-  imports: [
-    FalconTailwindModule,
-    CodeGeneratorComponent,
-    HighlightModule,
-    CodeButtonComponent,
-  ],
+    selector: 'app-angular-rich-text-editor',
+    templateUrl: './angular-rich-text-editor.component.html',
+    styleUrls: ['./angular-rich-text-editor.component.scss'],
+    imports: [
+        FalconTailwindModule,
+        CodeGeneratorComponent,
+        HighlightModule,
+        CodeButtonComponent,
+    ]
 })
 export class AngularRichTextEditorComponent
   extends BaseFormComponent<any>

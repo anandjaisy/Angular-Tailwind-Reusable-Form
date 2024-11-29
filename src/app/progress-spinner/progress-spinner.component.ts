@@ -14,16 +14,15 @@ import { CodeGeneratorComponent } from '../common/component/code-generator/code-
 import { CodeButtonComponent } from '../common/component/code-button/code-button.component';
 
 @Component({
-  selector: 'app-progress-spinner',
-  templateUrl: './progress-spinner.component.html',
-  styleUrls: ['./progress-spinner.component.scss'],
-  standalone: true,
-  imports: [
-    FalconTailwindModule,
-    CodeGeneratorComponent,
-    HighlightModule,
-    CodeButtonComponent,
-  ],
+    selector: 'app-progress-spinner',
+    templateUrl: './progress-spinner.component.html',
+    styleUrls: ['./progress-spinner.component.scss'],
+    imports: [
+        FalconTailwindModule,
+        CodeGeneratorComponent,
+        HighlightModule,
+        CodeButtonComponent,
+    ]
 })
 export class ProgressSpinnerComponent
   extends BaseFormComponent<any>

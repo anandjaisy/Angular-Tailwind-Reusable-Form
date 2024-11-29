@@ -3,9 +3,10 @@ import {ThemePalette} from "@angular/material/core";
 import {ProgressSpinnerMode} from "@angular/material/progress-spinner";
 
 @Component({
-  selector: 'falcon-progress-spinner',
-  templateUrl: './progress-spinner.component.html',
-  styleUrls: ['./progress-spinner.component.scss']
+    selector: 'falcon-progress-spinner',
+    templateUrl: './progress-spinner.component.html',
+    styleUrls: ['./progress-spinner.component.scss'],
+    standalone: false
 })
 export class ProgressSpinnerComponent {
   @Input() diameter: number = 100;

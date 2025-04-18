@@ -1,15 +1,9 @@
 import { Component } from '@angular/core';
 import { Textbox } from '@falcon-ng/core';
 import { BaseControl } from '@falcon-ng/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { CodeButtonComponent } from '../../common/component/code-button/code-button.component';
-import { CodeGeneratorComponent } from '../../common/component/code-generator/code-generator.component';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
-import { InputErrorComponent } from '../../textbox/input-error/input-error.component';
-import { InputFloatingLabelComponent } from '../../textbox/input-floating-label/input-floating-label.component';
-import { InputHintComponent } from '../../textbox/input-hint/input-hint.component';
 import { InputPrefixSuffixComponent } from '../../textbox/input-prefix-suffix/input-prefix-suffix.component';
-import { JsonPipe, NgIf } from '@angular/common';
 import { MatCard, MatCardContent } from '@angular/material/card';
 import { MatDivider } from '@angular/material/divider';
 import { MatIcon } from '@angular/material/icon';
@@ -22,13 +16,7 @@ import { FalconCoreModule } from '@falcon-ng/core';
   imports: [
     FalconCoreModule,
     ReactiveFormsModule,
-    CodeButtonComponent,
-    CodeGeneratorComponent,
     FalconTailwindModule,
-    InputErrorComponent,
-    InputFloatingLabelComponent,
-    InputHintComponent,
-    InputPrefixSuffixComponent,
     MatCard,
     MatCardContent,
     MatDivider,

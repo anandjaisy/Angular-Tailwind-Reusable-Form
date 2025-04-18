@@ -10,20 +10,14 @@ import {
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { Chip } from '@falcon-ng/core';
 import { HighlightModule } from 'ngx-highlightjs';
-import { CodeGeneratorComponent } from '../../common/component/code-generator/code-generator.component';
 import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 import { CodeButtonComponent } from '../../common/component/code-button/code-button.component';
 
 @Component({
-    selector: 'app-chips-drag-drop',
-    templateUrl: './chips-drag-drop.component.html',
-    styleUrls: ['./chips-drag-drop.component.scss'],
-    imports: [
-        FalconTailwindModule,
-        CodeGeneratorComponent,
-        HighlightModule,
-        CodeButtonComponent,
-    ]
+  selector: 'app-chips-drag-drop',
+  templateUrl: './chips-drag-drop.component.html',
+  styleUrls: ['./chips-drag-drop.component.scss'],
+  imports: [FalconTailwindModule, HighlightModule],
 })
 export class ChipsDragDropComponent
   extends BaseFormComponent<string>

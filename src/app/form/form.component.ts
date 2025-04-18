@@ -6,14 +6,13 @@ import { Textbox } from '@falcon-ng/core';
 import { Button } from '@falcon-ng/core';
 import { Validators } from '@angular/forms';
 import { HighlightModule } from 'ngx-highlightjs';
-import { CodeGeneratorComponent } from '../common/component/code-generator/code-generator.component';
 import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 
 @Component({
-    selector: 'app-form',
-    templateUrl: './form.component.html',
-    styleUrls: ['./form.component.scss'],
-    imports: [FalconTailwindModule, CodeGeneratorComponent, HighlightModule]
+  selector: 'app-form',
+  templateUrl: './form.component.html',
+  styleUrls: ['./form.component.scss'],
+  imports: [FalconTailwindModule, HighlightModule],
 })
 export class FormComponent extends BaseFormComponent<string> implements OnInit {
   constructor() {

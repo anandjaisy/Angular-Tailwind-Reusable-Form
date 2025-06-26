@@ -3,8 +3,12 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "@falcon-ng/core": ["./dist/falcon-ng/core"],
-      "@falcon-ng/tailwind": ["dist/falcon-ng/tailwind"]
+      "@falcon-ng/core": [
+        "./dist/falcon-ng/core"
+      ],
+      "@falcon-ng/tailwind": [
+        "dist/falcon-ng/tailwind"
+      ]
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
@@ -18,12 +22,15 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": ["ES2022", "dom"]
+    "lib": [
+      "ES2022",
+      "dom"
+    ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

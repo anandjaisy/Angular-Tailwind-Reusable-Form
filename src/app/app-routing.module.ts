@@ -28,6 +28,7 @@ import { StandaloneTextareaComponent } from './standalone-component/standalone-t
 import { LoginFormComponent } from './standalone-component/login-form/login-form.component';
 import { StandaloneSelectComponent } from './standalone-component/standalone-select/standalone-select.component';
 import { StandaloneDatepickerComponent } from './standalone-component/standalone-datepicker/standalone-datepicker.component';
+import { StandaloneButtonComponent } from './standalone-component/standalone-button/standalone-button.component';
 
 export const routes: Routes = [
   { path: 'auth-callback', component: AuthCallbackComponent },
@@ -57,6 +58,7 @@ export const routes: Routes = [
   { path: 'standalone-texarea', component: StandaloneTextareaComponent },
   { path: 'standalone-select', component: StandaloneSelectComponent },
   { path: 'standalone-datepicker', component: StandaloneDatepickerComponent },
+  { path: 'standalone-button', component: StandaloneButtonComponent },
   { path: 'login', component: LoginFormComponent },
 ];
 

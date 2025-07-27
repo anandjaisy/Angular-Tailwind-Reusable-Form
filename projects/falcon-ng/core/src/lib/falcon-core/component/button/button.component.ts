@@ -9,23 +9,22 @@ import {
 import { ThemePalette } from '@angular/material/core';
 
 @Component({
-    selector: 'fal-button',
-    template: `
+  selector: 'fal-button',
+  template: `
     <button
-      mat-flat-button
-      [color]="color"
+      [matButton]="appearance"
       [type]="type"
       (click)="onClick($event)"
       [disabled]="disabled">
       {{ label }}
     </button>
   `,
-    standalone: false
+  standalone: false,
 })
 export class ButtonComponent implements OnDestroy {
   @Input({ required: true }) label!: string;
   @Input({ required: true }) type: 'submit' | 'reset' | 'button' = 'submit';
-  @Input() color: ThemePalette = 'primary';
+  @Input() appearance: 'elevated' | 'outlined' | 'filled' | 'tonal' | '' = '';
   @Input() disabled: boolean = false;
   @Output() click = new EventEmitter<MouseEvent>();
 

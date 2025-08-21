@@ -9,16 +9,18 @@ import {
 } from '../../control-builder/base-control-builder';
 
 @Component({
-    selector: 'fal-select',
-    imports: [
-        MatInputModule,
-        MatFormFieldModule,
-        MatSelectModule,
-        ...sharedControlDeps,
-    ],
-    viewProviders: [controlProvider],
-    template: `<mat-form-field appearance="outline" class="w-full">
+  selector: 'fal-select',
+  imports: [
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    ...sharedControlDeps,
+  ],
+  viewProviders: [controlProvider],
+  template: `<mat-form-field appearance="outline" class="w-full">
+    @if(control.config.label){
     <mat-label>{{ control.config.label }}</mat-label>
+    }
     <mat-select
       [value]="control.config.value"
       [formControlName]="control.formControlName"
@@ -29,9 +31,9 @@ import {
       }
     </mat-select>
   </mat-form-field>`,
-    styles: `.w-full {
+  styles: `.w-full {
     width: 100%
-  }`
+  }`,
 })
 export class SelectComponent extends BaseControlBuilder {
   selectionChange(event: MatSelectChange): void {

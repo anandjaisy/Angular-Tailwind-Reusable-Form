@@ -7,12 +7,14 @@ import {
 } from '../../control-builder/base-control-builder';
 
 @Component({
-    selector: 'fal-textbox',
-    imports: [MatInputModule, ...sharedControlDeps],
-    viewProviders: [controlProvider],
-    template: `
+  selector: 'fal-textbox',
+  imports: [MatInputModule, ...sharedControlDeps],
+  viewProviders: [controlProvider],
+  template: `
     <mat-form-field appearance="outline" class="w-full">
+      @if(control.config.label){
       <mat-label>{{ control.config.label }}</mat-label>
+      }
       <input
         matInput
         [formControlName]="control.formControlName"
@@ -23,8 +25,8 @@ import {
         #containerDir="falconValidationMessageContainer" />
     </mat-form-field>
   `,
-    styles: `.w-full {
+  styles: `.w-full {
     width: 100%
-  }`
+  }`,
 })
 export class TextboxComponent extends BaseControlBuilder {}

@@ -7,17 +7,19 @@ import { Textbox } from '@falcon-ng/core';
 import { Textarea } from '@falcon-ng/core';
 
 @Component({
-    selector: 'app-standalone-textarea',
-    imports: [
-        ReactiveFormsModule,
-        RouterLink,
-        FalconCoreModule,
-    ],
-    templateUrl: './standalone-textarea.component.html',
-    styleUrl: './standalone-textarea.component.scss'
+  selector: 'app-standalone-textarea',
+  imports: [ReactiveFormsModule, RouterLink, FalconCoreModule],
+  templateUrl: './standalone-textarea.component.html',
+  styleUrl: './standalone-textarea.component.scss',
 })
 export class StandaloneTextareaComponent {
-  textArea: BaseControl<string> = new Textarea({ formControlName: 'textArea', label: 'First Name', });
+  textArea: BaseControl<string> = new Textarea({
+    formControlName: 'textArea',
+    label: 'First Name',
+  });
+  firstNameWithOutLabel: BaseControl<string> = new Textbox({
+    formControlName: 'firstName',
+  });
   form: FormGroup;
   constructor() {
     this.form = new FormGroup({});

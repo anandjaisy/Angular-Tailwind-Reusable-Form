@@ -28,7 +28,12 @@
             the form field with a border all the way around, not just an underline.</p>
         </div>
         <form [formGroup]="form">
-          <falcon-control [control]="textArea"/>
+          <falcon-control [control]="textArea" />
+          <div class="flex flex-col">
+            <span>Without label</span>
+            <falcon-control [control]="firstNameWithOutLabel" />
+          </div>
+
         </form>
       </div>
     </mat-card-content>

@@ -7,12 +7,14 @@ import {
 } from '../../control-builder/base-control-builder';
 
 @Component({
-    selector: 'fal-textarea',
-    imports: [MatInputModule, ...sharedControlDeps],
-    viewProviders: [controlProvider],
-    template: `
+  selector: 'fal-textarea',
+  imports: [MatInputModule, ...sharedControlDeps],
+  viewProviders: [controlProvider],
+  template: `
     <mat-form-field appearance="outline" class="w-full">
+      @if(control.config.label){
       <mat-label>{{ control.config.label }}</mat-label>
+      }
       <textarea
         matInput
         [formControlName]="control.formControlName"
@@ -33,6 +35,6 @@ import {
         [disabled]="control.config.disabled"></textarea>
     </mat-form-field>
   `,
-    styles: `.w-full{width: 100%}`
+  styles: `.w-full{width: 100%}`,
 })
 export class TextareaComponent extends BaseControlBuilder {}

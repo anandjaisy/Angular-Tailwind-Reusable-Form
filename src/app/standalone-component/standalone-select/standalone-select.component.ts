@@ -7,10 +7,10 @@ import { FalconCoreModule } from '../../../../projects/falcon-ng/core/src/lib/fa
 import { BaseControl } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/model/base-control';
 
 @Component({
-    selector: 'app-standalone-select',
-    imports: [ReactiveFormsModule, RouterLink, FalconCoreModule],
-    templateUrl: './standalone-select.component.html',
-    styleUrl: './standalone-select.component.scss'
+  selector: 'app-standalone-select',
+  imports: [ReactiveFormsModule, RouterLink, FalconCoreModule],
+  templateUrl: './standalone-select.component.html',
+  styleUrl: './standalone-select.component.scss',
 })
 export class StandaloneSelectComponent implements OnInit {
   changeEvent: IComponentEvent<string> = { change: new EventEmitter<string>() };
@@ -23,6 +23,14 @@ export class StandaloneSelectComponent implements OnInit {
       { key: '3', value: 'Option 3' },
     ],
     event: this.changeEvent,
+  });
+  firstNameWithOutLabel: BaseControl<string> = new Select({
+    formControlName: 'firstName',
+    options: [
+      { key: '1', value: 'Option 1' },
+      { key: '2', value: 'Option 2' },
+      { key: '3', value: 'Option 3' },
+    ],
   });
   form: FormGroup;
   constructor() {

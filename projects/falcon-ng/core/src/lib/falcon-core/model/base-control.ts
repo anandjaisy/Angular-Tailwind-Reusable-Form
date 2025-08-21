@@ -1,5 +1,5 @@
-import { Control} from './enum';
-import {IValidator} from './ivalidator';
+import { Control } from './enum';
+import { IValidator } from './ivalidator';
 import {
   FloatLabelType,
   MatFormFieldAppearance,
@@ -11,7 +11,8 @@ import {
   IOptions,
   ISelectOptions,
   ISliderProperty,
-  ISuffixPrefixConfig, ITextAreaProperty,
+  ISuffixPrefixConfig,
+  ITextAreaProperty,
 } from './interface';
 
 /**
@@ -35,7 +36,7 @@ import {
 export class BaseControl<T> {
   value: T | undefined;
   formControlName: string;
-  label: string;
+  label: string | undefined;
   labelPosition: any;
   order: number;
   controlType: Control;
@@ -59,39 +60,37 @@ export class BaseControl<T> {
   chipSelectedOptions: IOptions[] | any;
   editorProperty: any;
   formArray: BaseControl<T>[] | undefined;
-  constructor(
-    options: {
-      value?: T;
-      formControlName?: string;
-      label: string;
-      labelPosition?: any;
-      order?: number;
-      controlType?: Control;
-      type?: string;
-      disabled?: boolean;
-      options?: IOptions[] | any;
-      validations?: IValidator[];
-      appearance?: MatFormFieldAppearance | any;
-      class?: string;
-      style?: { [klass: string]: any };
-      placeHolder?: string;
-      floatLabel?: FloatLabelType;
-      hint?: IMatHint;
-      suffix?: ISuffixPrefixConfig;
-      prefix?: ISuffixPrefixConfig;
-      textAreaProperty?: ITextAreaProperty;
-      event?: IComponentEvent<T>;
-      selectProperty?: ISelectOptions;
-      color?: ThemePalette;
-      sliderProperty?: ISliderProperty;
-      chipSelectedOptions?: IOptions[] | any;
-      editorProperty?: any;
-      formArray?: BaseControl<T>[];
-    }
-  ) {
+  constructor(options: {
+    value?: T;
+    formControlName?: string;
+    label?: string;
+    labelPosition?: any;
+    order?: number;
+    controlType?: Control;
+    type?: string;
+    disabled?: boolean;
+    options?: IOptions[] | any;
+    validations?: IValidator[];
+    appearance?: MatFormFieldAppearance | any;
+    class?: string;
+    style?: { [klass: string]: any };
+    placeHolder?: string;
+    floatLabel?: FloatLabelType;
+    hint?: IMatHint;
+    suffix?: ISuffixPrefixConfig;
+    prefix?: ISuffixPrefixConfig;
+    textAreaProperty?: ITextAreaProperty;
+    event?: IComponentEvent<T>;
+    selectProperty?: ISelectOptions;
+    color?: ThemePalette;
+    sliderProperty?: ISliderProperty;
+    chipSelectedOptions?: IOptions[] | any;
+    editorProperty?: any;
+    formArray?: BaseControl<T>[];
+  }) {
     this.value = options.value;
     this.formControlName = options.formControlName || '';
-    this.label = options.label;
+    this.label = options.label || undefined;
     this.labelPosition = options.labelPosition || 'before' || 'after';
     this.order = options.order === undefined ? 1 : options.order;
     this.controlType = options.controlType || Control.Button;
@@ -115,6 +114,6 @@ export class BaseControl<T> {
     this.sliderProperty = options.sliderProperty || {};
     this.chipSelectedOptions = options.chipSelectedOptions || {};
     this.editorProperty = options.editorProperty || {};
-    this.formArray = options.formArray || undefined
+    this.formArray = options.formArray || undefined;
   }
 }

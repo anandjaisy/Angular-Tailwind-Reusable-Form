@@ -32,6 +32,9 @@ export class StandaloneTextboxComponent {
     formControlName: 'firstName',
     label: 'First Name',
   });
+  firstNameWithOutLabel: BaseControl<string> = new Textbox({
+    formControlName: 'firstName',
+  });
   form: FormGroup;
   constructor() {
     this.form = new FormGroup({});

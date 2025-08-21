@@ -2,11 +2,9 @@ import {
   Component,
   EventEmitter,
   Input,
-  input,
   OnDestroy,
   Output,
 } from '@angular/core';
-import { ThemePalette } from '@angular/material/core';
 
 @Component({
   selector: 'fal-button',
@@ -16,7 +14,10 @@ import { ThemePalette } from '@angular/material/core';
       [type]="type"
       (click)="onClick($event)"
       [disabled]="disabled">
-      {{ label }}
+      <span class="flex items-center justify-center gap-2 mdc-button__label">
+        <ng-content></ng-content>
+        <span class="mt-1">{{ label }}</span>
+      </span>
     </button>
   `,
   standalone: false,

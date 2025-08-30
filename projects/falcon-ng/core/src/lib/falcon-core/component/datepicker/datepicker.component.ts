@@ -27,7 +27,9 @@ import {
       matInput
       [matDatepicker]="picker"
       [formControlName]="control.formControlName"
-      [placeholder]="control.config.placeHolder" />
+      [placeholder]="control.config.placeHolder"
+      [ngStyle]="control.config.style"
+      [ngClass]="control.config.class" />
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>`,

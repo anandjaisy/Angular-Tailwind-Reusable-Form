@@ -5,13 +5,13 @@ export * from './lib/falcon-tailwind.module';
 export * from './lib/reactive-field.directive';
 export * from './lib/control-builder/control-builder.component';
 
-
 /*
  * Public API Surface of falcon core module service
  */
 export * from './lib/service/http/igeneric-http-client';
 export * from './lib/service/logger.service';
 export * from './lib/service/open-id/auth.service';
+export * from './lib/service/open-id/TokenHelperService';
 export * from './lib/service/open-id/auth-guard.service';
 export * from './lib/service/appsetting.service';
 

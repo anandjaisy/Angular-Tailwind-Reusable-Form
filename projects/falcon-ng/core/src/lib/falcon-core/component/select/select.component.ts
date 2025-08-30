@@ -25,6 +25,8 @@ import {
       [value]="control.config.value"
       [formControlName]="control.formControlName"
       [placeholder]="control.config.placeHolder"
+      [ngStyle]="control.config.style"
+      [ngClass]="control.config.class"
       (selectionChange)="selectionChange($event)">
       @for(option of control.config.options; track option){
       <mat-option [value]="option.key">{{ option.value }}</mat-option>

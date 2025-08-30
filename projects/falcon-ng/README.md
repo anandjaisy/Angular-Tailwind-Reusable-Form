@@ -3,7 +3,8 @@
 Run below command to build respective project
 
 ```
-ng build @falcon-ng/core;
+ng build @falcon-ng/core
+npm link @falcon-ng/core
 ng build @falcon-ng/tailwind
 ```
 
@@ -52,6 +53,8 @@ npm version <new_Version_No>
 ```
 
 ## In Development
+
+- Build `ng build @falcon-ng/core` then before building `ng build @falcon-ng/tailwind` run `npm link @falcon-ng/core`
 
 - During development the best way to consume library is using `npm link`
 

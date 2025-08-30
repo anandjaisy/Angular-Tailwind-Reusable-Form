@@ -1,7 +1,14 @@
 import { Component } from '@angular/core';
 import { Textbox } from '@falcon-ng/core';
 import { BaseControl } from '@falcon-ng/core';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  AbstractControl,
+  FormGroup,
+  ReactiveFormsModule,
+  ValidationErrors,
+  ValidatorFn,
+  Validators,
+} from '@angular/forms';
 import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 import { InputPrefixSuffixComponent } from '../../textbox/input-prefix-suffix/input-prefix-suffix.component';
 import { MatCard, MatCardContent } from '@angular/material/card';
@@ -10,6 +17,7 @@ import { MatIcon } from '@angular/material/icon';
 import { MatMiniFabAnchor } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import { FalconCoreModule } from '@falcon-ng/core';
+import { banWords, CustomValidator } from 'src/app/common/validations';
 
 @Component({
   selector: 'app-standalone-textbox',
@@ -34,6 +42,25 @@ export class StandaloneTextboxComponent {
   });
   firstNameWithOutLabel: BaseControl<string> = new Textbox({
     formControlName: 'firstName',
+  });
+  firstNameWithValidation: BaseControl<string> = new Textbox({
+    formControlName: 'firstNameWithValidation',
+    validations: [
+      {
+        name: 'required',
+        validator: Validators.required,
+        message: 'Required Field',
+      },
+    ],
+  });
+  customValidation: BaseControl<string> = new Textbox({
+    formControlName: 'customValidation',
+    validations: [
+      {
+        name: 'cannotContainSpace',
+        validator: banWords('Cannot contain space'),
+      },
+    ],
   });
   form: FormGroup;
   constructor() {

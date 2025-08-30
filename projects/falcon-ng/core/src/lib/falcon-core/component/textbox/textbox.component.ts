@@ -19,11 +19,13 @@ import {
         matInput
         [formControlName]="control.formControlName"
         [placeholder]="control.config.placeHolder"
+        [ngStyle]="control.config.style"
+        [ngClass]="control.config.class"
         [container]="containerDir.container" />
-      <ng-container
-        falconValidationMessageContainer
-        #containerDir="falconValidationMessageContainer" />
     </mat-form-field>
+    <ng-container
+      falconValidationMessageContainer
+      #containerDir="falconValidationMessageContainer" />
   `,
   styles: `.w-full {
     width: 100%

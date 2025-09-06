@@ -30,7 +30,10 @@
                         the form field with a border all the way around, not just an underline.</p>
                 </div>
                 <form [formGroup]="form">
-                    <falcon-control [control]="firstName" />
+                    <div class="flex flex-col gap-2">
+                        <falcon-control [control]="checkboxAfter" />
+                        <falcon-control [control]="checkboxBefore" />
+                    </div>
                     <!-- <pre><code [highlight]="form.value | json"></code></pre> -->
                 </form>
             </div>

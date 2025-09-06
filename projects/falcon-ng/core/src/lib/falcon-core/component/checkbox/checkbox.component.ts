@@ -4,9 +4,10 @@ import {
   controlProvider,
   sharedControlDeps,
 } from '../../control-builder/base-control-builder';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import {
+  MatCheckboxChange,
+  MatCheckboxModule,
+} from '@angular/material/checkbox';
 
 @Component({
   selector: 'fal-checkbox',
@@ -22,7 +23,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
   </mat-checkbox>`,
 })
 export class CheckboxComponent extends BaseControlBuilder {
-  change($event: any) {
-    this.control.config.event.change?.emit(event);
+  change($event: MatCheckboxChange) {
+    this.control.config.event.change?.emit($event);
   }
 }

@@ -44,6 +44,7 @@ export class StandaloneRadioComponent implements OnInit {
     ],
     appearance: Appearance.Before,
     class: 'radio-group-column',
+    event: this.changeEvent,
   });
 
   form: FormGroup;

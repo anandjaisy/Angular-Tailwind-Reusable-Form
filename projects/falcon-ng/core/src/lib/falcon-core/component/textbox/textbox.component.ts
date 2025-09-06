@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import {
   BaseControlBuilder,
@@ -11,7 +11,7 @@ import {
   imports: [MatInputModule, ...sharedControlDeps],
   viewProviders: [controlProvider],
   template: `
-    <mat-form-field appearance="outline" class="w-full">
+    <mat-form-field [appearance]="control.config.appearance" class="w-full">
       @if(control.config.label){
       <mat-label>{{ control.config.label }}</mat-label>
       }

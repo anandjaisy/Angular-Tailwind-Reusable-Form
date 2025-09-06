@@ -27,16 +27,14 @@ export class ComponentResolver {
         c => c.DatepickerComponent
       ),
     radio: () =>
-      import('./component/textarea/textarea.component').then(
-        c => c.TextareaComponent
-      ),
+      import('./component/radio/radio.component').then(c => c.RadioComponent),
     checkbox: () =>
-      import('./component/textarea/textarea.component').then(
-        c => c.TextareaComponent
+      import('./component/checkbox/checkbox.component').then(
+        c => c.CheckboxComponent
       ),
     button: () =>
-      import('./component/textarea/textarea.component').then(
-        c => c.TextareaComponent
+      import('./component/button/button.component').then(
+        c => c.ButtonComponent
       ),
     slideToggle: () =>
       import('./component/textarea/textarea.component').then(
@@ -51,8 +49,8 @@ export class ComponentResolver {
         c => c.TextareaComponent
       ),
     autocomplete: () =>
-      import('./component/textarea/textarea.component').then(
-        c => c.TextareaComponent
+      import('./component/autocomplete/autocomplete.component').then(
+        c => c.AutocompleteComponent
       ),
     chip: () =>
       import('./component/textarea/textarea.component').then(

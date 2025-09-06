@@ -5,10 +5,20 @@ import { FalconCoreModule } from '@falcon-ng/core';
 import { BaseControl } from '@falcon-ng/core';
 import { Textbox } from '@falcon-ng/core';
 import { Textarea } from '@falcon-ng/core';
+import { HighlightModule } from 'ngx-highlightjs';
+import { FalconTailwindModule } from 'projects/falcon-ng/tailwind/src/public-api';
 
 @Component({
   selector: 'app-standalone-textarea',
-  imports: [ReactiveFormsModule, RouterLink, FalconCoreModule],
+  imports: [
+    ReactiveFormsModule,
+    RouterLink,
+    FalconCoreModule,
+    FalconCoreModule,
+    ReactiveFormsModule,
+    FalconTailwindModule,
+    HighlightModule,
+  ],
   templateUrl: './standalone-textarea.component.html',
   styleUrl: './standalone-textarea.component.scss',
 })

@@ -37,7 +37,7 @@ export class BaseControl<T> {
   value: T | undefined;
   formControlName: string;
   label: string | undefined;
-  labelPosition: any;
+  labelPosition: 'before' | 'after';
   order: number;
   controlType: Control;
   type: string;
@@ -64,7 +64,7 @@ export class BaseControl<T> {
     value?: T;
     formControlName?: string;
     label?: string;
-    labelPosition?: any;
+    labelPosition?: 'before' | 'after';
     order?: number;
     controlType?: Control;
     type?: string;

@@ -5,7 +5,7 @@ import {
   sharedControlDeps,
 } from '../../control-builder/base-control-builder';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatRadioModule } from '@angular/material/radio';
+import { MatRadioChange, MatRadioModule } from '@angular/material/radio';
 
 @Component({
   selector: 'fal-radio',
@@ -34,7 +34,7 @@ import { MatRadioModule } from '@angular/material/radio';
   </div>`,
 })
 export class RadioComponent extends BaseControlBuilder {
-  radioGroupChangeEvent($event: any) {
-    this.control.config.event.change?.emit(event);
+  radioGroupChangeEvent($event: MatRadioChange) {
+    this.control.config.event.change?.emit($event);
   }
 }

@@ -35,10 +35,20 @@ import {
   styleUrl: './standalone-checkbox.component.scss',
 })
 export class StandaloneCheckboxComponent implements OnInit {
-  changeEvent: IComponentEvent<string> = { change: new EventEmitter<string>() };
-  firstName: BaseControl<boolean> = new CheckBox({
+  changeEvent: IComponentEvent<boolean> = {
+    change: new EventEmitter<boolean>(),
+  };
+  checkboxAfter: BaseControl<boolean> = new CheckBox({
     formControlName: 'firstName',
-    label: 'First Name',
+    label: 'After checkbox',
+    labelPosition: 'after',
+    event: this.changeEvent,
+  });
+  checkboxBefore: BaseControl<boolean> = new CheckBox({
+    formControlName: 'firstName',
+    label: 'Before checkbox',
+    labelPosition: 'before',
+    event: this.changeEvent,
   });
 
   form: FormGroup;

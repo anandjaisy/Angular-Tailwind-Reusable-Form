@@ -18,6 +18,7 @@ import { MatMiniFabAnchor } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import { FalconCoreModule } from '@falcon-ng/core';
 import { banWords, CustomValidator } from 'src/app/common/validations';
+import { HighlightModule } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-standalone-textbox',
@@ -25,6 +26,7 @@ import { banWords, CustomValidator } from 'src/app/common/validations';
     FalconCoreModule,
     ReactiveFormsModule,
     FalconTailwindModule,
+    HighlightModule,
     MatCard,
     MatCardContent,
     MatDivider,

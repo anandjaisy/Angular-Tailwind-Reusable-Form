@@ -19,20 +19,29 @@ import {
     ...sharedControlDeps,
   ],
   viewProviders: [controlProvider],
-  template: `<mat-form-field appearance="outline" class="w-full">
-    @if(control.config.label){
-    <mat-label>{{ control.config.label }}</mat-label>
-    }
-    <input
-      matInput
-      [matDatepicker]="picker"
-      [formControlName]="control.formControlName"
-      [placeholder]="control.config.placeHolder"
-      [ngStyle]="control.config.style"
-      [ngClass]="control.config.class" />
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>`,
+  template: `<mat-form-field
+      [appearance]="control.config.appearance"
+      class="w-full">
+      @if(control.config.label){
+      <mat-label>{{ control.config.label }}</mat-label>
+      }
+      <input
+        matInput
+        [matDatepicker]="picker"
+        [formControlName]="control.formControlName"
+        [placeholder]="control.config.placeHolder"
+        [ngStyle]="control.config.style"
+        [ngClass]="control.config.class"
+        [container]="containerDir.container" />
+      />
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <ng-container
+      falconValidationMessageContainer
+      #containerDir="falconValidationMessageContainer" /> `,
   styles: `.w-full {
     width: 100%
   }`,

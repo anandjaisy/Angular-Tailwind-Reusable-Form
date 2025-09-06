@@ -29,6 +29,9 @@ import { LoginFormComponent } from './standalone-component/login-form/login-form
 import { StandaloneSelectComponent } from './standalone-component/standalone-select/standalone-select.component';
 import { StandaloneDatepickerComponent } from './standalone-component/standalone-datepicker/standalone-datepicker.component';
 import { StandaloneButtonComponent } from './standalone-component/standalone-button/standalone-button.component';
+import { StandaloneAutocompleteComponent } from './standalone-component/standalone-autocomplete/standalone-autocomplete.component';
+import { StandaloneRadioComponent } from './standalone-component/standalone-radio/standalone-radio.component';
+import { StandaloneCheckboxComponent } from './standalone-component/standalone-checkbox/standalone-checkbox.component';
 
 export const routes: Routes = [
   { path: 'auth-callback', component: AuthCallbackComponent },
@@ -60,6 +63,18 @@ export const routes: Routes = [
   { path: 'standalone-datepicker', component: StandaloneDatepickerComponent },
   { path: 'standalone-button', component: StandaloneButtonComponent },
   { path: 'login', component: LoginFormComponent },
+  {
+    path: 'standalone-autocomplete',
+    component: StandaloneAutocompleteComponent,
+  },
+  {
+    path: 'standalone-radio',
+    component: StandaloneRadioComponent,
+  },
+  {
+    path: 'standalone-check',
+    component: StandaloneCheckboxComponent,
+  },
 ];
 
 //@NgModule({

@@ -17,22 +17,28 @@ import {
     ...sharedControlDeps,
   ],
   viewProviders: [controlProvider],
-  template: `<mat-form-field appearance="outline" class="w-full">
-    @if(control.config.label){
-    <mat-label>{{ control.config.label }}</mat-label>
-    }
-    <mat-select
-      [value]="control.config.value"
-      [formControlName]="control.formControlName"
-      [placeholder]="control.config.placeHolder"
-      [ngStyle]="control.config.style"
-      [ngClass]="control.config.class"
-      (selectionChange)="selectionChange($event)">
-      @for(option of control.config.options; track option){
-      <mat-option [value]="option.key">{{ option.value }}</mat-option>
+  template: `<mat-form-field
+      [appearance]="control.config.appearance"
+      class="w-full">
+      @if(control.config.label){
+      <mat-label>{{ control.config.label }}</mat-label>
       }
-    </mat-select>
-  </mat-form-field>`,
+      <mat-select
+        [value]="control.config.value"
+        [formControlName]="control.formControlName"
+        [placeholder]="control.config.placeHolder"
+        [ngStyle]="control.config.style"
+        [ngClass]="control.config.class"
+        (selectionChange)="selectionChange($event)"
+        [container]="containerDir.container">
+        @for(option of control.config.options; track option){
+        <mat-option [value]="option.key">{{ option.value }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <ng-container
+      falconValidationMessageContainer
+      #containerDir="falconValidationMessageContainer" />`,
   styles: `.w-full {
     width: 100%
   }`,

@@ -25,6 +25,7 @@ export * from './lib/falcon-core/control-type/Textarea';
 export * from './lib/falcon-core/control-type/Textbox';
 
 export * from './lib/falcon-core/control-builder/control-builder.component';
+export * from './lib/falcon-core/control-builder/group-control-builder.component';
 
 export * from './lib/falcon-core/angularmaterial.module';
 

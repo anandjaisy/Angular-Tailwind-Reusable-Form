@@ -1,38 +1,56 @@
-import { AfterViewInit, Directive, inject, Input, OnDestroy, OnInit, StaticProvider } from '@angular/core';
+import {
+  AfterViewInit,
+  Directive,
+  inject,
+  Input,
+  OnDestroy,
+  OnInit,
+  StaticProvider,
+} from '@angular/core';
 import {
   AbstractControl,
   ControlContainer,
   FormControl,
   FormGroup,
-  ReactiveFormsModule, ValidatorFn,
+  ReactiveFormsModule,
+  ValidatorFn,
   Validators,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CONTROL_DATA } from './control-data-builder';
 import { IValidator } from '../model/ivalidator';
 import { ValidationMessageDirective } from '../component/validation-error/validation-message.directive';
-import {
-  ValidationMessageContainerDirective
-} from '../component/validation-error/validation-message-container.directive';
+import { ValidationMessageContainerDirective } from '../component/validation-error/validation-message-container.directive';
 
-export const sharedControlDeps = [CommonModule, ReactiveFormsModule, ValidationMessageDirective,ValidationMessageContainerDirective];
+export const sharedControlDeps = [
+  CommonModule,
+  ReactiveFormsModule,
+  ValidationMessageDirective,
+  ValidationMessageContainerDirective,
+];
 export const controlProvider: StaticProvider = {
   provide: ControlContainer,
-  useFactory: () => inject(ControlContainer, { skipSelf: true })
-}
+  useFactory: () => inject(ControlContainer, { skipSelf: true }),
+};
 
 @Directive()
 export class BaseControlBuilder implements OnInit, OnDestroy {
   private parentGroupDir = inject(ControlContainer);
   public control = inject(CONTROL_DATA);
-  private formControl: AbstractControl = new FormControl(this.control.config.value, this.bindValidators(this.control.config.validations))
+  protected formControl: AbstractControl = new FormControl(
+    this.control.config.value,
+    this.bindValidators(this.control.config.validations)
+  );
 
   get parentFormGroup() {
     return this.parentGroupDir.control as FormGroup;
   }
 
   ngOnInit() {
-    this.parentFormGroup.addControl(this.control.formControlName, this.formControl);
+    this.parentFormGroup.addControl(
+      this.control.formControlName,
+      this.formControl
+    );
   }
 
   ngOnDestroy() {
@@ -41,7 +59,9 @@ export class BaseControlBuilder implements OnInit, OnDestroy {
 
   private bindValidators(validations: IValidator[]): ValidatorFn | null {
     if (validations.length > 0) {
-      const validatorList: ValidatorFn[] = validations.map((valid: IValidator) => valid.validator);
+      const validatorList: ValidatorFn[] = validations.map(
+        (valid: IValidator) => valid.validator
+      );
       return Validators.compose(validatorList);
     }
     return Validators.nullValidator;

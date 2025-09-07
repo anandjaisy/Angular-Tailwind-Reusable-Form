@@ -1,0 +1,79 @@
+<div class="container mx-auto p-6">
+    <mat-card>
+        <div class="flex justify-between p-5">
+            <a mat-mini-fab color="accent" routerLink="..">
+                <mat-icon>arrow_back</mat-icon>
+            </a>
+            <h2>Group component</h2>
+            <h2></h2>
+        </div>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <div style="margin-top: 40px">
+                <form [formGroup]="loginForm" (ngSubmit)="submit()">
+                    <falcon-control [control]="firstName" />
+                    <mat-card class="p-5" appearance="outlined">
+                        <h2>Group address</h2>
+                        <falcon-group-control formGroupName="address">
+                            <div class="flex flex-col">
+                                <span>Without label</span>
+                                <falcon-control [control]="firstNameWithOutLabel" />
+                            </div>
+
+                            <div class="flex flex-col">
+                                <span>With validation</span>
+                                <falcon-control [control]="firstNameWithValidation" />
+                            </div>
+                            <div class="flex flex-col">
+                                <span>Custom validation</span>
+                                <falcon-control [control]="customValidation" />
+                            </div>
+                            <mat-card class="p-5" appearance="outlined">
+                                <h2>Group phone</h2>
+                                <falcon-group-control formGroupName="phone">
+                                    <div class="flex flex-col">
+                                        <span>Without label</span>
+                                        <falcon-control [control]="firstNameWithOutLabel" />
+                                    </div>
+
+                                    <div class="flex flex-col">
+                                        <span>With validation</span>
+                                        <falcon-control [control]="firstNameWithValidation" />
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span>Custom validation</span>
+                                        <falcon-control [control]="customValidation" />
+                                    </div>
+                                </falcon-group-control>
+                            </mat-card>
+                        </falcon-group-control>
+                    </mat-card>
+                    <falcon-control [control]="nextLevel" />
+                    <mat-card class="p-5" appearance="outlined">
+                        <h2>Group phone</h2>
+                        <falcon-group-control formGroupName="phone">
+                            <div class="flex flex-col">
+                                <span>Without label</span>
+                                <falcon-control [control]="firstNameWithOutLabel" />
+                            </div>
+
+                            <div class="flex flex-col">
+                                <span>With validation</span>
+                                <falcon-control [control]="firstNameWithValidation" />
+                            </div>
+                            <div class="flex flex-col">
+                                <span>Custom validation</span>
+                                <falcon-control [control]="customValidation" />
+                            </div>
+                        </falcon-group-control>
+                    </mat-card>
+                    <fal-button label="Sign in" type="submit" class="flex justify-center" appearance="elevated"
+                        [disabled]="!loginForm.valid" />
+                    <pre><code [highlight]="loginForm.value | json"></code></pre>
+                </form>
+
+            </div>
+        </mat-card-content>
+
+    </mat-card>
+</div>

@@ -255,29 +255,32 @@ export declare interface IOptions {
  * @description
  * @param change change event for the control
  * @param click click event for the control
+ * @param keyboardEnter keyboard Enter event for the control
+ * @param inputChange input text change event for the control
  * Events for controls
  */
 export declare interface IComponentEvent<T> {
   change?: EventEmitter<T>;
   click?: EventEmitter<T>;
   keyboardEnter?: EventEmitter<T>;
+  inputChange?: EventEmitter<string>;
 }
 /**
-* @description
-* Interface use for setting the Mat Slider Property.
-* @usageNotes
-* ```ts
-*       componentProperty: {
-*        sliderProperty : {
-*          invert : true,
-*          step : 1,
-*          thumbLabel : false,
-*          vertical : true,
-*          horizontal : false
-*        }
-*      }
-* ```
-*/
+ * @description
+ * Interface use for setting the Mat Slider Property.
+ * @usageNotes
+ * ```ts
+ *       componentProperty: {
+ *        sliderProperty : {
+ *          invert : true,
+ *          step : 1,
+ *          thumbLabel : false,
+ *          vertical : true,
+ *          horizontal : false
+ *        }
+ *      }
+ * ```
+ */
 export declare interface ISliderProperty {
   invert?: boolean;
   thumbLabel?: boolean;
@@ -289,19 +292,19 @@ export declare interface ISliderProperty {
 }
 
 /**
-* @description
-* Interface use for mat table header and column.
-* @usageNotes
-* ```ts
-*       columns: MatTable[] = [
-*        {
-*          columnDef: 'position',
-*          header: 'No.',
-*          cell: (element: any) => `${element.position}`
-*          }
-*      ]
-* ```
-*/
+ * @description
+ * Interface use for mat table header and column.
+ * @usageNotes
+ * ```ts
+ *       columns: MatTable[] = [
+ *        {
+ *          columnDef: 'position',
+ *          header: 'No.',
+ *          cell: (element: any) => `${element.position}`
+ *          }
+ *      ]
+ * ```
+ */
 export declare interface MatTable {
   columnDef?: string;
   header?: string;

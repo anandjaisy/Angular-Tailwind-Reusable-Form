@@ -117,8 +117,8 @@ import {environment} from "../environments/environment";
 
 ## Publish code to GitHub
 
-ng build --configuration=production --output-path docs --base-href /<project_name>/
+`ng build --configuration=production --output-path docs --base-href /<project_name>/`
 
-Example --> ng build --configuration=production --output-path docs --base-href /Angular-Tailwind-Reusable-Form/
+Example --> `ng build --configuration=production --output-path docs --base-href /Angular-Tailwind-Reusable-Form/`
 
 - Reference - https://angular.io/guide/deployment

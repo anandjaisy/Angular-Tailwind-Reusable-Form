@@ -17,7 +17,8 @@ import { map, startWith } from 'rxjs/operators';
   template: `<mat-form-field
       [appearance]="control.config.appearance"
       [ngStyle]="control.config.style"
-      [ngClass]="control.config.class">
+      [ngClass]="control.config.class"
+      class="w-full">
       @if(control.config.label){
       <mat-label>{{ control.config.label }}</mat-label>
       }
@@ -58,6 +59,7 @@ export class AutocompleteComponent extends BaseControlBuilder {
   onInputChange(event: Event) {
     const target = event.target as HTMLInputElement;
     this.filteredOptions = this._filter(target.value || '');
+    this.control.config.event.inputChange?.emit(target.value || '');
   }
 
   private _filter(value: string): IOptions[] {
@@ -68,6 +70,7 @@ export class AutocompleteComponent extends BaseControlBuilder {
   }
 
   optionSelected(event: any) {
+    this.control.config.event.keyboardEnter?.emit(event);
     this.control.config.event.change?.emit(event);
   }
 }

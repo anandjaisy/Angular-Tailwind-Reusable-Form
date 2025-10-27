@@ -31,8 +31,13 @@
                 </div>
                 <form [formGroup]="form">
                     <falcon-control [control]="firstName" />
-                    <!-- <pre><code [highlight]="form?.value | json"></code></pre> -->
+                    <pre><code [highlight]="form.value | json"></code></pre>
                 </form>
+                <br />
+                <br />
+                <br />
+                <br />
+                <app-autocomplete-text-change />
             </div>
         </mat-card-content>
 

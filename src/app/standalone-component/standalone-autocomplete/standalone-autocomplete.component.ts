@@ -31,8 +31,8 @@ export class StandaloneAutocompleteComponent implements OnInit {
     formControlName: 'firstName',
     label: 'Basic Auto complete',
     options: [
-      { value: 'Sydney', key: 'Sydney' },
-      { value: 'Melbourne', key: 'Melbourne' },
+      { value: 'Sydney', key: 'Syd' },
+      { value: 'Melbourne', key: 'Mel' },
       { value: 'Brisbane', key: 'Brisbane' },
       { value: 'NewYork', key: 'New York' },
       { value: 'Kathmandu', key: 'Kathmandu' },

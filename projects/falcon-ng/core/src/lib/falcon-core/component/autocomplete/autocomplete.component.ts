@@ -34,9 +34,10 @@ import { map, startWith } from 'rxjs/operators';
         [container]="containerDir.container" />
       <mat-autocomplete
         #auto="matAutocomplete"
-        (optionSelected)="optionSelected($event.option.viewValue)">
+        (optionSelected)="optionSelected($event.option.viewValue)"
+        [displayWith]="displayFn">
         @for(option of filteredOptions; track option){
-        <mat-option [value]="option.key">{{ option.value }}</mat-option>
+        <mat-option [value]="option">{{ option.value }}</mat-option>
         }
       </mat-autocomplete>
     </mat-form-field>
@@ -54,6 +55,10 @@ export class AutocompleteComponent extends BaseControlBuilder {
     super();
     this.originalOptions = [...this.control.config.options];
     this.filteredOptions = [...this.originalOptions];
+  }
+
+  displayFn(option: IOptions): string {
+    return option && option.value ? option.value : '';
   }
 
   onInputChange(event: Event) {

@@ -1,6 +1,7 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { IRequestOptions } from '@falcon-ng/core';
+import { HttpClient } from '@angular/common/http';
 @Injectable()
 export abstract class IGenericHttpClient<T> {
   /**
@@ -107,4 +108,16 @@ export abstract class IGenericHttpClient<T> {
     destinationUrl: string,
     options?: IRequestOptions | any
   ): Observable<T>;
+
+  /**
+   * @description
+   * Gets the underlying HttpClient instance
+   * @returns {HttpClient}
+   * @usageNotes
+   * The following snippet shows how to use this method
+   * ```ts
+   *    this.genericHttpClientService.getHttpClient();
+   * ```
+   */
+  abstract getHttpClient(): HttpClient;
 }

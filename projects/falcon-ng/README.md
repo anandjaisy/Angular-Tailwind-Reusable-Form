@@ -28,7 +28,7 @@ Note - Tailwind project is dependent on core project. The build artifacts will b
 
 #### Tailwind
 
-ng build @falcon-ng/tailwind --configuration=production
+    ng build @falcon-ng/tailwind --configuration=production
 
 - `npm login`
 - From the project root folder: `cd dist/@falcon-ng/tailwind`

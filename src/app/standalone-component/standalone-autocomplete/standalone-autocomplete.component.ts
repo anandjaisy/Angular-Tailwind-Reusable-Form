@@ -2,6 +2,8 @@ import { Component, EventEmitter, OnInit } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { HighlightModule } from 'ngx-highlightjs';
+import { AutocompleteTextChangeComponent } from './autocomplete-text-change/autocomplete-text-change.component';
+import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 import {
   Appearance,
   AutoComplete,
@@ -9,9 +11,7 @@ import {
   FalconCoreModule,
   IComponentEvent,
   Textbox,
-} from 'projects/falcon-ng/core/src/public-api';
-import { FalconTailwindModule } from 'projects/falcon-ng/tailwind/src/public-api';
-import { AutocompleteTextChangeComponent } from './autocomplete-text-change/autocomplete-text-change.component';
+} from '../../../../projects/falcon-ng/core/src/public-api';
 
 @Component({
   selector: 'app-standalone-autocomplete',
@@ -45,6 +45,6 @@ export class StandaloneAutocompleteComponent implements OnInit {
     this.form = new FormGroup({});
   }
   ngOnInit(): void {
-    this.changeEvent.change?.subscribe(event => console.log(event));
+    this.changeEvent.change?.subscribe((event) => console.log(event));
   }
 }

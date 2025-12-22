@@ -6,9 +6,10 @@ import {
   MatTable,
 } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/model/interface';
 import { HighlightModule } from 'ngx-highlightjs';
-import { CodeGeneratorComponent } from '../../common/component/code-generator/code-generator.component';
+
 import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 import { CodeButtonComponent } from '../../common/component/code-button/code-button.component';
+import { CodeGeneratorComponent } from '../../common/component/code-generator/code-generator.component';
 
 export interface PeriodicElement {
   name: string;
@@ -31,15 +32,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 @Component({
-    selector: 'app-table-filter',
-    templateUrl: './table-filter.component.html',
-    styleUrls: ['./table-filter.component.scss'],
-    imports: [
-        FalconTailwindModule,
-        CodeGeneratorComponent,
-        HighlightModule,
-        CodeButtonComponent,
-    ]
+  selector: 'app-table-filter',
+  templateUrl: './table-filter.component.html',
+  styleUrls: ['./table-filter.component.scss'],
+  imports: [FalconTailwindModule, CodeGeneratorComponent, HighlightModule, CodeButtonComponent],
 })
 export class TableFilterComponent implements OnInit {
   public displayedColumns = ['action'];
@@ -83,10 +79,8 @@ export class TableFilterComponent implements OnInit {
     };
   }
   buttonClickEvent() {
-    this.angularCodeTemplateViewModel.tsConfig =
-      AngularCodeTemplate.Table_FILTER_TS_KEY;
-    this.angularCodeTemplateViewModel.htmlConfig =
-      AngularCodeTemplate.Table_FILTER_HTML_KEY;
+    this.angularCodeTemplateViewModel.tsConfig = AngularCodeTemplate.Table_FILTER_TS_KEY;
+    this.angularCodeTemplateViewModel.htmlConfig = AngularCodeTemplate.Table_FILTER_HTML_KEY;
     this.codeGeneratorEnable = !this.codeGeneratorEnable;
   }
   tableActionRowEvent($event: any) {}

@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { Observable, of } from 'rxjs';
-import { AngularCodeTemplateViewModel } from 'src/app/common/angularCodeTemplateViewModel';
-import { AngularCodeTemplate } from 'src/app/common/angularCodeTemplate';
-import { CustomValidator } from 'src/app/common/validations';
 import { BaseFormComponent } from '../../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
 
 import {
@@ -16,22 +13,17 @@ import { CodeGeneratorComponent } from '../../common/component/code-generator/co
 import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 import { CodeButtonComponent } from '../../common/component/code-button/code-button.component';
 import { Textbox } from '@falcon-ng/core';
+import { AngularCodeTemplateViewModel } from '../../common/angularCodeTemplateViewModel';
+import { CustomValidator } from '../../common/validations';
+import { AngularCodeTemplate } from '../../common/angularCodeTemplate';
 
 @Component({
-    selector: 'app-input-error',
-    templateUrl: './input-error.component.html',
-    styleUrls: ['./input-error.component.scss'],
-    imports: [
-        FalconTailwindModule,
-        CodeGeneratorComponent,
-        HighlightModule,
-        CodeButtonComponent,
-    ]
+  selector: 'app-input-error',
+  templateUrl: './input-error.component.html',
+  styleUrls: ['./input-error.component.scss'],
+  imports: [FalconTailwindModule, CodeGeneratorComponent, HighlightModule, CodeButtonComponent],
 })
-export class InputErrorComponent
-  extends BaseFormComponent<any>
-  implements OnInit
-{
+export class InputErrorComponent extends BaseFormComponent<any> implements OnInit {
   codeGeneratorEnable: boolean = false;
   public angularCodeTemplateViewModel: AngularCodeTemplateViewModel =
     new AngularCodeTemplateViewModel();
@@ -65,9 +57,7 @@ export class InputErrorComponent
           validations: [
             {
               name: 'pattern',
-              validator: Validators.pattern(
-                '^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'
-              ),
+              validator: Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'),
               message: 'Invalid email',
             },
           ],
@@ -85,9 +75,7 @@ export class InputErrorComponent
             },
             {
               name: 'pattern',
-              validator: Validators.pattern(
-                '^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'
-              ),
+              validator: Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'),
               message: 'Invalid email',
             },
             {
@@ -125,10 +113,8 @@ export class InputErrorComponent
     return of(model);
   }
   buttonClickEvent() {
-    this.angularCodeTemplateViewModel.tsConfig =
-      AngularCodeTemplate.FormFieldError_TS_KEY;
-    this.angularCodeTemplateViewModel.htmlConfig =
-      AngularCodeTemplate.FormFieldError_HTML_KEY;
+    this.angularCodeTemplateViewModel.tsConfig = AngularCodeTemplate.FormFieldError_TS_KEY;
+    this.angularCodeTemplateViewModel.htmlConfig = AngularCodeTemplate.FormFieldError_HTML_KEY;
     this.codeGeneratorEnable = !this.codeGeneratorEnable;
   }
 }

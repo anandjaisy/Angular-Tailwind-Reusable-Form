@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { AngularCodeTemplateViewModel } from 'src/app/common/angularCodeTemplateViewModel';
-import { AngularCodeTemplate } from 'src/app/common/angularCodeTemplate';
 import { BaseFormComponent } from '../../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 import {
@@ -14,22 +12,16 @@ import { HighlightModule } from 'ngx-highlightjs';
 import { CodeGeneratorComponent } from '../../common/component/code-generator/code-generator.component';
 import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 import { CodeButtonComponent } from '../../common/component/code-button/code-button.component';
+import { AngularCodeTemplateViewModel } from '../../common/angularCodeTemplateViewModel';
+import { AngularCodeTemplate } from '../../common/angularCodeTemplate';
 
 @Component({
-    selector: 'app-input-floating-label',
-    templateUrl: './input-floating-label.component.html',
-    styleUrls: ['./input-floating-label.component.scss'],
-    imports: [
-        FalconTailwindModule,
-        CodeGeneratorComponent,
-        HighlightModule,
-        CodeButtonComponent,
-    ]
+  selector: 'app-input-floating-label',
+  templateUrl: './input-floating-label.component.html',
+  styleUrls: ['./input-floating-label.component.scss'],
+  imports: [FalconTailwindModule, CodeGeneratorComponent, HighlightModule, CodeButtonComponent],
 })
-export class InputFloatingLabelComponent
-  extends BaseFormComponent<any>
-  implements OnInit
-{
+export class InputFloatingLabelComponent extends BaseFormComponent<any> implements OnInit {
   codeGeneratorEnable: boolean = false;
   public angularCodeTemplateViewModel: AngularCodeTemplateViewModel =
     new AngularCodeTemplateViewModel();
@@ -73,8 +65,7 @@ export class InputFloatingLabelComponent
   }
 
   buttonClickEvent() {
-    this.angularCodeTemplateViewModel.tsConfig =
-      AngularCodeTemplate.FormFieldFloatingLabel_TS_KEY;
+    this.angularCodeTemplateViewModel.tsConfig = AngularCodeTemplate.FormFieldFloatingLabel_TS_KEY;
     this.angularCodeTemplateViewModel.htmlConfig =
       AngularCodeTemplate.FormFieldFloatingLabel_HTML_KEY;
     this.codeGeneratorEnable = !this.codeGeneratorEnable;

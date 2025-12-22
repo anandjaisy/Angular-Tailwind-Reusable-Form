@@ -9,8 +9,8 @@ import { MatIcon } from '@angular/material/icon';
 import { MatMiniFabAnchor } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import { FalconCoreModule } from '@falcon-ng/core';
-import { banWords } from 'src/app/common/validations';
 import { HighlightModule } from 'ngx-highlightjs';
+import { banWords } from '../../common/validations';
 
 @Component({
   selector: 'app-standalone-textbox',

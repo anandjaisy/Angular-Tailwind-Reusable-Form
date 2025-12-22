@@ -14,7 +14,7 @@ import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/l
   imports: [FalconTailwindModule, HighlightModule],
 })
 export class AuthCallbackComponent implements OnInit {
-  private completed: boolean;
+  private completed: boolean = false;
   constructor(
     private appSettings: AppSettingService,
     private authService: AuthService,

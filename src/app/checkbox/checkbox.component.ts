@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {
   BaseFormComponent,
   FalconTailwindModule,
-} from 'projects/falcon-ng/tailwind/src/public-api';
+} from '../../../projects/falcon-ng/tailwind/src/public-api';
 import { Observable, of } from 'rxjs';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
@@ -13,20 +13,12 @@ import { CodeButtonComponent } from '../common/component/code-button/code-button
 import { Appearance, CheckBox } from '@falcon-ng/core';
 
 @Component({
-    selector: 'app-checkbox',
-    templateUrl: './checkbox.component.html',
-    styleUrls: ['./checkbox.component.scss'],
-    imports: [
-        FalconTailwindModule,
-        CodeGeneratorComponent,
-        HighlightModule,
-        CodeButtonComponent,
-    ]
+  selector: 'app-checkbox',
+  templateUrl: './checkbox.component.html',
+  styleUrls: ['./checkbox.component.scss'],
+  imports: [FalconTailwindModule, CodeGeneratorComponent, HighlightModule, CodeButtonComponent],
 })
-export class CheckboxComponent
-  extends BaseFormComponent<any>
-  implements OnInit
-{
+export class CheckboxComponent extends BaseFormComponent<any> implements OnInit {
   public codeGeneratorEnable: boolean = false;
   public angularCodeTemplateViewModel: AngularCodeTemplateViewModel =
     new AngularCodeTemplateViewModel();
@@ -63,10 +55,8 @@ export class CheckboxComponent
   }
 
   buttonClickEvent() {
-    this.angularCodeTemplateViewModel.tsConfig =
-      AngularCodeTemplate.CheckBox_TS_KEY;
-    this.angularCodeTemplateViewModel.htmlConfig =
-      AngularCodeTemplate.CheckBox_HTML_KEY;
+    this.angularCodeTemplateViewModel.tsConfig = AngularCodeTemplate.CheckBox_TS_KEY;
+    this.angularCodeTemplateViewModel.htmlConfig = AngularCodeTemplate.CheckBox_HTML_KEY;
     this.codeGeneratorEnable = !this.codeGeneratorEnable;
   }
 }

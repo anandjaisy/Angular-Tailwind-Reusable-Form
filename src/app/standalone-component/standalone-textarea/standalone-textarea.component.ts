@@ -6,7 +6,7 @@ import { BaseControl } from '@falcon-ng/core';
 import { Textbox } from '@falcon-ng/core';
 import { Textarea } from '@falcon-ng/core';
 import { HighlightModule } from 'ngx-highlightjs';
-import { FalconTailwindModule } from 'projects/falcon-ng/tailwind/src/public-api';
+import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 
 @Component({
   selector: 'app-standalone-textarea',

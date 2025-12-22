@@ -8,9 +8,9 @@
       {{item.value}}
     </mat-option>
   </mat-select>
-  <mat-hint *ngIf="control.hint?.show">
-    <ng-container *ngIf="control.hint?.link?.isLink; else elseBlock">
-      <ng-container *ngIf="control.hint?.link?.queryParams !== undefined; else withoutQueryBlock">
+  <mat-hint *ngIf="control.hint.show">
+    <ng-container *ngIf="control.hint.link?.isLink; else elseBlock">
+      <ng-container *ngIf="control.hint.link?.queryParams !== undefined; else withoutQueryBlock">
         <a [routerLink]="[control.hint.link?.routerLink]" [queryParams]="{ query: control.hint.link?.queryParams }"
           routerLinkActive="router-link-active">{{control.hint.text}}</a>
       </ng-container>

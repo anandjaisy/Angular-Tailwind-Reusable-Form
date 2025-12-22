@@ -6,13 +6,11 @@ import { MatDivider } from '@angular/material/divider';
 import { MatIcon } from '@angular/material/icon';
 import { MatMiniFabAnchor } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
-import { banWords } from 'src/app/common/validations';
 import { HighlightModule } from 'ngx-highlightjs';
-import {
-  BaseControl,
-  FalconCoreModule,
-  Textbox,
-} from 'projects/falcon-ng/core/src/public-api';
+import { FalconCoreModule } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/falcon-core.module';
+import { Textbox } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/control-type/Textbox';
+import { BaseControl } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/model/base-control';
+import { banWords } from '../../common/validations';
 
 @Component({
   selector: 'app-standalone-group-form',

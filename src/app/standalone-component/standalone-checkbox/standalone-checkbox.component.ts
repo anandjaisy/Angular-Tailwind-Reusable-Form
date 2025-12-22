@@ -15,8 +15,7 @@ import {
   IComponentEvent,
   Radio,
   Textbox,
-} from 'projects/falcon-ng/core/src/public-api';
-
+} from '../../../../projects/falcon-ng/core/src/public-api';
 @Component({
   selector: 'app-standalone-checkbox',
   imports: [
@@ -56,6 +55,6 @@ export class StandaloneCheckboxComponent implements OnInit {
     this.form = new FormGroup({});
   }
   ngOnInit(): void {
-    this.changeEvent.change?.subscribe(event => console.log(event));
+    this.changeEvent.change?.subscribe((event) => console.log(event));
   }
 }

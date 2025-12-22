@@ -1,28 +1,6 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { AppComponent } from './app/app.component';
-import { HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
-import { importProvidersFrom } from '@angular/core';
-import { FalconTailwindModule } from '../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
-import { environment } from './environments/environment';
-import { RouterModule } from '@angular/router';
-import { routes } from './app/app-routing.module';
-import { provideAnimations } from '@angular/platform-browser/animations';
+import { appConfig } from './app/app.config';
+import { App } from './app/app';
 
-bootstrapApplication(AppComponent, {
-  providers: [
-    importProvidersFrom(FalconTailwindModule.forRoot(environment)),
-    importProvidersFrom(RouterModule.forRoot(routes)),
-    provideAnimations(),
-    {
-      provide: HIGHLIGHT_OPTIONS,
-      useValue: {
-        coreLibraryLoader: () => import('highlight.js/lib/core'),
-        languages: {
-          xml: () => import('highlight.js/lib/languages/xml'),
-          typescript: () => import('highlight.js/lib/languages/typescript'),
-          scss: () => import('highlight.js/lib/languages/scss'),
-        },
-      },
-    },
-  ],
-}).catch(err => console.error(err));
+bootstrapApplication(App, appConfig)
+  .catch((err) => console.error(err));

@@ -10,12 +10,12 @@ import { HighlightModule } from 'ngx-highlightjs';
 import {
   Appearance,
   BaseControl,
+  CheckBox,
   FalconCoreModule,
   IComponentEvent,
   Radio,
   Textbox,
-} from 'projects/falcon-ng/core/src/public-api';
-
+} from '../../../../projects/falcon-ng/core/src/public-api';
 @Component({
   selector: 'app-standalone-radio',
   imports: [
@@ -52,6 +52,6 @@ export class StandaloneRadioComponent implements OnInit {
     this.form = new FormGroup({});
   }
   ngOnInit(): void {
-    this.changeEvent.change?.subscribe(event => console.log(event));
+    this.changeEvent.change?.subscribe((event) => console.log(event));
   }
 }

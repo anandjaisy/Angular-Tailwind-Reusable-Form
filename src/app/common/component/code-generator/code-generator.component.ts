@@ -1,21 +1,15 @@
-import {
-  Component,
-  OnInit,
-  Input,
-  ViewChild,
-  TemplateRef,
-} from '@angular/core';
+import { Component, OnInit, Input, ViewChild, TemplateRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IGenericHttpClient } from 'projects/falcon-ng/tailwind/src/lib/service/http/igeneric-http-client';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 import { HighlightModule } from 'ngx-highlightjs';
 import { FalconTailwindModule } from '../../../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
+import { IGenericHttpClient } from '../../../../../projects/falcon-ng/tailwind/src/lib/service/http/igeneric-http-client';
 
 @Component({
-    selector: 'app-code-generator',
-    templateUrl: './code-generator.component.html',
-    styleUrls: ['./code-generator.component.scss'],
-    imports: [HighlightModule, FalconTailwindModule]
+  selector: 'app-code-generator',
+  templateUrl: './code-generator.component.html',
+  styleUrls: ['./code-generator.component.scss'],
+  imports: [HighlightModule, FalconTailwindModule],
 })
 export class CodeGeneratorComponent implements OnInit {
   @Input() tsConfig!: string;
@@ -55,33 +49,29 @@ export class CodeGeneratorComponent implements OnInit {
 
   private loadHtmlFromServer() {
     this.templateToLoad = this.lazyLoadingTemplate;
-    this.igenericHttpClient
-      .get(this.htmlConfig, { responseType: 'text' })
-      .subscribe(
-        (data: any) => {
-          this.code = `${data}`;
-          this.templateToLoad = this.codeTemplate;
-        },
-        (error: any) => {
-          this.templateToLoad = this.codeTemplate;
-        }
-      );
+    this.igenericHttpClient.get(this.htmlConfig, { responseType: 'text' }).subscribe(
+      (data: any) => {
+        this.code = `${data}`;
+        this.templateToLoad = this.codeTemplate;
+      },
+      (error: any) => {
+        this.templateToLoad = this.codeTemplate;
+      }
+    );
   }
 
   private loadTSFromServer() {
     this.templateToLoad = this.lazyLoadingTemplate;
 
-    this.igenericHttpClient
-      .get(this.tsConfig, { responseType: 'text' })
-      .subscribe(
-        (data: any) => {
-          this.code = `${data}`;
-          this.templateToLoad = this.codeTemplate;
-        },
-        (error: any) => {
-          this.templateToLoad = this.codeTemplate;
-        }
-      );
+    this.igenericHttpClient.get(this.tsConfig, { responseType: 'text' }).subscribe(
+      (data: any) => {
+        this.code = `${data}`;
+        this.templateToLoad = this.codeTemplate;
+      },
+      (error: any) => {
+        this.templateToLoad = this.codeTemplate;
+      }
+    );
   }
 
   private loadCSSFromServer() {

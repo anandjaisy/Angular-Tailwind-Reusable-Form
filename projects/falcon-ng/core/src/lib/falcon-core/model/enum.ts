@@ -35,7 +35,7 @@ export const enum Control {
  *          only use Appearance Before and After
  * ```
  */
-export const enum Appearance {
+export enum Appearance {
   /**
    * @usageNotes Should be only use for input, textbox, and select
    */
@@ -108,7 +108,7 @@ export const enum InputTypes {
  *      this.genericHttpClientService.Delete(this.deleteUserUrl).subscribe(item => {}, error => {});
  * ```
  */
-export const enum HttpMethod {
+export enum HttpMethod {
   Get = 'GET',
   Post = 'POST',
   Put = 'PUT',
@@ -142,10 +142,10 @@ export const enum Floatinglabel {
   Always = 'always',
 }
 
-export const enum LoggingLevel {
+export enum LoggingLevel {
   None = 'None',
   Verbose = 'Verbose',
   Info = 'Info',
   Warnings = 'Warnings',
-  Errors = 'Errors'
+  Errors = 'Errors',
 }

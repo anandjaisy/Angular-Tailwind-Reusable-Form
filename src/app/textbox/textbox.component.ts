@@ -6,32 +6,30 @@ import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewM
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
 import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 import { HighlightModule } from 'ngx-highlightjs';
-import { CodeGeneratorComponent } from '../common/component/code-generator/code-generator.component';
+
 import { InputPrefixSuffixComponent } from './input-prefix-suffix/input-prefix-suffix.component';
 import { InputHintComponent } from './input-hint/input-hint.component';
 import { InputFloatingLabelComponent } from './input-floating-label/input-floating-label.component';
 import { InputErrorComponent } from './input-error/input-error.component';
 import { CodeButtonComponent } from '../common/component/code-button/code-button.component';
+import { CodeGeneratorComponent } from '../common/component/code-generator/code-generator.component';
 
 @Component({
-    selector: 'app-textbox',
-    templateUrl: './textbox.component.html',
-    styleUrls: ['./textbox.component.scss'],
-    imports: [
-        FalconTailwindModule,
-        CodeGeneratorComponent,
-        HighlightModule,
-        InputPrefixSuffixComponent,
-        InputHintComponent,
-        InputFloatingLabelComponent,
-        InputErrorComponent,
-        CodeButtonComponent,
-    ]
+  selector: 'app-textbox',
+  templateUrl: './textbox.component.html',
+  styleUrls: ['./textbox.component.scss'],
+  imports: [
+    FalconTailwindModule,
+    CodeGeneratorComponent,
+    HighlightModule,
+    InputPrefixSuffixComponent,
+    InputHintComponent,
+    InputFloatingLabelComponent,
+    InputErrorComponent,
+    CodeButtonComponent,
+  ],
 })
-export class TextboxComponent
-  extends BaseFormComponent<string>
-  implements OnInit
-{
+export class TextboxComponent extends BaseFormComponent<string> implements OnInit {
   public codeGeneratorEnable: boolean = false;
   public angularCodeTemplateViewModel: AngularCodeTemplateViewModel =
     new AngularCodeTemplateViewModel();

@@ -51,10 +51,7 @@ export class GenericHttpClient<T> implements IGenericHttpClient<T> {
    *      });
    * ```
    */
-  public get(
-    destinationUrl: string,
-    options?: IRequestOptions | any
-  ): Observable<T> {
+  public get(destinationUrl: string, options?: IRequestOptions | any): Observable<T> {
     return this.request<T>(HttpMethod.Get, destinationUrl, options);
   }
 
@@ -75,10 +72,7 @@ export class GenericHttpClient<T> implements IGenericHttpClient<T> {
    *      });
    * ```
    */
-  public post(
-    destinationUrl: string,
-    options?: IRequestOptions | any
-  ): Observable<T> {
+  public post(destinationUrl: string, options?: IRequestOptions | any): Observable<T> {
     return this.request<T>(HttpMethod.Post, destinationUrl, options);
   }
 
@@ -99,10 +93,7 @@ export class GenericHttpClient<T> implements IGenericHttpClient<T> {
    *      });
    * ```
    */
-  public put(
-    destinationUrl: string,
-    options?: IRequestOptions | any
-  ): Observable<T> {
+  public put(destinationUrl: string, options?: IRequestOptions | any): Observable<T> {
     return this.request<T>(HttpMethod.Put, destinationUrl, options);
   }
 
@@ -123,10 +114,7 @@ export class GenericHttpClient<T> implements IGenericHttpClient<T> {
    *      });
    * ```
    */
-  public patch(
-    destinationUrl: string,
-    options?: IRequestOptions | any
-  ): Observable<T> {
+  public patch(destinationUrl: string, options?: IRequestOptions | any): Observable<T> {
     return this.request<T>(HttpMethod.Patch, destinationUrl, options);
   }
 
@@ -146,10 +134,7 @@ export class GenericHttpClient<T> implements IGenericHttpClient<T> {
    *      });
    * ```
    */
-  public delete(
-    destinationUrl: string,
-    options?: IRequestOptions | any
-  ): Observable<T> {
+  public delete(destinationUrl: string, options?: IRequestOptions | any): Observable<T> {
     return this.request<T>(HttpMethod.Delete, destinationUrl, options);
   }
 
@@ -166,92 +151,82 @@ export class GenericHttpClient<T> implements IGenericHttpClient<T> {
    *    this.request<T>(HttpMethod.Delete, destinationUrl, options);
    * ```
    */
-  private request<T>(
-    method: string,
-    url: string,
-    options?: IRequestOptions
-  ): Observable<T> {
+  private request<T>(method: string, url: string, options?: IRequestOptions): Observable<T> {
+    this.logger.info('Http Client request started!');
     return Observable.create((observer: any) => {
       let destinationUrl = '';
-      if (this.environment.baseUrl != undefined)
-        destinationUrl = this.environment.baseUrl + url;
+      if (this.environment.baseUrl != undefined) destinationUrl = this.environment.baseUrl + url;
       else destinationUrl = url;
-      this.httpClient
-        .request<T>(new HttpRequest(method, destinationUrl, options))
-        .subscribe(
-          (response: any) => {
-            const responsTye = response as HttpEvent<any>;
-            switch (responsTye.type) {
-              case HttpEventType.Sent:
-                this.logger.info('Http Client : Sent ->', 'Request sent!');
-                break;
-              case HttpEventType.ResponseHeader:
-                this.logger.info(
-                  'Http Client : ResponseHeader ->',
-                  'Response header received!'
-                );
-                break;
-              case HttpEventType.DownloadProgress:
-                const kbLoaded = Math.round(responsTye.loaded / 1024);
-                this.logger.info(
-                  'Http Client : DownloadProgress ->',
-                  `Download in progress! ${kbLoaded}Kb loaded`
-                );
-                break;
-              case HttpEventType.Response:
-                observer.next(response.body);
-                this.logger.info(
-                  'Http Client : Response -> 😺 Done!',
-                  responsTye.body
-                );
-            }
-          },
-          error => {
-            switch (error.status) {
-              case HttpStatusCode.Forbidden:
-                // observer.complete();
-                this.snackBarViewModel.messageText =
-                  'Access to the requested resource is forbidden.';
-                this.snackBarViewModel.actionText = 'Forbidden';
-                this.isHttpError = true;
-                break;
-              case HttpStatusCode.BadRequest:
-                this.snackBarViewModel.messageText =
-                  'Server cannot or will not process the request.';
-                this.snackBarViewModel.actionText = 'Bad Request';
-                this.isHttpError = true;
-                break;
-              case HttpStatusCode.Unauthorized:
-                this.snackBarViewModel.messageText =
-                  'Request has not been applied because it lacks valid authentication credentials.';
-                this.snackBarViewModel.actionText = 'Unauthorized';
-                this.isHttpError = true;
-                break;
-              case HttpStatusCode.InternalServerError:
-                this.snackBarViewModel.messageText =
-                  'Server encountered an unexpected condition.';
-                this.snackBarViewModel.actionText = 'Internal server error';
-                this.isHttpError = true;
-                break;
-              case 0:
-                this.snackBarViewModel.messageText =
-                  'Not connected to the service.';
-                this.snackBarViewModel.actionText = 'Service not available';
-                this.isHttpError = true;
-                break;
-            }
-            observer.error(error);
-            if (
-              this.environment.snackBarEnable != undefined &&
-              this.environment.snackBarEnable &&
-              this.isHttpError
-            )
-              this._snackBar.open(
-                this.snackBarViewModel.messageText,
-                this.snackBarViewModel.actionText
+      this.httpClient.request<T>(new HttpRequest(method, destinationUrl, options)).subscribe(
+        (response: any) => {
+          const responsTye = response as HttpEvent<any>;
+          switch (responsTye.type) {
+            case HttpEventType.Sent:
+              this.logger.info('Http Client : Sent ->', 'Request sent!');
+              break;
+            case HttpEventType.ResponseHeader:
+              this.logger.info('Http Client : ResponseHeader ->', 'Response header received!');
+              break;
+            case HttpEventType.DownloadProgress:
+              const kbLoaded = Math.round(responsTye.loaded / 1024);
+              this.logger.info(
+                'Http Client : DownloadProgress ->',
+                `Download in progress! ${kbLoaded}Kb loaded`
               );
+              break;
+            case HttpEventType.Response:
+              observer.next(response.body);
+              this.logger.info('Http Client : Response -> 😺 Done!', responsTye.body);
           }
-        );
+        },
+        (error: any) => {
+          this.logger.error('********** Errors *******************');
+          this.logger.error(error);
+          switch (error.status) {
+            case HttpStatusCode.Forbidden:
+              // observer.complete();
+              this.snackBarViewModel.messageText = 'Access to the requested resource is forbidden.';
+              this.snackBarViewModel.actionText = 'Forbidden';
+              this.isHttpError = true;
+              break;
+            case HttpStatusCode.BadRequest:
+              this.snackBarViewModel.messageText = 'Server cannot or will not process the request.';
+              this.snackBarViewModel.actionText = 'Bad Request';
+              this.isHttpError = true;
+              break;
+            case HttpStatusCode.Unauthorized:
+              this.snackBarViewModel.messageText =
+                'Request has not been applied because it lacks valid authentication credentials.';
+              this.snackBarViewModel.actionText = 'Unauthorized';
+              this.isHttpError = true;
+              break;
+            case HttpStatusCode.InternalServerError:
+              this.snackBarViewModel.messageText = 'Server encountered an unexpected condition.';
+              this.snackBarViewModel.actionText = 'Internal server error';
+              this.isHttpError = true;
+              break;
+            case 0:
+              this.snackBarViewModel.messageText = 'Not connected to the service.';
+              this.snackBarViewModel.actionText = 'Service not available';
+              this.isHttpError = true;
+              break;
+          }
+          this.logger.error(`Error code :  ${HttpStatusCode.Forbidden}`);
+          observer.error(error);
+          this.logger.info(
+            `Snackbar condition : ${this.environment.snackBarEnable} && ${this.environment.snackBarEnable} && ${this.isHttpError}`
+          );
+          if (
+            this.environment.snackBarEnable != undefined &&
+            this.environment.snackBarEnable &&
+            this.isHttpError
+          )
+            this._snackBar.open(
+              this.snackBarViewModel.messageText,
+              this.snackBarViewModel.actionText
+            );
+        }
+      );
     });
   }
 }

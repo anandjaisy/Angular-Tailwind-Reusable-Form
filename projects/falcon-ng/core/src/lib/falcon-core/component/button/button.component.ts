@@ -1,10 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  Output,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
 
 @Component({
   selector: 'fal-button',
@@ -13,7 +7,9 @@ import {
       [matButton]="appearance"
       [type]="type"
       (click)="onClick($event)"
-      [disabled]="disabled">
+      [disabled]="disabled"
+      class="w-full"
+    >
       <span class="flex items-center justify-center gap-2 mdc-button__label">
         <ng-content></ng-content>
         <span class="mt-1">{{ label }}</span>

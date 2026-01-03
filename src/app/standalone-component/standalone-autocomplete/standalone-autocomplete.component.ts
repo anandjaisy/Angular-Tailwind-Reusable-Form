@@ -40,6 +40,20 @@ export class StandaloneAutocompleteComponent implements OnInit {
     event: this.changeEvent,
     appearance: Appearance.Outline as MatFormFieldAppearance,
   });
+
+  disable: BaseControl<string> = new AutoComplete({
+    formControlName: 'disable',
+    label: 'Disable Auto complete',
+    options: [
+      { value: 'Sydney', key: 'Syd' },
+      { value: 'Melbourne', key: 'Mel' },
+      { value: 'Brisbane', key: 'Brisbane' },
+      { value: 'NewYork', key: 'New York' },
+      { value: 'Kathmandu', key: 'Kathmandu' },
+    ],
+    disabled: true,
+    appearance: Appearance.Outline as MatFormFieldAppearance,
+  });
   form: FormGroup;
   constructor() {
     this.form = new FormGroup({});

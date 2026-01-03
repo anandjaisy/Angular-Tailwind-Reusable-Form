@@ -47,6 +47,19 @@ export class StandaloneRadioComponent implements OnInit {
     event: this.changeEvent,
   });
 
+  disable: BaseControl<string> = new Radio({
+    formControlName: 'disable',
+    disabled: true,
+    label: 'Positon BEFORE ',
+    options: [
+      { viewValue: 'Option 1', value: 'Option 1' },
+      { viewValue: 'Option 2', value: 'Option 2' },
+    ],
+    appearance: Appearance.Before,
+    class: 'radio-group-column',
+    event: this.changeEvent,
+  });
+
   form: FormGroup;
   constructor() {
     this.form = new FormGroup({});

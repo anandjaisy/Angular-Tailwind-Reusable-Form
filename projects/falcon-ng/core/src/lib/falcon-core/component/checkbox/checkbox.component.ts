@@ -11,7 +11,6 @@ import { MatCheckboxChange, MatCheckboxModule } from '@angular/material/checkbox
   imports: [MatCheckboxModule, ...sharedControlDeps],
   viewProviders: [controlProvider],
   template: ` <mat-checkbox
-    [disabled]="control.config.disabled"
     [ngStyle]="control.config.style"
     [ngClass]="control.config.class"
     [labelPosition]="control.config.labelPosition"

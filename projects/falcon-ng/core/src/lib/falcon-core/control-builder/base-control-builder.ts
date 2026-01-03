@@ -1,12 +1,4 @@
-import {
-  AfterViewInit,
-  Directive,
-  inject,
-  Input,
-  OnDestroy,
-  OnInit,
-  StaticProvider,
-} from '@angular/core';
+import { Directive, inject, OnDestroy, OnInit, StaticProvider } from '@angular/core';
 import {
   AbstractControl,
   ControlContainer,
@@ -38,7 +30,7 @@ export class BaseControlBuilder implements OnInit, OnDestroy {
   private parentGroupDir = inject(ControlContainer);
   public control = inject(CONTROL_DATA);
   protected formControl: AbstractControl = new FormControl(
-    this.control.config.value,
+    { value: this.control.config.value, disabled: this.control.config.disabled },
     this.bindValidators(this.control.config.validations)
   );
 
@@ -47,10 +39,10 @@ export class BaseControlBuilder implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.parentFormGroup.addControl(
-      this.control.formControlName,
-      this.formControl
-    );
+    this.parentFormGroup.addControl(this.control.formControlName, this.formControl);
+    if (this.control.config.disabled) {
+      this.formControl.disable({ emitEvent: false });
+    }
   }
 
   ngOnDestroy() {
@@ -59,9 +51,7 @@ export class BaseControlBuilder implements OnInit, OnDestroy {
 
   private bindValidators(validations: IValidator[]): ValidatorFn | null {
     if (validations.length > 0) {
-      const validatorList: ValidatorFn[] = validations.map(
-        (valid: IValidator) => valid.validator
-      );
+      const validatorList: ValidatorFn[] = validations.map((valid: IValidator) => valid.validator);
       return Validators.compose(validatorList);
     }
     return Validators.nullValidator;

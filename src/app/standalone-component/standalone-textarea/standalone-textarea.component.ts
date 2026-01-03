@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { FalconCoreModule } from '@falcon-ng/core';
-import { BaseControl } from '@falcon-ng/core';
-import { Textbox } from '@falcon-ng/core';
-import { Textarea } from '@falcon-ng/core';
 import { HighlightModule } from 'ngx-highlightjs';
 import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
+import {
+  BaseControl,
+  FalconCoreModule,
+  Textarea,
+  Textbox,
+} from '../../../../projects/falcon-ng/core/src/public-api';
 
 @Component({
   selector: 'app-standalone-textarea',
@@ -29,6 +31,10 @@ export class StandaloneTextareaComponent {
   });
   firstNameWithOutLabel: BaseControl<string> = new Textbox({
     formControlName: 'firstName',
+  });
+  disabled: BaseControl<string> = new Textbox({
+    formControlName: 'disabled',
+    disabled: true,
   });
   form: FormGroup;
   constructor() {

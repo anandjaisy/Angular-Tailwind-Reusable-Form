@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { FalconCoreModule } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/falcon-core.module';
-import { BaseControl } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/model/base-control';
-import { DatePicker } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/control-type/DatePicker';
+import {
+  BaseControl,
+  DatePicker,
+  FalconCoreModule,
+} from '../../../../projects/falcon-ng/core/src/public-api';
+
 @Component({
   selector: 'app-standalone-datepicker',
   imports: [ReactiveFormsModule, RouterLink, FalconCoreModule],
@@ -17,6 +20,11 @@ export class StandaloneDatepickerComponent {
   });
   firstNameWithOutLabel: BaseControl<string> = new DatePicker({
     formControlName: 'firstName',
+  });
+  disable: BaseControl<string> = new DatePicker({
+    formControlName: 'firstName',
+    disabled: true,
+    placeHolder: 'Disable place holder',
   });
   form: FormGroup;
   constructor() {

@@ -31,7 +31,6 @@ import { map, startWith } from 'rxjs/operators';
         [ngStyle]="control.config.style"
         [ngClass]="control.config.class"
         [matAutocomplete]="auto"
-        [disabled]="control.config.disabled"
         (input)="onInputChange($event)"
         [container]="containerDir.container"
       />

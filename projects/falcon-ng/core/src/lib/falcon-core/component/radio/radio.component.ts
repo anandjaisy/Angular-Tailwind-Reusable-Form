@@ -14,7 +14,6 @@ import { MatRadioChange, MatRadioModule } from '@angular/material/radio';
   template: `<div [ngStyle]="control.config.style" [ngClass]="control.config.class">
     <label class="radio-label-padding">{{ control.config.label | titlecase }}</label>
     <mat-radio-group
-      [disabled]="control.config.disabled"
       [attr.aria-label]="control.config.label"
       [labelPosition]="control.config.appearance"
       [formControlName]="control.formControlName"

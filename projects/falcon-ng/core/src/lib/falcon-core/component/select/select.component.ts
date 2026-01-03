@@ -22,7 +22,6 @@ import {
         [placeholder]="control.config.placeHolder"
         [ngStyle]="control.config.style"
         [ngClass]="control.config.class"
-        [disabled]="control.config.disabled"
         (selectionChange)="selectionChange($event)"
         [container]="containerDir.container"
       >

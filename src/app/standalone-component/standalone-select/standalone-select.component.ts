@@ -32,12 +32,21 @@ export class StandaloneSelectComponent implements OnInit {
       { key: '3', value: 'Option 3' },
     ],
   });
+  disabled: BaseControl<string> = new Select({
+    formControlName: 'disabled',
+    disabled: true,
+    options: [
+      { key: '1', value: 'Option 1' },
+      { key: '2', value: 'Option 2' },
+      { key: '3', value: 'Option 3' },
+    ],
+  });
   form: FormGroup;
   constructor() {
     this.form = new FormGroup({});
   }
   ngOnInit(): void {
-    this.changeEvent.change?.subscribe(event => console.log(event));
+    this.changeEvent.change?.subscribe((event) => console.log(event));
     this.select.value = '3';
   }
 }

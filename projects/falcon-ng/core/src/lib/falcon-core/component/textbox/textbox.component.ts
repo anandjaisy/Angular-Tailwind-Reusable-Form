@@ -18,7 +18,6 @@ import {
       <input
         matInput
         [type]="control.config.type"
-        [disabled]="control.config.disabled"
         [formControlName]="control.formControlName"
         [placeholder]="control.config.placeHolder"
         [ngStyle]="control.config.style"

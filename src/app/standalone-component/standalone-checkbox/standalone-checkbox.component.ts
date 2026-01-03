@@ -50,6 +50,14 @@ export class StandaloneCheckboxComponent implements OnInit {
     event: this.changeEvent,
   });
 
+  disable: BaseControl<boolean> = new CheckBox({
+    formControlName: 'disable',
+    label: 'Before checkbox',
+    labelPosition: 'before',
+    event: this.changeEvent,
+    disabled: true,
+  });
+
   form: FormGroup;
   constructor() {
     this.form = new FormGroup({});

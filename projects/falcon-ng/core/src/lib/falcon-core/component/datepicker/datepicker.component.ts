@@ -20,14 +20,12 @@ import {
       }
       <input
         matInput
-        [disabled]="control.config.disabled"
         [matDatepicker]="picker"
         [formControlName]="control.formControlName"
         [placeholder]="control.config.placeHolder"
         [ngStyle]="control.config.style"
         [ngClass]="control.config.class"
         [container]="containerDir.container"
-      />
       />
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>

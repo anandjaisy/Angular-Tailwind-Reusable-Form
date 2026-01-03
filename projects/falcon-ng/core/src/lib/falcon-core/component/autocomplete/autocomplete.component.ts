@@ -18,7 +18,8 @@ import { map, startWith } from 'rxjs/operators';
       [appearance]="control.config.appearance"
       [ngStyle]="control.config.style"
       [ngClass]="control.config.class"
-      class="w-full">
+      class="w-full"
+    >
       @if(control.config.label){
       <mat-label>{{ control.config.label }}</mat-label>
       }
@@ -30,12 +31,15 @@ import { map, startWith } from 'rxjs/operators';
         [ngStyle]="control.config.style"
         [ngClass]="control.config.class"
         [matAutocomplete]="auto"
+        [disabled]="control.config.disabled"
         (input)="onInputChange($event)"
-        [container]="containerDir.container" />
+        [container]="containerDir.container"
+      />
       <mat-autocomplete
         #auto="matAutocomplete"
         (optionSelected)="optionSelected($event.option.viewValue)"
-        [displayWith]="displayFn">
+        [displayWith]="displayFn"
+      >
         @for(option of filteredOptions; track option){
         <mat-option [value]="option">{{ option.value }}</mat-option>
         }
@@ -43,7 +47,8 @@ import { map, startWith } from 'rxjs/operators';
     </mat-form-field>
     <ng-container
       falconValidationMessageContainer
-      #containerDir="falconValidationMessageContainer" />`,
+      #containerDir="falconValidationMessageContainer"
+    />`,
   styles: `.w-full {
     width: 100%
   }`,

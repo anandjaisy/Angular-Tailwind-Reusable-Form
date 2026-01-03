@@ -21,24 +21,20 @@ import {
         [placeholder]="control.config.placeHolder"
         [ngStyle]="control.config.style"
         [ngClass]="control.config.class"
-        [cdkTextareaAutosize]="
-          control.config.textAreaProperty.cdkTextareaAutosize
-        "
-        [cdkAutosizeMinRows]="
-          control.config.textAreaProperty.cdkAutosizeMinRows
-        "
-        [cdkAutosizeMaxRows]="
-          control.config.textAreaProperty.cdkAutosizeMaxRows
-        "
+        [cdkTextareaAutosize]="control.config.textAreaProperty.cdkTextareaAutosize"
+        [cdkAutosizeMinRows]="control.config.textAreaProperty.cdkAutosizeMinRows"
+        [cdkAutosizeMaxRows]="control.config.textAreaProperty.cdkAutosizeMaxRows"
         [rows]="control.config.textAreaProperty.rows"
         [cols]="control.config.textAreaProperty.cols"
         [disabled]="control.config.disabled"
-        [container]="containerDir.container">
+        [container]="containerDir.container"
+      >
       </textarea>
     </mat-form-field>
     <ng-container
       falconValidationMessageContainer
-      #containerDir="falconValidationMessageContainer" />
+      #containerDir="falconValidationMessageContainer"
+    />
   `,
   styles: `.w-full{width: 100%}`,
 })

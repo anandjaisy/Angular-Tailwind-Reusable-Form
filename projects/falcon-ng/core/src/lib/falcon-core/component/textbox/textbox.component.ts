@@ -17,15 +17,19 @@ import {
       }
       <input
         matInput
+        [type]="control.config.type"
+        [disabled]="control.config.disabled"
         [formControlName]="control.formControlName"
         [placeholder]="control.config.placeHolder"
         [ngStyle]="control.config.style"
         [ngClass]="control.config.class"
-        [container]="containerDir.container" />
+        [container]="containerDir.container"
+      />
     </mat-form-field>
     <ng-container
       falconValidationMessageContainer
-      #containerDir="falconValidationMessageContainer" />
+      #containerDir="falconValidationMessageContainer"
+    />
   `,
   styles: `.w-full {
     width: 100%

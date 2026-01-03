@@ -11,19 +11,17 @@ import { MatRadioChange, MatRadioModule } from '@angular/material/radio';
   selector: 'fal-radio',
   imports: [MatFormFieldModule, MatRadioModule, ...sharedControlDeps],
   viewProviders: [controlProvider],
-  template: `<div
-    [ngStyle]="control.config.style"
-    [ngClass]="control.config.class">
-    <label class="radio-label-padding">{{
-      control.config.label | titlecase
-    }}</label>
+  template: `<div [ngStyle]="control.config.style" [ngClass]="control.config.class">
+    <label class="radio-label-padding">{{ control.config.label | titlecase }}</label>
     <mat-radio-group
+      [disabled]="control.config.disabled"
       [attr.aria-label]="control.config.label"
       [labelPosition]="control.config.appearance"
       [formControlName]="control.formControlName"
       [ngStyle]="control.config.style"
       [ngClass]="control.config.class"
-      (change)="radioGroupChangeEvent($event)">
+      (change)="radioGroupChangeEvent($event)"
+    >
       <mat-radio-button
         [ngClass]="control.config.class"
         *ngFor="let item of control.config.options"

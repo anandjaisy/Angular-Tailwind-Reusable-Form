@@ -1,6 +1,6 @@
 {
   "name": "@falcon-ng/core",
-  "version": "0.0.42",
+  "version": "0.0.44",
   "peerDependencies": {
     "@angular/common": "^21.0.0",
     "@angular/core": "^21.0.0"

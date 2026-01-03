@@ -12,36 +12,30 @@ import {
 @Component({
   selector: 'fal-datepicker',
   providers: [provideNativeDateAdapter()],
-  imports: [
-    MatFormFieldModule,
-    MatInputModule,
-    MatDatepickerModule,
-    ...sharedControlDeps,
-  ],
+  imports: [MatFormFieldModule, MatInputModule, MatDatepickerModule, ...sharedControlDeps],
   viewProviders: [controlProvider],
-  template: `<mat-form-field
-      [appearance]="control.config.appearance"
-      class="w-full">
+  template: `<mat-form-field [appearance]="control.config.appearance" class="w-full">
       @if(control.config.label){
       <mat-label>{{ control.config.label }}</mat-label>
       }
       <input
         matInput
+        [disabled]="control.config.disabled"
         [matDatepicker]="picker"
         [formControlName]="control.formControlName"
         [placeholder]="control.config.placeHolder"
         [ngStyle]="control.config.style"
         [ngClass]="control.config.class"
-        [container]="containerDir.container" />
+        [container]="containerDir.container"
       />
-      <mat-datepicker-toggle
-        matIconSuffix
-        [for]="picker"></mat-datepicker-toggle>
+      />
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     <ng-container
       falconValidationMessageContainer
-      #containerDir="falconValidationMessageContainer" /> `,
+      #containerDir="falconValidationMessageContainer"
+    /> `,
   styles: `.w-full {
     width: 100%
   }`,

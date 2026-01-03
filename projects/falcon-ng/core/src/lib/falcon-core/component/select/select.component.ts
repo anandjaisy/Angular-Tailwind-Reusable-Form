@@ -10,16 +10,9 @@ import {
 
 @Component({
   selector: 'fal-select',
-  imports: [
-    MatInputModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    ...sharedControlDeps,
-  ],
+  imports: [MatInputModule, MatFormFieldModule, MatSelectModule, ...sharedControlDeps],
   viewProviders: [controlProvider],
-  template: `<mat-form-field
-      [appearance]="control.config.appearance"
-      class="w-full">
+  template: `<mat-form-field [appearance]="control.config.appearance" class="w-full">
       @if(control.config.label){
       <mat-label>{{ control.config.label }}</mat-label>
       }
@@ -29,8 +22,10 @@ import {
         [placeholder]="control.config.placeHolder"
         [ngStyle]="control.config.style"
         [ngClass]="control.config.class"
+        [disabled]="control.config.disabled"
         (selectionChange)="selectionChange($event)"
-        [container]="containerDir.container">
+        [container]="containerDir.container"
+      >
         @for(option of control.config.options; track option){
         <mat-option [value]="option.key">{{ option.value }}</mat-option>
         }
@@ -38,7 +33,8 @@ import {
     </mat-form-field>
     <ng-container
       falconValidationMessageContainer
-      #containerDir="falconValidationMessageContainer" />`,
+      #containerDir="falconValidationMessageContainer"
+    />`,
   styles: `.w-full {
     width: 100%
   }`,

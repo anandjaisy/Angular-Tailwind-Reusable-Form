@@ -4,21 +4,20 @@ import {
   controlProvider,
   sharedControlDeps,
 } from '../../control-builder/base-control-builder';
-import {
-  MatCheckboxChange,
-  MatCheckboxModule,
-} from '@angular/material/checkbox';
+import { MatCheckboxChange, MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
   selector: 'fal-checkbox',
   imports: [MatCheckboxModule, ...sharedControlDeps],
   viewProviders: [controlProvider],
   template: ` <mat-checkbox
+    [disabled]="control.config.disabled"
     [ngStyle]="control.config.style"
     [ngClass]="control.config.class"
     [labelPosition]="control.config.labelPosition"
     [formControlName]="control.config.formControlName"
-    (change)="change($event)">
+    (change)="change($event)"
+  >
     {{ control.config.label }}
   </mat-checkbox>`,
 })

@@ -5,10 +5,18 @@ import { IComponentEvent } from '@falcon-ng/core';
 import { Select } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/control-type/Select';
 import { FalconCoreModule } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/falcon-core.module';
 import { BaseControl } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/model/base-control';
+import { HighlightModule } from 'ngx-highlightjs';
+import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/src/public-api';
 
 @Component({
   selector: 'app-standalone-select',
-  imports: [ReactiveFormsModule, RouterLink, FalconCoreModule],
+  imports: [
+    ReactiveFormsModule,
+    RouterLink,
+    FalconCoreModule,
+    HighlightModule,
+    FalconTailwindModule,
+  ],
   templateUrl: './standalone-select.component.html',
   styleUrl: './standalone-select.component.scss',
 })
@@ -40,6 +48,15 @@ export class StandaloneSelectComponent implements OnInit {
       { key: '2', value: 'Option 2' },
       { key: '3', value: 'Option 3' },
     ],
+  });
+  multiselect: BaseControl<string> = new Select({
+    formControlName: 'multiselect',
+    options: [
+      { key: '1', value: 'Option 1' },
+      { key: '2', value: 'Option 2' },
+      { key: '3', value: 'Option 3' },
+    ],
+    selectProperty: { multiple: true },
   });
   form: FormGroup;
   constructor() {

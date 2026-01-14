@@ -39,9 +39,14 @@
                         <span>Disable label</span>
                         <falcon-control [control]="disabled" />
                     </div>
+
+                    <div class="flex flex-col">
+                        <span>Multi Select</span>
+                        <falcon-control [control]="multiselect" />
+                    </div>
                 </form>
             </div>
         </mat-card-content>
-
+        <pre><code [highlight]="form.value | json"></code></pre>
     </mat-card>
 </div>

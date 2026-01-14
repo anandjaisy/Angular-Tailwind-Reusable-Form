@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { afterNextRender, AfterViewInit, Component, EventEmitter, OnInit } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { HighlightModule } from 'ngx-highlightjs';
@@ -10,7 +10,6 @@ import {
   BaseControl,
   FalconCoreModule,
   IComponentEvent,
-  Textbox,
 } from '../../../../projects/falcon-ng/core/src/public-api';
 
 @Component({
@@ -54,11 +53,32 @@ export class StandaloneAutocompleteComponent implements OnInit {
     disabled: true,
     appearance: Appearance.Outline as MatFormFieldAppearance,
   });
+  prefilled: BaseControl<string> = new AutoComplete({
+    formControlName: 'prefilled',
+    label: 'Prefilled',
+    options: [
+      { value: 'Sydney', key: 'Syd' },
+      { value: 'Melbourne', key: 'Mel' },
+      { value: 'Brisbane', key: 'Brisbane' },
+      { value: 'NewYork', key: 'New York' },
+      { value: 'Kathmandu', key: 'Kathmandu' },
+    ],
+    appearance: Appearance.Outline as MatFormFieldAppearance,
+  });
   form: FormGroup;
+
   constructor() {
     this.form = new FormGroup({});
+    afterNextRender(() => {
+      this.form.get('prefilled')?.patchValue({ value: 'Sydney', key: 'Syd' });
+    });
   }
+
   ngOnInit(): void {
-    this.changeEvent.change?.subscribe((event) => console.log(event));
+    //this.changeEvent.change?.subscribe((event) => console.log(event));
+
+    setTimeout(() => {
+      this.form.get('prefilled')?.patchValue({ value: 'Sydney', key: 'Syd' });
+    }, 100);
   }
 }

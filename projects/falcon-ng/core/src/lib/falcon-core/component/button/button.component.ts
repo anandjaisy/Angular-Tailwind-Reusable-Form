@@ -12,7 +12,7 @@ import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core
     >
       <span class="flex items-center justify-center gap-2 mdc-button__label">
         <ng-content></ng-content>
-        <span class="mt-1">{{ label }}</span>
+        <span>{{ label }}</span>
       </span>
     </button>
   `,

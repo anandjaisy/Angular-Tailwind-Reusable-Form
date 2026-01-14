@@ -121,4 +121,4 @@ import {environment} from "../environments/environment";
 
 Example --> `ng build --configuration=production --output-path docs --base-href /Angular-Tailwind-Reusable-Form/`
 
-- Reference - https://angular.io/guide/deployment
+- Reference - https://v17.angular.io/guide/deployment#deploy-to-github-pages

@@ -24,6 +24,7 @@ import {
         [ngClass]="control.config.class"
         (selectionChange)="selectionChange($event)"
         [container]="containerDir.container"
+        [multiple]="control.config.selectProperty.multiple"
       >
         @for(option of control.config.options; track option){
         <mat-option [value]="option.key">{{ option.value }}</mat-option>

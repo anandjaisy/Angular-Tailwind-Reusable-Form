@@ -69,6 +69,40 @@ export class StandaloneTextboxComponent {
       },
     ],
   });
+  prefixIcon: BaseControl<string> = new Textbox({
+    formControlName: 'prefixIcon',
+    placeHolder: 'prefix icon',
+    prefix: { isIcon: true, text: 'lock' },
+    validations: [
+      {
+        name: 'cannotContainSpace',
+        validator: banWords('Cannot contain space'),
+      },
+    ],
+  });
+  suffixIcon: BaseControl<string> = new Textbox({
+    formControlName: 'suffixIcon',
+    placeHolder: 'suffix icon',
+    suffix: { isIcon: true, text: 'lock' },
+    validations: [
+      {
+        name: 'cannotContainSpace',
+        validator: banWords('Cannot contain space'),
+      },
+    ],
+  });
+
+  iconToolTip: BaseControl<string> = new Textbox({
+    formControlName: 'suffixIcon',
+    placeHolder: 'suffix icon',
+    suffix: { isIcon: true, text: 'lock', toolTipText: 'This is helpful' },
+    validations: [
+      {
+        name: 'cannotContainSpace',
+        validator: banWords('Cannot contain space'),
+      },
+    ],
+  });
   form: FormGroup;
   constructor() {
     this.form = new FormGroup({});

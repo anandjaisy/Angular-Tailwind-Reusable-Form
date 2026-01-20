@@ -9,10 +9,11 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { IOptions } from '../../model/interface';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'fal-autocomplete',
-  imports: [MatInputModule, MatAutocompleteModule, ...sharedControlDeps],
+  imports: [MatInputModule, MatAutocompleteModule, MatTooltipModule, ...sharedControlDeps],
   viewProviders: [controlProvider],
   template: `<mat-form-field
       [appearance]="control.config.appearance"
@@ -43,6 +44,15 @@ import { map, startWith } from 'rxjs/operators';
         <mat-option [value]="option">{{ option.value }}</mat-option>
         }
       </mat-autocomplete>
+      @if(control.config.prefix && control.config.prefix.isIcon){
+      <mat-icon matPrefix [matTooltip]="control.config.prefix.toolTipText!">{{
+        control.config.prefix.text
+      }}</mat-icon>
+      } @if(control.config.suffix && control.config.suffix.isIcon){
+      <mat-icon matSuffix [matTooltip]="control.config.suffix.toolTipText!">{{
+        control.config.suffix.text
+      }}</mat-icon>
+      }
     </mat-form-field>
     <ng-container
       falconValidationMessageContainer

@@ -33,6 +33,7 @@ import { StandaloneAutocompleteComponent } from './standalone-component/standalo
 import { StandaloneRadioComponent } from './standalone-component/standalone-radio/standalone-radio.component';
 import { StandaloneCheckboxComponent } from './standalone-component/standalone-checkbox/standalone-checkbox.component';
 import { StandaloneGroupFormComponent } from './standalone-component/standalone-group-form/standalone-group-form.component';
+import { StandaloneSlideToogle } from './standalone-component/standalone-slide-toogle/standalone-slide-toogle';
 
 export const routes: Routes = [
   { path: 'auth-callback', component: AuthCallbackComponent },
@@ -79,5 +80,9 @@ export const routes: Routes = [
   {
     path: 'standalone-group-component',
     component: StandaloneGroupFormComponent,
+  },
+  {
+    path: 'standalone-slide-toogle',
+    component: StandaloneSlideToogle,
   },
 ];

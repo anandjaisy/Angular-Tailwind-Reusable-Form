@@ -32,3 +32,4 @@ export * from './lib/falcon-core/angularmaterial.module';
 export * from './lib/falcon-core/component/card/card.component';
 export * from './lib/falcon-core/component/button/button.component';
 export * from './lib/falcon-core/component/select/select.component';
+export * from './lib/falcon-core/component/slide-toggle/slide-toggle';

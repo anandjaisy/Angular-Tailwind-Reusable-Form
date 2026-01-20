@@ -1,0 +1,1 @@
+var t;function r(){if(t===void 0&&(t=null,typeof window<"u")){let e=window;e.trustedTypes!==void 0&&(t=e.trustedTypes.createPolicy("angular#components",{createHTML:n=>n}))}return t}function d(e){return r()?.createHTML(e)||e}export{d as a};

@@ -1,9 +1,5 @@
 import { Component, Input, OnDestroy, OnInit, inject } from '@angular/core';
-import {
-  ControlContainer,
-  FormGroup,
-  FormGroupDirective,
-} from '@angular/forms';
+import { ControlContainer, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'falcon-group-control',

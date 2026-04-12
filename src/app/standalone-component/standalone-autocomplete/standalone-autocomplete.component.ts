@@ -11,6 +11,7 @@ import {
   FalconCoreModule,
   IComponentEvent,
 } from '../../../../projects/falcon-ng/core/src/public-api';
+import { AutocompleteGroup } from './autocomplete-group/autocomplete-group';
 
 @Component({
   selector: 'app-standalone-autocomplete',
@@ -20,6 +21,7 @@ import {
     FalconTailwindModule,
     HighlightModule,
     AutocompleteTextChangeComponent,
+    AutocompleteGroup,
   ],
   templateUrl: './standalone-autocomplete.component.html',
   styleUrl: './standalone-autocomplete.component.scss',

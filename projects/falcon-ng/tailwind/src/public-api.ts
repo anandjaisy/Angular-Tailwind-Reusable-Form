@@ -30,3 +30,4 @@ export * from './lib/component/progress-bar/progress-bar.component';
 export * from './lib/component/progress-spinner/progress-spinner.component';
 export * from './lib/component/button/button.component';
 export * from './lib/component/dialog/dialog.component';
+export * from './lib/service/http/http-interceptor';

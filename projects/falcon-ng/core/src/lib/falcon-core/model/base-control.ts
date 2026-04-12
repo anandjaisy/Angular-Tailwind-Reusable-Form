@@ -1,13 +1,11 @@
 import { Control } from './enum';
 import { IValidator } from './ivalidator';
-import {
-  FloatLabelType,
-  MatFormFieldAppearance,
-} from '@angular/material/form-field';
+import { FloatLabelType, MatFormFieldAppearance } from '@angular/material/form-field';
 import { ThemePalette } from '@angular/material/core';
 import {
   IComponentEvent,
   IMatHint,
+  IOptionGroup,
   IOptions,
   ISelectOptions,
   ISliderProperty,
@@ -43,6 +41,7 @@ export class BaseControl<T> {
   type: string;
   disabled: boolean;
   options: IOptions[] | any;
+  optionGroup: IOptionGroup[] | any;
   validations: IValidator[];
   appearance: MatFormFieldAppearance | any;
   class: string;
@@ -70,6 +69,7 @@ export class BaseControl<T> {
     type?: string;
     disabled?: boolean;
     options?: IOptions[] | any;
+    optionGroup?: IOptionGroup[] | any;
     validations?: IValidator[];
     appearance?: MatFormFieldAppearance | any;
     class?: string;
@@ -97,6 +97,7 @@ export class BaseControl<T> {
     this.type = options.type || '';
     this.disabled = options.disabled || false;
     this.options = options.options || [];
+    this.optionGroup = options.optionGroup || [];
     this.validations = options.validations || [];
     this.appearance = options.appearance || 'outline';
     this.class = options.class || '';
@@ -106,8 +107,7 @@ export class BaseControl<T> {
     this.hint = options.hint || ({} as IMatHint);
     this.prefix = options.prefix || ({} as ISuffixPrefixConfig);
     this.suffix = options.suffix || ({} as ISuffixPrefixConfig);
-    this.textAreaProperty =
-      options.textAreaProperty || ({} as ITextAreaProperty);
+    this.textAreaProperty = options.textAreaProperty || ({} as ITextAreaProperty);
     this.event = options.event || {};
     this.selectProperty = options.selectProperty || {};
     this.color = options.color || undefined;

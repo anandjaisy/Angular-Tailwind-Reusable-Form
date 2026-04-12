@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   BaseControlBuilder,
   controlProvider,
@@ -6,9 +6,7 @@ import {
 } from '../../control-builder/base-control-builder';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { IOptions } from '../../model/interface';
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
+import { IOptions, IOptionGroup } from '../../model/interface';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
@@ -40,9 +38,16 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         (optionSelected)="optionSelected($event.option.viewValue)"
         [displayWith]="displayFn"
       >
-        @for(option of filteredOptions; track option){
+        @if(control.config.selectProperty.optionGroups) { @for(group of filteredOptionGroup; track
+        group) {
+        <mat-optgroup [label]="group.label">
+          @for(option of group.options; track option) {
+          <mat-option [value]="option">{{ option.value }}</mat-option>
+          }
+        </mat-optgroup>
+        } } @else { @for(option of filteredOptions; track option) {
         <mat-option [value]="option">{{ option.value }}</mat-option>
-        }
+        } }
       </mat-autocomplete>
       @if(control.config.prefix && control.config.prefix.isIcon){
       <mat-icon matPrefix [matTooltip]="control.config.prefix.toolTipText!">{{
@@ -63,12 +68,13 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   }`,
 })
 export class AutocompleteComponent extends BaseControlBuilder {
-  private originalOptions: IOptions[] = [];
   filteredOptions: IOptions[] = [];
+  filteredOptionGroup: IOptionGroup[] = [];
   constructor() {
     super();
-    this.originalOptions = [...this.control.config.options];
-    this.filteredOptions = [...this.originalOptions];
+    this.filteredOptions = [...this.control.config.options];
+    if (this.control.config?.selectProperty?.optionGroups)
+      this.filteredOptionGroup = [...this.control.config.optionGroup];
   }
 
   displayFn(option: IOptions): string {
@@ -78,6 +84,8 @@ export class AutocompleteComponent extends BaseControlBuilder {
   onInputChange(event: Event) {
     const target = event.target as HTMLInputElement;
     this.filteredOptions = this._filter(target.value || '');
+    if (this.control.config?.selectProperty?.optionGroups)
+      this.filteredOptionGroup = this._filterGroup(target.value || '');
     this.control.config.event.inputChange?.emit(target.value || '');
   }
 
@@ -91,5 +99,17 @@ export class AutocompleteComponent extends BaseControlBuilder {
   optionSelected(event: any) {
     this.control.config.event.keyboardEnter?.emit(event);
     this.control.config.event.change?.emit(event);
+  }
+  private _filterGroup(value: string): IOptionGroup[] {
+    if (value) {
+      return this.control.config.optionGroup
+        .map(
+          (groupOption: IOptionGroup) =>
+            ({ label: groupOption.label, options: this._filter(value) } as IOptionGroup)
+        )
+        .filter((group: IOptionGroup) => group.label.length > 0);
+    }
+
+    return this.control.config.optionGroup;
   }
 }

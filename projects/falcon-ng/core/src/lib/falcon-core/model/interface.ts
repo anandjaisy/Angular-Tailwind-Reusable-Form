@@ -230,6 +230,7 @@ export declare interface ITextAreaProperty {
 export declare interface ISelectOptions {
   single?: boolean;
   multiple?: boolean;
+  optionGroups?: boolean;
 }
 
 /**
@@ -249,6 +250,30 @@ export declare interface IOptions {
   icon?: string;
   class?: string;
   disabled?: boolean;
+}
+
+/**
+ * @description
+ * Interface used to group a collection of options under a common label.
+ * Useful for rendering grouped select inputs (e.g., dropdown with categories).
+ * @usageNotes
+ * ```ts
+ * componentProperty: {
+ *   optionGroups: [
+ *     {
+ *       label: 'Group 1',
+ *       options: [
+ *         { key: 'key-1', value: 'value-1' },
+ *         { key: 'key-2', value: 'value-2', disabled: true }
+ *       ]
+ *     }
+ *   ];
+ * }
+ * ```
+ */
+export declare interface IOptionGroup {
+  label: string;
+  options: IOptions[];
 }
 
 /**

@@ -1,9 +1,9 @@
 {
   "name": "@falcon-ng/core",
-  "version": "0.0.48",
+  "version": "0.0.49",
   "peerDependencies": {
-    "@angular/common": "^21.0.0",
-    "@angular/core": "^21.0.0"
+    "@angular/common": "^21.2.8",
+    "@angular/core": "^21.2.8"
   },
   "dependencies": {
     "tslib": "^2.3.0"

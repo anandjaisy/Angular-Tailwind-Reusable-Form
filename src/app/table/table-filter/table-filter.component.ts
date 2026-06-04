@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AngularCodeTemplate } from '../../common/angularCodeTemplate';
 import { AngularCodeTemplateViewModel } from '../../common/angularCodeTemplateViewModel';
 import {
@@ -35,6 +35,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   selector: 'app-table-filter',
   templateUrl: './table-filter.component.html',
   styleUrls: ['./table-filter.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [FalconTailwindModule, CodeGeneratorComponent, HighlightModule, CodeButtonComponent],
 })
 export class TableFilterComponent implements OnInit {

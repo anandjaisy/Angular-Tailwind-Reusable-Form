@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AppSettingService } from '../../../projects/falcon-ng/tailwind/src/lib/service/appsetting.service';
 import { AuthService } from '../../../projects/falcon-ng/tailwind/src/lib/service/open-id/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -11,6 +11,7 @@ import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/l
   selector: 'app-auth-callback',
   templateUrl: './auth-callback.component.html',
   styleUrls: ['./auth-callback.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [FalconTailwindModule, HighlightModule],
 })
 export class AuthCallbackComponent implements OnInit {

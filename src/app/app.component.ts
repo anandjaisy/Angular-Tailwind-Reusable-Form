@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {
   Appearance,
   Control,
@@ -12,6 +12,7 @@ import { FalconTailwindModule } from '../../projects/falcon-ng/tailwind/src/lib/
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [RouterModule, FalconTailwindModule]
 })
 export class AppComponent {

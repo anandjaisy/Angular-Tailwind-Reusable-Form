@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {
   BaseControlBuilder,
   controlProvider,
@@ -63,6 +63,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
       falconValidationMessageContainer
       #containerDir="falconValidationMessageContainer"
     />`,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: `.w-full {
     width: 100%
   }`,

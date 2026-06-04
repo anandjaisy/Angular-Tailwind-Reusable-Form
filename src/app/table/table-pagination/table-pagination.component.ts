@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AngularCodeTemplateViewModel } from '../../common/angularCodeTemplateViewModel';
 import {
   MatTableConfig,
@@ -45,6 +45,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     selector: 'app-table-pagination',
     templateUrl: './table-pagination.component.html',
     styleUrls: ['./table-pagination.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         FalconTailwindModule,
         CodeGeneratorComponent,

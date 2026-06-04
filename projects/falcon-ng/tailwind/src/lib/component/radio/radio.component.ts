@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ChangeDetectionStrategy } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {MatRadioChange} from "@angular/material/radio";
 import { BaseControl } from '@falcon-ng/core';
@@ -7,6 +7,7 @@ import { BaseControl } from '@falcon-ng/core';
     selector: 'falcon-radio',
     templateUrl: './radio.component.html',
     styleUrls: ['./radio.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class RadioComponent implements OnInit{

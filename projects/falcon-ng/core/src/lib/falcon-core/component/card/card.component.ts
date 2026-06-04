@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'fal-card',
@@ -14,6 +14,7 @@ import { Component, Input } from '@angular/core';
       </mat-card-content>
     </mat-card>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class CardComponent {

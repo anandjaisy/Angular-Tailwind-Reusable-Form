@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
 import {FormGroup} from "@angular/forms";
 import { BaseControl } from '@falcon-ng/core';
 
@@ -6,6 +6,7 @@ import { BaseControl } from '@falcon-ng/core';
     selector: 'lib-rich-text-editor',
     templateUrl: './rich-text-editor.component.html',
     styleUrls: ['./rich-text-editor.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class RichTextEditorComponent {

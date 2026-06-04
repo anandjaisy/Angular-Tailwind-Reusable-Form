@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
@@ -12,6 +12,7 @@ import { CodeButtonComponent } from '../common/component/code-button/code-button
     selector: 'app-bottom-sheet',
     templateUrl: './bottom-sheet.component.html',
     styleUrls: ['./bottom-sheet.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         FalconTailwindModule,
         CodeGeneratorComponent,

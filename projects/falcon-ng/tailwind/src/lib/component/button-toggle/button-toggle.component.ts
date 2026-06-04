@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, ChangeDetectionStrategy} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {MatButtonToggleChange} from "@angular/material/button-toggle";
 import {BaseControl} from "@falcon-ng/core"
@@ -7,6 +7,7 @@ import {BaseControl} from "@falcon-ng/core"
     selector: 'falcon-button-toggle',
     templateUrl: './button-toggle.component.html',
     styleUrls: ['./button-toggle.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ButtonToggleComponent implements OnInit {

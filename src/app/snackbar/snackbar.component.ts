@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
@@ -11,6 +11,7 @@ import { CodeButtonComponent } from '../common/component/code-button/code-button
     selector: 'app-snackbar',
     templateUrl: './snackbar.component.html',
     styleUrls: ['./snackbar.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         FalconTailwindModule,
         CodeGeneratorComponent,

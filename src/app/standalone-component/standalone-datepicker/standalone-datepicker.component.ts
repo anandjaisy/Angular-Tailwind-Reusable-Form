@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import {
@@ -11,6 +11,7 @@ import {
   selector: 'app-standalone-datepicker',
   imports: [ReactiveFormsModule, RouterLink, FalconCoreModule],
   templateUrl: './standalone-datepicker.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './standalone-datepicker.component.scss',
 })
 export class StandaloneDatepickerComponent {

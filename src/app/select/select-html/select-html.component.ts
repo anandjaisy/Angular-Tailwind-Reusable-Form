@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Appearance } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
 import { Select } from '@falcon-ng/core';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
@@ -13,6 +13,7 @@ import { AngularCodeTemplate } from '../../common/angularCodeTemplate';
   selector: 'app-select-html',
   templateUrl: './select-html.component.html',
   styleUrls: ['./select-html.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [FalconTailwindModule, CodeGeneratorComponent, HighlightModule, CodeButtonComponent],
 })
 export class SelectHtmlComponent {

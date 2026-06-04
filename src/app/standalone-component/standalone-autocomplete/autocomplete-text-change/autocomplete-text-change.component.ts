@@ -1,4 +1,4 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { HighlightModule } from 'ngx-highlightjs';
@@ -14,6 +14,7 @@ import { FalconTailwindModule } from '../../../../../projects/falcon-ng/tailwind
   selector: 'app-autocomplete-text-change',
   imports: [FalconCoreModule, ReactiveFormsModule, FalconTailwindModule, HighlightModule],
   templateUrl: './autocomplete-text-change.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './autocomplete-text-change.component.scss',
 })
 export class AutocompleteTextChangeComponent {

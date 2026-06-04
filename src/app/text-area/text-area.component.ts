@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
 import { Observable, of } from 'rxjs';
@@ -15,6 +15,7 @@ import { CodeButtonComponent } from '../common/component/code-button/code-button
     selector: 'app-text-area',
     templateUrl: './text-area.component.html',
     styleUrls: ['./text-area.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         FalconTailwindModule,
         CodeGeneratorComponent,

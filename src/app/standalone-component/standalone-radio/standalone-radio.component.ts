@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 import { MatCard, MatCardContent } from '@angular/material/card';
@@ -31,6 +31,7 @@ import {
     RouterLink,
   ],
   templateUrl: './standalone-radio.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './standalone-radio.component.scss',
 })
 export class StandaloneRadioComponent implements OnInit {

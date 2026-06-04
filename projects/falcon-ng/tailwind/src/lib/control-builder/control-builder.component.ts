@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
 import {FormGroup} from "@angular/forms";
 import { Layout } from '../model/layout';
 
@@ -6,6 +6,7 @@ import { Layout } from '../model/layout';
     selector: 'control-builder',
     templateUrl: './control-builder.component.html',
     styleUrls: ['./control-builder.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ControlBuilderComponent {

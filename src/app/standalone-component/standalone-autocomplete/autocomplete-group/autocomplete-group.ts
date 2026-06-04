@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import {
   Appearance,
@@ -15,6 +15,7 @@ import { MatFormFieldAppearance } from '@angular/material/form-field';
   selector: 'app-autocomplete-group',
   imports: [FalconCoreModule, ReactiveFormsModule, FalconTailwindModule],
   templateUrl: './autocomplete-group.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './autocomplete-group.css',
 })
 export class AutocompleteGroup {

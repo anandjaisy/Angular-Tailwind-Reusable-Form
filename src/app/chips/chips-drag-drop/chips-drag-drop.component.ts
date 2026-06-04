@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AngularCodeTemplateViewModel } from '../../common/angularCodeTemplateViewModel';
 import { BaseFormComponent } from '../../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
 import { Observable, of } from 'rxjs';
@@ -17,6 +17,7 @@ import { CodeButtonComponent } from '../../common/component/code-button/code-but
   selector: 'app-chips-drag-drop',
   templateUrl: './chips-drag-drop.component.html',
   styleUrls: ['./chips-drag-drop.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [FalconTailwindModule, HighlightModule],
 })
 export class ChipsDragDropComponent

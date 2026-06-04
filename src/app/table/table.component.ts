@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
 import { IGenericHttpClient } from '../../../projects/falcon-ng/tailwind/src/lib/service/http/igeneric-http-client';
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
@@ -36,6 +36,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     selector: 'app-table',
     templateUrl: './table.component.html',
     styleUrls: ['./table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         FalconTailwindModule,
         CodeGeneratorComponent,

@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit, inject } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { ControlContainer, FormGroup } from '@angular/forms';
 
 @Component({
@@ -6,6 +6,7 @@ import { ControlContainer, FormGroup } from '@angular/forms';
   template: `<div [formGroup]="innerGroup">
     <ng-content></ng-content>
   </div>`,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class GroupControlBuilderComponent implements OnInit, OnDestroy {

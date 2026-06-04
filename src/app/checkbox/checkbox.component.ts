@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {
   BaseFormComponent,
   FalconTailwindModule,
@@ -16,6 +16,7 @@ import { Appearance, CheckBox } from '@falcon-ng/core';
   selector: 'app-checkbox',
   templateUrl: './checkbox.component.html',
   styleUrls: ['./checkbox.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [FalconTailwindModule, CodeGeneratorComponent, HighlightModule, CodeButtonComponent],
 })
 export class CheckboxComponent extends BaseFormComponent<any> implements OnInit {

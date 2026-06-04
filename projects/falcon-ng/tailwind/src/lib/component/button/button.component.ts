@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { BaseControl } from '@falcon-ng/core';
 
@@ -6,6 +6,7 @@ import { BaseControl } from '@falcon-ng/core';
   selector: 'falcon-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.css'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ButtonComponent {

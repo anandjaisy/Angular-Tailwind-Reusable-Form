@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectChange, MatSelectModule } from '@angular/material/select';
@@ -51,6 +51,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
       falconValidationMessageContainer
       #containerDir="falconValidationMessageContainer"
     />`,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: `.w-full {
     width: 100%
   }`,

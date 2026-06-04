@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AngularCodeTemplate } from '../../common/angularCodeTemplate';
 import { Observable, of } from 'rxjs';
 import { BaseFormComponent } from '../../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
@@ -16,6 +16,7 @@ import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/sr
   selector: 'app-chips-withinput',
   templateUrl: './chips-withinput.component.html',
   styleUrls: ['./chips-withinput.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [FalconTailwindModule, HighlightModule],
 })
 export class ChipsWithinputComponent

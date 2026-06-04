@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
 import { Observable, of } from 'rxjs';
 import { Textbox } from '@falcon-ng/core';
@@ -18,6 +18,7 @@ import { CodeGeneratorComponent } from '../common/component/code-generator/code-
   selector: 'app-textbox',
   templateUrl: './textbox.component.html',
   styleUrls: ['./textbox.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     FalconTailwindModule,
     CodeGeneratorComponent,

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
 import { HighlightModule } from 'ngx-highlightjs';
@@ -9,6 +9,7 @@ import { CodeButtonComponent } from '../common/component/code-button/code-button
   selector: 'app-app-pagination',
   templateUrl: './app-pagination.component.html',
   styleUrls: ['./app-pagination.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [FalconTailwindModule, HighlightModule, CodeButtonComponent],
 })
 export class AppPaginationComponent {

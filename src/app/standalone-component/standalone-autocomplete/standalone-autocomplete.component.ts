@@ -1,4 +1,4 @@
-import { afterNextRender, AfterViewInit, Component, EventEmitter, OnInit } from '@angular/core';
+import { afterNextRender, AfterViewInit, Component, EventEmitter, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { HighlightModule } from 'ngx-highlightjs';
@@ -24,6 +24,7 @@ import { AutocompleteGroup } from './autocomplete-group/autocomplete-group';
     AutocompleteGroup,
   ],
   templateUrl: './standalone-autocomplete.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './standalone-autocomplete.component.scss',
 })
 export class StandaloneAutocompleteComponent implements OnInit {

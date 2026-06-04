@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {Observable} from "rxjs";
 import { map, startWith } from 'rxjs/operators';
@@ -7,6 +7,7 @@ import {BaseControl,IOptions} from "@falcon-ng/core"
     selector: 'falcon-auto-complete',
     templateUrl: './auto-complete.component.html',
     styleUrls: ['./auto-complete.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class AutoCompleteComponent {

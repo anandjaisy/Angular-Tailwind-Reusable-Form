@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
 import { HighlightModule } from 'ngx-highlightjs';
@@ -10,6 +10,7 @@ import { CodeButtonComponent } from '../common/component/code-button/code-button
     selector: 'app-progress-bar',
     templateUrl: './progress-bar.component.html',
     styleUrls: ['./progress-bar.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         FalconTailwindModule,
         CodeGeneratorComponent,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
 import { Observable, of } from 'rxjs';
 import { Appearance } from '../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
@@ -12,6 +12,7 @@ import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/l
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [FalconTailwindModule, HighlightModule],
 })
 export class FormComponent extends BaseFormComponent<string> implements OnInit {

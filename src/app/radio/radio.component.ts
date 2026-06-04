@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
 import { Observable, of } from 'rxjs';
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
@@ -14,6 +14,7 @@ import { CodeButtonComponent } from '../common/component/code-button/code-button
     selector: 'app-radio',
     templateUrl: './radio.component.html',
     styleUrls: ['./radio.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         FalconTailwindModule,
         CodeGeneratorComponent,

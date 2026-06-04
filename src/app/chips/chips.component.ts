@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
 import { Chip } from '@falcon-ng/core';
@@ -19,6 +19,7 @@ import { CodeButtonComponent } from '../common/component/code-button/code-button
     selector: 'app-chips',
     templateUrl: './chips.component.html',
     styleUrls: ['./chips.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         FalconTailwindModule,
         CodeGeneratorComponent,

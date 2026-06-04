@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
 import {ThemePalette} from "@angular/material/core";
 import {ProgressBarMode} from "@angular/material/progress-bar";
 
@@ -6,6 +6,7 @@ import {ProgressBarMode} from "@angular/material/progress-bar";
     selector: 'falcon-progress-bar',
     templateUrl: './progress-bar.component.html',
     styleUrls: ['./progress-bar.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ProgressBarComponent {

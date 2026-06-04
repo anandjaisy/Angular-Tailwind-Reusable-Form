@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { IDialogData } from '../../../projects/falcon-ng/core/src/lib/falcon-core/model/interface';
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
@@ -13,6 +13,7 @@ import { CodeButtonComponent } from '../common/component/code-button/code-button
     selector: 'app-modal-dialog',
     templateUrl: './modal-dialog.component.html',
     styleUrls: ['./modal-dialog.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         FalconTailwindModule,
         CodeGeneratorComponent,

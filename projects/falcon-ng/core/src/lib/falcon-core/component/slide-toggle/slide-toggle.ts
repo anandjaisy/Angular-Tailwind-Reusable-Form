@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {
   BaseControlBuilder,
   controlProvider,
@@ -10,6 +10,7 @@ import { MatSlideToggleChange, MatSlideToggleModule } from '@angular/material/sl
   selector: 'fal-slide-toggle',
   imports: [MatSlideToggleModule, ...sharedControlDeps],
   viewProviders: [controlProvider],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: ` <mat-slide-toggle
     [ngStyle]="control.config.style"
     [ngClass]="control.config.class"

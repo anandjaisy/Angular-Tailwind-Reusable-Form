@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { BaseFormComponent } from '../../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
@@ -18,6 +18,7 @@ import { AngularCodeTemplate } from '../../common/angularCodeTemplate';
   selector: 'app-input-hint',
   templateUrl: './input-hint.component.html',
   styleUrls: ['./input-hint.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [FalconTailwindModule, CodeGeneratorComponent, HighlightModule, CodeButtonComponent],
 })
 export class InputHintComponent extends BaseFormComponent<any> implements OnInit {

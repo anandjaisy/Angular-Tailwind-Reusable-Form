@@ -1,4 +1,4 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import {
   BaseControl,
   FalconCoreModule,
@@ -29,6 +29,7 @@ import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/sr
     RouterLink,
   ],
   templateUrl: './standalone-slide-toogle.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './standalone-slide-toogle.css',
 })
 export class StandaloneSlideToogle {

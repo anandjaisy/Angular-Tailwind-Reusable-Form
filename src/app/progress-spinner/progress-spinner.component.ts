@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
 import {
@@ -17,6 +17,7 @@ import { CodeButtonComponent } from '../common/component/code-button/code-button
     selector: 'app-progress-spinner',
     templateUrl: './progress-spinner.component.html',
     styleUrls: ['./progress-spinner.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         FalconTailwindModule,
         CodeGeneratorComponent,

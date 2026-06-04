@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild, ChangeDetectionStrategy} from '@angular/core';
 import {MatTableConfig} from "@falcon-ng/core";
 import {MatPaginator, PageEvent} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
@@ -8,6 +8,7 @@ import {TableAction} from "@falcon-ng/core";
     selector: 'falcon-table',
     templateUrl: './table.component.html',
     styleUrls: ['./table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class TableComponent implements OnInit {

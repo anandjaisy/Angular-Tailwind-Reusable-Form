@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
 import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
@@ -14,6 +14,7 @@ import { CodeButtonComponent } from '../common/component/code-button/code-button
     selector: 'app-button-toggle',
     templateUrl: './button-toggle.component.html',
     styleUrls: ['./button-toggle.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         FalconTailwindModule,
         CodeGeneratorComponent,

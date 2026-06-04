@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
 import { MatCard, MatCardContent } from '@angular/material/card';
@@ -27,6 +27,7 @@ import { banWords } from '../../common/validations';
     RouterLink,
   ],
   templateUrl: './standalone-group-form.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './standalone-group-form.component.scss',
 })
 export class StandaloneGroupFormComponent {

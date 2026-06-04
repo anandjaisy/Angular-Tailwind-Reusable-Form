@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {
   BaseControlBuilder,
   controlProvider,
@@ -11,6 +11,7 @@ import { MatRadioChange, MatRadioModule } from '@angular/material/radio';
   selector: 'fal-radio',
   imports: [MatFormFieldModule, MatRadioModule, ...sharedControlDeps],
   viewProviders: [controlProvider],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `<div [ngStyle]="control.config.style" [ngClass]="control.config.class">
     <label class="radio-label-padding">{{ control.config.label | titlecase }}</label>
     <mat-radio-group

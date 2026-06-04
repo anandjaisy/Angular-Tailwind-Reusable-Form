@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 import { BaseFormComponent } from '../../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
@@ -21,6 +21,7 @@ import { AngularCodeTemplate } from '../../common/angularCodeTemplate';
   selector: 'app-input-error',
   templateUrl: './input-error.component.html',
   styleUrls: ['./input-error.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [FalconTailwindModule, CodeGeneratorComponent, HighlightModule, CodeButtonComponent],
 })
 export class InputErrorComponent extends BaseFormComponent<any> implements OnInit {

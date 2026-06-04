@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatSelectChange } from '@angular/material/select';
 import { BaseControl } from '@falcon-ng/core';
@@ -7,6 +7,7 @@ import { BaseControl } from '@falcon-ng/core';
     selector: 'falcon-select',
     templateUrl: './select.component.html',
     styleUrls: ['./select.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class SelectComponent implements OnInit {

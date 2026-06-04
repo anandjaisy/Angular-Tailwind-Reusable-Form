@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AngularCodeTemplateViewModel } from '../../common/angularCodeTemplateViewModel';
 import {
   MatTableConfig,
@@ -45,6 +45,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     selector: 'app-table-action-menu',
     templateUrl: './table-action-menu.component.html',
     styleUrls: ['./table-action-menu.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         FalconTailwindModule,
         CodeGeneratorComponent,

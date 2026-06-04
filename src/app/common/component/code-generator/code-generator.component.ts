@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, TemplateRef } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, TemplateRef, ChangeDetectionStrategy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 import { HighlightModule } from 'ngx-highlightjs';
@@ -9,6 +9,7 @@ import { IGenericHttpClient } from '../../../../../projects/falcon-ng/tailwind/s
   selector: 'app-code-generator',
   templateUrl: './code-generator.component.html',
   styleUrls: ['./code-generator.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [HighlightModule, FalconTailwindModule],
 })
 export class CodeGeneratorComponent implements OnInit {

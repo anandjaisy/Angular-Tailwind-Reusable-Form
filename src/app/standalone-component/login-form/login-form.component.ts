@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FalconCoreModule } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/falcon-core.module';
 import { BaseControl } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/model/base-control';
@@ -8,6 +8,7 @@ import { Textbox } from '../../../../projects/falcon-ng/core/src/lib/falcon-core
     selector: 'app-login-form',
     imports: [ReactiveFormsModule, FalconCoreModule],
     templateUrl: './login-form.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './login-form.component.scss'
 })
 export class LoginFormComponent {

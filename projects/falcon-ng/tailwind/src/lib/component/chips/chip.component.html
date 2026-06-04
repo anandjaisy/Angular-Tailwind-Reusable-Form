@@ -13,7 +13,7 @@
         [formArrayName]="control.formControlName" [placeholder]="control.placeHolder" [ngStyle]="control.style"
         [ngClass]="control.class" [matAutocomplete]="auto" [matChipInputFor]="chipGrid"
         [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)"
-        [required]="formGroup.get(control.formControlName)?.errors !== null && formGroup.get(control.formControlName)?.errors?.['required']"
+        [required]="$safeNavigationMigration(formGroup.get(control.formControlName)?.errors) !== null && formGroup.get(control.formControlName)?.errors?.['required']"
         (keyup.enter)="keyboardEnterEvent($event)">
 
     </mat-chip-grid>
@@ -24,8 +24,8 @@
     </mat-autocomplete>
     <mat-hint>
       <ng-container *ngIf="control.hint.link?.isLink; else elseBlock">
-        <ng-container *ngIf="control.hint.link?.queryParams !== undefined; else withoutQueryBlock">
-          <a [routerLink]="[control.hint.link?.routerLink]" [queryParams]="{ query: control.hint.link?.queryParams }"
+        <ng-container *ngIf="$safeNavigationMigration(control.hint.link?.queryParams) !== undefined; else withoutQueryBlock">
+          <a [routerLink]="[$safeNavigationMigration(control.hint.link?.routerLink)]" [queryParams]="{ query: $safeNavigationMigration(control.hint.link?.queryParams) }"
             routerLinkActive="router-link-active">{{control.hint.text}}</a>
         </ng-container>
       </ng-container>
@@ -33,7 +33,7 @@
         <span>{{control.hint.text}}</span>
       </ng-template>
       <ng-template #withoutQueryBlock>
-        <a [routerLink]="[control.hint.link?.routerLink]"
+        <a [routerLink]="[$safeNavigationMigration(control.hint.link?.routerLink)]"
           routerLinkActive="router-link-active">{{control.hint.text}}</a>
       </ng-template>
     </mat-hint>
@@ -53,7 +53,7 @@
         [placeholder]="control.placeHolder" [matChipInputFor]="chipGrid" [ngStyle]="control.style"
         [ngClass]="control.class" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
         [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)"
-        [required]="formGroup.get(control.formControlName)?.errors !== null && formGroup.get(control.formControlName)?.errors?.['required']"
+        [required]="$safeNavigationMigration(formGroup.get(control.formControlName)?.errors) !== null && formGroup.get(control.formControlName)?.errors?.['required']"
         (keyup.enter)="keyboardEnterEvent($event)">
 
     </mat-chip-grid>

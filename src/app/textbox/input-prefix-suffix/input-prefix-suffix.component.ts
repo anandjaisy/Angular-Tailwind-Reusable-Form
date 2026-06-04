@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { BaseFormComponent } from '../../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
 import { Textbox } from '@falcon-ng/core';
@@ -14,6 +14,7 @@ import { MatFormFieldAppearance } from '@angular/material/form-field';
   selector: 'app-input-prefix-suffix',
   templateUrl: './input-prefix-suffix.component.html',
   styleUrls: ['./input-prefix-suffix.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [FalconTailwindModule, CodeGeneratorComponent, HighlightModule, CodeButtonComponent],
 })
 export class InputPrefixSuffixComponent extends BaseFormComponent<any> implements OnInit {

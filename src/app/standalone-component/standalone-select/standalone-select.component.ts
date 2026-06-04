@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { IComponentEvent } from '@falcon-ng/core';
@@ -18,6 +18,7 @@ import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/sr
     FalconTailwindModule,
   ],
   templateUrl: './standalone-select.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './standalone-select.component.scss',
 })
 export class StandaloneSelectComponent implements OnInit {

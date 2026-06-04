@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { BaseFormComponent } from '../../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
 import { Observable, of } from 'rxjs';
 import { AngularCodeTemplate } from '../../common/angularCodeTemplate';
@@ -16,6 +16,7 @@ import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/sr
   selector: 'app-chips-autocomplete',
   templateUrl: './chips-autocomplete.component.html',
   styleUrls: ['./chips-autocomplete.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [FalconTailwindModule, HighlightModule],
 })
 export class ChipsAutocompleteComponent

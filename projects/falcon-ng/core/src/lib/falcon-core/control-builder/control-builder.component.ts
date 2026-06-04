@@ -1,4 +1,4 @@
-import { AfterContentChecked, ChangeDetectorRef, Component, Input, PipeTransform } from '@angular/core';
+import { AfterContentChecked, ChangeDetectorRef, Component, Input, PipeTransform, ChangeDetectionStrategy } from '@angular/core';
 import { ComponentResolver } from '../component-resolver';
 import { BaseControl } from '../model/base-control';
 import { controlProvider } from './base-control-builder';
@@ -8,6 +8,7 @@ import { controlProvider } from './base-control-builder';
     viewProviders: [controlProvider],
     template: `<ng-container class="w-full" [ngComponentOutlet]="componentResolver.resolver(control.controlType) | async"
                            [ngComponentOutletInjector]="control.formControlName | controlInjection: control"></ng-container>`,
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ControlBuilderComponent<T> implements AfterContentChecked {

@@ -1,10 +1,11 @@
-import {Component, Inject} from '@angular/core';
+import {Component, Inject, ChangeDetectionStrategy} from '@angular/core';
 import {MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef} from "@angular/material/bottom-sheet";
 
 @Component({
     selector: 'lib-bottom-sheet',
     templateUrl: './bottom-sheet.component.html',
     styleUrls: ['./bottom-sheet.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class BottomSheetComponent {

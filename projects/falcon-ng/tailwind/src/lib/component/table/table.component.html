@@ -11,8 +11,8 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ column.header }}</th>
       <ng-container *ngIf="column?.link?.isLink; else elseBlock">
         <td mat-cell *matCellDef="let element">
-          <a [routerLink]="column?.link?.routerLink(element)">
-            {{column?.cell(element) !== undefined ? column?.cell(element) : '' }}
+          <a [routerLink]="$safeNavigationMigration(column?.link?.routerLink(element))">
+            {{$safeNavigationMigration(column?.cell(element)) !== undefined ? column?.cell(element) : '' }}
           </a>
         </td>
       </ng-container>
@@ -43,9 +43,9 @@
             <mat-icon color="primary">more_horiz</mat-icon>
           </button>
           <mat-menu #tableActionMenu="matMenu">
-            <a [routerLink]="item?.link?.routerLink" mat-menu-item *ngFor="let item of matTableConfig.action?.menu"
+            <a [routerLink]="$safeNavigationMigration(item?.link?.routerLink)" mat-menu-item *ngFor="let item of matTableConfig.action?.menu"
               [disabled]="item.disabled">
-              <mat-icon [color]="item?.icon?.iconColor">{{item?.icon?.iconText}}</mat-icon>
+              <mat-icon [color]="$safeNavigationMigration(item?.icon?.iconColor)">{{item?.icon?.iconText}}</mat-icon>
               <span>{{item.text}}</span>
             </a>
           </mat-menu>
@@ -77,6 +77,6 @@
 
   </table>
   <mat-paginator *ngIf="matTableConfig.paginationConfig?.pagination" (page)="page($event)"
-    [pageSizeOptions]="matTableConfig.paginationConfig?.pageSizeOptions!" showFirstLastButtons>
+    [pageSizeOptions]="$safeNavigationMigration(matTableConfig.paginationConfig?.pageSizeOptions)!" showFirstLastButtons>
   </mat-paginator>
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {
   BaseControlBuilder,
   controlProvider,
@@ -10,6 +10,7 @@ import { MatCheckboxChange, MatCheckboxModule } from '@angular/material/checkbox
   selector: 'fal-checkbox',
   imports: [MatCheckboxModule, ...sharedControlDeps],
   viewProviders: [controlProvider],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: ` <mat-checkbox
     [ngStyle]="control.config.style"
     [ngClass]="control.config.class"

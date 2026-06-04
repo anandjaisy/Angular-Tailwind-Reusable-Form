@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-button-indicator',
   templateUrl: './button-indicator.component.html',
   styleUrls: ['./button-indicator.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: true,
 })
 export class ButtonIndicatorComponent {}

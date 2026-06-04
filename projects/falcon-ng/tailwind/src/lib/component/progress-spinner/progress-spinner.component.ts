@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
 import {ThemePalette} from "@angular/material/core";
 import {ProgressSpinnerMode} from "@angular/material/progress-spinner";
 
@@ -6,6 +6,7 @@ import {ProgressSpinnerMode} from "@angular/material/progress-spinner";
     selector: 'falcon-progress-spinner',
     templateUrl: './progress-spinner.component.html',
     styleUrls: ['./progress-spinner.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ProgressSpinnerComponent {

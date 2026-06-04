@@ -1,9 +1,9 @@
 {
   "name": "@falcon-ng/tailwind",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "peerDependencies": {
-    "@angular/common": "^21.2.8",
-    "@angular/core": "^21.2.8",
+    "@angular/common": "^22.0.0",
+    "@angular/core": "^22.0.0",
     "@falcon-ng/core": ">=0.0.48"
   },
   "dependencies": {

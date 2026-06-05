@@ -1,0 +1,240 @@
+import {
+  U as U$1,
+  b as bl,
+  r as ra,
+  n as na,
+  D as Dt,
+  q as qe,
+  G as Gi,
+  a as qi,
+  ad as yt,
+  ae as vt,
+  I as te,
+  af as Ee,
+  ag as qe$1,
+  c,
+  j as jn,
+  d as wy,
+  J as JC,
+  i as iT,
+  e as Ur,
+  s as si,
+  L as Lr,
+  f as jn$1,
+  H,
+  g as J,
+  h as sm,
+  k as ws,
+  l as ib,
+  M as Em,
+  x as xl,
+  Y as YI,
+  o as ym,
+  T as Tb,
+  p as pm,
+  t as H_,
+  u as sb,
+  K as KI,
+  z as zm,
+  v as zr,
+  O as ub,
+  P as cb,
+  A as vb,
+  Q as lb,
+  Z as Zb,
+  B as Lm,
+} from './main-243ESPVV.js';
+function X(e, o) {
+  if ((e & 1 && (ws(0, 'mat-label'), Zb(1), xl()), e & 2)) {
+    let t = vb();
+    (H_(), Lm(t.control.config.label));
+  }
+}
+function Y(e, o) {
+  if ((e & 1 && (ws(0, 'mat-option', 9), Zb(1), xl()), e & 2)) {
+    let t = o.$implicit;
+    (pm('value', t), H_(), Lm(t.value));
+  }
+}
+function Z(e, o) {
+  if ((e & 1 && (ws(0, 'mat-optgroup', 8), ub(1, Y, 2, 2, 'mat-option', 9, cb), xl()), e & 2)) {
+    let t = o.$implicit;
+    (pm('label', t.label), H_(), lb(t.options));
+  }
+}
+function tt(e, o) {
+  if ((e & 1 && ub(0, Z, 3, 1, 'mat-optgroup', 8, cb), e & 2)) {
+    let t = vb();
+    lb(t.filteredOptionGroup);
+  }
+}
+function et(e, o) {
+  if ((e & 1 && (ws(0, 'mat-option', 9), Zb(1), xl()), e & 2)) {
+    let t = o.$implicit;
+    (pm('value', t), H_(), Lm(t.value));
+  }
+}
+function ot(e, o) {
+  if ((e & 1 && ub(0, et, 2, 2, 'mat-option', 9, cb), e & 2)) {
+    let t = vb();
+    lb(t.filteredOptions);
+  }
+}
+function nt(e, o) {
+  if ((e & 1 && (ws(0, 'mat-icon', 5), Zb(1), xl()), e & 2)) {
+    let t = vb();
+    (pm('matTooltip', t.control.config.prefix.toolTipText), H_(), Lm(t.control.config.prefix.text));
+  }
+}
+function it(e, o) {
+  if ((e & 1 && (ws(0, 'mat-icon', 6), Zb(1), xl()), e & 2)) {
+    let t = vb();
+    (pm('matTooltip', t.control.config.suffix.toolTipText), H_(), Lm(t.control.config.suffix.text));
+  }
+}
+var U = class e extends U$1 {
+  filteredOptions = [];
+  filteredOptionGroup = [];
+  constructor() {
+    (super(),
+      (this.filteredOptions = [...this.control.config.options]),
+      this.control.config?.selectProperty?.optionGroups &&
+        (this.filteredOptionGroup = [...this.control.config.optionGroup]));
+  }
+  displayFn(o) {
+    return o && o.value ? o.value : '';
+  }
+  onInputChange(o) {
+    let t = o.target;
+    ((this.filteredOptions = this._filter(t.value || '')),
+      this.control.config?.selectProperty?.optionGroups &&
+        (this.filteredOptionGroup = this._filterGroup(t.value || '')),
+      this.control.config.event.inputChange?.emit(t.value || ''));
+  }
+  _filter(o) {
+    let t = o.toLowerCase();
+    return this.control.config.options.filter((n) => n?.key?.toLowerCase().includes(t));
+  }
+  optionSelected(o) {
+    (this.control.config.event.keyboardEnter?.emit(o), this.control.config.event.change?.emit(o));
+  }
+  _filterGroup(o) {
+    return o
+      ? this.control.config.optionGroup
+          .map((t) => ({ label: t.label, options: this._filter(o) }))
+          .filter((t) => t.label.length > 0)
+      : this.control.config.optionGroup;
+  }
+  static ɵfac = function (t) {
+    return new (t || e)();
+  };
+  static ɵcmp = bl({
+    type: e,
+    selectors: [['fal-autocomplete']],
+    features: [zm([], [zr]), sm],
+    decls: 11,
+    vars: 14,
+    consts: [
+      ['auto', 'matAutocomplete'],
+      ['containerDir', 'falconValidationMessageContainer'],
+      [1, 'w-full', 3, 'appearance', 'ngStyle', 'ngClass'],
+      [
+        'matInput',
+        '',
+        'type',
+        'text',
+        3,
+        'input',
+        'formControlName',
+        'placeholder',
+        'ngStyle',
+        'ngClass',
+        'matAutocomplete',
+        'container',
+      ],
+      [3, 'optionSelected', 'displayWith'],
+      ['matPrefix', '', 3, 'matTooltip'],
+      ['matSuffix', '', 3, 'matTooltip'],
+      ['falconValidationMessageContainer', ''],
+      [3, 'label'],
+      [3, 'value'],
+    ],
+    template: function (t, n) {
+      if (
+        (t & 1 &&
+          (ws(0, 'mat-form-field', 2),
+          ib(1, X, 2, 1, 'mat-label'),
+          ws(2, 'input', 3),
+          Em('input', function (s) {
+            return n.onInputChange(s);
+          }),
+          xl(),
+          YI(),
+          ws(3, 'mat-autocomplete', 4, 0),
+          Em('optionSelected', function (s) {
+            return n.optionSelected(s.option.viewValue);
+          }),
+          ib(5, tt, 2, 0)(6, ot, 2, 0),
+          xl(),
+          ib(7, nt, 2, 2, 'mat-icon', 5),
+          ib(8, it, 2, 2, 'mat-icon', 6),
+          xl(),
+          ym(9, 7, 1)),
+        t & 2)
+      ) {
+        let y = Tb(4),
+          s = Tb(10);
+        (pm('appearance', n.control.config.appearance)('ngStyle', n.control.config.style)(
+          'ngClass',
+          n.control.config.class,
+        ),
+          H_(),
+          sb(n.control.config.label ? 1 : -1),
+          H_(),
+          pm('formControlName', n.control.formControlName)(
+            'placeholder',
+            n.control.config.placeHolder,
+          )('ngStyle', n.control.config.style)('ngClass', n.control.config.class)(
+            'matAutocomplete',
+            y,
+          )('container', s.container),
+          KI(),
+          H_(),
+          pm('displayWith', n.displayFn),
+          H_(2),
+          sb(n.control.config.selectProperty.optionGroups ? 5 : 6),
+          H_(2),
+          sb(n.control.config.prefix && n.control.config.prefix.isIcon ? 7 : -1),
+          H_(),
+          sb(n.control.config.suffix && n.control.config.suffix.isIcon ? 8 : -1));
+      }
+    },
+    dependencies: [
+      ra,
+      na,
+      Dt,
+      qe,
+      Gi,
+      qi,
+      yt,
+      vt,
+      te,
+      Ee,
+      qe$1,
+      c,
+      jn,
+      wy,
+      JC,
+      iT,
+      Ur,
+      si,
+      Lr,
+      jn$1,
+      H,
+      J,
+    ],
+    styles: ['.w-full[_ngcontent-%COMP%]{width:100%}'],
+    changeDetection: 1,
+  });
+};
+export { U as AutocompleteComponent };

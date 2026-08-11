@@ -34,6 +34,8 @@ import { StandaloneRadioComponent } from './standalone-component/standalone-radi
 import { StandaloneCheckboxComponent } from './standalone-component/standalone-checkbox/standalone-checkbox.component';
 import { StandaloneGroupFormComponent } from './standalone-component/standalone-group-form/standalone-group-form.component';
 import { StandaloneSlideToogle } from './standalone-component/standalone-slide-toogle/standalone-slide-toogle';
+import { StandaloneTimepicker } from './standalone-component/standalone-timepicker/standalone-timepicker';
+import { StandaloneChip } from './standalone-component/standalone-chip/standalone-chip';
 
 export const routes: Routes = [
   { path: 'auth-callback', component: AuthCallbackComponent },
@@ -63,6 +65,7 @@ export const routes: Routes = [
   { path: 'standalone-texarea', component: StandaloneTextareaComponent },
   { path: 'standalone-select', component: StandaloneSelectComponent },
   { path: 'standalone-datepicker', component: StandaloneDatepickerComponent },
+  { path: 'standalone-timepicker', component: StandaloneTimepicker },
   { path: 'standalone-button', component: StandaloneButtonComponent },
   { path: 'login', component: LoginFormComponent },
   {
@@ -84,5 +87,9 @@ export const routes: Routes = [
   {
     path: 'standalone-slide-toogle',
     component: StandaloneSlideToogle,
+  },
+  {
+    path: 'standalone-chip',
+    component: StandaloneChip,
   },
 ];

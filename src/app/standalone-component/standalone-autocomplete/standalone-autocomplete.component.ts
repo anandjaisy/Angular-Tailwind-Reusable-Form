@@ -1,4 +1,11 @@
-import { afterNextRender, AfterViewInit, Component, EventEmitter, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  afterNextRender,
+  AfterViewInit,
+  Component,
+  EventEmitter,
+  OnInit,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { HighlightModule } from 'ngx-highlightjs';
@@ -39,6 +46,22 @@ export class StandaloneAutocompleteComponent implements OnInit {
       { value: 'NewYork', key: 'New York' },
       { value: 'Kathmandu', key: 'Kathmandu' },
     ],
+    event: this.changeEvent,
+    appearance: Appearance.Outline as MatFormFieldAppearance,
+  });
+
+  presuffixicons: BaseControl<string> = new AutoComplete({
+    formControlName: 'presuffixicons',
+    label: 'Pre and Suffix Icons',
+    options: [
+      { value: 'Sydney', key: 'Syd' },
+      { value: 'Melbourne', key: 'Mel' },
+      { value: 'Brisbane', key: 'Brisbane' },
+      { value: 'NewYork', key: 'New York' },
+      { value: 'Kathmandu', key: 'Kathmandu' },
+    ],
+    prefix: { isIcon: true, text: 'search' },
+    suffix: { isIcon: true, text: 'search' },
     event: this.changeEvent,
     appearance: Appearance.Outline as MatFormFieldAppearance,
   });

@@ -2,10 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
 import { Chip } from '@falcon-ng/core';
-import {
-  Appearance,
-  InputTypes,
-} from '../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
+import { Appearance } from '../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { HighlightModule } from 'ngx-highlightjs';
 import { CodeGeneratorComponent } from '../common/component/code-generator/code-generator.component';
@@ -16,19 +13,19 @@ import { ChipsAutocompleteComponent } from './chips-autocomplete/chips-autocompl
 import { CodeButtonComponent } from '../common/component/code-button/code-button.component';
 
 @Component({
-    selector: 'app-chips',
-    templateUrl: './chips.component.html',
-    styleUrls: ['./chips.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [
-        FalconTailwindModule,
-        CodeGeneratorComponent,
-        HighlightModule,
-        ChipsWithinputComponent,
-        ChipsDragDropComponent,
-        ChipsAutocompleteComponent,
-        CodeButtonComponent,
-    ]
+  selector: 'app-chips',
+  templateUrl: './chips.component.html',
+  styleUrls: ['./chips.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
+  imports: [
+    FalconTailwindModule,
+    CodeGeneratorComponent,
+    HighlightModule,
+    ChipsWithinputComponent,
+    ChipsDragDropComponent,
+    ChipsAutocompleteComponent,
+    CodeButtonComponent,
+  ],
 })
 export class ChipsComponent {
   public codeGeneratorEnable: boolean = false;
@@ -46,7 +43,7 @@ export class ChipsComponent {
           { value: 'NewYork', key: 'New York' },
           { value: 'Kathmandu', key: 'Kathmandu' },
         ],
-        type: InputTypes.Text,
+        type: 'text',
         chipSelectedOptions: [],
         formArray: [],
       }),
@@ -58,34 +55,26 @@ export class ChipsComponent {
   constructor() {}
 
   buttonClickEvent() {
-    this.angularCodeTemplateViewModel.tsConfig =
-      AngularCodeTemplate.Chips_TS_KEY;
-    this.angularCodeTemplateViewModel.htmlConfig =
-      AngularCodeTemplate.Chips_HTML_KEY;
+    this.angularCodeTemplateViewModel.tsConfig = AngularCodeTemplate.Chips_TS_KEY;
+    this.angularCodeTemplateViewModel.htmlConfig = AngularCodeTemplate.Chips_HTML_KEY;
     this.codeGeneratorEnable = !this.codeGeneratorEnable;
   }
 
   chipsAutoCompleteClickEvent() {
-    this.angularCodeTemplateViewModel.tsConfig =
-      AngularCodeTemplate.Chips_AUTO_COMPLETE_TS_KEY;
-    this.angularCodeTemplateViewModel.htmlConfig =
-      AngularCodeTemplate.Chips_AUTO_COMPLETE_HTML_KEY;
+    this.angularCodeTemplateViewModel.tsConfig = AngularCodeTemplate.Chips_AUTO_COMPLETE_TS_KEY;
+    this.angularCodeTemplateViewModel.htmlConfig = AngularCodeTemplate.Chips_AUTO_COMPLETE_HTML_KEY;
     this.codeGeneratorEnable = !this.codeGeneratorEnable;
   }
 
   chipsWithInputClickEvent() {
-    this.angularCodeTemplateViewModel.tsConfig =
-      AngularCodeTemplate.Chips_INPUT_TS_KEY;
-    this.angularCodeTemplateViewModel.htmlConfig =
-      AngularCodeTemplate.Chips_INPUT_HTML_KEY;
+    this.angularCodeTemplateViewModel.tsConfig = AngularCodeTemplate.Chips_INPUT_TS_KEY;
+    this.angularCodeTemplateViewModel.htmlConfig = AngularCodeTemplate.Chips_INPUT_HTML_KEY;
     this.codeGeneratorEnable = !this.codeGeneratorEnable;
   }
 
   chipsDragDropClickEvent() {
-    this.angularCodeTemplateViewModel.tsConfig =
-      AngularCodeTemplate.Chips_DRAGDROP_TS_KEY;
-    this.angularCodeTemplateViewModel.htmlConfig =
-      AngularCodeTemplate.Chips_DRAGDROP_HTML_KEY;
+    this.angularCodeTemplateViewModel.tsConfig = AngularCodeTemplate.Chips_DRAGDROP_TS_KEY;
+    this.angularCodeTemplateViewModel.htmlConfig = AngularCodeTemplate.Chips_DRAGDROP_HTML_KEY;
     this.codeGeneratorEnable = !this.codeGeneratorEnable;
   }
 }

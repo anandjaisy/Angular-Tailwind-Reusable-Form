@@ -8,10 +8,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { IOptions, IOptionGroup } from '../../model/interface';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'fal-autocomplete',
-  imports: [MatInputModule, MatAutocompleteModule, MatTooltipModule, ...sharedControlDeps],
+  imports: [
+    MatInputModule,
+    MatAutocompleteModule,
+    MatIconModule,
+    MatTooltipModule,
+    ...sharedControlDeps,
+  ],
   viewProviders: [controlProvider],
   template: `<mat-form-field
       [appearance]="control.config.appearance"
@@ -19,8 +26,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
       [ngClass]="control.config.class"
       class="w-full"
     >
-      @if(control.config.label){
-      <mat-label>{{ control.config.label }}</mat-label>
+      @if (control.config.label) {
+        <mat-label>{{ control.config.label }}</mat-label>
       }
       <input
         matInput
@@ -38,25 +45,29 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         (optionSelected)="optionSelected($event.option.viewValue)"
         [displayWith]="displayFn"
       >
-        @if(control.config.selectProperty.optionGroups) { @for(group of filteredOptionGroup; track
-        group) {
-        <mat-optgroup [label]="group.label">
-          @for(option of group.options; track option) {
-          <mat-option [value]="option">{{ option.value }}</mat-option>
+        @if (control.config.selectProperty.optionGroups) {
+          @for (group of filteredOptionGroup; track group) {
+            <mat-optgroup [label]="group.label">
+              @for (option of group.options; track option) {
+                <mat-option [value]="option">{{ option.value }}</mat-option>
+              }
+            </mat-optgroup>
           }
-        </mat-optgroup>
-        } } @else { @for(option of filteredOptions; track option) {
-        <mat-option [value]="option">{{ option.value }}</mat-option>
-        } }
+        } @else {
+          @for (option of filteredOptions; track option) {
+            <mat-option [value]="option">{{ option.value }}</mat-option>
+          }
+        }
       </mat-autocomplete>
-      @if(control.config.prefix && control.config.prefix.isIcon){
-      <mat-icon matPrefix [matTooltip]="control.config.prefix.toolTipText!">{{
-        control.config.prefix.text
-      }}</mat-icon>
-      } @if(control.config.suffix && control.config.suffix.isIcon){
-      <mat-icon matSuffix [matTooltip]="control.config.suffix.toolTipText!">{{
-        control.config.suffix.text
-      }}</mat-icon>
+      @if (control.config.prefix && control.config.prefix.isIcon) {
+        <mat-icon matPrefix [matTooltip]="control.config.prefix.toolTipText!">{{
+          control.config.prefix.text
+        }}</mat-icon>
+      }
+      @if (control.config.suffix && control.config.suffix.isIcon) {
+        <mat-icon matSuffix [matTooltip]="control.config.suffix.toolTipText!">{{
+          control.config.suffix.text
+        }}</mat-icon>
       }
     </mat-form-field>
     <ng-container
@@ -64,9 +75,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
       #containerDir="falconValidationMessageContainer"
     />`,
   changeDetection: ChangeDetectionStrategy.Eager,
-  styles: `.w-full {
-    width: 100%
-  }`,
+  styles: `
+    .w-full {
+      width: 100%;
+    }
+  `,
 })
 export class AutocompleteComponent extends BaseControlBuilder {
   filteredOptions: IOptions[] = [];
@@ -93,7 +106,7 @@ export class AutocompleteComponent extends BaseControlBuilder {
   private _filter(value: string): IOptions[] {
     const filterValue = value.toLowerCase();
     return this.control.config.options.filter((option: IOptions) =>
-      option?.key?.toLowerCase().includes(filterValue)
+      option?.key?.toLowerCase().includes(filterValue),
     );
   }
 
@@ -106,7 +119,7 @@ export class AutocompleteComponent extends BaseControlBuilder {
       return this.control.config.optionGroup
         .map(
           (groupOption: IOptionGroup) =>
-            ({ label: groupOption.label, options: this._filter(value) } as IOptionGroup)
+            ({ label: groupOption.label, options: this._filter(value) }) as IOptionGroup,
         )
         .filter((group: IOptionGroup) => group.label.length > 0);
     }

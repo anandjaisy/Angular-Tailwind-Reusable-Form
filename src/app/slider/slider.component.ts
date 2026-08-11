@@ -3,10 +3,7 @@ import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
 import { Observable, of } from 'rxjs';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
-import {
-  Appearance,
-  InputTypes,
-} from '../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
+import { Appearance } from '../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
 import { Slider } from '@falcon-ng/core';
 import { HighlightModule } from 'ngx-highlightjs';
 import { CodeGeneratorComponent } from '../common/component/code-generator/code-generator.component';
@@ -14,16 +11,11 @@ import { FalconTailwindModule } from '../../../projects/falcon-ng/tailwind/src/l
 import { CodeButtonComponent } from '../common/component/code-button/code-button.component';
 
 @Component({
-    selector: 'app-slider',
-    templateUrl: './slider.component.html',
-    styleUrls: ['./slider.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [
-        FalconTailwindModule,
-        CodeGeneratorComponent,
-        HighlightModule,
-        CodeButtonComponent,
-    ]
+  selector: 'app-slider',
+  templateUrl: './slider.component.html',
+  styleUrls: ['./slider.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
+  imports: [FalconTailwindModule, CodeGeneratorComponent, HighlightModule, CodeButtonComponent],
 })
 export class SliderComponent extends BaseFormComponent<any> implements OnInit {
   public codeGeneratorEnable: boolean = false;
@@ -42,7 +34,7 @@ export class SliderComponent extends BaseFormComponent<any> implements OnInit {
         new Slider({
           label: 'Value',
           appearance: Appearance.Standard,
-          type: InputTypes.Number,
+          type: 'number',
           value: 0,
           formControlName: 'value',
         }),
@@ -50,7 +42,7 @@ export class SliderComponent extends BaseFormComponent<any> implements OnInit {
           formControlName: 'MinValue',
           label: 'Min Value',
           appearance: Appearance.Standard,
-          type: InputTypes.Number,
+          type: 'number',
           value: 0,
         }),
       ],
@@ -66,10 +58,8 @@ export class SliderComponent extends BaseFormComponent<any> implements OnInit {
   }
 
   buttonClickEvent() {
-    this.angularCodeTemplateViewModel.tsConfig =
-      AngularCodeTemplate.Slider_TS_KEY;
-    this.angularCodeTemplateViewModel.htmlConfig =
-      AngularCodeTemplate.Slider_HTML_KEY;
+    this.angularCodeTemplateViewModel.tsConfig = AngularCodeTemplate.Slider_TS_KEY;
+    this.angularCodeTemplateViewModel.htmlConfig = AngularCodeTemplate.Slider_HTML_KEY;
     this.codeGeneratorEnable = !this.codeGeneratorEnable;
   }
 }

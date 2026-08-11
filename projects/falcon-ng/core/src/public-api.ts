@@ -14,6 +14,7 @@ export * from './lib/falcon-core/control-type/ButtonToggle';
 export * from './lib/falcon-core/control-type/CheckBox';
 export * from './lib/falcon-core/control-type/Chip';
 export * from './lib/falcon-core/control-type/DatePicker';
+export * from './lib/falcon-core/control-type/TimePicker';
 export * from './lib/falcon-core/control-type/Divider';
 export * from './lib/falcon-core/control-type/Editor';
 export * from './lib/falcon-core/control-type/Radio';
@@ -27,7 +28,7 @@ export * from './lib/falcon-core/control-type/Textbox';
 export * from './lib/falcon-core/control-builder/control-builder.component';
 export * from './lib/falcon-core/control-builder/group-control-builder.component';
 
-export * from './lib/falcon-core/angularmaterial.module';
+export * from '../../core/src/lib/falcon-core/angularmaterial.module';
 
 export * from './lib/falcon-core/component/card/card.component';
 export * from './lib/falcon-core/component/button/button.component';

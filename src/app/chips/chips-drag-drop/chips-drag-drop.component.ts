@@ -3,10 +3,7 @@ import { AngularCodeTemplateViewModel } from '../../common/angularCodeTemplateVi
 import { BaseFormComponent } from '../../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
 import { Observable, of } from 'rxjs';
 import { AngularCodeTemplate } from '../../common/angularCodeTemplate';
-import {
-  Appearance,
-  InputTypes,
-} from '../../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
+import { Appearance } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { Chip } from '@falcon-ng/core';
 import { HighlightModule } from 'ngx-highlightjs';
@@ -20,10 +17,7 @@ import { CodeButtonComponent } from '../../common/component/code-button/code-but
   changeDetection: ChangeDetectionStrategy.Eager,
   imports: [FalconTailwindModule, HighlightModule],
 })
-export class ChipsDragDropComponent
-  extends BaseFormComponent<string>
-  implements OnInit
-{
+export class ChipsDragDropComponent extends BaseFormComponent<string> implements OnInit {
   public angularCodeTemplateViewModel: AngularCodeTemplateViewModel =
     new AngularCodeTemplateViewModel();
   public codeGeneratorEnable: boolean = false;
@@ -48,7 +42,7 @@ export class ChipsDragDropComponent
             { value: 'NewYork', key: 'New York' },
             { value: 'Kathmandu', key: 'Kathmandu' },
           ],
-          type: InputTypes.DragDrop,
+          type: 'drag-drop',
           chipSelectedOptions: [],
           formArray: [],
         }),
@@ -68,10 +62,8 @@ export class ChipsDragDropComponent
   }
 
   buttonClickEvent() {
-    this.angularCodeTemplateViewModel.tsConfig =
-      AngularCodeTemplate.Chips_DRAGDROP_TS_KEY;
-    this.angularCodeTemplateViewModel.htmlConfig =
-      AngularCodeTemplate.Chips_DRAGDROP_HTML_KEY;
+    this.angularCodeTemplateViewModel.tsConfig = AngularCodeTemplate.Chips_DRAGDROP_TS_KEY;
+    this.angularCodeTemplateViewModel.htmlConfig = AngularCodeTemplate.Chips_DRAGDROP_HTML_KEY;
     this.codeGeneratorEnable = !this.codeGeneratorEnable;
   }
 }

@@ -3,10 +3,7 @@ import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 import { BaseFormComponent } from '../../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
 
-import {
-  Appearance,
-  InputTypes,
-} from '../../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
+import { Appearance } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { HighlightModule } from 'ngx-highlightjs';
 import { CodeGeneratorComponent } from '../../common/component/code-generator/code-generator.component';

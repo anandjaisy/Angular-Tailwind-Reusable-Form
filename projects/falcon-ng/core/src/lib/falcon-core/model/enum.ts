@@ -13,6 +13,7 @@ export const enum Control {
   TextArea = 'textarea',
   Select = 'select',
   DatePicker = 'datepicker',
+  TimePicker = 'timepicker',
   Radio = 'radio',
   Checkbox = 'checkbox',
   Button = 'button',
@@ -74,31 +75,33 @@ export enum Appearance {
  * @usageNotes
  * ```ts
  *      componentProperty: {
- *        attrType: InputTypes.Text
+ *        attrType: 'date'
  *      }
  * ```
  */
-export const enum InputTypes {
-  Color = 'color',
-  Date = 'date',
-  DatetimeLocal = 'datetime-local',
-  Email = 'email',
-  Month = 'month',
-  Number = 'number',
-  Password = 'password',
-  Search = 'search',
-  Tel = 'tel',
-  Text = 'text',
-  Time = 'time',
-  Url = 'url',
-  Week = 'week',
+export type InputType =
+  | 'color'
+  | 'date'
+  | 'datetime'
+  | 'date-range'
+  | 'datetime-local'
+  | 'email'
+  | 'month'
+  | 'number'
+  | 'password'
+  | 'search'
+  | 'tel'
+  | 'text'
+  | 'time'
+  | 'url'
+  | 'week'
+  | 'select'
   /**
    * @usageNotes Should be only use for Buttom
    */
-  Button = 'button',
-  Submit = 'submit',
-  DragDrop = 'dragDrop',
-}
+  | 'button'
+  | 'submit'
+  | 'dragDrop';
 
 /**
  * @description

@@ -15,12 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ButtonComponent,
     GroupControlBuilderComponent,
   ],
-  imports: [
-    AngularmaterialModule,
-    CommonModule,
-    ControlInjectionPipe,
-    ReactiveFormsModule,
-  ],
+  imports: [AngularmaterialModule, CommonModule, ControlInjectionPipe, ReactiveFormsModule],
   exports: [
     AngularmaterialModule,
     ControlBuilderComponent,

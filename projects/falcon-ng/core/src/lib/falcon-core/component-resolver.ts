@@ -16,6 +16,7 @@ export class ComponentResolver {
     select: () => import('./component/select/select.component').then((c) => c.SelectComponent),
     datepicker: () =>
       import('./component/datepicker/datepicker.component').then((c) => c.DatepickerComponent),
+    timepicker: () => import('./component/timepicker/timepicker').then((c) => c.Timepicker),
     radio: () => import('./component/radio/radio.component').then((c) => c.RadioComponent),
     checkbox: () =>
       import('./component/checkbox/checkbox.component').then((c) => c.CheckboxComponent),
@@ -27,9 +28,9 @@ export class ComponentResolver {
       import('./component/textarea/textarea.component').then((c) => c.TextareaComponent),
     autocomplete: () =>
       import('./component/autocomplete/autocomplete.component').then(
-        (c) => c.AutocompleteComponent
+        (c) => c.AutocompleteComponent,
       ),
-    chip: () => import('./component/textarea/textarea.component').then((c) => c.TextareaComponent),
+    chip: () => import('./component/chip/chip').then((c) => c.Chip),
     editor: () =>
       import('./component/textarea/textarea.component').then((c) => c.TextareaComponent),
     divider: () =>
@@ -40,7 +41,7 @@ export class ComponentResolver {
     const loadedComponent = this.loadedControlCompoments.get(controlType);
     if (loadedComponent) return of(loadedComponent);
     return from(this.lazyControlComponents[controlType]()).pipe(
-      tap((comp) => this.loadedControlCompoments.set(controlType, comp))
+      tap((comp) => this.loadedControlCompoments.set(controlType, comp)),
     );
   }
 }

@@ -4,10 +4,7 @@ import { Observable, of } from 'rxjs';
 import { BaseFormComponent } from '../../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
 import { AngularCodeTemplateViewModel } from '../../common/angularCodeTemplateViewModel';
 import { Chip } from '@falcon-ng/core';
-import {
-  Appearance,
-  InputTypes,
-} from '../../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
+import { Appearance } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { HighlightModule } from 'ngx-highlightjs';
 import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/src/lib/falcon-tailwind.module';
@@ -19,10 +16,7 @@ import { FalconTailwindModule } from '../../../../projects/falcon-ng/tailwind/sr
   changeDetection: ChangeDetectionStrategy.Eager,
   imports: [FalconTailwindModule, HighlightModule],
 })
-export class ChipsWithinputComponent
-  extends BaseFormComponent<string>
-  implements OnInit
-{
+export class ChipsWithinputComponent extends BaseFormComponent<string> implements OnInit {
   public angularCodeTemplateViewModel: AngularCodeTemplateViewModel =
     new AngularCodeTemplateViewModel();
   public codeGeneratorEnable: boolean = false;
@@ -47,7 +41,7 @@ export class ChipsWithinputComponent
             { value: 'NewYork', key: 'New York' },
             { value: 'Kathmandu', key: 'Kathmandu' },
           ],
-          type: InputTypes.Text,
+          type: 'text',
           chipSelectedOptions: [],
           formArray: [],
         }),
@@ -67,10 +61,8 @@ export class ChipsWithinputComponent
   }
 
   buttonClickEvent() {
-    this.angularCodeTemplateViewModel.tsConfig =
-      AngularCodeTemplate.Chips_DRAGDROP_TS_KEY;
-    this.angularCodeTemplateViewModel.htmlConfig =
-      AngularCodeTemplate.Chips_DRAGDROP_HTML_KEY;
+    this.angularCodeTemplateViewModel.tsConfig = AngularCodeTemplate.Chips_DRAGDROP_TS_KEY;
+    this.angularCodeTemplateViewModel.htmlConfig = AngularCodeTemplate.Chips_DRAGDROP_HTML_KEY;
     this.codeGeneratorEnable = !this.codeGeneratorEnable;
   }
 }

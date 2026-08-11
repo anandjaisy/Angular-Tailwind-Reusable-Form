@@ -29,9 +29,10 @@ export const controlProvider: StaticProvider = {
 export class BaseControlBuilder implements OnInit, OnDestroy {
   private parentGroupDir = inject(ControlContainer);
   public control = inject(CONTROL_DATA);
+
   protected formControl: AbstractControl = new FormControl(
     { value: this.control.config.value, disabled: this.control.config.disabled },
-    this.bindValidators(this.control.config.validations)
+    this.bindValidators(this.control.config.validations),
   );
 
   get parentFormGroup() {
@@ -39,6 +40,10 @@ export class BaseControlBuilder implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.registerControl();
+  }
+
+  protected registerControl(): void {
     this.parentFormGroup.addControl(this.control.formControlName, this.formControl);
     if (this.control.config.disabled) {
       this.formControl.disable({ emitEvent: false });

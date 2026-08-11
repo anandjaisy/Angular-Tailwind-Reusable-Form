@@ -1,0 +1,44 @@
+.ward-chip {
+  --mdc-chip-label-text-color: var(--chip-color);
+  --mdc-chip-outline-color: var(--chip-color);
+}
+
+:host ::ng-deep .ward-chip .mdc-evolution-chip__action--primary::before {
+  border-color: var(--mdc-chip-outline-color) !important;
+}
+
+:host
+  ::ng-deep
+  .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
+  .mdc-evolution-chip__text-label {
+  color: var(--mdc-chip-label-text-color) !important;
+}
+
+.yellow-chip {
+  --chip-color: #eab308;
+}
+.lime-chip {
+  --chip-color: #84cc16;
+}
+.green-chip {
+  --chip-color: #22c55e;
+}
+.blue-chip {
+  --chip-color: #3b82f6;
+}
+.indigo-chip {
+  --chip-color: #6366f1;
+}
+.violet-chip {
+  --chip-color: #8b5cf6;
+}
+.purple-chip {
+  --chip-color: #a855f7;
+}
+
+mat-icon,
+mat-icon.mat-primary,
+mat-icon.mat-accent,
+mat-icon.mat-warn {
+  color: #3b82f6;
+}

@@ -8,6 +8,7 @@ import {
   sharedControlDeps,
 } from '../../control-builder/base-control-builder';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'fal-select',
@@ -15,13 +16,14 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatIconModule,
     MatTooltipModule,
     ...sharedControlDeps,
   ],
   viewProviders: [controlProvider],
   template: `<mat-form-field [appearance]="control.config.appearance" class="w-full">
-      @if(control.config.label){
-      <mat-label>{{ control.config.label }}</mat-label>
+      @if (control.config.label) {
+        <mat-label>{{ control.config.label }}</mat-label>
       }
       <mat-select
         [value]="control.config.value"
@@ -33,18 +35,19 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         [container]="containerDir.container"
         [multiple]="control.config.selectProperty.multiple"
       >
-        @for(option of control.config.options; track option){
-        <mat-option [value]="option.key">{{ option.value }}</mat-option>
+        @for (option of control.config.options; track option) {
+          <mat-option [value]="option.key">{{ option.value }}</mat-option>
         }
       </mat-select>
-      @if(control.config.prefix && control.config.prefix.isIcon){
-      <mat-icon matPrefix [matTooltip]="control.config.prefix.toolTipText!">{{
-        control.config.prefix.text
-      }}</mat-icon>
-      } @if(control.config.suffix && control.config.suffix.isIcon){
-      <mat-icon matSuffix [matTooltip]="control.config.suffix.toolTipText!">{{
-        control.config.suffix.text
-      }}</mat-icon>
+      @if (control.config.prefix && control.config.prefix.isIcon) {
+        <mat-icon matPrefix [matTooltip]="control.config.prefix.toolTipText!">{{
+          control.config.prefix.text
+        }}</mat-icon>
+      }
+      @if (control.config.suffix && control.config.suffix.isIcon) {
+        <mat-icon matSuffix [matTooltip]="control.config.suffix.toolTipText!">{{
+          control.config.suffix.text
+        }}</mat-icon>
       }
     </mat-form-field>
     <ng-container
@@ -52,9 +55,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
       #containerDir="falconValidationMessageContainer"
     />`,
   changeDetection: ChangeDetectionStrategy.Eager,
-  styles: `.w-full {
-    width: 100%
-  }`,
+  styles: `
+    .w-full {
+      width: 100%;
+    }
+  `,
 })
 export class SelectComponent extends BaseControlBuilder {
   selectionChange(event: MatSelectChange): void {

@@ -5,7 +5,6 @@ import { MatFormFieldAppearance } from '@angular/material/form-field';
 import {
   Appearance,
   Floatinglabel,
-  InputTypes,
 } from '../../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
 import { Textbox } from '@falcon-ng/core';
 import { HighlightModule } from 'ngx-highlightjs';

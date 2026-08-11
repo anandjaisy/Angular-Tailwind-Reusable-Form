@@ -4,7 +4,7 @@
             <a mat-mini-fab color="accent" routerLink="..">
                 <mat-icon>arrow_back</mat-icon>
             </a>
-            <h2>Autocomplete component</h2>
+            <h2>Chip components</h2>
             <h2></h2>
         </div>
         <mat-divider></mat-divider>
@@ -30,18 +30,29 @@
                         the form field with a border all the way around, not just an underline.</p>
                 </div>
                 <form [formGroup]="form">
-                    <falcon-control [control]="firstName" />
-                    <falcon-control [control]="disable" />
-                    <falcon-control [control]="prefilled" />
-                    <falcon-control [control]="presuffixicons" />
+                    <div class="flex flex-col gap-4">
+                        <div class="flex flex-col gap-4">
+                            <label class="text-lg font-semibold">Basic Chip</label>
+                            <falcon-control [control]="basicChip" />
+                        </div>
+
+                        <div class="flex flex-col gap-4">
+                            <label class="text-lg font-semibold">Select Chip</label>
+                            <falcon-control [control]="selectChip" />
+                        </div>
+
+
+                        <div class="flex flex-col gap-4">
+                            <label class="text-lg font-semibold">Multi Select Chip</label>
+                            <falcon-control [control]="multiSelectChip" />
+                        </div>
+
+                        <div class="flex flex-col gap-4">
+                            <label class="text-lg font-semibold">Form Value</label>
+                            <pre>{{ form.value | json }}</pre>
+                        </div>
+                    </div>
                 </form>
-                <br />
-                <app-autocomplete-group [form]="form" />
-                <br />
-                <br />
-                <br />
-                <app-autocomplete-text-change />
-                <pre><code [highlight]="form.value | json"></code></pre>
             </div>
         </mat-card-content>
 

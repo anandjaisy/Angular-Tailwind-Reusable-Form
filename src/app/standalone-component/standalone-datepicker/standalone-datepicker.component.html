@@ -30,15 +30,26 @@
                         the form field with a border all the way around, not just an underline.</p>
                 </div>
                 <form [formGroup]="form">
-                    <falcon-control [control]="datePicker" />
-                    <div class="flex flex-col">
-                        <span>Without label</span>
-                        <falcon-control [control]="firstNameWithOutLabel" />
+                    <div class="flex flex-col gap-5 mt-5">
+                        <falcon-control [control]="datePicker" />
+                        <div class="flex flex-col">
+                            <span>Without label</span>
+                            <falcon-control [control]="firstNameWithOutLabel" />
+                        </div>
+                        <div class="flex flex-col">
+                            <span>Disable</span>
+                            <falcon-control [control]="disable" />
+                        </div>
+                        <div class="flex flex-col">
+                            <span>Date range</span>
+                            <falcon-control [control]="dateRange" />
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <label class="text-lg font-semibold">Form Value</label>
+                            <pre>{{ form.value | json }}</pre>
+                        </div>
                     </div>
-                    <div class="flex flex-col">
-                        <span>Disable</span>
-                        <falcon-control [control]="disable" />
-                    </div>
+
                 </form>
             </div>
         </mat-card-content>

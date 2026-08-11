@@ -1,10 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { BaseFormComponent } from '../../../projects/falcon-ng/tailwind/src/lib/base-form-component';
 import { AngularCodeTemplateViewModel } from '../common/angularCodeTemplateViewModel';
-import {
-  Appearance,
-  InputTypes,
-} from '../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
+import { Appearance } from '../../../projects/falcon-ng/core/src/lib/falcon-core/model/enum';
 import { Observable, of } from 'rxjs';
 import { AngularCodeTemplate } from '../common/angularCodeTemplate';
 import { Slider } from '@falcon-ng/core';
@@ -14,21 +11,13 @@ import { CodeGeneratorComponent } from '../common/component/code-generator/code-
 import { CodeButtonComponent } from '../common/component/code-button/code-button.component';
 
 @Component({
-    selector: 'app-progress-spinner',
-    templateUrl: './progress-spinner.component.html',
-    styleUrls: ['./progress-spinner.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [
-        FalconTailwindModule,
-        CodeGeneratorComponent,
-        HighlightModule,
-        CodeButtonComponent,
-    ]
+  selector: 'app-progress-spinner',
+  templateUrl: './progress-spinner.component.html',
+  styleUrls: ['./progress-spinner.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
+  imports: [FalconTailwindModule, CodeGeneratorComponent, HighlightModule, CodeButtonComponent],
 })
-export class ProgressSpinnerComponent
-  extends BaseFormComponent<any>
-  implements OnInit
-{
+export class ProgressSpinnerComponent extends BaseFormComponent<any> implements OnInit {
   progressSpinnerValue: number = 10;
   public codeGeneratorEnable: boolean = false;
   public angularCodeTemplateViewModel: AngularCodeTemplateViewModel =
@@ -46,7 +35,7 @@ export class ProgressSpinnerComponent
         new Slider({
           label: 'Value',
           appearance: Appearance.Standard,
-          type: InputTypes.Number,
+          type: 'number',
           value: 0,
           formControlName: 'slider',
         }),
@@ -55,7 +44,7 @@ export class ProgressSpinnerComponent
   }
 
   onChanges(): void {
-    this.formGroup.get('slider')?.valueChanges.subscribe(val => {
+    this.formGroup.get('slider')?.valueChanges.subscribe((val) => {
       this.progressSpinnerValue = val;
     });
   }
@@ -70,10 +59,8 @@ export class ProgressSpinnerComponent
   }
 
   buttonClickEvent() {
-    this.angularCodeTemplateViewModel.tsConfig =
-      AngularCodeTemplate.ProgressSpinner_TS_KEY;
-    this.angularCodeTemplateViewModel.htmlConfig =
-      AngularCodeTemplate.ProgressSpinner_HTML_KEY;
+    this.angularCodeTemplateViewModel.tsConfig = AngularCodeTemplate.ProgressSpinner_TS_KEY;
+    this.angularCodeTemplateViewModel.htmlConfig = AngularCodeTemplate.ProgressSpinner_HTML_KEY;
     this.codeGeneratorEnable = !this.codeGeneratorEnable;
   }
 }

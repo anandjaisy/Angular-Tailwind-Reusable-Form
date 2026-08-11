@@ -9,14 +9,15 @@ import { SliderComponent } from '../component/slider/slider.component';
 import { ButtonToggleComponent } from '../component/button-toggle/button-toggle.component';
 import { AutoCompleteComponent } from '../component/auto-complete/auto-complete.component';
 import { ChipComponent } from '../component/chips/chip.component';
-import {ButtonComponent} from "../component/button/button.component";
-import {RichTextEditorComponent} from "../component/rich-text-editor/rich-text-editor.component";
+import { ButtonComponent } from '../component/button/button.component';
+import { RichTextEditorComponent } from '../component/rich-text-editor/rich-text-editor.component';
 export class Constant {
   public static ComponentMapper = {
     textbox: TextboxComponent,
     textarea: TextareaComponent,
     select: SelectComponent,
     datepicker: DatePickerComponent,
+    timepicker: DatePickerComponent,
     radio: RadioComponent,
     checkbox: CheckboxComponent,
     button: ButtonComponent,
@@ -26,6 +27,6 @@ export class Constant {
     autocomplete: AutoCompleteComponent,
     chip: ChipComponent,
     editor: RichTextEditorComponent,
-    divider: RichTextEditorComponent
+    divider: RichTextEditorComponent,
   };
 }

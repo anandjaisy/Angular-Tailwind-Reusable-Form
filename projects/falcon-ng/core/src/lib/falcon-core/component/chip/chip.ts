@@ -31,7 +31,7 @@ import { MatChipsModule } from '@angular/material/chips';
       @case ('text') {
         <p>Welcome, text chip.</p>
       }
-      @case ('dragDrop') {
+      @case ('drag-drop') {
         <p>Welcome, drag and drop chip.</p>
       }
       @case ('select') {

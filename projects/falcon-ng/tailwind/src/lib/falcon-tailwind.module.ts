@@ -69,6 +69,7 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     AngularEditorModule,
   ],
   exports: [
+    AngularmaterialModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,

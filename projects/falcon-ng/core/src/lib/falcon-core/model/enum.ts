@@ -101,7 +101,7 @@ export type InputType =
    */
   | 'button'
   | 'submit'
-  | 'dragDrop';
+  | 'drag-drop';
 
 /**
  * @description

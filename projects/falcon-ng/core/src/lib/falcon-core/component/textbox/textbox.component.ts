@@ -14,26 +14,27 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   viewProviders: [controlProvider],
   template: `
     <mat-form-field [appearance]="control.config.appearance" class="w-full">
-      @if(control.config.label){
-      <mat-label>{{ control.config.label }}</mat-label>
+      @if (control.config.label) {
+        <mat-label>{{ control.config.label }}</mat-label>
       }
       <input
         matInput
-        [type]="control.config.type"
+        [type]="control.config.type ?? 'text'"
         [formControlName]="control.formControlName"
         [placeholder]="control.config.placeHolder"
         [ngStyle]="control.config.style"
         [ngClass]="control.config.class"
         [container]="containerDir.container"
       />
-      @if(control.config.prefix && control.config.prefix.isIcon){
-      <mat-icon matPrefix [matTooltip]="control.config.prefix.toolTipText!">{{
-        control.config.prefix.text
-      }}</mat-icon>
-      } @if(control.config.suffix && control.config.suffix.isIcon){
-      <mat-icon matSuffix [matTooltip]="control.config.suffix.toolTipText!">{{
-        control.config.suffix.text
-      }}</mat-icon>
+      @if (control.config.prefix && control.config.prefix.isIcon) {
+        <mat-icon matPrefix [matTooltip]="control.config.prefix.toolTipText!">{{
+          control.config.prefix.text
+        }}</mat-icon>
+      }
+      @if (control.config.suffix && control.config.suffix.isIcon) {
+        <mat-icon matSuffix [matTooltip]="control.config.suffix.toolTipText!">{{
+          control.config.suffix.text
+        }}</mat-icon>
       }
     </mat-form-field>
     <ng-container
@@ -42,8 +43,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     />
   `,
   changeDetection: ChangeDetectionStrategy.Eager,
-  styles: `.w-full {
-    width: 100%
-  }`,
+  styles: `
+    .w-full {
+      width: 100%;
+    }
+  `,
 })
 export class TextboxComponent extends BaseControlBuilder {}

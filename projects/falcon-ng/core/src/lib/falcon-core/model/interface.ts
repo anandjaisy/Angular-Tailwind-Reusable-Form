@@ -254,6 +254,21 @@ export declare interface IOptions {
 
 /**
  * @description
+ * Interface used for setting component-specific properties.
+ * Interval is used to configure time or numeric spacing values.
+ * @usageNotes
+ * ```ts
+ * componentProperty: {
+ *   interval: '5min'
+ * }
+ * ```
+ */
+export declare interface IComponentProperties {
+  interval?: string | null;
+}
+
+/**
+ * @description
  * Interface used to group a collection of options under a common label.
  * Useful for rendering grouped select inputs (e.g., dropdown with categories).
  * @usageNotes

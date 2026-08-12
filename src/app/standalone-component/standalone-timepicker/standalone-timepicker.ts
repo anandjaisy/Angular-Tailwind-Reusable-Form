@@ -19,6 +19,13 @@ export class StandaloneTimepicker {
     label: 'Select time',
   });
 
+  intervalTimePicker: BaseControl<string> = new TimePicker({
+    formControlName: 'intervalTimePicker',
+    label: 'Select interval time',
+    componentProperties: {
+      interval: '1h', // Set the interval to 15 minutes
+    },
+  });
   form: FormGroup;
   constructor() {
     this.form = new FormGroup({});

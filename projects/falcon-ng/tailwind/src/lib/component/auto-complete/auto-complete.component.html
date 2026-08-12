@@ -2,8 +2,8 @@
   [formGroup]="formGroup" [ngStyle]="control.style" [ngClass]="control.class">
   <mat-label>{{control.label}}</mat-label>
   <input matInput [formControl]="autoCompleteControl" [formControlName]="control.formControlName"
-    [placeholder]="control.placeHolder" [type]="control.type" [ngStyle]="control.style" [ngClass]="control.class"
-    [matAutocomplete]="auto"
+    [placeholder]="control.placeHolder" [type]="control.type ?? 'text'" [ngStyle]="control.style"
+    [ngClass]="control.class" [matAutocomplete]="auto"
     [required]="$safeNavigationMigration(formGroup.get(control.formControlName)?.errors) !== null && formGroup.get(control.formControlName)?.errors?.['required']">
   <mat-autocomplete #auto="matAutocomplete" (optionSelected)='optionSelected($event.option.viewValue)'>
     <mat-option *ngFor="let item of filteredOptions | async" [value]="item.key">

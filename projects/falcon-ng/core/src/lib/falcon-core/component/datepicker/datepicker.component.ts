@@ -20,7 +20,7 @@ import { FormControl, FormGroup } from '@angular/forms';
         <mat-label>{{ control.config.label }}</mat-label>
       }
       @if (control.config.type === 'date-range') {
-        <div class="flex flex-row">
+        <div class="flex flex-row items-center">
           <mat-date-range-input [rangePicker]="picker" [formGroup]="dateRange">
             <input matStartDate placeholder="Start date" formControlName="start" />
             <input matEndDate placeholder="End date" formControlName="end" />
@@ -29,7 +29,7 @@ import { FormControl, FormGroup } from '@angular/forms';
           <mat-date-range-picker #picker></mat-date-range-picker>
         </div>
       } @else {
-        <div class="flex flex-row">
+        <div class="flex flex-row items-center">
           <input
             matInput
             [matDatepicker]="picker"
@@ -55,6 +55,9 @@ import { FormControl, FormGroup } from '@angular/forms';
   styles: `
     .w-full {
       width: 100%;
+    }
+    .mat-mdc-text-field-wrapper {
+      height: revert-rule !important;
     }
   `,
 })

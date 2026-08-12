@@ -21,7 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   providers: [provideNativeDateAdapter()],
   viewProviders: [controlProvider],
-  template: `<mat-form-field>
+  template: `<mat-form-field [appearance]="control.config.appearance" class="w-full">
       @if (control.config.label) {
         <mat-label>{{ control.config.label }}</mat-label>
       }
@@ -35,7 +35,10 @@ import { MatIconModule } from '@angular/material/icon';
         [container]="containerDir.container"
       />
       <mat-timepicker-toggle matIconSuffix [for]="timePicker" />
-      <mat-timepicker #timePicker />
+      <mat-timepicker
+        #timePicker
+        [interval]="control?.config?.componentProperties?.interval ?? null"
+      />
     </mat-form-field>
     <ng-container
       falconValidationMessageContainer

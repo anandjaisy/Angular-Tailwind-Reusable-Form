@@ -1,11 +1,10 @@
-<mat-form-field [appearance]="control.appearance" [formGroup]="formGroup"
-                [floatLabel]="control.floatLabel" [ngStyle]="control.style"
-                [ngClass]="control.class">
+<mat-form-field [appearance]="control.appearance" [formGroup]="formGroup" [floatLabel]="control.floatLabel"
+  [ngStyle]="control.style" [ngClass]="control.class">
   <mat-label>{{control.label}}</mat-label>
   <input matInput [matDatepicker]="picker" [formControlName]="control.formControlName"
-         [placeholder]="control.placeHolder" [type]="control.type"
-         [ngStyle]="control.style" [ngClass]="control.class"
-         [required]="$safeNavigationMigration(formGroup.get(control.formControlName)?.errors) !== null && formGroup.get(control.formControlName)?.errors?.['required']">
+    [placeholder]="control.placeHolder" [type]="control.type ?? 'text'" [ngStyle]="control.style"
+    [ngClass]="control.class"
+    [required]="$safeNavigationMigration(formGroup.get(control.formControlName)?.errors) !== null && formGroup.get(control.formControlName)?.errors?.['required']">
   <mat-datepicker-toggle matSuffix [for]="picker">
     <mat-icon matDatepickerToggleIcon *ngIf="control.suffix.isIcon">keyboard_arrow_down</mat-icon>
   </mat-datepicker-toggle>

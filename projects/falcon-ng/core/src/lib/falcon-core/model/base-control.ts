@@ -4,6 +4,7 @@ import { FloatLabelType, MatFormFieldAppearance } from '@angular/material/form-f
 import { ThemePalette } from '@angular/material/core';
 import {
   IComponentEvent,
+  IComponentProperties,
   IMatHint,
   IOptionGroup,
   IOptions,
@@ -38,7 +39,7 @@ export class BaseControl<T> {
   labelPosition: 'before' | 'after';
   order: number;
   controlType: Control;
-  type: InputType;
+  type: InputType | undefined;
   disabled: boolean;
   options: IOptions[] | any;
   optionGroup: IOptionGroup[] | any;
@@ -59,6 +60,7 @@ export class BaseControl<T> {
   chipSelectedOptions: IOptions[] | any;
   editorProperty: any;
   formArray: BaseControl<T>[] | undefined;
+  componentProperties: IComponentProperties | undefined;
   constructor(options: {
     value?: T;
     formControlName?: string;
@@ -66,7 +68,7 @@ export class BaseControl<T> {
     labelPosition?: 'before' | 'after';
     order?: number;
     controlType?: Control;
-    type?: InputType;
+    type?: InputType | undefined;
     disabled?: boolean;
     options?: IOptions[] | any;
     optionGroup?: IOptionGroup[] | any;
@@ -87,6 +89,7 @@ export class BaseControl<T> {
     chipSelectedOptions?: IOptions[] | any;
     editorProperty?: any;
     formArray?: BaseControl<T>[];
+    componentProperties?: IComponentProperties;
   }) {
     this.value = options.value;
     this.formControlName = options.formControlName || '';
@@ -94,7 +97,7 @@ export class BaseControl<T> {
     this.labelPosition = options.labelPosition || 'before' || 'after';
     this.order = options.order === undefined ? 1 : options.order;
     this.controlType = options.controlType || Control.Button;
-    this.type = options.type || 'text';
+    this.type = options.type || undefined;
     this.disabled = options.disabled || false;
     this.options = options.options || [];
     this.optionGroup = options.optionGroup || [];
@@ -115,5 +118,6 @@ export class BaseControl<T> {
     this.chipSelectedOptions = options.chipSelectedOptions || {};
     this.editorProperty = options.editorProperty || {};
     this.formArray = options.formArray || undefined;
+    this.componentProperties = options.componentProperties || undefined;
   }
 }

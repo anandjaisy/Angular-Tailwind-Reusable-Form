@@ -14,7 +14,7 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
       </mat-card-content>
     </mat-card>
   `,
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false,
 })
 export class CardComponent {

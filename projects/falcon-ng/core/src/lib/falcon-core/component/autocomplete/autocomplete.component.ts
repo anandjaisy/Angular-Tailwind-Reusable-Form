@@ -74,7 +74,7 @@ import { MatIconModule } from '@angular/material/icon';
       falconValidationMessageContainer
       #containerDir="falconValidationMessageContainer"
     />`,
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: `
     .w-full {
       width: 100%;

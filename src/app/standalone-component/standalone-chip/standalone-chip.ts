@@ -5,7 +5,7 @@ import {
   Chip,
 } from '../../../../projects/falcon-ng/core/src/public-api';
 import { RouterLink } from '@angular/router';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { JsonPipe } from '@angular/common';
 
 @Component({
@@ -48,6 +48,7 @@ export class StandaloneChip {
       { key: '2', value: 'Option 2' },
       { key: '3', value: 'Option 3' },
     ],
+    validations: [{ validator: Validators.required }],
   });
 
   form: FormGroup;

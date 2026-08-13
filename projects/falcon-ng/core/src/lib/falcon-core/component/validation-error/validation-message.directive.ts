@@ -9,22 +9,8 @@ import {
   OnInit,
   ViewContainerRef,
 } from '@angular/core';
-import {
-  ControlContainer,
-  FormGroupDirective,
-  NgControl,
-  NgForm,
-  NgModel,
-} from '@angular/forms';
-import {
-  EMPTY,
-  fromEvent,
-  iif,
-  merge,
-  skip,
-  startWith,
-  Subscription,
-} from 'rxjs';
+import { ControlContainer, FormGroupDirective, NgControl, NgForm, NgModel } from '@angular/forms';
+import { EMPTY, fromEvent, iif, merge, skip, startWith, Subscription } from 'rxjs';
 import { ValidationErrorComponent } from './validation-error.component';
 import { ErrorStateMatcherService } from './error-state-matcher.service';
 
@@ -35,8 +21,7 @@ import { ErrorStateMatcherService } from './error-state-matcher.service';
 })
 export class ValidationMessageDirective implements OnInit, OnDestroy {
   ngControl =
-    inject(NgControl, { self: true, optional: true }) ||
-    inject(ControlContainer, { self: true });
+    inject(NgControl, { self: true, optional: true }) || inject(ControlContainer, { self: true });
   elementRef = inject(ElementRef);
 
   @Input() errorStateMatcher = inject(ErrorStateMatcherService);
@@ -47,10 +32,7 @@ export class ValidationMessageDirective implements OnInit, OnDestroy {
   private componentRef: ComponentRef<ValidationErrorComponent> | null = null;
 
   get form() {
-    return this.parentContainer?.formDirective as
-      | NgForm
-      | FormGroupDirective
-      | null;
+    return this.parentContainer?.formDirective as NgForm | FormGroupDirective | null;
   }
 
   ngOnInit() {
@@ -59,23 +41,18 @@ export class ValidationMessageDirective implements OnInit, OnDestroy {
     this.errorMessageTrigger = merge(
       this.ngControl.control.statusChanges,
       fromEvent(this.elementRef.nativeElement, 'blur'),
-      iif(() => !!this.form, this.form!.ngSubmit, EMPTY)
+      iif(() => !!this.form, this.form!.ngSubmit, EMPTY),
     )
       .pipe(
         startWith(this.ngControl.control.status),
-        skip(this.ngControl instanceof NgModel ? 1 : 0)
+        skip(this.ngControl instanceof NgModel ? 1 : 0),
       )
       .subscribe(() => {
-        if (
-          this.errorStateMatcher.isErrorState(this.ngControl.control, this.form)
-        ) {
+        if (this.errorStateMatcher.isErrorState(this.ngControl.control, this.form)) {
           if (!this.componentRef) {
-            this.componentRef = this.container.createComponent(
-              ValidationErrorComponent,
-              {
-                bindings: [inputBinding('errors', () => this.ngControl.errors)],
-              }
-            );
+            this.componentRef = this.container.createComponent(ValidationErrorComponent, {
+              bindings: [inputBinding('errors', () => this.ngControl.errors)],
+            });
             this.componentRef.changeDetectorRef.markForCheck();
           }
         } else {

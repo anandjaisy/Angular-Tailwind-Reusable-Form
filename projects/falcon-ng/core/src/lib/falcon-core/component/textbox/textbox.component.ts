@@ -36,13 +36,15 @@ import { MatTooltipModule } from '@angular/material/tooltip';
           control.config.suffix.text
         }}</mat-icon>
       }
+      <mat-error>
+        <ng-container
+          falconValidationMessageContainer
+          #containerDir="falconValidationMessageContainer"
+        />
+      </mat-error>
     </mat-form-field>
-    <ng-container
-      falconValidationMessageContainer
-      #containerDir="falconValidationMessageContainer"
-    />
   `,
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: `
     .w-full {
       width: 100%;

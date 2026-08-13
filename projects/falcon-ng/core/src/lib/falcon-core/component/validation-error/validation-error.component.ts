@@ -9,12 +9,16 @@ import { ErrorMessagePipe } from './error-message.pipe';
   imports: [CommonModule, MatInputModule, ErrorMessagePipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    @if (errors) { @for (error of errors | keyvalue; track trackByFn($index,
-    error)) {
-    <mat-error [style.bottom.px]="18" [style.position]="'relative'">{{
-      error.key | errorMessage : error.value
-    }}</mat-error>
-    } }
+    @if (errors) {
+      @for (error of errors | keyvalue; track trackByFn($index, error)) {
+        <span class="font-normal text-sm">{{ error.key | errorMessage: error.value }}</span>
+      }
+    }
+  `,
+  styles: `
+    ::ng-deep .mat-mdc-form-field-error-wrapper {
+      padding: 0 0 !important;
+    }
   `,
 })
 export class ValidationErrorComponent {

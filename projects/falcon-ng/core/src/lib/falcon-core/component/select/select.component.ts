@@ -22,39 +22,41 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   viewProviders: [controlProvider],
   template: `<mat-form-field [appearance]="control.config.appearance" class="w-full">
-      @if (control.config.label) {
-        <mat-label>{{ control.config.label }}</mat-label>
+    @if (control.config.label) {
+      <mat-label>{{ control.config.label }}</mat-label>
+    }
+    <mat-select
+      [value]="control.config.value"
+      [formControlName]="control.formControlName"
+      [placeholder]="control.config.placeHolder"
+      [ngStyle]="control.config.style"
+      [ngClass]="control.config.class"
+      (selectionChange)="selectionChange($event)"
+      [container]="containerDir.container"
+      [multiple]="control.config.selectProperty.multiple"
+    >
+      @for (option of control.config.options; track option) {
+        <mat-option [value]="option.key">{{ option.value }}</mat-option>
       }
-      <mat-select
-        [value]="control.config.value"
-        [formControlName]="control.formControlName"
-        [placeholder]="control.config.placeHolder"
-        [ngStyle]="control.config.style"
-        [ngClass]="control.config.class"
-        (selectionChange)="selectionChange($event)"
-        [container]="containerDir.container"
-        [multiple]="control.config.selectProperty.multiple"
-      >
-        @for (option of control.config.options; track option) {
-          <mat-option [value]="option.key">{{ option.value }}</mat-option>
-        }
-      </mat-select>
-      @if (control.config.prefix && control.config.prefix.isIcon) {
-        <mat-icon matPrefix [matTooltip]="control.config.prefix.toolTipText!">{{
-          control.config.prefix.text
-        }}</mat-icon>
-      }
-      @if (control.config.suffix && control.config.suffix.isIcon) {
-        <mat-icon matSuffix [matTooltip]="control.config.suffix.toolTipText!">{{
-          control.config.suffix.text
-        }}</mat-icon>
-      }
-    </mat-form-field>
-    <ng-container
-      falconValidationMessageContainer
-      #containerDir="falconValidationMessageContainer"
-    />`,
-  changeDetection: ChangeDetectionStrategy.Eager,
+    </mat-select>
+    @if (control.config.prefix && control.config.prefix.isIcon) {
+      <mat-icon matPrefix [matTooltip]="control.config.prefix.toolTipText!">{{
+        control.config.prefix.text
+      }}</mat-icon>
+    }
+    @if (control.config.suffix && control.config.suffix.isIcon) {
+      <mat-icon matSuffix [matTooltip]="control.config.suffix.toolTipText!">{{
+        control.config.suffix.text
+      }}</mat-icon>
+    }
+    <mat-error>
+      <ng-container
+        falconValidationMessageContainer
+        #containerDir="falconValidationMessageContainer"
+      />
+    </mat-error>
+  </mat-form-field>`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: `
     .w-full {
       width: 100%;

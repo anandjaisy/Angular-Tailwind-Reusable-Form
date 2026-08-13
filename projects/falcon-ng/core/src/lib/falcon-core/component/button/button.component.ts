@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, OnDestroy, Output, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  Output,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
 @Component({
   selector: 'fal-button',
@@ -16,7 +23,7 @@ import { Component, EventEmitter, Input, OnDestroy, Output, ChangeDetectionStrat
       </span>
     </button>
   `,
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false,
 })
 export class ButtonComponent implements OnDestroy {

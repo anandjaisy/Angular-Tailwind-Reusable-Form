@@ -13,8 +13,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   viewProviders: [controlProvider],
   template: `
     <mat-form-field [appearance]="control.config.appearance" class="w-full">
-      @if(control.config.label){
-      <mat-label>{{ control.config.label }}</mat-label>
+      @if (control.config.label) {
+        <mat-label>{{ control.config.label }}</mat-label>
       }
       <textarea
         matInput
@@ -31,22 +31,29 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         [container]="containerDir.container"
       >
       </textarea>
-      @if(control.config.prefix && control.config.prefix.isIcon){
-      <mat-icon matPrefix [matTooltip]="control.config.prefix.toolTipText!">{{
-        control.config.prefix.text
-      }}</mat-icon>
-      } @if(control.config.suffix && control.config.suffix.isIcon){
-      <mat-icon matSuffix [matTooltip]="control.config.suffix.toolTipText!">{{
-        control.config.suffix.text
-      }}</mat-icon>
+      @if (control.config.prefix && control.config.prefix.isIcon) {
+        <mat-icon matPrefix [matTooltip]="control.config.prefix.toolTipText!">{{
+          control.config.prefix.text
+        }}</mat-icon>
       }
+      @if (control.config.suffix && control.config.suffix.isIcon) {
+        <mat-icon matSuffix [matTooltip]="control.config.suffix.toolTipText!">{{
+          control.config.suffix.text
+        }}</mat-icon>
+      }
+      <mat-error>
+        <ng-container
+          falconValidationMessageContainer
+          #containerDir="falconValidationMessageContainer"
+        />
+      </mat-error>
     </mat-form-field>
-    <ng-container
-      falconValidationMessageContainer
-      #containerDir="falconValidationMessageContainer"
-    />
   `,
-  changeDetection: ChangeDetectionStrategy.Eager,
-  styles: `.w-full{width: 100%}`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  styles: `
+    .w-full {
+      width: 100%;
+    }
+  `,
 })
 export class TextareaComponent extends BaseControlBuilder {}

@@ -16,42 +16,44 @@ import { FormControl, FormGroup } from '@angular/forms';
   imports: [MatFormFieldModule, MatInputModule, MatDatepickerModule, ...sharedControlDeps],
   viewProviders: [controlProvider],
   template: `<mat-form-field [appearance]="control.config.appearance" class="w-full">
-      @if (control.config.label) {
-        <mat-label>{{ control.config.label }}</mat-label>
-      }
-      @if (control.config.type === 'date-range') {
-        <div class="flex flex-row items-center">
-          <mat-date-range-input [rangePicker]="picker" [formGroup]="dateRange">
-            <input matStartDate placeholder="Start date" formControlName="start" />
-            <input matEndDate placeholder="End date" formControlName="end" />
-          </mat-date-range-input>
-          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-date-range-picker #picker></mat-date-range-picker>
-        </div>
-      } @else {
-        <div class="flex flex-row items-center">
-          <input
-            matInput
-            [matDatepicker]="picker"
-            [formControlName]="control.formControlName"
-            [placeholder]="control.config.placeHolder"
-            [ngStyle]="control.config.style"
-            [ngClass]="control.config.class"
-            [container]="containerDir.container"
-          />
-          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </div>
-      }
-      @if (control.config.hint?.show) {
-        <mat-hint>{{ control.config.hint?.text }}</mat-hint>
-      }
-    </mat-form-field>
-    <ng-container
-      falconValidationMessageContainer
-      #containerDir="falconValidationMessageContainer"
-    /> `,
-  changeDetection: ChangeDetectionStrategy.Eager,
+    @if (control.config.label) {
+      <mat-label>{{ control.config.label }}</mat-label>
+    }
+    @if (control.config.type === 'date-range') {
+      <div class="flex flex-row items-center">
+        <mat-date-range-input [rangePicker]="picker" [formGroup]="dateRange">
+          <input matStartDate placeholder="Start date" formControlName="start" />
+          <input matEndDate placeholder="End date" formControlName="end" />
+        </mat-date-range-input>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </div>
+    } @else {
+      <div class="flex flex-row items-center">
+        <input
+          matInput
+          [matDatepicker]="picker"
+          [formControlName]="control.formControlName"
+          [placeholder]="control.config.placeHolder"
+          [ngStyle]="control.config.style"
+          [ngClass]="control.config.class"
+          [container]="containerDir.container"
+        />
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </div>
+    }
+    @if (control.config.hint?.show) {
+      <mat-hint>{{ control.config.hint?.text }}</mat-hint>
+    }
+    <mat-error>
+      <ng-container
+        falconValidationMessageContainer
+        #containerDir="falconValidationMessageContainer"
+      />
+    </mat-error>
+  </mat-form-field> `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: `
     .w-full {
       width: 100%;

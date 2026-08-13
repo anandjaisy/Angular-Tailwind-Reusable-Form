@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {
   BaseControlBuilder,
   controlProvider,
@@ -22,28 +22,31 @@ import { MatIconModule } from '@angular/material/icon';
   providers: [provideNativeDateAdapter()],
   viewProviders: [controlProvider],
   template: `<mat-form-field [appearance]="control.config.appearance" class="w-full">
-      @if (control.config.label) {
-        <mat-label>{{ control.config.label }}</mat-label>
-      }
-      <input
-        matInput
-        [matTimepicker]="timePicker"
-        [formControlName]="control.formControlName"
-        [placeholder]="control.config.placeHolder"
-        [ngStyle]="control.config.style"
-        [ngClass]="control.config.class"
-        [container]="containerDir.container"
+    @if (control.config.label) {
+      <mat-label>{{ control.config.label }}</mat-label>
+    }
+    <input
+      matInput
+      [matTimepicker]="timePicker"
+      [formControlName]="control.formControlName"
+      [placeholder]="control.config.placeHolder"
+      [ngStyle]="control.config.style"
+      [ngClass]="control.config.class"
+      [container]="containerDir.container"
+    />
+    <mat-timepicker-toggle matIconSuffix [for]="timePicker" />
+    <mat-timepicker
+      #timePicker
+      [interval]="control?.config?.componentProperties?.interval ?? null"
+    />
+    <mat-error>
+      <ng-container
+        falconValidationMessageContainer
+        #containerDir="falconValidationMessageContainer"
       />
-      <mat-timepicker-toggle matIconSuffix [for]="timePicker" />
-      <mat-timepicker
-        #timePicker
-        [interval]="control?.config?.componentProperties?.interval ?? null"
-      />
-    </mat-form-field>
-    <ng-container
-      falconValidationMessageContainer
-      #containerDir="falconValidationMessageContainer"
-    />`,
+    </mat-error>
+  </mat-form-field>`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: ``,
 })
 export class Timepicker extends BaseControlBuilder {}

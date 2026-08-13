@@ -10,7 +10,7 @@ import { MatCheckboxChange, MatCheckboxModule } from '@angular/material/checkbox
   selector: 'fal-checkbox',
   imports: [MatCheckboxModule, ...sharedControlDeps],
   viewProviders: [controlProvider],
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: ` <mat-checkbox
     [ngStyle]="control.config.style"
     [ngClass]="control.config.class"
